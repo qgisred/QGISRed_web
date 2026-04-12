@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página no encontrada – QGISRed</title>
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="icon" href="/assets/img/logos/logoqgisred.png">
+  <script>
+    // Inject correct base-relative paths before stylesheet loads
+    var _base = window.location.hostname.endsWith('github.io')
+      ? '/' + window.location.pathname.split('/').filter(Boolean)[0]
+      : '';
+    document.write('<link rel="stylesheet" href="' + _base + '/assets/css/main.css">');
+    document.write('<link rel="icon" href="' + _base + '/assets/img/logos/logoqgisred.png">');
+  </script>
   <style>
     .error-page { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 48px 24px; }
     .error-code { font-size: 6rem; font-weight: 800; color: var(--color-accent); line-height: 1; }
@@ -24,6 +30,6 @@
     </div>
   </div>
   <div id="site-footer"></div>
-  <script src="/assets/js/components.js"></script>
+  <script>document.write('<script src="' + _base + '/assets/js/components.js"><\/script>');</script>
 </body>
 </html>

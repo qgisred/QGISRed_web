@@ -2,11 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/es/">
   <title>QGISRed</title>
-  <script>window.location.replace('/es/');</script>
+  <script>
+    // Works both on GitHub Pages (/qgisred_web/) and on a custom domain (/)
+    var base = window.location.hostname.endsWith('github.io')
+      ? '/' + window.location.pathname.split('/').filter(Boolean)[0]
+      : '';
+    window.location.replace(base + '/es/');
+  </script>
 </head>
 <body>
-  <p>Redirigiendo a <a href="/es/">QGISRed</a>…</p>
+  <p>Redirigiendo… <a href="es/">QGISRed</a></p>
 </body>
 </html>

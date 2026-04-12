@@ -8,6 +8,13 @@
 (function () {
   'use strict';
 
+  /* ── Base path (GitHub Pages project repos live under /<repo>/) ───────── */
+  // On github.io the first path segment is the repo name → use it as base.
+  // On localhost or a custom domain the hostname doesn't end in github.io → base is ''.
+  const BASE = window.location.hostname.endsWith('github.io')
+    ? '/' + window.location.pathname.split('/').filter(Boolean)[0]
+    : '';
+
   /* ── Site map ─────────────────────────────────────────────────────────── */
 
   const NAV_ES = [
@@ -109,9 +116,10 @@
       link.href = href;
       head.appendChild(link);
     }
+    const altFull = location.origin + BASE + altHref;
     addAlt(lang, canonical);
-    addAlt(lang === 'es' ? 'en' : 'es', altHref);
-    addAlt('x-default', lang === 'es' ? canonical : altHref);
+    addAlt(lang === 'es' ? 'en' : 'es', altFull);
+    addAlt('x-default', lang === 'es' ? canonical : altFull);
   }
 
   /* ── Build header HTML ───────────────────────────────────────────────── */
@@ -275,6 +283,16 @@
 
   if (headerEl) headerEl.outerHTML = buildHeader();
   if (footerEl) footerEl.outerHTML = buildFooter();
+
+  // Rewrite every absolute link in the page so they work under a sub-path
+  // (e.g. GitHub Pages: /qgisred_web/es/ instead of /es/).
+  // This handles hardcoded hrefs in breadcrumbs, cards, buttons, etc.
+  if (BASE) {
+    document.querySelectorAll('a[href^="/"]').forEach(a => {
+      const h = a.getAttribute('href');
+      if (!h.startsWith(BASE)) a.setAttribute('href', BASE + h);
+    });
+  }
 
   injectHreflang();
 
