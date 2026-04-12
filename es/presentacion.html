@@ -12,20 +12,16 @@
 
   <div id="site-header"></div>
 
-  <!-- Page Hero -->
   <div class="page-hero" style="background-image: url('../assets/img/sections/BG-Worldmap.png'); background-size: cover; background-position: center;">
     <div class="container">
       <div class="breadcrumb">
-        <a href="/es/">Inicio</a>
-        <span>›</span>
-        <span>Presentación</span>
+        <a href="/es/">Inicio</a><span>›</span><span>Presentación</span>
       </div>
       <h1>Presentación</h1>
       <p>Conoce QGISRed, su historia y su equipo de desarrollo</p>
     </div>
   </div>
 
-  <!-- Section anchor nav -->
   <nav class="section-nav" aria-label="Secciones de esta página">
     <div class="section-nav__inner">
       <a href="#quees">Qué es</a>
@@ -50,11 +46,18 @@
             <span class="hero__eyebrow">Plugin de QGIS</span>
             <h2>¿Qué es QGISRed?</h2>
             <div class="accent-line accent-line--left" style="margin-bottom:20px"></div>
-            <p>QGISRed es un complemento de QGIS (plugin) destinado a facilitar la tarea de construir y analizar modelos hidráulicos de redes de distribución de agua. La herramienta permite construir modelos hidráulicos que van desde simples esquemas hasta sofisticados gemelos digitales.</p>
-            <p>Como plugin de uso gratuito, aprovecha las capacidades GIS para georreferenciar elementos de la red, superponer fondos geográficos, editar datos gráficos y alfanuméricos, y realizar operaciones de geoprocesamiento. La plataforma constituye un entorno de trabajo integrado —no herramientas aisladas— que permite importar modelos, editar trazados, declarar propiedades de elementos, construir escenarios de cálculo y analizar resultados en un único entorno.</p>
-            <a href="https://plugins.qgis.org/plugins/QGISRed/" class="btn btn-primary" target="_blank" rel="noopener">
-              Descargar plugin
-            </a>
+            <p>QGISRed es un <strong>complemento de QGIS</strong> (o plugin) destinado a facilitar la tarea de construir y analizar <strong>modelos hidráulicos de redes de distribución de agua,</strong> desde los esquemas más sencillos hasta el nivel de detalle requerido por los Gemelos Digitales.</p>
+            <p>El plugin es de <strong>uso libre</strong> y aprovecha todas las ventajas de trabajar en un entorno GIS para georreferenciar los elementos de la red, superponerlos sobre fondos geográficos, editar la información gráfica y alfanumérica, visualizar la información por capas, personalizar la simbología, realizar operaciones de geoprocesamiento, etc.</p>
+            <p>A diferencia de otros plugins, QGISRed no es un conjunto de herramientas aisladas para facilitar determinadas tareas, sino que constituye una <strong>plataforma de trabajo</strong> desde la cual se puede construir o importar el modelo de la red, editar su trazado, declarar las propiedades de los elementos, construir un escenario de cálculo y analizar los resultados, todo desde el mismo entorno.</p>
+            <p>De este modo <strong>QGISRed puede emular todas las capacidades de EPANET 2.2</strong>, ampliando sus opciones de edición y de cálculo.</p>
+            <p>Además de ello, QGISRed ofrece algunas <strong>ayudas para confeccionar los modelos,</strong> como la verificación de todos los datos, el cálculo automático de longitudes, la interpolación de cotas a partir de un MDT, la asignación de rugosidades a las tuberías a partir del material y edad, la asignación de las demandas a los nudos a partir de los datos de población o de los consumos medios registrados, y la gestión de escenarios de cálculo.</p>
+            <p>Como herramienta de <strong>modelación avanzada</strong>, QGISRed ofrece opciones adicionales para ampliar el modelo y conectarlo con los datos reales, convirtiendo así de forma progresiva el modelo hidráulico de la red en un <strong>Gemelo Digital</strong>.</p>
+            <p>Emular las capacidades de EPANET permite <strong>acelerar la curva de aprendizaje</strong> en el manejo de QGISRed.</p>
+            <p>Además, los conocimientos requeridos de QGIS para su uso son mínimos, pues se han desarrollado herramientas propias para llevar a cabo todas las operaciones necesarias. Sin embargo, los especialistas en QGIS podrán sacar aún mucho más provecho a las prestaciones ofrecidas por QGISRed.</p>
+            <p>A través de esta página se ofrecen <strong>numerosas ayudas</strong> para convertirse en poco tiempo en un experto en la modelación de redes, y ofrecer soluciones profesionales a las empresas mediante las herramientas asociadas al Gemelo Digital.</p>
+            <p>Finalmente cabe resaltar que el <strong>modelo de datos</strong> utilizado por QGISRed es público y con una estructura muy simple, orientada fundamentalmente a realizar todo tipo de análisis, lo que permite conectar QGISRed con otras aplicaciones de modelado de redes como EPANET, InfoWorks o WaterGEMS.</p>
+            <p>QGISRed se ofrece por ahora solo en <strong>Inglés</strong>, y en breve estará también en Español. Sin embargo, QGISRed <strong>funciona por ahora solo sobre Windows y para versiones posteriores a la 3.2</strong>.</p>
+            <a href="https://plugins.qgis.org/plugins/QGISRed/" class="btn btn-primary" target="_blank" rel="noopener">Descargar plugin</a>
           </div>
         </div>
       </div>
@@ -71,8 +74,12 @@
             <span class="hero__eyebrow">Historia</span>
             <h2>Antecedentes</h2>
             <div class="accent-line accent-line--left" style="margin-bottom:20px"></div>
-            <p>Los orígenes se remontan a 2004, cuando el investigador Fernando Martínez dirigió el desarrollo de GISRed, una herramienta predecesora que utilizaba el lenguaje Avenue para ArcView 3.2. Aunque las primeras versiones dieron soporte a grandes proyectos de abastecimiento de agua (incluida el área metropolitana de Valencia con 1,5 millones de personas), la obsolescencia tecnológica limitó su adopción.</p>
-            <p>Tras quince años sin alternativas de código abierto comparables, y con la liberación del código de EPANET en 2015, el equipo decidió reimaginar GISRed dentro de QGIS. La primera presentación pública tuvo lugar en la Conferencia CCWI 2019 en Exeter, Reino Unido.</p>
+            <p>La idea de potenciar las prestaciones de EPANET mediante su conexión con un GIS no es nueva para nuestro grupo de investigación. Ya en 2004 Fernando Martínez, director del actual proyecto QGISRed, dirigió un proyecto con similares objetivos y prestaciones, denominado <strong>GISRed.</strong></p>
+            <p>GISRed se programó en el lenguaje Avenue para ArcView 3.2, y llegó a estar configurado por más de 600 scripts. Se utilizó internamente como herramienta de ayuda para confeccionar varios planes directores de mejora de abastecimientos, entre ellos el abastecimiento a la ciudad de Valencia y su área metropolitana, con una población servida de 1,5 millones de habitantes, como hito más importante.</p>
+            <p>Sin embargo, la falta de robustez del producto limitó su difusión en primera instancia, y al poco tiempo ArcView quedó obsoleto, siendo abandonado también el lenguaje Avenue.</p>
+            <p>En los 15 años siguientes ninguna aplicación, dejando aparte los productos comerciales, llegó a proporcionar las prestaciones que GISRed ofrecía para ayudar en la confección de modelos de redes de abastecimiento. Mientras tanto el código de EPANET fue liberalizado, y en 2015 se fundó una sección dentro de la <strong>Open Water Analytics</strong> (OWA) para continuar desarrollando el módulo de cálculo de EPANET. Finalmente, en Diciembre 2019 se lanzó la última versión 2.2 de la Toolkit.</p>
+            <p>En 2018, tras los espectaculares avances del software libre QGIS, nos decidimos a reproducir las prestaciones de GISRed en este nuevo entorno, y a mejorar de paso tanto las prestaciones de aquel producto inicial, equiparándolas a las que ofrece la última versión de EPANET 2.2. La primera presentación en público del nuevo producto, ya denominado <strong>QGISRed</strong>, se realizó durante la Conferencia CCWI de 2019, en Exeter (UK).</p>
+            <p>Por otra parte, la experiencia adquirida por los autores en el desarrollo de uno de los primeros Gemelos Digitales del mundo para la ciudad de Valencia, nos llevó a potenciar aún más las prestaciones del nuevo plugin para permitir migrar de un modelo hidráulico convencional a la construcción de un Gemelo Digital.</p>
           </div>
         </div>
       </div>
@@ -84,23 +91,27 @@
         <div class="section__header">
           <h2 class="section__title">Aplicaciones</h2>
           <div class="accent-line"></div>
-          <p class="section__subtitle" style="margin-top:12px">QGISRed da soporte a tres grandes tipos de modelos de red</p>
+          <p class="section__subtitle" style="margin-top:12px">QGISRed pretende cubrir todas estas situaciones, siendo las principales aplicaciones en cada caso:</p>
         </div>
+
+        <div style="max-width:860px;margin:0 auto 32px;color:var(--color-text-muted);font-size:0.95rem;">
+          <p>Las redes de distribución llegan a convertirse con el tiempo en sistemas complejos de manejar, por su continua expansión y adaptación en función de las necesidades. Los modelos se emplearon en principio con fines de diseño, y con el tiempo se extendió su uso para simular el comportamiento dinámico de las redes en explotación. Hoy se les pide a los modelos que reproduzcan fielmente el comportamiento de la red en cualquier instante del pasado o presente, y que predigan su comportamiento a corto plazo a través de los gemelos digitales.</p>
+        </div>
+
         <div class="grid-3">
 
           <div class="feature-card">
             <div class="feature-card__bar" style="background: var(--gradient-cyan)"></div>
             <div class="feature-card__body">
               <h3 class="feature-card__title">Modelos Estáticos</h3>
-              <p class="feature-card__text">Dimensionamiento de redes, planificación, calibración de modelos, simulación de fallos, análisis de criticidad, sectorización y auditorías energéticas.</p>
-              <ul style="list-style: disc; padding-left: 1.2rem; margin-top: 12px; font-size: 0.85rem; color: var(--color-text-muted);">
-                <li>Dimensionamiento de redes</li>
-                <li>Planificación de redes</li>
-                <li>Calibración de modelos</li>
-                <li>Simulación de fallos</li>
-                <li>Análisis de criticidad</li>
-                <li>Sectorización de redes</li>
-                <li>Auditorías energéticas</li>
+              <ul style="list-style: disc; padding-left: 1.2rem; margin-top: 8px; font-size: 0.875rem; color: var(--color-text-muted); display:flex;flex-direction:column;gap:6px;">
+                <li>El dimensionado de tuberías y elementos de regulación para el escenario más desfavorable</li>
+                <li>La planificación de nuevos escenarios ante ampliaciones de la red, rehabilitación de componentes, reformas, etc.</li>
+                <li>La calibración del modelo a partir de medidas en momentos puntuales</li>
+                <li>La simulación de la respuesta del sistema en situaciones extremas como roturas, elementos fuera de servicio, etc.</li>
+                <li>El análisis de la criticidad de la red, para detectar los elementos más débiles</li>
+                <li>La sectorización de la red garantizando el suministro en las condiciones más desfavorables</li>
+                <li>La realización de auditorías energéticas que afecten al diseño y concepción del sistema</li>
               </ul>
             </div>
           </div>
@@ -109,15 +120,15 @@
             <div class="feature-card__bar" style="background: var(--gradient-purple)"></div>
             <div class="feature-card__body">
               <h3 class="feature-card__title">Modelos Dinámicos</h3>
-              <p class="feature-card__text">Optimización del control de regulación, calibración en período extendido, análisis de fiabilidad, planificación del mantenimiento y gestión de la demanda.</p>
-              <ul style="list-style: disc; padding-left: 1.2rem; margin-top: 12px; font-size: 0.85rem; color: var(--color-text-muted);">
-                <li>Optimización del control de regulación</li>
-                <li>Calibración en período extendido</li>
-                <li>Análisis de fiabilidad</li>
-                <li>Planificación del mantenimiento</li>
-                <li>Reducción del consumo energético</li>
-                <li>Monitorización de la calidad del agua</li>
-                <li>Gestión de la demanda y detección de fugas</li>
+              <ul style="list-style: disc; padding-left: 1.2rem; margin-top: 8px; font-size: 0.875rem; color: var(--color-text-muted); display:flex;flex-direction:column;gap:6px;">
+                <li>El establecimiento de las consignas de los elementos de regulación para garantizar valores adecuados de las variables hidráulicas en todo momento</li>
+                <li>La calibración del modelo a partir de medidas en periodos prolongados</li>
+                <li>El análisis de la fiabilidad y capacidad de respuesta de la red ante cualquier eventualidad</li>
+                <li>La programación de actuaciones de mantenimiento en la red</li>
+                <li>La optimización del régimen de operación del sistema para reducir el consumo energético</li>
+                <li>El seguimiento de la calidad del agua y la programación de las actuaciones requeridas</li>
+                <li>La gestión de las presiones de suministro para reducir las fugas en la red</li>
+                <li>La determinación de indicadores de desempeño (KPIs) para periodos prolongados</li>
               </ul>
             </div>
           </div>
@@ -126,18 +137,23 @@
             <div class="feature-card__bar" style="background: var(--gradient-green)"></div>
             <div class="feature-card__body">
               <h3 class="feature-card__title">Gemelos Digitales</h3>
-              <p class="feature-card__text">Integración de datos en tiempo real, calibración continua del modelo, inferencia de valores no medidos, detección de anomalías y optimización operativa.</p>
-              <ul style="list-style: disc; padding-left: 1.2rem; margin-top: 12px; font-size: 0.85rem; color: var(--color-text-muted);">
-                <li>Integración de datos en tiempo real</li>
-                <li>Calibración continua del modelo</li>
-                <li>Inferencia de valores no medidos</li>
-                <li>Detección de anomalías</li>
-                <li>Capacidades predictivas</li>
-                <li>Optimización operativa</li>
+              <ul style="list-style: disc; padding-left: 1.2rem; margin-top: 8px; font-size: 0.875rem; color: var(--color-text-muted); display:flex;flex-direction:column;gap:6px;">
+                <li>La carga del modelo con datos reales en cada momento (demandas, niveles en depósitos, modos de operación)</li>
+                <li>El mantenimiento del modelo hidráulico y de calidad permanentemente calibrado</li>
+                <li>La inferencia del valor de cualquier magnitud no medida, a través de la simulación</li>
+                <li>La detección de cualquier anomalía en los parámetros de control de la red</li>
+                <li>La simulación de posibles actuaciones previas a su ejecución ante cualquier evento imprevisto</li>
+                <li>La detección precoz de cualquier evento contaminante del agua</li>
+                <li>El seguimiento en tiempo real de todo tipo de balances hidráulicos, energéticos o de sustancias disueltas</li>
+                <li>La predicción del comportamiento de la red a corto plazo</li>
               </ul>
             </div>
           </div>
 
+        </div>
+
+        <div class="info-box" style="max-width:860px;margin:32px auto 0;">
+          La <strong>versión libre</strong> de QGISRed <strong>se limita a simular el comportamiento de la red</strong> bajo unas condiciones predefinidas, tal como hace actualmente EPANET. Solo que ofrece muchas más herramientas de modelación, contempla más tipos de elementos, y permite conectar el modelo con los datos reales. Las técnicas de optimización o de inteligencia artificial quedan por ahora fuera del alcance de la versión libre de QGISRed.
         </div>
       </div>
     </section>
@@ -150,18 +166,23 @@
             <span class="hero__eyebrow">Primeros pasos</span>
             <h2>Instalación</h2>
             <div class="accent-line accent-line--left" style="margin-bottom:20px"></div>
-            <p>QGISRed requiere tener QGIS instalado previamente (versión 3.2 o superior). Actualmente funciona exclusivamente en <strong>Windows</strong>.</p>
+            <p>QGISRed no es una aplicación autónoma de escritorio al uso. Es un complemento de QGIS, y por tanto se requiere instalar previamente este producto desde la página oficial <a href="https://www.qgis.org" target="_blank" rel="noopener">qgis.org</a>. Sin embargo, QGISRed <strong>funciona por ahora solo sobre Windows y para versiones posteriores a la 3.2</strong>.</p>
 
-            <ol style="list-style: decimal; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 12px; margin: 20px 0; font-size: 0.95rem;">
-              <li>Descarga e instala <strong>QGIS</strong> desde <a href="https://www.qgis.org" target="_blank" rel="noopener">qgis.org</a></li>
-              <li>Abre QGIS y ve a <strong>Complementos → Administrar e instalar complementos</strong></li>
-              <li>Busca <strong>"QGISRed"</strong> y haz clic en <strong>Instalar</strong></li>
-              <li>En el primer uso, las librerías necesarias se descargan automáticamente en segundos</li>
+            <h3 style="margin:24px 0 12px;font-size:1rem;">Instalación del complemento QGISRed</h3>
+            <p>Una vez instalado QGIS, para instalar el complemento QGISRed basta con seguir los siguientes pasos:</p>
+            <ol style="list-style: decimal; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 10px; margin: 16px 0; font-size: 0.9rem; color:var(--color-text-muted);">
+              <li>Desde el menú <em>Complementos</em>, elegir la opción <em>Administrar e instalar complementos</em>.</li>
+              <li>Desde la pestaña <em>Todos</em>, buscar por su nombre el plugin <em>QGISRed</em>, el cual aparecerá al ser un complemento registrado en el repositorio oficial de QGIS.</li>
+              <li>Pulsar el botón <em>Instalar Complemento</em>, y en cuestión de segundos se habrá instalado la aplicación. Cerrar finalmente la ventana.</li>
+              <li>En la barra de menús aparecerá el nuevo menú de QGISRed y en la botonadura se mostrará también la nueva barra de botones de QGISRed.</li>
+              <li>Falta un último paso. En cuanto intentes utilizar por primera vez cualquier opción de QGISRed se mostrará una nueva pantalla solicitando que completes la instalación con las librerías (dlls) que contienen todos los algoritmos. Es solo unos segundos más.</li>
+              <li>Con ello ha finalizado la instalación de una aplicación que te sorprenderá por las numerosas prestaciones añadidas, todas ellas orientadas a la confección y explotación de modelos de redes hidráulicas.</li>
             </ol>
 
-            <a href="https://plugins.qgis.org/plugins/QGISRed/" class="btn btn-primary" target="_blank" rel="noopener">
-              Instalar desde QGIS Plugin Manager
-            </a>
+            <h3 style="margin:24px 0 12px;font-size:1rem;">Versiones beta y actualizaciones</h3>
+            <p style="font-size:0.9rem;color:var(--color-text-muted);">Cada vez que se lance una nueva versión oficial, se mostrará un mensaje emergente informando de su existencia. Desde la propia ventana del complemento QGISRed, se invitará al usuario a actualizar la versión actual pulsando el botón <em>Actualizar Complemento</em>. A continuación, al pulsar cualquier botón de QGISRed, se pedirá también actualizar las librerías.</p>
+
+            <a href="https://plugins.qgis.org/plugins/QGISRed/" class="btn btn-primary" target="_blank" rel="noopener" style="margin-top:20px;">Instalar desde QGIS Plugin Manager</a>
           </div>
           <div class="content-row__img">
             <img src="../assets/img/ui/manual-de-usuario.png" alt="Manual de usuario QGISRed">
@@ -181,15 +202,12 @@
             <span class="hero__eyebrow">Código abierto</span>
             <h2>Proyecto en GitHub</h2>
             <div class="accent-line accent-line--left" style="margin-bottom:20px"></div>
-            <p>El código de la interfaz Python del plugin es accesible públicamente en GitHub bajo licencia <strong>GNU GPL 2.0</strong>. El repositorio aloja el código que gestiona la personalización de la interfaz de QGIS y las capacidades de edición de elementos de red.</p>
-            <p>Los algoritmos computacionales principales —que contienen la mayor parte de la lógica de procesamiento— están desarrollados en C# dentro de librerías DLL propietarias, utilizando el Toolkit de EPANET 2.2 y librerías Shapefile.</p>
+            <p>QGISRed no es un producto cerrado. La parte del código de QGISRed que interacciona con las funcionalidades de QGIS está desarrollada en <em>Python</em> y es dominio público, de acuerdo con los términos de la licencia GNU GPL 2.0 de QGIS. Dicho código aloja todas las funcionalidades que afectan a la personalización de la interfaz gráfica de QGIS tras instalar el plugin, así como a ciertas capacidades de edición y selección de los elementos de la red.</p>
+            <p>Sin embargo, <strong>la mayor parte del código de QGISRed está desarrollado en C# para Windows</strong>, configurando una serie de librerías denominadas <strong><em>GISRed.xxx.dll</em>,</strong> las cuales contienen la mayoría de los algoritmos, formularios y cuadros de diálogo propios de la aplicación. Estas librerías no utilizan ninguna otra librería externa excepto la librería <em>Epanet2.dll</em> (Toolkit 2.2, Dic. 2019) y la librería <em>Shapelib.dll</em>.</p>
+            <p>Una sección muy importante del portal es la pestaña <strong><em>Issues</em></strong>, que está plenamente activa, y donde los usuarios pueden reportar cualquier incidencia. Está dividida en incidencias <em>Abiertas</em> y <em>Cerradas</em>. Para crear una nueva incidencia es necesario estar registrado previamente en GitHub.</p>
             <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px;">
-              <a href="https://github.com/qgisred/QGISRed" class="btn btn-primary" target="_blank" rel="noopener">
-                <img src="../assets/img/logos/GitHub-Emblem.png" alt="" width="18" style="filter: brightness(0)"> Ver repositorio
-              </a>
-              <a href="https://github.com/qgisred/QGISRed/issues" class="btn btn-outline-dark" target="_blank" rel="noopener">
-                Reportar incidencia
-              </a>
+              <a href="https://github.com/qgisred/QGISRed" class="btn btn-primary" target="_blank" rel="noopener">Ver repositorio</a>
+              <a href="https://github.com/qgisred/QGISRed/issues" class="btn btn-outline-dark" target="_blank" rel="noopener">Reportar incidencia</a>
             </div>
           </div>
         </div>
@@ -205,46 +223,72 @@
           <p class="section__subtitle" style="margin-top:12px">El equipo detrás de QGISRed</p>
         </div>
 
-        <div class="grid-2" style="max-width: 860px; margin: 0 auto 48px;">
+        <div style="max-width:860px;margin:0 auto;">
 
-          <div class="card">
-            <img src="../assets/img/team/Team-1.jpg" alt="Fernando Martínez Alzamora" class="card__img">
-            <div class="card__body">
-              <h3 class="card__title">Fernando Martínez Alzamora</h3>
-              <p class="text-muted" style="font-size:0.85rem; margin-bottom:12px">Director del proyecto · Profesor UPV</p>
-              <p class="card__text">Catedrático de Ingeniería Civil de la UPV con más de 40 años de experiencia en el modelado de sistemas hidráulicos. Dirigió el desarrollo de GISRed y ha publicado más de 40 artículos en revistas especializadas sobre redes de distribución de agua.</p>
+          <p style="color:var(--color-text-muted);margin-bottom:32px;">El proyecto QGISRed nace por <strong>iniciativa del</strong> Grupo de Investigación en Redes Hidráulicas y Sistemas a Presión (REDHISP), del Instituto de Ingeniería del Agua y Medio Ambiente (IIAMA) de la Universitat Politècnica de València (UPV). El proyecto arranca con una <strong>Ayuda de la Generalitat Valenciana</strong> (APOTI/2018/006), por un importe efectivo de 18.300 € y duración desde Nov 2018 hasta Julio 2019. A partir de esa fecha el proyecto continúa a través del soporte económico del Fondo de Sostenibilidad I+D del grupo REDHISP y con la colaboración de la empresa WaterPi hasta finales de 2022.</p>
+
+          <!-- Fernando -->
+          <div class="content-row" style="margin-bottom:48px;">
+            <div class="content-row__img">
+              <img src="../assets/img/team/fernando-martinez.jpg" alt="Fernando Martínez Alzamora">
+            </div>
+            <div class="content-row__text">
+              <h3>Fernando Martínez Alzamora</h3>
+              <p style="color:var(--color-accent);font-size:0.9rem;margin-bottom:12px;">Director del proyecto</p>
+              <p>La <strong>dirección</strong> del Proyecto QGISRed está a cargo del <strong>Prof. Fernando Martínez Alzamora,</strong> Catedrático de Ingeniería Hidráulica de la UPV, con más de 40 años de experiencia en la modelación de sistemas hidráulicos a presión. Se adjunta un breve CV, mientras que un listado de las principales publicaciones puede encontrarse en su <a href="https://www.researchgate.net/profile/Fernando-Martinez-Alzamora" target="_blank" rel="noopener">página personal</a> de Research Gate.</p>
+              <details style="margin-top:16px;">
+                <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--color-primary);">Saber más</summary>
+                <div style="margin-top:12px;font-size:0.875rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:8px;">
+                  <p>Fernando Martínez Alzamora es Ingeniero Industrial por la Universitat Politècnica de València (1978) y Doctor por la misma universidad (1982). Desde 1995 es Catedrático de Ingeniería Hidráulica de la UPV y desde 2001 investigador del Instituto de Ingeniería del Agua y M.A. (IIAMA).</p>
+                  <p>Su investigación se ha centrado en el área del análisis, diseño y operación de las redes de distribución de agua, tanto para abastecimientos urbanos como para el riego a presión. En particular ha trabajado en la mejora de algoritmos de simulación, en la integración de los modelos hidráulicos en SIG para la realización de planes directores, y la utilización de los modelos en tiempo real para la toma de decisiones, en conexión con los sistemas SCADA.</p>
+                  <p>En estos temas ha publicado 40 artículos en revistas de prestigio, 70 comunicaciones en Congresos nacionales e internacionales, y dirigido 11 tesis doctorales. Ha sido investigador principal de 12 proyectos de investigación nacionales y participado como team leader en 4 proyectos europeos del programa marco. Colabora asiduamente como consultor, habiendo sido responsable de un total de 62 contratos.</p>
+                  <p>Ha desarrollado diversas aplicaciones de software: SCARed para el control en tiempo real de la red de suministro de agua a Valencia y su área metropolitana (operativo desde hace más de 10 años), GO2HydNet para obtener modelos hidráulicos actualizados por consulta directa a las bases de datos corporativas, y QGISRed. Desde 2001 es responsable del grupo de investigación REDHISP del IIAMA.</p>
+                </div>
+              </details>
             </div>
           </div>
 
-          <div class="card">
-            <img src="../assets/img/team/Team-2.jpg" alt="Néstor Lerma Elvira" class="card__img">
-            <div class="card__body">
-              <h3 class="card__title">Néstor Lerma Elvira</h3>
-              <p class="text-muted" style="font-size:0.85rem; margin-bottom:12px">Programador (hasta 2022) · Co-fundador WaterPi</p>
-              <p class="card__text">Ingeniero formado en la UPV y co-fundador de WaterPi, programó QGISRed hasta 2022 combinando experiencia en ingeniería hidráulica con desarrollo de software en C#, Python y JavaScript.</p>
+          <!-- Néstor -->
+          <div class="content-row content-row--reverse" style="margin-bottom:48px;">
+            <div class="content-row__img">
+              <img src="../assets/img/team/nestor-lerma.jpg" alt="Néstor Lerma Elvira">
+            </div>
+            <div class="content-row__text">
+              <h3>Néstor Lerma Elvira</h3>
+              <p style="color:var(--color-accent);font-size:0.9rem;margin-bottom:12px;">Programador (hasta 2022) · Co-fundador WaterPi</p>
+              <p>El <strong>código de QGISRed</strong> fue desarrollado hasta finales de 2022 por <strong>Néstor Lerma Elvira</strong>, Dr. Ing. Caminos por la UPV, y socio fundador de la empresa WaterPi Coop. V. Gran parte de los méritos de la versión de QGISRed que aquí se ofrece se deben al buen hacer de Néstor, que ha sabido conjugar sus conocimientos de ingeniería con sus habilidades como programador.</p>
+              <details style="margin-top:16px;">
+                <summary style="cursor:pointer;font-weight:600;font-size:0.9rem;color:var(--color-primary);">Saber más</summary>
+                <div style="margin-top:12px;font-size:0.875rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:8px;">
+                  <p>Néstor Lerma Elvira es Ingeniero de Caminos, Canales y Puertos por la UPV (2010) y Doctor por la misma universidad (2017). Durante el periodo 2009-2017 se especializó en recursos hídricos, aplicando algoritmos evolutivos para optimizar la gestión en sistemas multi-embalse.</p>
+                  <p>Los lenguajes de programación que más ha empleado han sido C# y VB.NET, aunque también ha llevado a cabo otras aplicaciones en Python o en TypeScript/JavaScript, aparte de tener conocimientos en SQL, VBA y R. Durante su etapa de investigador colaboró en diversos softwares para el Grupo de Recursos Hídricos de la UPV, desde AQUATOOL hasta otras herramientas como EvalHid, Caudeco, MashWin, Aquival, etc., además de RS Minerve a nivel internacional.</p>
+                  <p>A partir de 2018 fundó su propia empresa (WaterPi) dedicada a la consultoría de ingeniería aplicada a la gestión de recursos hídricos y a proyectos medioambientales. Fue en ese mismo año cuando se unió al grupo de investigación liderado por Fernando Martínez y comenzó a programar lo que es hoy en día QGISRed, empezando una nueva especialización en el campo de las redes de distribución de agua en presión.</p>
+                </div>
+              </details>
             </div>
           </div>
 
-        </div>
+          <!-- Registro y logos -->
+          <div class="info-box" style="margin-bottom:32px;">
+            QGISRed v1.0 está <strong>registrado</strong> en los servicios de CARTA de la UPV, con el número de registro S-072-2021, y licencia GNU GPL 2.0, siendo la titularidad 100% de la UPV. La descarga y uso del plugin es libre, sin requerir ningún tipo de registro previo. Sin embargo, en cualquier uso de tipo profesional o educativo que se haga del plugin debe mencionarse su procedencia y proporcionarse un enlace a esta página web.
+          </div>
 
-        <!-- Financiación -->
-        <div class="section__header">
-          <h3 style="margin-bottom:8px">Financiación y colaboración</h3>
-        </div>
-        <p style="max-width:700px; margin: 0 auto 32px; text-align:center; color:var(--color-text-muted);">
-          El grupo de investigación REDHISP de la UPV inició el desarrollo con apoyo de la Generalitat Valenciana (18.300 €, nov 2018–jul 2019), continuándose posteriormente con fondos de sostenibilidad del grupo de investigación y la colaboración de WaterPi. QGISRed v1.0 está registrado en la UPV (S-072-2021) bajo licencia GNU GPL 2.0.
-        </p>
+          <div class="info-box info-box--warning" style="margin-bottom:32px;">
+            Aunque los resultados ofrecidos por QGISRed han sido contrastados en varias ocasiones con los proporcionados por EPANET 2.2, los autores del plugin <strong>declinan cualquier responsabilidad</strong> sobre la exactitud de los mismos y el uso que se haga de ellos.
+          </div>
 
-        <div class="footer-logos" style="justify-content:center; gap:32px; padding:24px 0;">
-          <a href="https://www.upv.es" target="_blank" rel="noopener">
-            <img src="../assets/img/logos/logoUPV.png" alt="UPV" style="height:40px; filter:none; opacity:1;">
-          </a>
-          <a href="https://www.iiama.upv.es" target="_blank" rel="noopener">
-            <img src="../assets/img/logos/logoIiama.png" alt="IIAMA" style="height:40px; filter:none; opacity:1;">
-          </a>
-          <a href="https://redhisp.upv.es" target="_blank" rel="noopener">
-            <img src="../assets/img/logos/logoRedhisp.png" alt="RedhiSP" style="height:40px; filter:none; opacity:1;">
-          </a>
+          <div class="footer-logos" style="justify-content:center;gap:32px;padding:24px 0;">
+            <a href="https://www.upv.es" target="_blank" rel="noopener">
+              <img src="../assets/img/logos/logoUPV.png" alt="UPV" style="height:40px;filter:none;opacity:1;">
+            </a>
+            <a href="https://www.iiama.upv.es" target="_blank" rel="noopener">
+              <img src="../assets/img/logos/logoIiama.png" alt="IIAMA" style="height:40px;filter:none;opacity:1;">
+            </a>
+            <a href="https://redhisp.upv.es" target="_blank" rel="noopener">
+              <img src="../assets/img/logos/logoRedhisp.png" alt="RedhiSP" style="height:40px;filter:none;opacity:1;">
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
