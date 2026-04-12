@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Version 0.17 updates – QGISRed</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="../assets/img/logos/logoqgisred.png">
+</head>
+<body data-page="news-0.17" data-lang="en">
+  <div id="site-header"></div>
+  <div class="page-hero" style="background-image:url('../assets/img/sections/qgisred.jpg');background-size:cover;background-position:center;">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en/">Home</a><span>›</span><a href="/en/capabilities.html">Capabilities</a><span>›</span><span>v0.17 updates</span></div>
+      <h1>Version 0.17 updates <span class="badge badge--new" style="font-size:0.7rem;vertical-align:middle;">Latest</span></h1>
+      <p>February 2026 · The most important improvements in this version</p>
+    </div>
+  </div>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+        <div class="info-box">
+          More than 3 years have passed since the last official QGISRed version. Version 0.17 gathers the most important advances. Many features were already anticipated in beta versions up to 0.16.13, released through GitHub to address incompatibilities with newer QGIS 3.4x versions.
+        </div>
+        <div class="content-row" style="margin-top:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva3.png" alt="Isolated segments"></div>
+          <div class="content-row__text">
+            <h2>1. New isolated segment identification tool</h2>
+            <p>One of the most requested features in water distribution network simulation software is the automatic determination of which valves must be closed to isolate a segment around a damaged or maintenance element.</p>
+            <p>The new tool automatically calculates the minimum segment isolated when closing a given set of valves, showing affected elements and the number of customers without service.</p>
+          </div>
+        </div>
+        <div class="content-row content-row--reverse" style="margin-top:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva4.png" alt="13 states"></div>
+          <div class="content-row__text">
+            <h2>2. Identification of up to 13 states in pipes, pumps and valves</h2>
+            <p>The initial status of a transport element (pipe, pump, valve) declared in EPANET can be open or closed. However, the calculation result can reveal up to 13 distinct states depending on the element type and hydraulic conditions. QGISRed now identifies and symbolises all of them.</p>
+          </div>
+        </div>
+        <div class="content-row" style="margin-top:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva5.png" alt="Simulation chaining"></div>
+          <div class="content-row__text">
+            <h2>3. Successive simulation chaining</h2>
+            <p>As more real data becomes available, the opportunity arises to match the model to reality over longer periods. Simulation chaining runs multiple consecutive simulation periods, using the final state of each as the initial condition for the next.</p>
+          </div>
+        </div>
+        <div class="content-row content-row--reverse" style="margin-top:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva6.png" alt="EPANET scenarios"></div>
+          <div class="content-row__text">
+            <h2>4. EPANET-compatible scenario management</h2>
+            <p>EPANET provides an option to export/import scenarios — pipe diameters, roughness, node demands, initial quality, etc. QGISRed 0.17 integrates this functionality, allowing scenarios to be managed in a format fully compatible with native EPANET.</p>
+          </div>
+        </div>
+        <div class="content-row" style="margin-top:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva7.png" alt="Project manager"></div>
+          <div class="content-row__text">
+            <h2>5. New Project Manager options</h2>
+            <p>The QGISRed Project Manager is one of the most used tools, easily switching between scenarios. This version adds new options to improve the organisation and management of complex projects with multiple scenarios.</p>
+          </div>
+        </div>
+        <div class="content-row content-row--reverse" style="margin-top:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva8.png" alt="EPANET Toolkit 2.3"></div>
+          <div class="content-row__text">
+            <h2>6. EPANET Toolkit 2.3 integration</h2>
+            <p>QGISRed 0.17 integrates version 2.3 of the EPANET Toolkit, which includes bug fixes, performance improvements and new analysis options over the previous version 2.2.</p>
+          </div>
+        </div>
+        <div style="margin-top:48px;padding:32px;background:var(--color-bg-alt);border-radius:var(--border-radius-lg);">
+          <h2 style="margin-bottom:12px;">7. Minor improvements and bug fixes</h2>
+          <p>Version 0.17 also continues to refine features already offered by QGISRed. For full details of all minor improvements and corrections, see the version history.</p>
+          <a href="/en/capabilities.html#historico" class="btn btn-outline-dark" style="margin-top:16px;">View version history</a>
+        </div>
+        <div style="text-align:center;margin-top:48px;padding-top:32px;border-top:1px solid var(--color-border);">
+          <a href="/en/news-0.16.html" class="btn btn-outline-dark">← v0.16 updates</a>
+          &nbsp;
+          <a href="https://plugins.qgis.org/plugins/QGISRed/" class="btn btn-primary" target="_blank" rel="noopener">Download v0.17</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

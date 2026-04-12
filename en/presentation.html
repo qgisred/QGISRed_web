@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentation – QGISRed</title>
+  <meta name="description" content="What is QGISRed, its background, applications, installation guide and the team behind the project.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="../assets/img/logos/logoqgisred.png">
+</head>
+<body data-page="presentation" data-lang="en">
+  <div id="site-header"></div>
+
+  <div class="page-hero" style="background-image:url('../assets/img/sections/BG-Worldmap.png');background-size:cover;background-position:center;">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en/">Home</a><span>›</span><span>Presentation</span></div>
+      <h1>Presentation</h1>
+      <p>Learn about QGISRed, its history and development team</p>
+    </div>
+  </div>
+
+  <nav class="section-nav" aria-label="Page sections">
+    <div class="section-nav__inner">
+      <a href="#quees">What is it</a>
+      <a href="#antecedentes">Background</a>
+      <a href="#aplicaciones">Applications</a>
+      <a href="#instalacion">Installation</a>
+      <a href="#github">GitHub</a>
+      <a href="#creditos">Credits</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section id="quees" class="section">
+      <div class="container">
+        <div class="content-row">
+          <div class="content-row__img">
+            <img src="../assets/img/sections/Mock-QGISRed.jpg" alt="QGISRed interface">
+          </div>
+          <div class="content-row__text">
+            <span class="hero__eyebrow">QGIS Plugin</span>
+            <h2>What is QGISRed?</h2>
+            <div class="accent-line accent-line--left" style="margin-bottom:20px"></div>
+            <p>QGISRed is a QGIS plugin designed to facilitate the construction and analysis of hydraulic models of water distribution networks. The tool enables users to build hydraulic models ranging from simple schemas to sophisticated digital twins.</p>
+            <p>As a free plugin, it leverages GIS capabilities for georeferencing network elements, overlaying geographic backgrounds, editing graphic and alphanumeric data, and performing geoprocessing operations. The platform is an integrated working environment — not isolated tools — allowing users to import models, edit layouts, declare element properties, build calculation scenarios, and analyse results within one environment.</p>
+            <a href="https://plugins.qgis.org/plugins/QGISRed/" class="btn btn-primary" target="_blank" rel="noopener">Download plugin</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="antecedentes" class="section section--alt">
+      <div class="container">
+        <div class="content-row content-row--reverse">
+          <div class="content-row__img">
+            <img src="../assets/img/sections/GisRed.jpg" alt="GISRed, QGISRed predecessor">
+          </div>
+          <div class="content-row__text">
+            <span class="hero__eyebrow">History</span>
+            <h2>Background</h2>
+            <div class="accent-line accent-line--left" style="margin-bottom:20px"></div>
+            <p>The origins trace back to 2004, when researcher Fernando Martínez directed the development of GISRed, a predecessor tool using the Avenue language for ArcView 3.2. Although early versions supported major water supply projects (including Valencia's 1.5 million-person metropolitan area), technological obsolescence limited adoption.</p>
+            <p>Following fifteen years without comparable open-source alternatives, and with EPANET's code liberation in 2015, the team decided to reimagine GISRed within QGIS. The first public presentation took place at the CCWI 2019 Conference in Exeter, UK.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="aplicaciones" class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Applications</h2>
+          <div class="accent-line"></div>
+          <p class="section__subtitle" style="margin-top:12px">QGISRed supports three main types of network models</p>
+        </div>
+        <div class="grid-3">
+          <div class="feature-card">
+            <div class="feature-card__bar" style="background:var(--gradient-cyan)"></div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Static Models</h3>
+              <p class="feature-card__text">Pipeline dimensioning, network planning, model calibration, failure simulation, criticality analysis, network sectorization, and energy audits.</p>
+              <ul style="list-style:disc;padding-left:1.2rem;margin-top:12px;font-size:0.85rem;color:var(--color-text-muted);">
+                <li>Pipeline dimensioning</li><li>Network planning</li><li>Model calibration</li>
+                <li>Failure simulation</li><li>Criticality analysis</li>
+                <li>Network sectorization</li><li>Energy audits</li>
+              </ul>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__bar" style="background:var(--gradient-purple)"></div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Dynamic Models</h3>
+              <p class="feature-card__text">Regulation control optimisation, extended-period calibration, reliability analysis, maintenance scheduling, and demand management.</p>
+              <ul style="list-style:disc;padding-left:1.2rem;margin-top:12px;font-size:0.85rem;color:var(--color-text-muted);">
+                <li>Control optimisation</li><li>Extended-period calibration</li>
+                <li>Reliability analysis</li><li>Maintenance scheduling</li>
+                <li>Energy consumption reduction</li>
+                <li>Water quality monitoring</li><li>Demand management &amp; leak detection</li>
+              </ul>
+            </div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__bar" style="background:var(--gradient-green)"></div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title">Digital Twins</h3>
+              <p class="feature-card__text">Real-time data integration, continuous model calibration, unmeasured value inference, anomaly detection and operational optimisation.</p>
+              <ul style="list-style:disc;padding-left:1.2rem;margin-top:12px;font-size:0.85rem;color:var(--color-text-muted);">
+                <li>Real-time data integration</li><li>Continuous model calibration</li>
+                <li>Unmeasured value inference</li><li>Anomaly detection</li>
+                <li>Predictive capabilities</li><li>Operational optimisation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="instalacion" class="section section--alt">
+      <div class="container">
+        <div class="content-row">
+          <div class="content-row__text">
+            <span class="hero__eyebrow">Getting started</span>
+            <h2>Installation</h2>
+            <div class="accent-line accent-line--left" style="margin-bottom:20px"></div>
+            <p>QGISRed requires QGIS to be installed first (version 3.2 or later). Currently runs on <strong>Windows</strong> only.</p>
+            <ol style="list-style:decimal;padding-left:1.5rem;display:flex;flex-direction:column;gap:12px;margin:20px 0;font-size:0.95rem;">
+              <li>Download and install <strong>QGIS</strong> from <a href="https://www.qgis.org" target="_blank" rel="noopener">qgis.org</a></li>
+              <li>Open QGIS and go to <strong>Plugins → Manage and Install Plugins</strong></li>
+              <li>Search for <strong>"QGISRed"</strong> and click <strong>Install</strong></li>
+              <li>On first use, required libraries download automatically within seconds</li>
+            </ol>
+            <a href="https://plugins.qgis.org/plugins/QGISRed/" class="btn btn-primary" target="_blank" rel="noopener">Install from QGIS Plugin Manager</a>
+          </div>
+          <div class="content-row__img">
+            <img src="../assets/img/ui/manual-de-usuario.png" alt="QGISRed user manual">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="github" class="section">
+      <div class="container">
+        <div class="content-row content-row--reverse">
+          <div class="content-row__img">
+            <img src="../assets/img/logos/GitHub-Emblem.png" alt="GitHub">
+          </div>
+          <div class="content-row__text">
+            <span class="hero__eyebrow">Open source</span>
+            <h2>GitHub Project</h2>
+            <div class="accent-line accent-line--left" style="margin-bottom:20px"></div>
+            <p>The Python interface code of the plugin is publicly accessible on GitHub under <strong>GNU GPL 2.0</strong> licence. The repository hosts the code managing QGIS interface customisation and network element editing capabilities.</p>
+            <p>The core computational algorithms — containing most of the processing logic — are developed in C# within proprietary DLL libraries, using the EPANET 2.2 Toolkit and Shapefile libraries.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+              <a href="https://github.com/qgisred/QGISRed" class="btn btn-primary" target="_blank" rel="noopener">View repository</a>
+              <a href="https://github.com/qgisred/QGISRed/issues" class="btn btn-outline-dark" target="_blank" rel="noopener">Report an issue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="creditos" class="section section--alt">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Credits</h2>
+          <div class="accent-line"></div>
+          <p class="section__subtitle" style="margin-top:12px">The team behind QGISRed</p>
+        </div>
+        <div class="grid-2" style="max-width:860px;margin:0 auto 48px;">
+          <div class="card">
+            <img src="../assets/img/team/Team-1.jpg" alt="Fernando Martínez Alzamora" class="card__img">
+            <div class="card__body">
+              <h3 class="card__title">Fernando Martínez Alzamora</h3>
+              <p class="text-muted" style="font-size:0.85rem;margin-bottom:12px">Project Director · UPV Professor</p>
+              <p class="card__text">UPV Civil Engineering Professor with 40+ years of experience in hydraulic system modelling. Directed GISRed development and has published 40+ peer-reviewed articles on water distribution networks.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="../assets/img/team/Team-2.jpg" alt="Néstor Lerma Elvira" class="card__img">
+            <div class="card__body">
+              <h3 class="card__title">Néstor Lerma Elvira</h3>
+              <p class="text-muted" style="font-size:0.85rem;margin-bottom:12px">Developer (until 2022) · WaterPi co-founder</p>
+              <p class="card__text">UPV-trained engineer and WaterPi co-founder, programmed QGISRed through 2022 combining hydraulic engineering expertise with software development skills in C#, Python and JavaScript.</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-logos" style="justify-content:center;gap:32px;padding:24px 0;">
+          <a href="https://www.upv.es" target="_blank" rel="noopener"><img src="../assets/img/logos/logoUPV.png" alt="UPV" style="height:40px;filter:none;opacity:1;"></a>
+          <a href="https://www.iiama.upv.es" target="_blank" rel="noopener"><img src="../assets/img/logos/logoIiama.png" alt="IIAMA" style="height:40px;filter:none;opacity:1;"></a>
+          <a href="https://redhisp.upv.es" target="_blank" rel="noopener"><img src="../assets/img/logos/logoRedhisp.png" alt="RedhiSP" style="height:40px;filter:none;opacity:1;"></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

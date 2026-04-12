@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sector-based demand assignment – QGISRed</title>
+  <meta name="description" content="QGISRed assistant to automatically assign demands to nodes from consumption points and sectoral data.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="../assets/img/logos/logoqgisred.png">
+</head>
+<body data-page="capability-demand-assignment" data-lang="en">
+  <div id="site-header"></div>
+  <div class="page-hero" style="background-image:url('../assets/img/capacidades/Diapositiva7.png');background-size:cover;background-position:center;">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en/">Home</a><span>›</span><a href="/en/capabilities.html">Capabilities</a><span>›</span><span>Sector-based demand assignment</span></div>
+      <h1>Sector-based demand assignment</h1>
+      <p>Featured capability · GIS automation</p>
+    </div>
+  </div>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva7.png" alt="Demand assignment"></div>
+          <div class="content-row__text">
+            <h2>The demand assignment problem</h2>
+            <p>In water distribution networks with hundreds or thousands of nodes, manually assigning consumption demand to each node of the hydraulic model is time-consuming and error-prone. Consumption data is typically available as:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li>Georeferenced consumption points (service connections, meters)</li>
+              <li>Aggregated data by sectors or measurement zones</li>
+              <li>Total consumption per pipe section or administrative polygon</li>
+            </ul>
+            <p>The QGISRed assistant automatically transforms any of these sources into EPANET nodal demands.</p>
+          </div>
+        </div>
+
+        <div class="content-row content-row--reverse" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva7.png" alt="Assignment from consumption points"></div>
+          <div class="content-row__text">
+            <h2>Assignment from consumption points</h2>
+            <p>When a layer of points with consumption data for each connection or meter is available, the assistant calculates the nearest network node to each consumption point and aggregates the corresponding demand. The process considers:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li>Minimum distance to the nearest node (default criterion)</li>
+              <li>Weighted assignment between the two end nodes of the nearest pipe section</li>
+              <li>Option to exclude reservoir or pump nodes</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva7.png" alt="Sectoral assignment"></div>
+          <div class="content-row__text">
+            <h2>Assignment from sectoral data</h2>
+            <p>When only aggregated consumption data by sector is available (e.g., flow meter readings for each DMA or supply zone), the assistant proportionally distributes the sector demand among all nodes within that polygon:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li>Distribution can be uniform or weighted by number of connections</li>
+              <li>Allows combining data from different sources in the same model</li>
+              <li>Generates an assignment report to verify process consistency</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-bottom:48px;">
+          <strong>Requirement:</strong> Consumption point layers or sectoral polygons must be in the same coordinate reference system (CRS) as the distribution network. QGISRed warns if a CRS discrepancy is detected before running the assignment.
+        </div>
+
+        <div style="text-align:center;padding-top:32px;border-top:1px solid var(--color-border);">
+          <a href="/en/capability-epanet22-analysis.html" class="btn btn-outline-dark">← EPANET 2.2 analysis</a>
+          &nbsp;
+          <a href="/en/capability-property-editor.html" class="btn btn-primary">Property editor →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

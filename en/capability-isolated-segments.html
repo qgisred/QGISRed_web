@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isolated segment identification – QGISRed</title>
+  <meta name="description" content="QGISRed tool to automatically determine which valves must be closed to isolate any network segment.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="../assets/img/logos/logoqgisred.png">
+</head>
+<body data-page="capability-isolated-segments" data-lang="en">
+  <div id="site-header"></div>
+  <div class="page-hero" style="background-image:url('../assets/img/capacidades/Diapositiva3.png');background-size:cover;background-position:center;">
+    <div class="container">
+      <div class="breadcrumb"><a href="/en/">Home</a><span>›</span><a href="/en/capabilities.html">Capabilities</a><span>›</span><span>Isolated segment identification</span></div>
+      <h1>Isolated segment identification</h1>
+      <p>Featured capability · v0.17</p>
+    </div>
+  </div>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva3.png" alt="Isolated segments"></div>
+          <div class="content-row__text">
+            <h2>What is an isolated segment?</h2>
+            <p>A segment is the minimum network unit that can be completely isolated from the supply by closing a set of isolation valves. The concept is fundamental to operational management: in the event of a fault or pipe burst, the operator needs to know which valves to close to isolate only the affected section, minimising supply interruption.</p>
+            <p>QGISRed's isolated segments tool (introduced in v0.17) automatically calculates all network segments based on the position of existing isolation valves.</p>
+          </div>
+        </div>
+
+        <div class="content-row content-row--reverse" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva3.png" alt="Affected segment calculation"></div>
+          <div class="content-row__text">
+            <h2>Optimal isolation calculation</h2>
+            <p>For an incident on a specific element, the tool calculates:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li><strong>Valves to close</strong>: the minimum set of isolation valves needed to isolate the segment containing the affected element</li>
+              <li><strong>Affected segment</strong>: all pipe sections that lose supply when those valves are closed</li>
+              <li><strong>Affected consumers</strong>: number of connections and total demand that loses supply</li>
+              <li><strong>Inoperative valves</strong>: detects valves that due to their position do not allow complete isolation (poorly delimited segments)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva3.png" alt="Network maintenance planning"></div>
+          <div class="content-row__text">
+            <h2>Applications in operational management</h2>
+            <p>The isolated segments tool has multiple practical applications:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li><strong>Emergency protocols</strong>: document the isolation procedure for each critical section</li>
+              <li><strong>Maintenance planning</strong>: calculate the supply impact before scheduling an intervention</li>
+              <li><strong>Segmentation improvement</strong>: identify network areas with excessively large segments requiring new valves</li>
+              <li><strong>Digital Twin integration</strong>: by closing valves in the model, hydraulically simulate the isolation scenario</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-bottom:48px;">
+          <strong>Prerequisite:</strong> For accurate results, the isolation valve layer must be complete and correctly georeferenced on the network. The tool can be run in diagnostic mode to assess current valve coverage before a complete inventory is available.
+        </div>
+
+        <div style="text-align:center;padding-top:32px;border-top:1px solid var(--color-border);">
+          <a href="/en/capability-element-status.html" class="btn btn-outline-dark">← Element status</a>
+          &nbsp;
+          <a href="/en/capabilities.html#destacadas" class="btn btn-primary">View all capabilities →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

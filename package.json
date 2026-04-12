@@ -1,0 +1,12 @@
+{
+  "name": "qgisred-web",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "serve . --listen 3000",
+    "start": "serve . --listen 3000"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

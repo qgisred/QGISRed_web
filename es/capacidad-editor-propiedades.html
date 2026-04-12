@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Propiedades mejorado – QGISRed</title>
+  <meta name="description" content="Editor de propiedades de QGISRed: navegación fluida entre elementos vinculados y edición sin preselección de capa.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="../assets/img/logos/logoqgisred.png">
+</head>
+<body data-page="capacidad-editor-propiedades" data-lang="es">
+  <div id="site-header"></div>
+  <div class="page-hero" style="background-image:url('../assets/img/capacidades/Diapositiva8.png');background-size:cover;background-position:center;">
+    <div class="container">
+      <div class="breadcrumb"><a href="/es/">Inicio</a><span>›</span><a href="/es/capacidades.html">Capacidades</a><span>›</span><span>Editor de Propiedades mejorado</span></div>
+      <h1>Editor de Propiedades mejorado</h1>
+      <p>Capacidad destacada · Edición eficiente</p>
+    </div>
+  </div>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva8.png" alt="Editor de propiedades"></div>
+          <div class="content-row__text">
+            <h2>¿Qué es el Editor de Propiedades?</h2>
+            <p>El Editor de Propiedades de QGISRed es el panel central para revisar y modificar los atributos de todos los elementos de la red: tuberías, nudos, depósitos, bombas, válvulas y embalses. Es la alternativa a abrir la tabla de atributos de QGIS elemento a elemento.</p>
+            <p>El editor muestra los atributos del elemento seleccionado en el mapa y permite editarlos directamente, con validación inmediata de los valores introducidos.</p>
+          </div>
+        </div>
+
+        <div class="content-row content-row--reverse" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva8.png" alt="Navegación entre elementos vinculados"></div>
+          <div class="content-row__text">
+            <h2>Navegación entre elementos vinculados</h2>
+            <p>Una de las mejoras más valoradas del editor es la capacidad de navegar directamente entre elementos relacionados sin volver al mapa:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li>Desde una tubería: acceder directamente a los nudos extremos</li>
+              <li>Desde un nudo: ver todas las tuberías conectadas</li>
+              <li>Desde una bomba: acceder a la curva característica asociada</li>
+              <li>Desde una válvula: ver los nudos aguas arriba y aguas abajo</li>
+            </ul>
+            <p>Esta navegación permite inspeccionar la topología de la red de forma rápida y eficiente sin depender de la vista de mapa.</p>
+          </div>
+        </div>
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva8.png" alt="Edición sin preselección de capa"></div>
+          <div class="content-row__text">
+            <h2>Edición sin preselección de capa</h2>
+            <p>En QGIS estándar, para seleccionar y editar un elemento es necesario tener activa la capa correspondiente en el panel de capas. En redes complejas con múltiples capas superpuestas, esto ralentiza considerablemente el flujo de trabajo.</p>
+            <p>El Editor de Propiedades de QGISRed elimina esta restricción: basta con hacer clic sobre cualquier elemento de la red en el mapa para que el editor lo identifique automáticamente, independientemente de qué capa esté activa. El editor detecta el tipo de elemento y carga sus propiedades de inmediato.</p>
+          </div>
+        </div>
+
+        <div class="content-row content-row--reverse" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva8.png" alt="Edición masiva"></div>
+          <div class="content-row__text">
+            <h2>Edición de múltiples elementos</h2>
+            <p>El editor permite también la edición de atributos en múltiples elementos simultáneamente:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li>Selección rectangular o por polígono en el mapa</li>
+              <li>Modificación de un atributo en todos los elementos seleccionados</li>
+              <li>Filtrado por tipo de elemento dentro de la selección</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="text-align:center;padding-top:32px;border-top:1px solid var(--color-border);">
+          <a href="/es/capacidad-asignacion-demandas.html" class="btn btn-outline-dark">← Asignación de demandas</a>
+          &nbsp;
+          <a href="/es/capacidad-estado-elementos.html" class="btn btn-primary">Estado de elementos →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

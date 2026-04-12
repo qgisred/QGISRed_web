@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificación de segmentos aislados – QGISRed</title>
+  <meta name="description" content="Herramienta de QGISRed para determinar automáticamente qué válvulas hay que cerrar para aislar cualquier segmento de la red.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="../assets/img/logos/logoqgisred.png">
+</head>
+<body data-page="capacidad-segmentos-aislados" data-lang="es">
+  <div id="site-header"></div>
+  <div class="page-hero" style="background-image:url('../assets/img/capacidades/Diapositiva3.png');background-size:cover;background-position:center;">
+    <div class="container">
+      <div class="breadcrumb"><a href="/es/">Inicio</a><span>›</span><a href="/es/capacidades.html">Capacidades</a><span>›</span><span>Identificación de segmentos aislados</span></div>
+      <h1>Identificación de segmentos aislados</h1>
+      <p>Capacidad destacada · v0.17</p>
+    </div>
+  </div>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva3.png" alt="Segmentos aislados"></div>
+          <div class="content-row__text">
+            <h2>¿Qué es un segmento aislado?</h2>
+            <p>Un segmento es la mínima unidad de red que puede aislarse completamente del suministro cerrando un conjunto de válvulas de corte. El concepto es fundamental en la gestión operativa: ante una avería o rotura, el operario necesita saber qué válvulas cerrar para aislar únicamente el tramo afectado, minimizando el corte de suministro.</p>
+            <p>La herramienta de segmentos aislados de QGISRed (incorporada en v0.17) calcula automáticamente todos los segmentos de la red a partir de la posición de las válvulas de corte existentes.</p>
+          </div>
+        </div>
+
+        <div class="content-row content-row--reverse" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva3.png" alt="Cálculo del segmento afectado"></div>
+          <div class="content-row__text">
+            <h2>Cálculo del aislamiento óptimo</h2>
+            <p>Ante una incidencia sobre un elemento concreto, la herramienta calcula:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li><strong>Válvulas a cerrar</strong>: el conjunto mínimo de válvulas de corte necesario para aislar el segmento que contiene el elemento afectado</li>
+              <li><strong>Segmento afectado</strong>: todos los tramos de tubería que quedan sin suministro al cerrar esas válvulas</li>
+              <li><strong>Consumidores afectados</strong>: número de acometidas y demanda total que pierde el suministro</li>
+              <li><strong>Válvulas inoperativas</strong>: detecta válvulas que por su posición no permiten un aislamiento completo (segmentos mal delimitados)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva3.png" alt="Planificación del mantenimiento de la red"></div>
+          <div class="content-row__text">
+            <h2>Aplicaciones en gestión operativa</h2>
+            <p>La herramienta de segmentos aislados tiene múltiples aplicaciones prácticas:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li><strong>Protocolos de emergencia</strong>: documentar el procedimiento de aislamiento para cada tramo crítico</li>
+              <li><strong>Planificación de mantenimiento</strong>: calcular el impacto en el suministro antes de programar una intervención</li>
+              <li><strong>Mejora de la segmentación</strong>: identificar zonas de la red con segmentos excesivamente grandes que requieren nuevas válvulas</li>
+              <li><strong>Integración con el Gemelo Digital</strong>: al cerrar válvulas en el modelo, simular hidráulicamente el escenario de aislamiento</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-bottom:48px;">
+          <strong>Requisito previo:</strong> Para obtener resultados precisos, la capa de válvulas de corte debe estar completa y correctamente georreferenciada sobre la red. La herramienta puede ejecutarse en modo diagnóstico para evaluar la cobertura actual de válvulas antes de disponer del inventario completo.
+        </div>
+
+        <div style="text-align:center;padding-top:32px;border-top:1px solid var(--color-border);">
+          <a href="/es/capacidad-estado-elementos.html" class="btn btn-outline-dark">← Estado de elementos</a>
+          &nbsp;
+          <a href="/es/capacidades.html#destacadas" class="btn btn-primary">Ver todas las capacidades →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

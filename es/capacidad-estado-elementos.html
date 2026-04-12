@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estado de elementos y simbolización – QGISRed</title>
+  <meta name="description" content="Herramienta de QGISRed para cambiar el estado de tuberías, bombas y válvulas con simbolización gráfica según estado.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="../assets/img/logos/logoqgisred.png">
+</head>
+<body data-page="capacidad-estado-elementos" data-lang="es">
+  <div id="site-header"></div>
+  <div class="page-hero" style="background-image:url('../assets/img/capacidades/Diapositiva10.png');background-size:cover;background-position:center;">
+    <div class="container">
+      <div class="breadcrumb"><a href="/es/">Inicio</a><span>›</span><a href="/es/capacidades.html">Capacidades</a><span>›</span><span>Estado de elementos y simbolización</span></div>
+      <h1>Estado de elementos y simbolización</h1>
+      <p>Capacidad destacada · v0.16</p>
+    </div>
+  </div>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva10.png" alt="Estado de elementos"></div>
+          <div class="content-row__text">
+            <h2>Estados operativos en el modelo</h2>
+            <p>Los elementos de una red de distribución pueden encontrarse en distintos estados operativos que afectan a la simulación hidráulica. QGISRed permite gestionar estos estados directamente desde QGIS, sincronizando la representación gráfica con el modelo EPANET.</p>
+            <p>Con la versión 0.17, QGISRed identifica y gestiona <strong>13 estados distintos</strong> para los elementos de la red, frente a los 3 estados básicos de EPANET (abierto, cerrado, activo).</p>
+          </div>
+        </div>
+
+        <div class="content-row content-row--reverse" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva10.png" alt="Cambio de estado de tuberías y bombas"></div>
+          <div class="content-row__text">
+            <h2>Gestión del estado por tipo de elemento</h2>
+            <p>Cada tipo de elemento tiene su propio conjunto de estados posibles:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li><strong>Tuberías</strong>: abierta, cerrada, con válvula de control de caudal</li>
+              <li><strong>Bombas</strong>: en marcha, parada, con variador de frecuencia activo</li>
+              <li><strong>Válvulas</strong>: abierta, cerrada, activa (regulando según su tipo: PRV, PSV, FCV, TCV, PBV, GPV)</li>
+              <li><strong>Nudos</strong>: activos, con demanda cero, aislados</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva10.png" alt="Simbolización gráfica de estados"></div>
+          <div class="content-row__text">
+            <h2>Simbolización gráfica automática</h2>
+            <p>Cada estado tiene asociada una simbología gráfica diferenciada que se aplica automáticamente en el mapa de QGIS. Esto permite:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li>Identificar visualmente los elementos fuera de servicio o en modo especial</li>
+              <li>Detectar incoherencias entre el estado topológico y el estado operativo</li>
+              <li>Generar cartografía operativa para el personal de campo</li>
+              <li>Distinguir entre el estado base del modelo y los escenarios alternativos</li>
+            </ul>
+            <p>La simbolización sigue un código de colores normalizado, personalizable desde el panel de estilos de QGIS.</p>
+          </div>
+        </div>
+
+        <div style="text-align:center;padding-top:32px;border-top:1px solid var(--color-border);">
+          <a href="/es/capacidad-editor-propiedades.html" class="btn btn-outline-dark">← Editor de propiedades</a>
+          &nbsp;
+          <a href="/es/capacidad-segmentos-aislados.html" class="btn btn-primary">Segmentos aislados →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opciones de análisis EPANET 2.2 – QGISRed</title>
+  <meta name="description" content="Soporte a demandas dependientes de la presión (PDA) y otras opciones de análisis de EPANET 2.2 en QGISRed.">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="../assets/img/logos/logoqgisred.png">
+</head>
+<body data-page="capacidad-analisis-epanet22" data-lang="es">
+  <div id="site-header"></div>
+  <div class="page-hero" style="background-image:url('../assets/img/capacidades/Diapositiva6.png');background-size:cover;background-position:center;">
+    <div class="container">
+      <div class="breadcrumb"><a href="/es/">Inicio</a><span>›</span><a href="/es/capacidades.html">Capacidades</a><span>›</span><span>Opciones de análisis EPANET 2.2</span></div>
+      <h1>Opciones de análisis EPANET 2.2</h1>
+      <p>Capacidad destacada · PDA vs DDA</p>
+    </div>
+  </div>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:860px;">
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva6.png" alt="Análisis EPANET 2.2"></div>
+          <div class="content-row__text">
+            <h2>De EPANET 2.0 a EPANET 2.2</h2>
+            <p>EPANET 2.2 incorpora avances significativos sobre la versión 2.0, incluyendo el soporte a <strong>demandas dependientes de la presión (PDA)</strong>, nuevas opciones de calidad del agua y mejoras en la convergencia numérica.</p>
+            <p>QGISRed expone estas nuevas opciones desde su interfaz, permitiendo aprovechar todas las capacidades del motor de simulación sin necesidad de editar manualmente los ficheros <code>.inp</code>.</p>
+          </div>
+        </div>
+
+        <div class="content-row content-row--reverse" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/capacidades/Diapositiva6.png" alt="DDA vs PDA"></div>
+          <div class="content-row__text">
+            <h2>DDA versus PDA</h2>
+            <p>El modelo clásico de EPANET (DDA — <em>Demand Driven Analysis</em>) asume que la demanda en cada nudo se satisface siempre, independientemente de la presión disponible. Esto puede generar presiones negativas en situaciones de escasez, que no se corresponden con la realidad física.</p>
+            <p>El modelo PDA (<em>Pressure Driven Analysis</em>) calcula la demanda realmente servida en función de la presión disponible en el nudo:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li>Si la presión está por encima del umbral mínimo, se sirve la demanda completa.</li>
+              <li>Si la presión es inferior al mínimo, el caudal servido se reduce proporcionalmente.</li>
+              <li>Si la presión cae a cero, no se sirve demanda.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content-row" style="margin-bottom:48px;">
+          <div class="content-row__img"><img src="../assets/img/logos/epanet.png" alt="EPANET toolkit"></div>
+          <div class="content-row__text">
+            <h2>Integración con el Toolkit 2.3</h2>
+            <p>QGISRed utiliza la librería dinámica del EPANET Toolkit para ejecutar las simulaciones directamente desde QGIS, sin necesidad de abrir la aplicación de escritorio de EPANET. La versión 0.17 de QGISRed incorpora el Toolkit 2.3, que incluye:</p>
+            <ul style="list-style:disc;padding-left:1.2rem;margin:16px 0;color:var(--color-text-muted);font-size:0.9rem;display:flex;flex-direction:column;gap:6px;">
+              <li>Mejoras de rendimiento en redes de gran tamaño</li>
+              <li>Correcciones en el cálculo de calidad del agua en modo PDA</li>
+              <li>Nuevas opciones de informe y exportación de resultados</li>
+              <li>Compatibilidad con los escenarios de simulación encadenada</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="info-box" style="margin-bottom:48px;">
+          <strong>Nota:</strong> Para utilizar el análisis PDA, es necesario definir los parámetros <em>Presión mínima de servicio</em> y <em>Presión de servicio completo</em> en las opciones hidráulicas del proyecto. Estos valores se configuran desde el diálogo de opciones de simulación de QGISRed.
+        </div>
+
+        <div style="text-align:center;padding-top:32px;border-top:1px solid var(--color-border);">
+          <a href="/es/capacidad-gemelo-digital-valvulas.html" class="btn btn-outline-dark">← Válvulas de corte</a>
+          &nbsp;
+          <a href="/es/capacidad-asignacion-demandas.html" class="btn btn-primary">Asignación de demandas →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>
