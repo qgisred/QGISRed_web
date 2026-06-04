@@ -36,7 +36,7 @@ function ComingSoon() {
 const ejemplos = [
   {
     name: "Red1_SI.inp (Unidades SI)",
-    description: "Se trata de un ejemplo sencillo para mostrar el decaimiento del cloro. Incluye coeficientes de reacción en el medio y en las paredes. Todas las unidades están expresadas en el Sistema Internacional. Incorpora además una válvula de regulación que puede configurarse de diferentes modos cambiando su tipo.",
+    description: "Se trata de un ejemplo sencillo para mostrar el decaimiento del cloro. Incluye coeficientes de reacción en el medio y en las paredes. Todas las unidades están expresadas en el Sistema Internacional. Incorpora además una válvula de regulación que puede configurarse de diferentes modos cambiando su tipo y consigna.",
     imageSrc: "/images/utilizacion-red1.jpg",
   },
 ];
@@ -55,21 +55,33 @@ export function UtilizacionPageContent() {
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             En una primera parte se ofrecerán aquí un conjunto de Tutoriales para que puedas seguir con calma todos los
             pasos necesarios para alcanzar el objetivo marcado en cada uno de ellos. Serán documentos en PDF que puedes
-            descargar y manejar a tu gusto. Sin embargo, los tutoriales más avanzados los reservaremos para los cursos
-            de formación.
+            descargar y manejar a tu gusto. Sin embargo, los tutoriales más avanzados los reservaremos para su
+            desarrollo en los cursos que ofrecemos (enlace a cursos).
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             La sección de Vídeos seguirá el mismo esquema que los tutoriales, y normalmente estarán basados en ellos,
             aunque por limitación de tiempo es probable que se omitan algunas prestaciones, así que si quieres tener
-            una información más completa y detallada se recomienda acudir a los tutoriales.
+            una información más completa y detallada se recomienda acudir a los tutoriales. Para darle una mayor
+            difusión a los vídeos, hemos decidido distribuirlos a través de Youtube.
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             También aprovecharemos esta sección para colgar los Ejemplos utilizados en los tutoriales o en los vídeos,
             de modo que te resulte fácil acceder a ellos.
           </p>
-          <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+            En otro apartado está previsto publicar el Modelo de Datos utilizado por QGISRed para alojar toda la
+            información que configura un proyecto, así como la estructura de los diferentes ficheros auxiliares
+            utilizados por QGISRed.
+          </p>
+          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             Para una información más completa de todo lo que hay desarrollado hasta ahora puedes recurrir al Manual de
-            la aplicación en PDF, que encontrarás en la sección siguiente.
+            la aplicación en PDF, que encontrarás en la sección siguiente. El manual siempre ha estado disponible en
+            español y en inglés, y lo vamos actualizando cada vez que sacamos una nueva versión. En el futuro esperamos
+            poner esta información en red, ampliarla y compartir sus contenidos.
+          </p>
+          <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+            Finalmente habrá en esta sección también un apartado reservado para las preguntas más frecuentes, y otro
+            para gestionar un foro de usuarios, los cuales están por ahora deshabilitados.
           </p>
         </div>
       </section>
@@ -155,24 +167,6 @@ export function UtilizacionPageContent() {
       <section id="videosformativos" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
           <SectionHeading title="Vídeos formativos" />
-
-          <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            La sección de Vídeos seguirá el mismo esquema que los tutoriales, y normalmente estarán basados en ellos,
-            aunque por limitación de tiempo es probable que se omitan algunas prestaciones, así que si quieres tener
-            una información más completa y detallada se recomienda acudir a los tutoriales. Para dar acceso a los
-            vídeos utilizaremos el canal de YouTube del proyecto.
-          </p>
-
-          <div className="hidden md:block mb-6">
-            <Image
-              src="/images/utilizacion-video.jpg"
-              alt="Vídeos formativos QGISRed"
-              width={800}
-              height={500}
-              className="w-full h-auto max-w-2xl"
-            />
-          </div>
-
           <ComingSoon />
         </div>
       </section>
@@ -181,11 +175,6 @@ export function UtilizacionPageContent() {
       <section id="repositorioejemplos" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
           <SectionHeading title="Repositorio de ejemplos" />
-
-          <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            También aprovecharemos esta sección para colgar los Ejemplos utilizados en los tutoriales o en los vídeos,
-            de modo que te resulte fácil acceder a ellos.
-          </p>
 
           <div className="flex flex-col gap-8">
             {ejemplos.map((ejemplo) => (
@@ -226,13 +215,6 @@ export function UtilizacionPageContent() {
       <section id="modelodatos" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
           <SectionHeading title="Modelo de datos" />
-
-          <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            En otro apartado está previsto publicar el Modelo de Datos utilizado por QGISRed para alojar toda la
-            información que configura un proyecto, así como la estructura de los diferentes ficheros auxiliares
-            utilizados por QGISRed.
-          </p>
-
           <ComingSoon />
         </div>
       </section>

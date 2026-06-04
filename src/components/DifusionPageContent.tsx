@@ -48,24 +48,134 @@ const articulos = [
     title: "Digital Twins. A new paradigm for Water Supply and Distribution Networks",
     journal: "Hydrolink IAHR, nº 2, 2021, pp 48-54",
     url: "https://www.iahr.org/library/infor?pid=10798",
+    linkText: "https://www.iahr.org/library/infor?pid=10798",
   },
   {
     authors: "Vegas Niño, O.T., Martínez Alzamora, F., Tzatchkov, V.G. (2021).",
     title: "A Decision Support Tool for Water Supply System Decentralization via Distribution Network Sectorization",
-    journal: "Processes MDPI 2021, Vol 9, Issue 4",
+    journal: "Processes MDPI 2021, Vol 9, Issue 4.",
     url: "https://doi.org/10.3390/pr9040642",
+    linkText: "https://doi.org/10.3390/pr9040642",
   },
   {
-    authors: "Martínez Alzamora, F., Lerma, N., Vegas, O.T. (2020).",
-    title: "Hydraulic model calibration for WDNs using pressure flow data during the COVID lockdown",
-    journal: "Urban Water Journal, 2020",
+    authors: "Conejos Fuertes, P., Martinez Alzamora, F., Hervás Carot, M., Alonso Campos, J.C. (2020).",
+    title: '"Building and Exploiting a Digital Twin for the management of drinking water distribution network"',
+    journal: "Urban Water Journal, Vol 17, issue 8, pp 704-713, 2020",
     url: "https://doi.org/10.1080/1573062X.2020.1771382",
+    linkText: "https://doi.org/10.1080/1573062X.2020.1771382",
   },
   {
-    authors: "Martínez, F. (2018).",
-    title: "EPANET 2.0 en Español – Manual del Usuario",
-    journal: "IMTA Mexico, 2018",
-    url: "https://www.researchgate.net/publication/330530679",
+    authors: "Vegas Niño, O.T., Martinez Alzamora, F., Alonso Campos. J.C., Tzatchkov, V.G. (2018).",
+    title: "Using the Epanet toolkit v2.00.12 with different programming environments",
+    journal: "Instituto Mexicano Tecnología del Agua (IMTA). 1ª edic. 2018. ISBN: 978-607-9368-97-5 (obra digital).",
+    url: "http://repositorio.imta.mx/handle/20.500.12013/2187",
+    linkText: "http://repositorio.imta.mx/handle/20.500.12013/2187",
+    suffix: " (IMTA)",
+  },
+  {
+    authors: "Martínez Alzamora, F. (2017).",
+    title: "EPANET 2.0 en Español. Manual del Usuario. Versión 2.00.12",
+    journal: "Orig. L. Rossman. EPANET 2. Users Manual. IIAMA. Descarga libre. Mayo 2017. ISBN: 978-84-697-2429-3 (obra digital). DOI:",
+    url: "https://www.researchgate.net/publication/330530679_EPANET_20_en_Espanol_MANUAL_DEL_USUARIO_Version_20012_Incluye_el_Modulo_Herramientas?channel=doi&linkId=5c46641292851c22a386f80c&showFulltext=true",
+    linkText: "10.13140/RG.2.2.33536.89603",
+  },
+  {
+    authors: "Martínez Alzamora, F. (2017).",
+    title: "EPANET 2.0 en Française. Manuel de l'Utilisateur. Versión 2.00.12",
+    journal: "Orig. L. Rossman. EPANET 2. Users Manual. ISBN: 978-84-697-2429-3 (obra digital). Descarga Libre. DOI:",
+    url: "https://www.researchgate.net/publication/330530906_EPANET_20_en_Francaise_MANUEL_DE_L%2527UTILISATEUR_Version_20012_Comprend_la_Boite_a_Outils?channel=doi&linkId=5c46659c299bf12be3d9ec68&showFulltext=true",
+    linkText: "10.13140/RG.2.2.25148.28808",
+  },
+  {
+    authors: "F. Alvarruiz, F. Martinez-Alzamora, A.M. Vidal (2015).",
+    title: "Improving the Efficiency of the Loop Method for the Simulation of Water Distribution Networks. J.",
+    journal: "Water Res. and Planning Management. Vol 141. No 10. Oct 2015 (Q1, IF2015 2.521). DOI:",
+    url: "https://ascelibrary.org/doi/10.1061/(ASCE)WR.1943-5452.0000539",
+    linkText: "10.1061/(ASCE)WR.1943-5452.0000539",
+  },
+  {
+    authors: "Martínez Alzamora, F., Ulanicki, B., Salomons, E. (2014).",
+    title: "Fast and practical method for model reduction of large scale water distribution networks",
+    journal: "J. of Water Res. Plann. and Manag. ASCE. April 2014, 140(4), 444-456 (Q1, IF2014 2,676). DOI:",
+    url: "https://ascelibrary.org/doi/10.1061/(ASCE)WR.1943-5452.0000333",
+    linkText: "10.1061/(ASCE)WR.1943-5452.0000333",
+  },
+  {
+    authors: "Derek G. Jamieson, Uri Shamir, Fernando Martinez, Marco Franchini (2007).",
+    title: "Conceptual design of a genetic, real-time, near-optimal control system for water-distribution networks",
+    journal: "Journal of Hydroinformatics, Vol 9, nº 1, 2007, pp 3-14. DOI:",
+    url: "https://iwaponline.com/jh/article/9/1/3/31286/Conceptual-design-of-a-generic-real-time-near",
+    linkText: "10.2166/hydro.2006.013",
+  },
+  {
+    authors: "Fernando Martínez, Vicente Hernández, José Miguel Alonso, Zhengfu Rao, Stefano Alvisi (2007).",
+    title: "Optimizing the operation of the Valencia water distribution network.",
+    journal: "Journal of Hydroinformatics, Vol 9, nº 1, 2007, pp 65-78 DOI:",
+    url: "https://iwaponline.com/jh/article/9/1/65/31289/Optimizing-the-operation-of-the-Valencia-water",
+    linkText: "10.2166/hydro.2006.018",
+  },
+  {
+    authors: "Martínez Alzamora, F., Ferrer Polo, J., Bou Soler, V., Cortés Mahecha, J. (2007).",
+    title: "Sistema de Indicadores para la Gestión de las Redes de Agua Potable.",
+    journal: "Proyecto AQUA-CONTROL. Diputación de Castellón – Inst. Ing. Agua. Univ. Polit. Valencia. Marzo 2007. ISBN: 84-88263-64-3. DOI:",
+    url: "https://www.researchgate.net/publication/316158981_Sistema_de_Indicadores_para_la_Gestion_de_las_Redes_de_Agua_Potable_Proyecto_AQUA-CONTROL",
+    linkText: "10.13140/RG.2.2.30742.75846",
+  },
+  {
+    authors: "Martínez, F.; Bartolín, H. (2005).",
+    title: "GISRed 1.0, a GIS-based Tool for Water Distribution Models for Master Plans",
+    journal: "Effective Modeling of Urban Water Systems. Monograph 13, pp 79-92. Ed. By W. James et al. Publ. CHI. Guelph, Ontario (Canadá). 2005. ISBN: 0-9736716-0-2. DOI:",
+    url: "https://www.chijournal.org/R223-05",
+    linkText: "10.14796/JWMM.R223-05",
+  },
+  {
+    authors: "Bartolín, H, Martínez, F. (2004).",
+    title: "GISRED v10. User's Manual",
+    journal: "Publicaciones UPV, Marzo 2004. DOI:",
+    url: "https://www.researchgate.net/publication/330535429_GISRED_v10_USER'S_MANUAL?channel=doi&linkId=5c46f44592851c22a3872d62&showFulltext=true",
+    linkText: "10.13140/RG.2.2.35319.47527",
+  },
+  {
+    authors: "Martínez, F. (2003).",
+    title: "EPANET: Una potente herramienta para el análisis de redes de distribución de agua a presión",
+    journal: "Hidropres: Tecnología y gestión del agua. Nº 38, May/Julio 2003, pp 30-37",
+    url: "https://www.researchgate.net/publication/293145482_EPANET_Una_potente_herramienta_para_el_analisis_de_redes_de_distribucion_de_agua_a_presion",
+    linkText: "Access",
+  },
+  {
+    authors: "Hernández, V.; Vidal, A.; Alvarruiz, F.; Alonso, J.M.; Guerrero, D.; Ruiz, Martínez, F.; Vercher, J.; Ulanicki, B. (2000).",
+    title: "Parallel Computing in Water Network Analysis and Leakage Minimisation.",
+    journal: "Journal of .Water Resources and Plannign Management. ASCE Vol. 126. No.4 Jul/Aug 2000. pp 251-260 (IF2002 0,64). DOI:",
+    url: "http://doi.org/10.1061/(ASCE)0733-9496(2000)126:4(251)",
+    linkText: "http://doi.org/10.1061/(ASCE)0733-9496(2000)126:4(251)",
+  },
+  {
+    authors: "Martínez, F; Signes, M; Savall, R.; Andrés, M., Ponz, R., Conejos, P. (1999).",
+    title: "Construction and use of a dynamic simulation model for the Valencia metropolitan water supply and distribution network",
+    journal: "Water Industry Systems. Vol One: modelling and optimisation applications. Edit: Savic, A, Walters G.A, pp 155-174. Research Studies Press Ltd. Hertfordshire, UK, 1999 ISBN: 0 86380 248 6.",
+    url: "https://www.researchgate.net/publication/316647136_Construction_and_Use_of_a_Dynamic_Simulation_Model_for_the_Valencia_Metropolitan_Water_Supply_and_Distribution_Network",
+    linkText: "Access",
+  },
+  {
+    authors: "Ulanicki, B., Zehnpfund, A., Martinez, F. (1996).",
+    title: "Simplification of water distribution network models",
+    journal: "Hydroinformatics'96, Ed. by A. Müller, pp 493-500. Balkema, Rotterdam. September 1996. ISBN: 90-5410-852-5.",
+    url: "https://www.researchgate.net/publication/273796660_Simplification_of_Water_Distribution_Network_Models",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez,F., Pérez, R., Izquierdo, J. (1995).",
+    title: "Optimum design and reliability in water distribution systems",
+    journal: "Improving Efficiency and Reliability in Water Distribution Systems. Cap 13, pp 303-328. Kluwer Academic Press. May 1995. SBN: 0-7923-3536-8 DOI:",
+    url: "https://doi.org/10.1007/978-94-017-1841-7_13",
+    linkText: "https://doi.org/10.1007/978-94-017-1841-7_13",
+  },
+  {
+    authors: "Martínez, F., García-Serra, J. (1993).",
+    title: "Mathematical modelling of water distribution systems in service. Water Supply Systems. State of the art and future trends,",
+    journal: "Cap. 6, pp 143-174. Ed. E.Cabrera, F.Martinez. Computational Mechanics Pub. May 1993. ISBN: 1-85312-253-X.",
+    url: "https://www.researchgate.net/publication/331482865_Mathematical_modelling_of_water_distribution_systems_in_service",
+    linkText: "Access",
   },
 ];
 
@@ -74,28 +184,194 @@ const comunicaciones = [
     authors: "Martínez Alzamora, F., Lerma, N., Vegas, O.T. (2021).",
     title: "QGISRed, un plugin libre y profesional sobre QGIS para gestionar modelos avanzados de redes de distribución de agua",
     journal: "SIGTE Jornada GIS libre. Universidad de Gerona. Congreso on-line",
-    url: "https://diobma.udg.edu/handle/10256.1/6227",
+    url: "http://diobma.udg.edu/handle/10256.1/6227",
+    linkText: "http://diobma.udg.edu/handle/10256.1/6227",
   },
   {
-    authors: "Martínez Alzamora, F., Lerma, N., Bartolin, H., Vegas Niño, O.T. (2019).",
+    authors: "Martínez Alzamora, F. , Lerma, N., Bartolin, H., Vegas Niño, O.T. (2019)",
     title: "Upgrade of the GISRed application for the free analysis of WDN under GIS environment",
-    journal: "17th Int. Conf CCWI 2019. Exeter (UK)",
-    url: "#",
+    journal: "17th Int. Conf CCWI 2019. Exeter (UK).",
+    url: "https://www.researchgate.net/publication/336170857_Upgrade_of_the_GISRed_application_for_the_free_analysis_of_WDN_under_GIS_environment",
+    linkText: "Access",
+  },
+  {
+    authors: "Hervás Carot, M., Martínez Alzamora, F , Conejos, P. (2019).",
+    title: "Simulation of Tanks behaviour in Quality Models of Water Supply Systems.",
+    journal: "17th Int. Conf CCWI 2019. Exeter (UK).",
+    url: "https://www.researchgate.net/publication/343346085_Simulation_of_Tanks_behaviour_in_Quality_Models_of_Water_Supply_Systems",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez Alzamora, F. , Conejos, P., Lerma, N., Hervás, M. (2019).",
+    title: "Construcción del modelo de detalle de una red de abastecimiento de agua por consulta directa a las BdD corporativas: GIS, Telelectura, O&M y SCADA",
+    journal: "VI Jornadas Ingeniería del Agua, JIA 2019. Toledo. Libro Resúmenes Ponencias, pp 321-323, ISBN 978-84-09-14914-8.",
+    url: "https://www.hidralab.com:4430/jia2019/wp-content/uploads/2019/10/R172.pdf",
+    linkText: "Access",
+  },
+  {
+    authors: "Conejos, P., Martínez Alzamora, F., Hervás, M. (209).",
+    title: "Verificación experimental de la variación de la demanda y las fugas con la presión en un sector de una red de distribución de agua",
+    journal: "VI Jornadas Ingeniería del Agua, JIA 2019.Toledo. Libro Resúmenes Ponencias, pp 272-273, ISBN 978-84-09-14914-8.",
+    url: "https://www.hidralab.com:4430/jia2019/wp-content/uploads/2019/10/R166.pdf",
+    linkText: "Access",
+  },
+  {
+    authors: "Hervás, M., Martínez Alzamora, F. y Conejos, P. (2019).",
+    title: "Modelación experimental del comportamiento de la calidad del agua en depósitos, para su integración en el modelo de calidad de una red de distribución de agua.",
+    journal: "VI Jornadas Ingeniería del Agua, JIA 2019. Toledo. Libro Resúmenes Ponencias, pp 304-305, ISBN 978-84-09-14914-8.",
+    url: "https://www.hidralab.com:4430/jia2019/wp-content/uploads/2019/10/R165.pdf",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez Alzamora, F., Vegas Niño, O.T., Tzatchkov, V. (2018).",
+    title: "Modelación del Comportamiento Real de Suministros de Agua con Depósitos Domiciliarios mediante EPANET",
+    journal: "XXVIII Cong. Latinoamericano de Hidráulica. Buenos Aires (Argentina).",
+    url: "https://www.researchgate.net/publication/340435854_Modelacion_del_Comportamiento_Real_de_Suministros_de_Agua_con_Depositos_Domiciliarios_mediante_EPANET",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez Alzamora, F., Conejos, P., Urban, P. (2017).",
+    title: "Calibración de un sistema de distribución de agua complejo a partir de variables SCADA.",
+    journal: "V Jornadas de Ingeniería del Agua, JIA 2017. A Coruña.",
+    url: "http://geama.org/jia2017/wp-content/uploads/ponencias/tema_C/c12.pdf",
+    linkText: "Access",
+  },
+  {
+    authors: "Conejos, P., Martinez Alzamora, F., Gamón, A., Urbán, P., Alonso, J.C (2017).",
+    title: "La simulación hidráulica como herramienta de apoyo a la toma de decisiones en Global Omnium – Grupo Aguas de Valencia",
+    journal: "XXXIV Jornadas de AEAS. Tarragona. Rev. Tecnoagua",
+    url: null,
+    linkText: null,
+  },
+  {
+    authors: "Vegas Niño, O.T., Martinez Alzamora, F., Tzatchkov, V.G. (2016).",
+    title: "Aplicación de la teoría de grafos a la identificación de subsistemas hidráulicos en redes de distribución de agua",
+    journal: "XXVII Congreso Latinoamericano de Hidráulica. Lima (Perú).",
+    url: "https://www.researchgate.net/publication/315745096_Aplicacion_de_la_teoria_de_grafos_a_la_identificacion_de_subsistemas_hidraulicos_en_redes_de_distribucion_de_agua",
+    linkText: "Access",
+  },
+  {
+    authors: "Alvarruiz, F., Martinez Alzamora, F., Vidal, A.M. (2016).",
+    title: "A Toolkit for Water Distribution Systems' Simulation using the Loop Method and High Performance Computing",
+    journal: "Water Distribution System Analysis. WDSA 2016. Cartagena de Indias (Colombia). Proc. Eng. 186:303-310. Dec. 2017 DOI :",
+    url: "https://www.sciencedirect.com/science/article/pii/S1877705817314030",
+    linkText: "10.1016/j.proeng.2017.03.250",
+  },
+  {
+    authors: "Conejos, M.P, Martinez Alzamora, F., Alonso, J.C. (2016).",
+    title: "A Water Distribution System Model to Simulate Critical Scenarios by Considering both Leakage and Pressure Dependent Demands",
+    journal: "Water Distribution System Analysis. WDSA 2016. Cartagena de Indias (Colombia). Proc. Eng. 186:380-387. Dec. 2017. DOI :",
+    url: "https://www.sciencedirect.com/science/article/pii/S1877705817313838",
+    linkText: "10.1016/j.proeng.2017.03.234",
+  },
+  {
+    authors: "Martínez , F., Conejos, P. (2015).",
+    title: "SCARed 2.0. Herramienta para la simulación y ayuda a la toma de decisiones en tiempo real de abastecimientos de agua. Vanguardias en Ciencia y Tecnología para la Innovación en la gestión del agua",
+    journal: "Madrid.",
+    url: "https://www.researchgate.net/publication/315728404_SCARed_20_Herramienta_para_la_simulacion_y_ayuda_a_la_toma_de_decisiones_en_tiempo_real_de_abastecimientos_de_agua",
+    linkText: "Access",
+  },
+  {
+    authors: "Martinez Alzamora, F, Bou Soler, V, Conejos Fuertes, P. Díaz Martínez, J. (2013).",
+    title: "Conexión SCADA-modelo para la simulación en tiempo real del sistema de abastecimiento de agua a Valencia y su área metropolitana.",
+    journal: "III Jornadas Ingeniería del Agua. Valencia, Univ. Politécnica. Actas JIA 2013, Vol. 2, pp. Ed. F.J. Vallés et alt. ISBN 9788-426720-719.",
+    url: "https://www.researchgate.net/publication/315721617_Conexion_SCADA-modelo_para_la_simulacion_en_tiempo_real_del_sistema_de_abastecimiento_de_agua_a_Valencia_y_su_area_metropolitana",
+    linkText: "Access",
+  },
+  {
+    authors: "P. Salas, J. Domene, F. Martinez, H. Bartolín, V. Bou (2010).",
+    title: "La gestión informatizada del agua inyectada y registrada en la red sectorizada de Málaga, para la mejora de su rendimiento",
+    journal: "XXX Jornadas Técnicas AEAS. 9-10 Junio 2010. Sevilla. Actas del Congreso.",
+    url: "https://www.researchgate.net/publication/290605318_La_gestion_informatizada_del_agua_inyectada_y_registrada_en_la_red_sectorizada_de_Malaga",
+    linkText: "Access",
+  },
+  {
+    authors: "Bou, V., Martínez, F., Conejos, P. (2006).",
+    title: "SCA-Red, a general purpose SCADA application for taking decisions in real time with the aid of a hydraulic model",
+    journal: "8th Annual Water Distribution Systems Analysis Symposium. WDSA 2006. Cincinnati (Ohio). Proceedings of WDSA 2006.",
+    url: "https://www.researchgate.net/publication/268601785_SCA-Red_a_General_Purpose_SCADA_Application_for_Taking_Decisions_in_Real_Time_with_the_Aid_of_a_Hydraulic_Model",
+    linkText: "Access",
+  },
+  {
+    authors: "Bartolín, H., Martínez, F., Cortés, J.A. (2006).",
+    title: "Bringing up to date WDS models by querying. An Epanet-based GIS Geodatabase",
+    journal: "8th Annual Water Distribution Systems Analysis Symposium. WDSA 2006. Cincinnati (Ohio). Proceedings of WDSA 2006.",
+    url: "https://www.researchgate.net/publication/268601902_Bringing_up_to_date_WDS_models_by_querying_An_EPANET-Based_GIS_Geodatabase",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez, F.; Bou, V.; Hernández, V.; Alvarruiz,F.; Alonso, J.M. (2005).",
+    title: "ANN Architectures for simulating water distribution networks",
+    journal: "CCWI 2005 – Water Management for the 21st Century. Exeter (UK). Vol One, pp 251-256. ISBN 0-9539140-2-X.",
+    url: "https://www.researchgate.net/publication/282420512_Artificial_neural_network_model_for_simulation_of_water_distribution_in_sprinkle_irrigation",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez, F.; Hernández, V.; Bartolín, H.; Bou, V.;Alvarruiz,F.; Alonso, J.M (2005).",
+    title: "CALNET project: building and updating water distribution models from GIS+ CIS+ O&M+SCADA",
+    journal: "CCWI 2005 – Water Management for the 21st Century. Exeter (UK). Vol One, pp 209-214. ISBN 0-9539140-2-X.",
+    url: "https://www.researchgate.net/publication/330841415_CALNET_Project_Building_and_Updating_Water_Distribution_Models_from_GIS_CIS_OM_SCADA",
+    linkText: "Access",
+  },
+  {
+    authors: "Bartolín, H.; Martínez, F.; Cortés, J.A. (2005).",
+    title: "Topological GIS-Based Analysis of Water Distribution Network Model. Applications of the minimum spanning tree",
+    journal: "CCWI 2005 – Water Management for the 21st Century. Exeter (UK). Vol One, pp 185-199. ISBN 0-9539140-2-X.",
+    url: "https://www.researchgate.net/publication/285054091_Topological_GIS-Based_Analysis_of_a_Water_Distribution_Network_Model_Applications_of_the_Minimum_Spanning_Tree",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez, F., Bartolín, H. (2004).",
+    title: "Integración SIG-SCADA para la explotación de redes de abastecimento con la ayuda de modelos hidráulicos.",
+    journal: "Asamblea General de AEAS. Madrid. DOI:",
+    url: "https://www.researchgate.net/publication/290605287_Integracion_SIG-SCADA_para_la_explotacion_de_redes_de_abastecimiento_con_la_ayuda_de_modelos_hidraulicos",
+    linkText: "10.13140/RG.2.1.2973.2888",
+  },
+  {
+    authors: "Bartolín, H., Martínez, F.. (2003).",
+    title: "Modelling and Calibration of Water Distribution Systems. A new GIS approach",
+    journal: "33th ESRI International User Conference 2003. San Diego (EEUU).",
+    url: "https://www.researchgate.net/publication/290605506_Modelling_and_calibration_of_water_distribution_systems_A_new_GIS_approach",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez, F.; Bartolín, H., Monterde, N. (2001).",
+    title: "Connecting ArcView 3.2 to EPANET2. A full environment to manage water distribution systems using models",
+    journal: "6th Int. Conf. On Computing and Control for the Water Industry. Leicester (UK). Water Software Systems: theory and application. Vol. 2, pp 355-368 ISBN 0-86380-274-5. DOI",
+    url: "http://dx.doi.org/10.13140/RG.2.1.3292.2649",
+    linkText: "10.13140/RG.2.1.3292.2649",
+  },
+  {
+    authors: "Martínez, F; Conejos, P., Vercher, J. (1999).",
+    title: "Developing an integrated model for water distribution systems considering both, distributed leakage and pressure-dependent demands",
+    journal: "26th Ann. Water Resources Planning & Manag. ASCE Conference. Tempe, Arizona, Proceedings. Preparing for the 21st Century. CD-ROM, pp1-14. Ed. ASCE.",
+    url: "https://www.researchgate.net/publication/268592842_Developing_an_Integrated_Model_for_Water_Distribution_Systems_Considering_Both_Distributed_Leakage_and_Pressure-Dependent_Demands",
+    linkText: "Access",
+  },
+  {
+    authors: "Martínez, F; García, C. (1999).",
+    title: "Simplification of detailed models of water distribution systems obtained from GIS systems",
+    journal: "26th Ann. Water Resources Planning & Manag. ASCE Conference.Tempe, Arizona, USA. Proceedings. Preparing for the 21st Century. CD-ROM, pp1-22. Ed. ASCE.",
+    url: "https://cedb.asce.org/CEDBsearch/record.jsp?dockey=0118008",
+    linkText: "Access",
+  },
+  {
+    authors: "Hernández, V, Vidal, A., Alvarruiz, F, Martínez, F., Vercher, J, Ulanicki, B. (1999).",
+    title: "Parallel computing in water network analysis and optimization processes.",
+    journal: "26th Ann. Water Resources Planning & Manag. ASCE Conference. Tempe, Arizona, USA. Proceedings. Preparing for the 21st Century. CD-ROM, pp1-10. Ed. ASCE.",
+    url: "https://www.researchgate.net/publication/268592841_Parallel_Computing_in_Water_Network_Analysis_and_Optimization_Processes",
+    linkText: "Access",
   },
 ];
 
 const noticias = [
   {
-    title: "iAgua – QGISRed en el Congreso WDSA-CCWI 2022",
-    description: "Artículo sobre la presentación de QGISRed en el congreso internacional WDSA-CCWI 2022 celebrado en Valencia.",
     imageSrc: "/images/difusion-iagua.jpg",
-    url: "https://www.iagua.es",
+    url: "https://www.iagua.es/blogs/oscar-vegas-nino/plugins-qgis-mas-utilizados-confeccionar-y-modelar-redes-hidraulicas",
   },
   {
-    title: "UdG – SIGTE Jornada GIS libre",
-    description: "Comunicación presentada en las Jornadas GIS libre de la Universidad de Girona sobre QGISRed.",
     imageSrc: "/images/difusion-udg.jpg",
-    url: "https://diobma.udg.edu/handle/10256.1/6227",
+    url: "http://m.diobma.udg.edu/handle/10256.1/6227",
   },
 ];
 
@@ -115,11 +391,11 @@ export function DifusionPageContent() {
             <a href="#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
               Publicaciones
             </a>{" "}
-            del grupo REDHISP del IIAMA relacionadas con la aplicación, así como las{" "}
+            del grupo REDHISP del IIAMA relacionadas con la aplicación y sus prestaciones, así como enlaces a{" "}
             <a href="#noticias" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
-              Noticias y Redes Sociales
+              Noticias
             </a>{" "}
-            donde ha aparecido QGISRed.
+            aparecidas en diversos medios y redes sociales.
           </p>
         </div>
       </section>
@@ -132,7 +408,7 @@ export function DifusionPageContent() {
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                El primer curso de formación sobre QGISRed se va a impartir en la Universidad Politécnica de Valencia,
+                El <strong>primer curso de formación</strong> sobre QGISRed se va a impartir en la Universidad Politécnica de Valencia,
                 el próximo 18 de julio, con motivo de la celebración del{" "}
                 <strong>2º Congreso conjunto WDSA-CCWI 2022</strong>, que reúne a profesionales e investigadores de
                 todo el mundo en el ámbito del agua urbana, contando con la colaboración de la Dra. Paloma Batanero
@@ -156,7 +432,7 @@ export function DifusionPageContent() {
                   textDecoration: "none",
                 }}
               >
-                Ver contenidos del curso
+                Managing Advanced Hydraulic Models with QGISRed Plugin. From EPANET to Digital Twins
               </a>
 
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -164,7 +440,7 @@ export function DifusionPageContent() {
                 <strong>Catálogo de Cursos</strong> que estamos preparando, para cubrir desde el aprendizaje de los
                 principios básicos de la hidráulica urbana, a la confección de modelos y la gestión de escenarios para
                 Planes Directores, hasta la migración a los Gemelos Digitales en conexión con los datos reales,
-                utilizando siempre como base la plataforma QGISRed.
+                utilizando siempre como base la plataforma de QGISRed.
               </p>
 
               <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -206,15 +482,18 @@ export function DifusionPageContent() {
                 <PublicationItem key={i}>
                   <span>{pub.authors} </span>
                   <em>{pub.title}</em>
-                  <span>. {pub.journal}. </span>
-                  <a
-                    href={pub.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ color: "rgb(95, 189, 211)", textDecoration: "none", wordBreak: "break-all" }}
-                  >
-                    {pub.url}
-                  </a>
+                  <span>. {pub.journal} </span>
+                  {pub.url && (
+                    <a
+                      href={pub.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "rgb(95, 189, 211)", textDecoration: "none", wordBreak: "break-all" }}
+                    >
+                      {pub.linkText}
+                    </a>
+                  )}
+                  {"suffix" in pub && pub.suffix}
                 </PublicationItem>
               ))}
             </ul>
@@ -229,15 +508,15 @@ export function DifusionPageContent() {
                 <PublicationItem key={i}>
                   <span>{pub.authors} </span>
                   <em>{pub.title}</em>
-                  <span>. {pub.journal}. </span>
-                  {pub.url !== "#" && (
+                  <span>. {pub.journal} </span>
+                  {pub.url && pub.linkText && (
                     <a
                       href={pub.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{ color: "rgb(95, 189, 211)", textDecoration: "none", wordBreak: "break-all" }}
                     >
-                      {pub.url}
+                      {pub.linkText}
                     </a>
                   )}
                 </PublicationItem>
@@ -260,48 +539,37 @@ export function DifusionPageContent() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             {noticias.map((noticia, i) => (
-              <a
+              <div
                 key={i}
-                href={noticia.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block transition-shadow duration-200 hover:shadow-lg"
-                style={{ textDecoration: "none", backgroundColor: "rgb(255,255,255)", border: "1px solid rgb(230,230,230)" }}
+                className="block"
+                style={{ backgroundColor: "rgb(255,255,255)", border: "1px solid rgb(230,230,230)" }}
               >
                 <Image
                   src={noticia.imageSrc}
-                  alt={noticia.title}
+                  alt=""
                   width={800}
-                  height={400}
+                  height={405}
                   className="w-full h-[200px] object-cover"
                 />
-                <div className="p-5">
-                  <h3
-                    className="font-semibold mb-2"
-                    style={{ fontSize: "16px", color: "rgb(0, 9, 25)", lineHeight: "1.4" }}
+                <div className="p-5 flex justify-center">
+                  <a
+                    href={noticia.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
+                    style={{
+                      background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",
+                      fontSize: "13px",
+                      letterSpacing: "0.08em",
+                      padding: "12px 32px",
+                      textDecoration: "none",
+                    }}
                   >
-                    {noticia.title}
-                  </h3>
-                  <p style={{ fontSize: "14px", color: "rgb(51, 51, 51)", lineHeight: "1.6" }}>
-                    {noticia.description}
-                  </p>
+                    Leer noticia
+                  </a>
                 </div>
-              </a>
+              </div>
             ))}
-          </div>
-
-          <div
-            className="p-6"
-            style={{ backgroundColor: "rgb(255,255,255)", border: "1px solid rgb(230,230,230)" }}
-          >
-            <p style={{ fontSize: "14px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-              Síguenos en nuestras redes sociales para estar al día de todas las novedades del proyecto QGISRed.
-              También puedes suscribirte a nuestra{" "}
-              <a href="/contacto" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
-                Newsletter
-              </a>{" "}
-              desde la página de Contacto.
-            </p>
           </div>
         </div>
       </section>
