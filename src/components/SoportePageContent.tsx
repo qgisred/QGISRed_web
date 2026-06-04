@@ -161,7 +161,7 @@ export function SoportePageContent() {
           </p>
 
           <a
-            href="/contacto/"
+            href="/contacto"
             className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
             style={{
               background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",
@@ -212,7 +212,7 @@ export function SoportePageContent() {
               </ul>
 
               <a
-                href="/contacto/"
+                href="/contacto"
                 className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
                 style={{
                   background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",
@@ -274,7 +274,7 @@ export function SoportePageContent() {
           </ul>
 
           <a
-            href="/contacto/"
+            href="/contacto"
             className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
             style={{
               background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",

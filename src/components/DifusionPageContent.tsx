@@ -74,7 +74,7 @@ const comunicaciones = [
     authors: "Martínez Alzamora, F., Lerma, N., Vegas, O.T. (2021).",
     title: "QGISRed, un plugin libre y profesional sobre QGIS para gestionar modelos avanzados de redes de distribución de agua",
     journal: "SIGTE Jornada GIS libre. Universidad de Gerona. Congreso on-line",
-    url: "http://diobma.udg.edu/handle/10256.1/6227",
+    url: "https://diobma.udg.edu/handle/10256.1/6227",
   },
   {
     authors: "Martínez Alzamora, F., Lerma, N., Bartolin, H., Vegas Niño, O.T. (2019).",
@@ -95,7 +95,7 @@ const noticias = [
     title: "UdG – SIGTE Jornada GIS libre",
     description: "Comunicación presentada en las Jornadas GIS libre de la Universidad de Girona sobre QGISRed.",
     imageSrc: "/images/difusion-udg.jpg",
-    url: "http://diobma.udg.edu/handle/10256.1/6227",
+    url: "https://diobma.udg.edu/handle/10256.1/6227",
   },
 ];
 
@@ -108,15 +108,15 @@ export function DifusionPageContent() {
           <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             En esta sección se recogen aquellas actividades destinadas a dar difusión de la aplicación QGISRed,
             destacando los{" "}
-            <a href="/difusion/#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+            <a href="#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
               Cursos de Formación
             </a>
             , cuya programación se irá anunciando oportunamente. Además, se incluyen también enlaces a algunas{" "}
-            <a href="/difusion/#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+            <a href="#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
               Publicaciones
             </a>{" "}
             del grupo REDHISP del IIAMA relacionadas con la aplicación, así como las{" "}
-            <a href="/difusion/#noticias" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+            <a href="#noticias" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
               Noticias y Redes Sociales
             </a>{" "}
             donde ha aparecido QGISRed.
@@ -297,7 +297,7 @@ export function DifusionPageContent() {
             <p style={{ fontSize: "14px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
               Síguenos en nuestras redes sociales para estar al día de todas las novedades del proyecto QGISRed.
               También puedes suscribirte a nuestra{" "}
-              <a href="/contacto/" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
+              <a href="/contacto" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
                 Newsletter
               </a>{" "}
               desde la página de Contacto.

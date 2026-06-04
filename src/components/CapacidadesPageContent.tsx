@@ -125,7 +125,7 @@ export function CapacidadesPageContent() {
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
           <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             Después de la{" "}
-            <a href="/presentacion/" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
+            <a href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
               Presentación
             </a>
             , estarás ansioso por saber qué capacidades ofrece al usuario el plugin QGISRed. En esta sección te las
