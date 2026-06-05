@@ -30,17 +30,17 @@ interface AccordionItemProps {
 
 function AccordionItem({ title, children }: AccordionItemProps) {
   return (
-    <details className="border border-gray-200 mb-2 group">
+    <details className="mb-1 group" style={{ border: "1px solid rgb(220,220,220)" }}>
       <summary
-        className="flex items-center justify-between px-5 py-4 cursor-pointer list-none bg-white hover:bg-gray-50 transition-colors"
-        style={{ fontSize: "15px", fontWeight: "500", color: "rgb(0, 9, 25)" }}
+        className="flex items-center justify-between px-4 py-3 cursor-pointer list-none transition-colors hover:bg-gray-100"
+        style={{ fontSize: "14px", fontWeight: "600", color: "rgb(0, 9, 25)", backgroundColor: "rgb(252,252,252)" }}
       >
         <span>{title}</span>
-        <span className="flex-shrink-0 text-[rgb(95,189,211)] transition-transform duration-200 group-open:rotate-90 ml-4 text-lg">
+        <span className="flex-shrink-0 transition-transform duration-200 group-open:rotate-90 ml-4" style={{ color: "rgb(95, 189, 211)", fontSize: "18px" }}>
           ›
         </span>
       </summary>
-      <div className="px-5 pb-4 pt-2" style={{ fontSize: "14px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+      <div className="px-4 pb-4 pt-3" style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.6", backgroundColor: "rgb(255,255,255)" }}>
         {children}
       </div>
     </details>
@@ -58,33 +58,35 @@ interface CapacidadCardProps {
 function CapacidadCard({ title, description, href, imageSrc, imageAlt }: CapacidadCardProps) {
   return (
     <div
-      className="mb-8 transition-shadow duration-200 hover:shadow-md"
+      className="flex flex-col transition-shadow duration-200 hover:shadow-md"
       style={{ border: "1px solid rgb(230,230,230)", backgroundColor: "rgb(255,255,255)" }}
     >
-      <div className="p-6">
-        <h3 className="font-semibold mb-3" style={{ fontSize: "20px", color: "rgb(0, 9, 25)" }}>
+      {imageSrc && (
+        <div style={{ height: "155px", overflow: "hidden", flexShrink: 0 }}>
+          <Image
+            src={imageSrc}
+            alt={imageAlt ?? title}
+            width={400}
+            height={155}
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
+      )}
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="font-semibold mb-2" style={{ fontSize: "14px", color: "rgb(0, 9, 25)", lineHeight: "1.35" }}>
           <Link href={href as "/"} style={{ color: "inherit", textDecoration: "none" }} className="hover:text-[rgb(95,189,211)] transition-colors">
             {title}
           </Link>
         </h3>
-        <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+        <p className="mb-4 flex-1" style={{ fontSize: "12px", color: "rgb(80, 80, 80)", lineHeight: "1.6" }}>
           {description}
         </p>
-        {imageSrc && (
-          <Image
-            src={imageSrc}
-            alt={imageAlt ?? title}
-            width={800}
-            height={400}
-            className="w-full h-auto mb-4"
-          />
-        )}
         <Link
           href={href as "/"}
-          className="inline-flex items-center gap-1 text-[14px] font-medium transition-colors duration-150"
-          style={{ color: "rgb(95, 189, 211)" }}
+          className="inline-flex items-center gap-1 font-medium transition-colors duration-150"
+          style={{ fontSize: "12px", color: "rgb(95, 189, 211)" }}
         >
-          Leer más <span style={{ fontSize: "16px" }}>»</span>
+          Leer más <span style={{ fontSize: "14px" }}>»</span>
         </Link>
       </div>
     </div>
@@ -707,53 +709,48 @@ export function CapacidadesPageContent() {
             <Link href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</Link>.
           </p>
 
-          <CapacidadCard
-            href="/capacidades/mejoras-en-el-almacenamiento-de-resultados-y-su-visualizacion-sobe-el-mapa"
-            title="Mejoras en el almacenamiento de resultados y su visualización sobre el mapa"
-            description="Hasta la versión 0.17 los resultados de una simulación se guardaban en un fichero propio desde donde se configuraban los diferentes ficheros shape asociados a cada variable. Las filas de la tabla de atributos eran los elementos de la red y sus columnas los diferentes instantes de simulación."
-          />
-
-          <CapacidadCard
-            href="/capacidades/curvas-de-evolucion-de-las-variables-dinamicas"
-            title="Curvas de evolución de las variables dinámicas"
-            description="Una de las prestaciones que más se echaba en falta en QGISRed era poder mostrar la evolución en el tiempo de cualquiera de las variables dinámicas contenidas en los resultados. Se trata de una consulta muy útil y habitual, ofrecida por la mayoría de las aplicaciones de análisis de redes."
-          />
-
-          <CapacidadCard
-            href="/capacidades/confeccion-de-mapas-tematicos"
-            title="Confección de mapas temáticos"
-            description="Si queremos ver en el mapa los valores de una determinada variable calculada para todos los elementos de la red en un instante dado, clasificados por colores o bien como etiquetas, disponemos del panel de resultados para gestionar esta información."
-          />
-
-          <CapacidadCard
-            href="/capacidades/propiedades-de-los-elementos"
-            title="Propiedades de los elementos"
-            description="Los mapas temáticos y el panel de resultados permiten mostrar sobre el mapa los valores de cualquier propiedad elegida para todos los elementos de la red, o bien clasificarlos por colores. Pero ¿y si queremos ver todas las propiedades para un elemento elegido?"
-          />
-
-          <CapacidadCard
-            href="/capacidades/consultas-por-propiedades"
-            title="Consultas por Propiedades"
-            description="A través de los mapas temáticos podemos mostrar sobre el mapa de la rede el valor de una determinada propiedad para todos sus elementos. Pero si queremos saber qué elementos cumplen un determinado criterio o condición, la herramienta de Consultas por propiedades permite mostrar precisamente esos elementos."
-          />
-
-          <CapacidadCard
-            href="/capacidades/editor-de-leyendas"
-            title="Editor de leyendas"
-            description="Una de las prestaciones más importantes de QGIS es su capacidad para editar los estilos de las capas, y generar mapas muy variados. Sin embargo la cantidad de opciones ofrecida es abrumadora. Para simplificar, en QGISRed se ha creado una nueva opción con unas opciones más limitadas y prácticas."
-          />
-
-          <CapacidadCard
-            href="/capacidades/identificador-de-elementos-a-traves-de-su-id"
-            title="Identificador de elementos a través de su ID"
-            description="Cuando vemos el mapa de una red, fácilmente diferenciamos unos elementos de otros. Pero a veces algunos elementos pueden superponerse, siendo en realidad distintos. La única forma de diferenciarlos definitivamente es asignándoles un identificador único."
-          />
-
-          <CapacidadCard
-            href="/capacidades/otras-y-depuracion-de-errores"
-            title="Otras y depuración de errores"
-            description="Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia. También se han continuado depurando las prestaciones ofrecidas por QGISRed en versiones anteriores."
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <CapacidadCard
+              href="/capacidades/mejoras-en-el-almacenamiento-de-resultados-y-su-visualizacion-sobe-el-mapa"
+              title="Mejoras en el almacenamiento de resultados y su visualización sobre el mapa"
+              description="Hasta la versión 0.17 los resultados de una simulación se guardaban en un fichero propio desde donde se configuraban los diferentes ficheros shape asociados a cada variable. Las filas de la tabla de atributos eran los elementos de la red y sus columnas los diferentes instantes de simulación."
+            />
+            <CapacidadCard
+              href="/capacidades/curvas-de-evolucion-de-las-variables-dinamicas"
+              title="Curvas de evolución de las variables dinámicas"
+              description="Una de las prestaciones que más se echaba en falta en QGISRed era poder mostrar la evolución en el tiempo de cualquiera de las variables dinámicas contenidas en los resultados. Se trata de una consulta muy útil y habitual, ofrecida por la mayoría de las aplicaciones de análisis de redes."
+            />
+            <CapacidadCard
+              href="/capacidades/confeccion-de-mapas-tematicos"
+              title="Confección de mapas temáticos"
+              description="Si queremos ver en el mapa los valores de una determinada variable calculada para todos los elementos de la red en un instante dado, clasificados por colores o bien como etiquetas, disponemos del panel de resultados para gestionar esta información."
+            />
+            <CapacidadCard
+              href="/capacidades/propiedades-de-los-elementos"
+              title="Propiedades de los elementos"
+              description="Los mapas temáticos y el panel de resultados permiten mostrar sobre el mapa los valores de cualquier propiedad elegida para todos los elementos de la red, o bien clasificarlos por colores. Pero ¿y si queremos ver todas las propiedades para un elemento elegido?"
+            />
+            <CapacidadCard
+              href="/capacidades/consultas-por-propiedades"
+              title="Consultas por Propiedades"
+              description="A través de los mapas temáticos podemos mostrar sobre el mapa de la rede el valor de una determinada propiedad para todos sus elementos. Pero si queremos saber qué elementos cumplen un determinado criterio o condición, la herramienta de Consultas por propiedades permite mostrar precisamente esos elementos."
+            />
+            <CapacidadCard
+              href="/capacidades/editor-de-leyendas"
+              title="Editor de leyendas"
+              description="Una de las prestaciones más importantes de QGIS es su capacidad para editar los estilos de las capas, y generar mapas muy variados. Sin embargo la cantidad de opciones ofrecida es abrumadora. Para simplificar, en QGISRed se ha creado una nueva opción con unas opciones más limitadas y prácticas."
+            />
+            <CapacidadCard
+              href="/capacidades/identificador-de-elementos-a-traves-de-su-id"
+              title="Identificador de elementos a través de su ID"
+              description="Cuando vemos el mapa de una red, fácilmente diferenciamos unos elementos de otros. Pero a veces algunos elementos pueden superponerse, siendo en realidad distintos. La única forma de diferenciarlos definitivamente es asignándoles un identificador único."
+            />
+            <CapacidadCard
+              href="/capacidades/otras-y-depuracion-de-errores"
+              title="Otras y depuración de errores"
+              description="Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia. También se han continuado depurando las prestaciones ofrecidas por QGISRed en versiones anteriores."
+            />
+          </div>
         </div>
       </section>
 
@@ -775,125 +772,113 @@ export function CapacidadesPageContent() {
             , en las fichas siguientes pretendemos hacer solo una introducción a cada capacidad destacada para motivarte y despertar tu interés. Para profundizar más en ellas te remitiremos a los tutoriales y vídeos, y en último caso al Manual.
           </p>
 
-          <CapacidadCard
-            href="/capacidades/incorporacion-de-las-valvulas-de-corte-al-modelo-de-qgisred"
-            title="Incorporación de las Válvulas de Corte al Modelo de QGISRed"
-            description="Si quieres utilizar el modelo de la red para analizar cómo se ven afectados los flujos al seccionar la red por las válvulas de corte, bien para separar zonas de forma permanente, o para aislar una zona de modo temporal, tendrás que incorporar antes al modelo todas las válvulas de corte existentes en la red."
-            imageSrc="/images/capacidades/Diapositiva12.png"
-            imageAlt="Válvulas de corte en QGISRed"
-          />
-
-          <CapacidadCard
-            href="/capacidades/soporte-a-las-nuevas-opciones-de-analisis-de-epanet-2-2"
-            title="Soporte a las Nuevas Opciones de Análisis de EPANET 2.2"
-            description="Una de las mayores aportaciones de la versión 2.2 de la librería de EPANET es la posibilidad de considerar las demandas dependientes de la presión (PDA), frente a la opción de considerarlas fijas (DDA), en un intento de acercar más el comportamiento de la red a la realidad."
-            imageSrc="/images/capacidades/Diapositiva16-1.png"
-            imageAlt="Opciones de análisis EPANET 2.2"
-          />
-
-          <CapacidadCard
-            href="/capacidades/asignacion-de-demandas-a-los-nudos-por-sectores-y-desde-los-puntos-de-consumo"
-            title="Asignación de Demandas a los Nudos por Sectores y desde los Puntos de Consumo"
-            description="La asignación de las demandas a los nudos de una red, cuando su número es elevado, no puede hacerse de uno en uno. QGISRed ofrece dos herramientas muy potentes para asignar la demanda de forma masiva, a partir de los consumos declarados por sectores o desde los puntos de consumo."
-            imageSrc="/images/capacidades/Diapositiva14-1.png"
-            imageAlt="Asignación de demandas"
-          />
-
-          <CapacidadCard
-            href="/capacidades/mejoras-en-la-navegacion-desde-el-editor-de-propiedades"
-            title="Mejoras en la Navegación desde el Editor de Propiedades"
-            description="El Editor de Propiedades de QGISRed abre una ventana desde la que se pueden modificar las propiedades del elemento seleccionado, cualquiera que sea su naturaleza. No es necesario tener la capa correspondiente previamente seleccionada, lo cual es una gran ventaja."
-            imageSrc="/images/capacidades/Diapositiva15.png"
-            imageAlt="Editor de Propiedades QGISRed"
-          />
-
-          <CapacidadCard
-            href="/capacidades/nueva-herramienta-para-cambiar-el-estado-de-los-elementos-y-simbolizacion-segun-su-estado"
-            title="Nueva Herramienta para cambiar el Estado de los Elementos y Simbolización según su Estado"
-            description="Una de las operaciones más habituales a la hora de modificar un escenario de simulación es cambiar el estado de algún elemento de la red, sea de regulación o no, pasando de estar abierto a cerrado o viceversa."
-            imageSrc="/images/capacidades/Diapositiva13-1.png"
-            imageAlt="Herramienta de estados en QGISRed"
-          />
-
-          <CapacidadCard
-            href="/capacidades/pequenas-mejoras-y-depuracion-de-errores"
-            title="Pequeñas mejoras y depuración de errores"
-            description="Además de todo lo anterior, en la versión 0.17 se ha continuado depurando las prestaciones ya ofrecidas por QGISRed en versiones anteriores."
-            imageSrc="/images/capacidades/qgis-bin_s5ZfejsaKh.png"
-            imageAlt="Mejoras versión 0.17"
-          />
-
-          <CapacidadCard
-            href="/capacidades/epanet-2-3-ya-esta-integrado"
-            title="Integración de la versión 2.3 de la Toolkit de EPANET"
-            description="La versión 2.2 de la Toolkit de EPANET se lanzó en 2019 y fue incorporada a QGISRed en sus primeras versiones. Finalmente, en Julio de 2025 se lanzó la nueva versión 2.3, la cual incorpora mejoras notables en el motor de cálculo."
-            imageSrc="/images/capacidades/epanet2.3.png"
-            imageAlt="EPANET 2.3 en QGISRed"
-          />
-
-          <CapacidadCard
-            href="/capacidades/gestor-de-proyectos-renovado"
-            title="Nuevas opciones del Gestor de Proyectos"
-            description="El Gestor de Proyectos de QGISRed es una de las herramientas más utilizadas por los usuarios. La versión 0.17 añade ordenación de columnas, renombrado de proyectos, eliminación definitiva y exportación/importación como fichero zip."
-            imageSrc="/images/capacidades/projectManager.png"
-            imageAlt="Gestor de Proyectos renovado"
-          />
-
-          <CapacidadCard
-            href="/capacidades/nuevas-opciones-en-el-gestor-de-escenarios"
-            title="Gestión de escenarios compatibles con EPANET"
-            description="En la nueva versión de QGISRed los escenarios pueden también exportarse/importarse siguiendo los mismos formatos usados por EPANET, para así mantener la compatibilidad total entre EPANET y QGISRed."
-            imageSrc="/images/capacidades/epanetScenarios.png"
-            imageAlt="Gestión de escenarios EPANET"
-          />
-
-          <CapacidadCard
-            href="/capacidades/transfiere-estados-y-calidad-para-encadenar-simulaciones-sucesivas"
-            title="Encadenamiento de simulaciones sucesivas"
-            description="La versión 0.17 de QGISRed permite encadenar simulaciones desde el Gestor de Escenarios, exportando el estado final de los elementos de regulación e importándolo como estado inicial para la etapa siguiente."
-            imageSrc="/images/capacidades/simulaciones.png"
-            imageAlt="Encadenamiento de simulaciones"
-          />
-
-          <CapacidadCard
-            href="/capacidades/visualizacion-de-hasta-13-estados-en-tuberias-valvulas-y-bomas"
-            title="Identificación de hasta 13 estados en tuberías, bombas y válvulas"
-            description="Aunque EPANET diferencia hasta 8 estados distintos, en QGISRed se distinguen hasta 13 estados que completan las diferentes situaciones que pueden darse en tuberías, bombas y válvulas."
-            imageSrc="/images/capacidades/statuses.png"
-            imageAlt="13 estados en QGISRed"
-          />
-
-          <CapacidadCard
-            href="/capacidades/nueva-herramienta-para-la-exploracion-de-segmentos-aislados"
-            title="Nueva herramienta para la identificación de segmentos aislados"
-            description="Una de las prestaciones más solicitadas en un software de simulación es la determinación de las válvulas que hay que cerrar para aislar un segmento de la red en torno a un punto donde ha producido una avería."
-            imageSrc="/images/capacidades/isolatedSegments-1.png"
-            imageAlt="Identificación de segmentos aislados"
-          />
-
-          <CapacidadCard
-            href="/capacidades/depuracion-y-mejora-de-prestaciones-de-versiones-anteriores"
-            title="Depuración y Mejora de Prestaciones Anteriores"
-            description="La versión 0.16 ha mejorado algunos aspectos de las versiones anteriores, como la barra de tiempos, el orden y clasificación de algunas opciones de menú, y nuevos campos en la importación de shapes."
-            imageSrc="/images/capacidades/Diapositiva11.png"
-            imageAlt="Mejoras versión 0.16"
-          />
-
-          <CapacidadCard
-            href="/capacidades/identificacion-de-los-sectores-de-demanda-dma"
-            title="Identificación de los Sectores de Demanda (DMA)"
-            description="A partir de la versión 0.15 ya se pueden declarar las válvulas de corte superpuestas a las tuberías, y con la versión 0.16 también se pueden declarar caudalímetros y contadores para identificar con precisión los Sectores de Demanda."
-            imageSrc="/images/capacidades/Diapositiva10-1.png"
-            imageAlt="Sectores de Demanda DMA"
-          />
-
-          <CapacidadCard
-            href="/capacidades/incorporacion-de-los-medidores-al-modelo"
-            title="Incorporación de los Medidores al Modelo"
-            description="Una de las características más importantes que se le deben exigir al modelo hidráulico de una red en explotación es que reproduzca fielmente la realidad. En QGISRed los medidores son tratados como objetos con sus propias propiedades."
-            imageSrc="/images/capacidades/Diapositiva8-1.png"
-            imageAlt="Medidores en el modelo QGISRed"
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <CapacidadCard
+              href="/capacidades/incorporacion-de-las-valvulas-de-corte-al-modelo-de-qgisred"
+              title="Incorporación de las Válvulas de Corte al Modelo de QGISRed"
+              description="Si quieres utilizar el modelo de la red para analizar cómo se ven afectados los flujos al seccionar la red por las válvulas de corte, bien para separar zonas de forma permanente, o para aislar una zona de modo temporal, tendrás que incorporar antes al modelo todas las válvulas de corte existentes en la red."
+              imageSrc="/images/capacidades/Diapositiva12.png"
+              imageAlt="Válvulas de corte en QGISRed"
+            />
+            <CapacidadCard
+              href="/capacidades/soporte-a-las-nuevas-opciones-de-analisis-de-epanet-2-2"
+              title="Soporte a las Nuevas Opciones de Análisis de EPANET 2.2"
+              description="Una de las mayores aportaciones de la versión 2.2 de la librería de EPANET es la posibilidad de considerar las demandas dependientes de la presión (PDA), frente a la opción de considerarlas fijas (DDA), en un intento de acercar más el comportamiento de la red a la realidad."
+              imageSrc="/images/capacidades/Diapositiva16-1.png"
+              imageAlt="Opciones de análisis EPANET 2.2"
+            />
+            <CapacidadCard
+              href="/capacidades/asignacion-de-demandas-a-los-nudos-por-sectores-y-desde-los-puntos-de-consumo"
+              title="Asignación de Demandas a los Nudos por Sectores y desde los Puntos de Consumo"
+              description="La asignación de las demandas a los nudos de una red, cuando su número es elevado, no puede hacerse de uno en uno. QGISRed ofrece dos herramientas muy potentes para asignar la demanda de forma masiva, a partir de los consumos declarados por sectores o desde los puntos de consumo."
+              imageSrc="/images/capacidades/Diapositiva14-1.png"
+              imageAlt="Asignación de demandas"
+            />
+            <CapacidadCard
+              href="/capacidades/mejoras-en-la-navegacion-desde-el-editor-de-propiedades"
+              title="Mejoras en la Navegación desde el Editor de Propiedades"
+              description="El Editor de Propiedades de QGISRed abre una ventana desde la que se pueden modificar las propiedades del elemento seleccionado, cualquiera que sea su naturaleza. No es necesario tener la capa correspondiente previamente seleccionada, lo cual es una gran ventaja."
+              imageSrc="/images/capacidades/Diapositiva15.png"
+              imageAlt="Editor de Propiedades QGISRed"
+            />
+            <CapacidadCard
+              href="/capacidades/nueva-herramienta-para-cambiar-el-estado-de-los-elementos-y-simbolizacion-segun-su-estado"
+              title="Nueva Herramienta para cambiar el Estado de los Elementos y Simbolización según su Estado"
+              description="Una de las operaciones más habituales a la hora de modificar un escenario de simulación es cambiar el estado de algún elemento de la red, sea de regulación o no, pasando de estar abierto a cerrado o viceversa."
+              imageSrc="/images/capacidades/Diapositiva13-1.png"
+              imageAlt="Herramienta de estados en QGISRed"
+            />
+            <CapacidadCard
+              href="/capacidades/pequenas-mejoras-y-depuracion-de-errores"
+              title="Pequeñas mejoras y depuración de errores"
+              description="Además de todo lo anterior, en la versión 0.17 se ha continuado depurando las prestaciones ya ofrecidas por QGISRed en versiones anteriores."
+              imageSrc="/images/capacidades/qgis-bin_s5ZfejsaKh.png"
+              imageAlt="Mejoras versión 0.17"
+            />
+            <CapacidadCard
+              href="/capacidades/epanet-2-3-ya-esta-integrado"
+              title="Integración de la versión 2.3 de la Toolkit de EPANET"
+              description="La versión 2.2 de la Toolkit de EPANET se lanzó en 2019 y fue incorporada a QGISRed en sus primeras versiones. Finalmente, en Julio de 2025 se lanzó la nueva versión 2.3, la cual incorpora mejoras notables en el motor de cálculo."
+              imageSrc="/images/capacidades/epanet2.3.png"
+              imageAlt="EPANET 2.3 en QGISRed"
+            />
+            <CapacidadCard
+              href="/capacidades/gestor-de-proyectos-renovado"
+              title="Nuevas opciones del Gestor de Proyectos"
+              description="El Gestor de Proyectos de QGISRed es una de las herramientas más utilizadas por los usuarios. La versión 0.17 añade ordenación de columnas, renombrado de proyectos, eliminación definitiva y exportación/importación como fichero zip."
+              imageSrc="/images/capacidades/projectManager.png"
+              imageAlt="Gestor de Proyectos renovado"
+            />
+            <CapacidadCard
+              href="/capacidades/nuevas-opciones-en-el-gestor-de-escenarios"
+              title="Gestión de escenarios compatibles con EPANET"
+              description="En la nueva versión de QGISRed los escenarios pueden también exportarse/importarse siguiendo los mismos formatos usados por EPANET, para así mantener la compatibilidad total entre EPANET y QGISRed."
+              imageSrc="/images/capacidades/epanetScenarios.png"
+              imageAlt="Gestión de escenarios EPANET"
+            />
+            <CapacidadCard
+              href="/capacidades/transfiere-estados-y-calidad-para-encadenar-simulaciones-sucesivas"
+              title="Encadenamiento de simulaciones sucesivas"
+              description="La versión 0.17 de QGISRed permite encadenar simulaciones desde el Gestor de Escenarios, exportando el estado final de los elementos de regulación e importándolo como estado inicial para la etapa siguiente."
+              imageSrc="/images/capacidades/simulaciones.png"
+              imageAlt="Encadenamiento de simulaciones"
+            />
+            <CapacidadCard
+              href="/capacidades/visualizacion-de-hasta-13-estados-en-tuberias-valvulas-y-bomas"
+              title="Identificación de hasta 13 estados en tuberías, bombas y válvulas"
+              description="Aunque EPANET diferencia hasta 8 estados distintos, en QGISRed se distinguen hasta 13 estados que completan las diferentes situaciones que pueden darse en tuberías, bombas y válvulas."
+              imageSrc="/images/capacidades/statuses.png"
+              imageAlt="13 estados en QGISRed"
+            />
+            <CapacidadCard
+              href="/capacidades/nueva-herramienta-para-la-exploracion-de-segmentos-aislados"
+              title="Nueva herramienta para la identificación de segmentos aislados"
+              description="Una de las prestaciones más solicitadas en un software de simulación es la determinación de las válvulas que hay que cerrar para aislar un segmento de la red en torno a un punto donde ha producido una avería."
+              imageSrc="/images/capacidades/isolatedSegments-1.png"
+              imageAlt="Identificación de segmentos aislados"
+            />
+            <CapacidadCard
+              href="/capacidades/depuracion-y-mejora-de-prestaciones-de-versiones-anteriores"
+              title="Depuración y Mejora de Prestaciones Anteriores"
+              description="La versión 0.16 ha mejorado algunos aspectos de las versiones anteriores, como la barra de tiempos, el orden y clasificación de algunas opciones de menú, y nuevos campos en la importación de shapes."
+              imageSrc="/images/capacidades/Diapositiva11.png"
+              imageAlt="Mejoras versión 0.16"
+            />
+            <CapacidadCard
+              href="/capacidades/identificacion-de-los-sectores-de-demanda-dma"
+              title="Identificación de los Sectores de Demanda (DMA)"
+              description="A partir de la versión 0.15 ya se pueden declarar las válvulas de corte superpuestas a las tuberías, y con la versión 0.16 también se pueden declarar caudalímetros y contadores para identificar con precisión los Sectores de Demanda."
+              imageSrc="/images/capacidades/Diapositiva10-1.png"
+              imageAlt="Sectores de Demanda DMA"
+            />
+            <CapacidadCard
+              href="/capacidades/incorporacion-de-los-medidores-al-modelo"
+              title="Incorporación de los Medidores al Modelo"
+              description="Una de las características más importantes que se le deben exigir al modelo hidráulico de una red en explotación es que reproduzca fielmente la realidad. En QGISRed los medidores son tratados como objetos con sus propias propiedades."
+              imageSrc="/images/capacidades/Diapositiva8-1.png"
+              imageAlt="Medidores en el modelo QGISRed"
+            />
+          </div>
         </div>
       </section>
 
@@ -902,52 +887,38 @@ export function CapacidadesPageContent() {
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
           <SectionHeading title="Prestaciones actuales" />
 
-          <div className="flex flex-col md:flex-row gap-[60px] items-start">
-            <div style={{ flex: "1 1 55%" }}>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                QGISRed ha cumplido ya casi cuatro años de vida, desde que comenzó su andadura a finales de 2018. Desde
-                entonces no hemos parado de introducir mejoras, aunque quizás no al ritmo deseado por no haberle podido
-                dedicar atención exclusiva durante ese tiempo. Pero si echamos la vista atrás, las prestaciones que
-                ofrece ya en su última versión son muy notables.
-              </p>
+          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+            QGISRed ha cumplido ya casi cuatro años de vida, desde que comenzó su andadura a finales de 2018. Desde
+            entonces no hemos parado de introducir mejoras, aunque quizás no al ritmo deseado por no haberle podido
+            dedicar atención exclusiva durante ese tiempo. Pero si echamos la vista atrás, las prestaciones que
+            ofrece ya en su última versión son muy notables.
+          </p>
 
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                Algunas de estas prestaciones se describen con más detalle en las{" "}
-                <Link href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</Link>
-                , o en las{" "}
-                <Link href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</Link>
-                , pero para saber más sobre otras prestaciones tendrás que consultar el{" "}
-                <a href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</a>
-                , o los{" "}
-                <a href="/utilizacion#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</a>
-                {" "}y{" "}
-                <a href="/utilizacion#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</a>
-                {" "}que poco a poco vamos desarrollando. También puedes apuntarte a nuestros{" "}
-                <a href="/difusion#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</a>
-                {" "}presenciales o virtuales, aún en elaboración.
-              </p>
+          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+            Algunas de estas prestaciones se describen con más detalle en las{" "}
+            <Link href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</Link>
+            , o en las{" "}
+            <Link href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</Link>
+            , pero para saber más sobre otras prestaciones tendrás que consultar el{" "}
+            <a href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</a>
+            , o los{" "}
+            <a href="/utilizacion#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</a>
+            {" "}y{" "}
+            <a href="/utilizacion#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</a>
+            {" "}que poco a poco vamos desarrollando. También puedes apuntarte a nuestros{" "}
+            <a href="/difusion#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</a>
+            {" "}presenciales o virtuales, aún en elaboración.
+          </p>
 
-              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                A continuación, te listamos las principales prestaciones que ya ofrece la última versión descargable
-                desde el instalador de Complementos de QGIS, las cuales hemos ordenado por temáticas para más claridad.
-              </p>
+          <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+            A continuación, te listamos las principales prestaciones que ya ofrece la última versión descargable
+            desde el instalador de Complementos de QGIS, las cuales hemos ordenado por temáticas para más claridad.
+          </p>
 
-              <div className="flex flex-col gap-1">
-                {prestacionesActuales.map((group) => (
-                  <PrestacionGroup key={group.group} title={group.group} items={group.items} />
-                ))}
-              </div>
-            </div>
-
-            <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
-              <Image
-                src="/images/capacidades-diapositiva11.png"
-                alt="Prestaciones actuales QGISRed"
-                width={800}
-                height={500}
-                className="w-full h-auto"
-              />
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1">
+            {prestacionesActuales.map((group) => (
+              <PrestacionGroup key={group.group} title={group.group} items={group.items} />
+            ))}
           </div>
         </div>
       </section>
@@ -993,11 +964,11 @@ export function CapacidadesPageContent() {
 
               <div className="mb-4">
                 {historico.map((item) => (
-                  <AccordionItem key={item.version} title={`Cambios en la versión ${item.version}  – ${item.fecha}`}>
+                  <AccordionItem key={item.version} title={`Cambios en la versión ${item.version} – ${item.fecha}`}>
                     <ul className="list-none p-0 m-0">
                       {item.items.map((li, idx) => (
-                        <li key={idx} className="flex items-start gap-2 mb-1">
-                          <span className="flex-shrink-0 mt-1" style={{ color: "rgb(95, 189, 211)" }}>•</span>
+                        <li key={idx} className="flex items-start gap-2 mb-1.5">
+                          <span className="flex-shrink-0" style={{ color: "rgb(95, 189, 211)", marginTop: "3px", fontSize: "10px" }}>●</span>
                           <span>{li}</span>
                         </li>
                       ))}
