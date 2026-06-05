@@ -53,31 +53,29 @@ export function UtilizacionPageContent() {
             contenido. Por ahora la mayor fuente de información es el Manual, que tienes al final de esta sección.
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            En una primera parte se ofrecerán aquí un conjunto de Tutoriales para que puedas seguir con calma todos los
-            pasos necesarios para alcanzar el objetivo marcado en cada uno de ellos. Serán documentos en PDF que puedes
-            descargar y manejar a tu gusto. Sin embargo, los tutoriales más avanzados los reservaremos para su
-            desarrollo en los cursos que ofrecemos (enlace a cursos).
+            En una primera parte se ofrecerán aquí un conjunto de{" "}
+            <a href="#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Tutoriales</strong></a>
+            {" "}para que puedas seguir con calma todos los pasos necesarios para alcanzar el objetivo marcado en cada uno de ellos. Serán documentos en PDF que puedes descargar y manejar a tu gusto. Sin embargo, los tutoriales más avanzados los reservaremos para su desarrollo en los cursos que ofrecemos <span style={{ fontStyle: "italic" }}>(enlace a cursos).</span>
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            La sección de Vídeos seguirá el mismo esquema que los tutoriales, y normalmente estarán basados en ellos,
-            aunque por limitación de tiempo es probable que se omitan algunas prestaciones, así que si quieres tener
-            una información más completa y detallada se recomienda acudir a los tutoriales. Para darle una mayor
-            difusión a los vídeos, hemos decidido distribuirlos a través de Youtube.
+            La sección de{" "}
+            <a href="#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Vídeos </strong></a>
+            seguirá el mismo esquema que los tutoriales, y normalmente estarán basados en ellos, aunque por limitación de tiempo es probable que se omitan algunas prestaciones, así que si quieres tener una información más completa y detallada se recomienda acudir a los tutoriales. Para darle una mayor difusión a los vídeos, hemos decidido distribuirlos a través de Youtube.
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            También aprovecharemos esta sección para colgar los Ejemplos utilizados en los tutoriales o en los vídeos,
-            de modo que te resulte fácil acceder a ellos.
+            También aprovecharemos esta sección para colgar los{" "}
+            <a href="#repositorioejemplos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Ejemplos</strong></a>
+            {" "}utilizados en los tutoriales o en los vídeos, de modo que te resulte fácil acceder a ellos.
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            En otro apartado está previsto publicar el Modelo de Datos utilizado por QGISRed para alojar toda la
-            información que configura un proyecto, así como la estructura de los diferentes ficheros auxiliares
-            utilizados por QGISRed.
+            En otro apartado está previsto publicar el{" "}
+            <a href="#modelodatos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Modelo de Datos</strong></a>
+            {" "}utilizado por QGISRed para alojar toda la información que configura un proyecto, así como la estructura de los diferentes ficheros auxiliares utilizados por QGISRed.
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            Para una información más completa de todo lo que hay desarrollado hasta ahora puedes recurrir al Manual de
-            la aplicación en PDF, que encontrarás en la sección siguiente. El manual siempre ha estado disponible en
-            español y en inglés, y lo vamos actualizando cada vez que sacamos una nueva versión. En el futuro esperamos
-            poner esta información en red, ampliarla y compartir sus contenidos.
+            Para una información más completa de todo lo que hay desarrollado hasta ahora puedes recurrir al{" "}
+            <a href="#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Manual</strong></a>
+            {" "}de la aplicación en PDF, que encontrarás en la sección siguiente. El manual siempre ha estado disponible en español y en inglés, y lo vamos actualizando cada vez que sacamos una nueva versión. En el futuro esperamos poner esta información en red, ampliarla y compartir sus contenidos.
           </p>
           <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             Finalmente habrá en esta sección también un apartado reservado para las preguntas más frecuentes, y otro

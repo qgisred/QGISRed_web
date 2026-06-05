@@ -642,12 +642,17 @@ export function CapacidadesPageContent() {
             por etapas.
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            En primer lugar te mostraremos las Últimas novedades incluidas en la versión más reciente. A continuación
-            te resaltaremos las Capacidades más importantes ya desarrolladas, para que no tengas que descubrirlas
-            haciendo un repaso exhaustivo del manual, pero si lo prefieres puedes echar una leída rápida a todas las
-            Capacidades ya implementadas. Finalmente te haremos un adelanto de lo que está por llegar en Próximas
-            prestaciones. Y para los más curiosos hemos reservado la última sección, donde podrás ver cómo ha ido
-            evolucionando el producto desde sus inicios, y las mejoras introducidas en cada Versión.
+            En primer lugar te mostraremos las{" "}
+            <Link href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novedades</Link>
+            {" "}incluidas en la versión más reciente. A continuación te resaltaremos las{" "}
+            <Link href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades más importantes</Link>
+            {" "}ya desarrolladas, para que no tengas que descubrirlas haciendo un repaso exhaustivo del manual, pero si lo prefieres puedes echar una leída rápida a todas las
+            <Link href="#prestacionesactuales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}> Capacidades ya implementadas</Link>
+            . Finalmente te haremos un adelanto de lo que está por llegar en{" "}
+            <Link href="#proximasprestaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Próximas prestaciones</Link>
+            . Y para los más curiosos hemos reservado la última sección, donde podrás ver cómo ha ido evolucionando el producto desde sus inicios, y las mejoras introducidas en{" "}
+            <Link href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versión</Link>
+            .
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             Para que tengas una idea más exacta de la numeración seguida en el versionado, observa que todas las
@@ -691,13 +696,15 @@ export function CapacidadesPageContent() {
           </p>
 
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            Algunas de estas mejoras se han ido adelantando a través de las versiones beta 0.17.1 a 0.17.4, liberadas
-            en la plataforma de GitHub de QGISRed.
+            Algunas de estas mejoras se han ido adelantando a través de las versiones beta 0.17.1 a 0.17.4, liberadas en la plataforma de{" "}
+            <a href="https://github.com/qgisred/QGISRed" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GitHub</a>
+            {" "}de QGISRed.
           </p>
 
           <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            En las fichas siguentes se destacan las novedades más importantes de la versión 0.18. Para una descripción
-            más detallada de todas las novedades visitar la sección Histórico de versiones.
+            En las fichas siguentes se destacan las <strong>novedades más importantes de la versión 0.18. </strong>
+            Para una descripción más detallada de todas las novedades visitar la sección{" "}
+            <Link href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</Link>.
           </p>
 
           <CapacidadCard
@@ -763,10 +770,9 @@ export function CapacidadesPageContent() {
           </p>
 
           <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            Como son muchas, las hemos ordenado por temática. Además, poco a poco las iremos completando, a medida que
-            tengamos más contenidos. Al igual que en la sección de Novedades, en las fichas siguientes pretendemos hacer
-            solo una introducción a cada capacidad destacada para motivarte y despertar tu interés. Para profundizar más
-            en ellas te remitiremos a los tutoriales y vídeos, y en último caso al Manual.
+            Como son muchas, las hemos ordenado por temática. Además, poco a poco las iremos completando, a medida que tengamos más contenidos. Al igual que en la sección de{" "}
+            <Link href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novedades</Link>
+            , en las fichas siguientes pretendemos hacer solo una introducción a cada capacidad destacada para motivarte y despertar tu interés. Para profundizar más en ellas te remitiremos a los tutoriales y vídeos, y en último caso al Manual.
           </p>
 
           <CapacidadCard
@@ -906,10 +912,19 @@ export function CapacidadesPageContent() {
               </p>
 
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                Algunas de estas prestaciones se describen con más detalle en las Últimas Novedades, o en las
-                Capacidades Destacadas, pero para saber más sobre otras prestaciones tendrás que consultar el Manual,
-                o los Tutoriales y Videos Formativos que poco a poco vamos desarrollando. También puedes apuntarte a
-                nuestros Cursos presenciales o virtuales, aún en elaboración.
+                Algunas de estas prestaciones se describen con más detalle en las{" "}
+                <Link href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</Link>
+                , o en las{" "}
+                <Link href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</Link>
+                , pero para saber más sobre otras prestaciones tendrás que consultar el{" "}
+                <a href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</a>
+                , o los{" "}
+                <a href="/utilizacion#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</a>
+                {" "}y{" "}
+                <a href="/utilizacion#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</a>
+                {" "}que poco a poco vamos desarrollando. También puedes apuntarte a nuestros{" "}
+                <a href="/difusion#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</a>
+                {" "}presenciales o virtuales, aún en elaboración.
               </p>
 
               <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>

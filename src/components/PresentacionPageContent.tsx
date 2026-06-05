@@ -194,10 +194,8 @@ export function PresentacionPageContent() {
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                La idea de potenciar las prestaciones de EPANET mediante su conexión con un GIS no es nueva para nuestro
-                grupo de investigación. Ya en 2004 Fernando Martínez, director del actual proyecto QGISRed, dirigió un
-                proyecto con similares objetivos y prestaciones, denominado GISRed. Hubo por entonces dos versiones, la
-                1.0 y la 2.0, y se difundieron sus capacidades a través de varias publicaciones.
+                La idea de potenciar las prestaciones de EPANET mediante su conexión con un GIS no es nueva para nuestro grupo de investigación. Ya en 2004 Fernando Martínez, director del actual proyecto QGISRed, dirigió un proyecto con similares objetivos y prestaciones, denominado <strong>GISRed. </strong>Hubo por entonces dos versiones, la 1.0 y la 2.0, y se difundieron sus capacidades a través de varias{" "}
+                <a href="/difusion#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publicaciones</a>.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 GISRed se programó en el lenguaje Avenue para ArcView 3.2, un precedente de lo que después fue ArcGIS,
@@ -213,14 +211,13 @@ export function PresentacionPageContent() {
 
               <ToggleSection title="Leer más">
                 <p className="mb-3">
-                  En los 15 años siguientes ninguna aplicación, dejando aparte los productos comerciales, llegó a
-                  proporcionar las prestaciones que GISRed ofrecía para ayudar en la confección de modelos de redes de
-                  abastecimiento. Mientras tanto el código de EPANET fue liberalizado, y en 2015 se fundó una sección
-                  dentro de la Open Water Analytics (OWA) para continuar desarrollando el módulo de cálculo de EPANET
-                  (también conocido como Toolkit), con la contribución ahora de toda la comunidad investigadora.
-                  Finalmente, en Diciembre 2019 se lanzó desde esta plataforma la última versión 2.2 de la Toolkit,
-                  vigente hasta el día de hoy. Poco después, en Julio de 2020 la EPA mejoró también la interfaz gráfica
-                  de EPANET a su versión 2.2, en la cual integró la última versión de la Toolkit.
+                  En los 15 años siguientes ninguna aplicación, dejando aparte los productos comerciales, llegó a proporcionar las prestaciones que GISRed ofrecía para ayudar en la confección de modelos de redes de abastecimiento. Mientras tanto el código de EPANET fue liberalizado, y en 2015 se fundó una sección dentro de la{" "}
+                  <a href="http://community.wateranalytics.org/c/epanet" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Open Water Analytics</strong></a>
+                  {" "}(OWA) para continuar desarrollando el módulo de cálculo de EPANET (también conocido como Toolkit), con la contribución ahora de toda la comunidad investigadora. Finalmente, en Diciembre 2019 se lanzó desde esta plataforma la última{" "}
+                  <a href="https://github.com/OpenWaterAnalytics/EPANET/releases" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>versión 2.2 de la Toolkit</a>
+                  , vigente hasta el día de hoy. Poco después, en Julio de 2020 la EPA mejoró también la interfaz gráfica de{" "}
+                  <a href="https://www.epa.gov/water-research/epanet" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>EPANET a su versión 2.2</a>
+                  , en la cual integró la última versión de la Toolkit.
                 </p>
                 <p className="mb-3">
                   Sin embargo, estos avances en EPANET no potenciaron las herramientas de ayuda para confeccionar
@@ -248,10 +245,9 @@ export function PresentacionPageContent() {
                   digitalización de este sector empieza a ser galopante.
                 </p>
                 <p>
-                  QGISRed está aún en construcción, y las prestaciones de la última versión oficial se pueden consultar
-                  en la sección CAPACIDADES, donde se detallan especialmente las últimas novedades, y las prestaciones
-                  futuras por desarrollar. Se espera completar el alcance de todos los objetivos propuestos en la hoja
-                  de ruta, para la versión libre de este producto, en el plazo máximo de un año.
+                  QGISRed está aún en construcción, y las prestaciones de la última versión oficial se pueden consultar en la sección{" "}
+                  <a href="/capacidades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CAPACIDADES</a>
+                  , donde se detallan especialmente las últimas novedades, y las prestaciones futuras por desarrollar. Se espera completar el alcance de todos los objetivos propuestos en la hoja de ruta, para la versión libre de este producto, en el plazo máximo de un año.
                 </p>
               </ToggleSection>
             </div>
@@ -500,10 +496,9 @@ export function PresentacionPageContent() {
                     el número de descargas actuales y su valoración.
                   </p>
                   <p className="mt-2">
-                    En la misma ventana tienes un enlace a la ficha de QGISRed del repositorio de QGIS, donde encontrarás
-                    algunos detalles más, y el histórico de versiones desde Septiembre 2019 en que se subió la primera
-                    versión de QGISRed al repositorio. Pinchando sobre ellas puedes ver las novedades aportadas en cada
-                    una.
+                    En la misma ventana tienes un enlace a la ficha de QGISRed del repositorio de QGIS (puedes llegar también pinchando{" "}
+                    <a href="https://plugins.qgis.org/plugins/QGISRed/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>aquí</a>
+                    ), donde encontrarás algunos detalles más, y el histórico de versiones desde Septiembre 2019 en que se subió la primera versión de QGISRed al repositorio. Pinchando sobre ellas puedes ver las novedades aportadas en cada una.
                   </p>
                 </AccordionItem>
                 <AccordionItem title="Versiones beta y actualizaciones">
@@ -568,16 +563,15 @@ export function PresentacionPageContent() {
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                QGISRed no es un producto cerrado. La parte del código de QGISRed que interacciona con las
-                funcionalidades de QGIS está desarrollada en Python y es dominio público, de acuerdo con los términos
-                de la licencia GNU GPL 2.0 de QGIS, la cual es extensible a todos los plugins distribuidos a través de
-                su repositorio oficial. Dicho código es accesible a través del portal de GitHub QGISRed y aloja todas
-                las funcionalidades que afectan a la personalización de la interfaz gráfica de QGIS tras instalar el
-                plugin, así como a ciertas capacidades de edición y selección de los elementos de la red.
+                QGISRed no es un producto cerrado. La parte del código de QGISRed que interacciona con las funcionalidades de QGIS está desarrollada en <em>Python</em> y es dominio público, de acuerdo con los términos de la licencia{" "}
+                <a href="https://docs.qgis.org/3.22/en/docs/user_manual/appendices/GNU_GPL.html" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GNU GPL 2.0 de QGIS</a>
+                , la cual es extensible a todos los plugins distribuidos a través de su repositorio oficial. Dicho código es accesible a través del portal de GitHub{" "}
+                <a href="https://github.com/qgisred/qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>QGISRed</a>
+                {" "}y aloja todas las funcionalidades que afectan a la personalización de la interfaz gráfica de QGIS tras instalar el plugin, así como a ciertas capacidades de edición y selección de los elementos de la red.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                A continuación, se muestra el contenido de la pestaña que aloja el código de QGISRed. Desde las dos
-                últimas líneas se puede acceder también a los manuales en español e inglés.
+                A continuación, se muestra el contenido de la pestaña que aloja el código de QGISRed. Desde las dos últimas líneas se puede acceder también a los{" "}
+                <a href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuales en español e inglés</a>
               </p>
 
               <ToggleSection title="Saber más sobre el proyecto de QGISRed en GitHub">
@@ -586,8 +580,10 @@ export function PresentacionPageContent() {
                   libre no es colaborativo, aunque está previsto abrirlo a la comunidad investigadora en el futuro.
                 </p>
                 <p className="mb-3">
-                  En la parte de la derecha de esta pestaña se muestra también la licencia del plugin, la última versión
-                  liberada y todas las versiones publicadas anteriormente con sus mejoras.
+                  En la parte de la derecha de esta pestaña se muestra también la licencia del plugin,{" "}
+                  <a href="/capacidades#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>la última versión liberada</a>
+                  {" "}y todas las{" "}
+                  <a href="/capacidades#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>versiones publicadas anteriormente con sus mejoras</a>
                 </p>
                 <p className="mb-3">
                   Una sección muy importante de este portal es la pestaña Issues, que está plenamente activa, y donde
@@ -607,18 +603,9 @@ export function PresentacionPageContent() {
                   de los manuales de la aplicación, tanto en español como en inglés.
                 </p>
                 <p>
-                  Sin embargo, la mayor parte del código de QGISRed está desarrollado en C# para Windows, configurando
-                  una serie de librerías denominadas GISRed.xxx.dll, las cuales son utilizadas por la interfaz gráfica.
-                  Estas librerías contienen la mayoría de los algoritmos, formularios y cuadros de diálogo propios de la
-                  aplicación, y se instalan en la carpeta …/AppData/Roaming/QGISRed/dlls/… del perfil del usuario al
-                  pulsar sobre cualquier botón u opción propia del plugin, una vez instalado. Todos los algoritmos
-                  contenidos en dicha librería han sido desarrollados desde cero, y no utilizan ninguna otra librería
-                  externa, ni las propias de QGIS, no generando así ninguna dependencia, excepto con la librería
-                  Epanet2.dll correspondiente a la Toolkit 2.2 de EPANET (Dic 2109), utilizada para lanzar las
-                  simulaciones hidráulicas y de calidad, y la librería Shaplibe.dll utilizada para leer y escribir los
-                  ficheros .shp; ambas librerías se instalan al mismo tiempo que las librerías de QGISRed. Por otras
-                  parte, los diálogos en Python se han construido utilizando la plataforma Qt, que es también de dominio
-                  público.
+                  Sin embargo, <strong>la mayor parte del código de QGISRed está desarrollado en C# para Windows</strong>, configurando una serie de librerías denominadas <strong><em>GISRed.xxx.dll</em>,</strong> las cuales son utilizadas por la interfaz gráfica. Estas librerías contienen la mayoría de los algoritmos, formularios y cuadros de diálogo propios de la aplicación, y se instalan en la carpeta …/AppData/Roaming/QGISRed/dlls/… del perfil del usuario al pulsar sobre cualquier botón u opción propia del plugin, una vez instalado. Todos los algoritmos contenidos en dicha librería han sido desarrollados desde cero, y no utilizan ninguna otra librería externa, ni las propias de QGIS, no generando así ninguna dependencia, excepto con la librería <em>Epanet2.dll</em> correspondiente a la Toolkit 2.2 de EPANET (Dic 2109), utilizada para lanzar las simulaciones hidráulicas y de calidad, y la librería <em>Shaplibe.dll</em> utilizada para leer y escribir los ficheros .shp; ambas librerías se instalan al mismo tiempo que las librerías de QGISRed. Por otras parte, los diálogos en Python se han construido utilizando la plataforma{" "}
+                  <a href="https://www.qt.io/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Qt</a>
+                  , que es también de dominio público.
                 </p>
               </ToggleSection>
             </div>
@@ -656,25 +643,25 @@ export function PresentacionPageContent() {
           <SectionHeading title="Créditos" />
 
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            El proyecto QGISRed nace por iniciativa del Grupo de Investigación en Redes Hidráulicas y Sistemas a Presión
-            (REDHISP), del Instituto de Ingeniería del Agua y Medio Ambiente (IIAMA) de la Universitat Politècnica de
-            València (UPV), como una propuesta para retomar las prestaciones de la antigua aplicación GISRed y
-            adecuarlas a un entorno de trabajo más actual, promoviendo al mismo tiempo su difusión en todo el mundo.
+            El proyecto QGISRed nace por <strong>iniciativa del{" "}
+            <a href="https://www.iiama.upv.es/iiama/es/investigacion/grupos-de-investigacion/redes-hidraulicas-y-sistemas-a-presion.html" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Grupo de Investigación en Redes Hidráulicas y Sistemas a Presión</a>
+            </strong>{" "}(REDHISP), del{" "}
+            <a href="https://www.iiama.upv.es/iiama/es/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Instituto de Ingeniería del Agua y Medio Ambiente</a>
+            {" "}(IIAMA) de la{" "}
+            <a href="http://www.upv.es/es" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Universitat Politècnica de València</a>
+            {" "}(UPV), como una propuesta para retomar las prestaciones de la antigua aplicación GISRed y adecuarlas a un entorno de trabajo más actual, promoviendo al mismo tiempo su difusión en todo el mundo.
           </p>
           <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            El proyecto arranca con una Ayuda de la Generalitat Valenciana para la contratación de Personal de Apoyo a
-            la Transferencia Tecnológica (APOTI/2018/006), por un importe efectivo de 18.300 € y duración desde Nov
-            2018 hasta Julio 2019. A partir de esa fecha el proyecto continua adelante a través del soporte económico
-            del Fondo de Sostenibilidad I+D del grupo REDHISP, alimentado con recursos propios generados a través de
-            contratos y con la colaboración de la empresa WaterPi hasta finales de 2022.
+            El proyecto arranca con una <strong>Ayuda de la Generalitat Valenciana</strong> para la contratación de Personal de Apoyo a la Transferencia Tecnológica (APOTI/2018/006), por un importe efectivo de 18.300 € y duración desde Nov 2018 hasta Julio 2019. A partir de esa fecha el proyecto continua adelante a través del soporte económico del Fondo de Sostenibilidad I+D del grupo REDHISP, alimentado con recursos propios generados a través de contratos y con la colaboración de la empresa{" "}
+            <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "bold" }}>WaterPi</a>
+            {" "}hasta finales de 2022.
           </p>
 
           <ToggleSection title="Saber más">
             <p className="mb-3">
-              La dirección del Proyecto QGISRed está a cargo del Prof. Fernando Martínez Alzamora, Catedrático de
-              Ingeniería Hidráulica de la UPV, con más de 40 años de experiencia en la modelación de sistemas
-              hidráulicos a presión. Se adjunta un breve CV, mientras que un listado de las principales publicaciones
-              puede encontrarse en su página personal de Research Gate.
+              La <strong>dirección </strong>del Proyecto QGISRed está a cargo del <strong>Prof. Fernando Martínez Alzamora,</strong> Catedrático de Ingeniería Hidráulica de la UPV, con más de 40 años de experiencia en la modelación de sistemas hidráulicos a presión. Se adjunta un breve CV, mientras que un listado de las principales publicaciones puede encontrarse en su{" "}
+              <a href="https://www.researchgate.net/profile/Fernando-Martinez-Alzamora" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>página personal</a>
+              {" "}de Research Gate.
             </p>
             <p>
               Fernando Martínez Alzamora es Ingeniero Industrial por la Universitat Politècnica de València (1978) y
@@ -698,11 +685,11 @@ export function PresentacionPageContent() {
 
           <ToggleSection title="Saber más">
             <p className="mb-3">
-              El código de QGISRed fue desarrollado hasta finales de 2022 por Néstor Lerma Elvira, Dr. Ing. Caminos por
-              la UPV, y socio fundador de la empresa WaterPi Coop. V. Gran parte de los méritos de la versión de
-              QGISRed que aquí se ofrece se deben al buen hacer de Néstor, que ha sabido conjugar sus conocimientos de
-              ingeniería con sus habilidades como programador. Puedes visitar su perfil investigador en la página
-              personal de Research Gate.
+              El <strong>código de QGISRed</strong> fue desarrollado hasta finales de 2022 por <strong>Néstor Lerma Elvira</strong>, Dr. Ing. Caminos por la UPV, y socio fundador de la empresa{" "}
+              <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>WaterPi Coop. V</a>
+              . Gran parte de los méritos de la versión de QGISRed que aquí se ofrece se deben al buen hacer de Néstor, que ha sabido conjugar sus conocimientos de ingeniería con sus habilidades como programador. Puedes visitar su perfil investigador en la{" "}
+              <a href="https://www.researchgate.net/profile/Nestor-Lerma" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>página personal</a>
+              {" "}de Research Gate.
             </p>
             <p>
               Néstor Lerma Elvira es Ingeniero de Caminos, Canales y Puertos por la Universitat Politècnica de València
@@ -719,15 +706,10 @@ export function PresentacionPageContent() {
               style={{ backgroundColor: "rgb(255, 255, 255)", border: "1px solid rgb(230,230,230)" }}
             >
               <p style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.6" }}>
-                <strong>QGISRed v1.0</strong> está registrado en los servicios de CARTA de la UPV, con el número de
-                registro S-072-2021, y licencia GNU GPL 2.0, siendo la titularidad 100 % de la UPV. La descarga y uso
-                del plugin es libre, sin requerir ningún tipo de registro previo. Sin embargo, en cualquier uso de tipo
-                profesional o educativo que se haga del plugin debe mencionarse su procedencia y proporcionar un enlace
-                a esta página web. No obstante, los usuarios que voluntariamente quieran registrarse para estar al día
-                de las novedades o contactar con los desarrolladores puede hacerlo desde nuestro formulario de
-                contacto. Aunque los resultados ofrecidos por QGISRed han sido contrastados en varias ocasiones con los
-                proporcionados por EPANET 2.2, los autores del plugin declinan cualquier responsabilidad sobre la
-                exactitud de los mismos y el uso de que se haga de ellos.
+                <strong>QGISRed v1.0</strong> está <strong>registrado en los servicios de{" "}
+                <a href="https://aplicat.upv.es/exploraupv/ficha-tecnologia/patente_software/34082?busqueda=qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CARTA de la UPV</a>
+                </strong>, con el número de registro S-072-2021, y licencia GNU GPL 2.0, siendo la titularidad 100 % de la UPV. La descarga y uso del plugin es libre, sin requerir ningún tipo de registro previo. Sin embargo, en cualquier uso de tipo profesional o educativo que se haga del plugin debe mencionarse su procedencia y proporcionar un enlace a esta página web. No obstante, los <strong>usuarios que voluntariamente quieran registrarse</strong> para estar al día de las novedades o contactar con los desarrolladores puede hacerlo desde nuestro formulario de{" "}
+                <a href="/contacto" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>contacto</a>
               </p>
             </div>
           </div>
