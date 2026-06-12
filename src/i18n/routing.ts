@@ -6,42 +6,15 @@ export const routing = defineRouting({
   localePrefix: "always",
   pathnames: {
     "/": "/",
-    "/presentacion": {
-      es: "/presentacion",
-      en: "/presentation",
-    },
-    "/capacidades": {
-      es: "/capacidades",
-      en: "/capabilities",
-    },
-    "/utilizacion": {
-      es: "/utilizacion",
-      en: "/usage",
-    },
-    "/difusion": {
-      es: "/difusion",
-      en: "/diffusion",
-    },
-    "/soporte": {
-      es: "/soporte",
-      en: "/support",
-    },
-    "/contacto": {
-      es: "/contacto",
-      en: "/contact",
-    },
-    "/aviso-legal": {
-      es: "/aviso-legal",
-      en: "/legal-warning",
-    },
-    "/politica-de-privacidad": {
-      es: "/politica-de-privacidad",
-      en: "/privacy-policy",
-    },
-    "/politica-de-cookies": {
-      es: "/politica-de-cookies",
-      en: "/cookies-policy",
-    },
+    "/presentacion": "/presentacion",
+    "/capacidades": "/capacidades",
+    "/utilizacion": "/utilizacion",
+    "/difusion": "/difusion",
+    "/soporte": "/soporte",
+    "/contacto": "/contacto",
+    "/aviso-legal": "/aviso-legal",
+    "/politica-de-privacidad": "/politica-de-privacidad",
+    "/politica-de-cookies": "/politica-de-cookies",
   },
 });
 
