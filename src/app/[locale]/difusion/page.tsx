@@ -34,7 +34,7 @@ export default async function DifusionPage({
         backgroundImage="/images/difusion-bg.jpg"
         overlayOpacity={0.5}
       />
-      <DifusionPageContent />
+      <DifusionPageContent locale={locale} />
       <Footer />
     </>
   );

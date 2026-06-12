@@ -34,7 +34,7 @@ export default async function PresentacionPage({
         backgroundImage="/images/presentacion-screenshot.jpg"
         overlayOpacity={0.6}
       />
-      <PresentacionPageContent />
+      <PresentacionPageContent locale={locale} />
       <Footer />
     </>
   );

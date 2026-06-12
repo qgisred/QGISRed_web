@@ -34,7 +34,7 @@ export default async function SoportePage({
         backgroundImage="/images/soporte-bg.jpg"
         overlayOpacity={0.6}
       />
-      <SoportePageContent />
+      <SoportePageContent locale={locale} />
       <Footer />
     </>
   );

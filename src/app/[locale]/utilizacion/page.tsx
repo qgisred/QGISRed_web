@@ -34,7 +34,7 @@ export default async function UtilizacionPage({
         backgroundImage="/images/utilizacion-bg.jpg"
         overlayOpacity={0.6}
       />
-      <UtilizacionPageContent />
+      <UtilizacionPageContent locale={locale} />
       <Footer />
     </>
   );

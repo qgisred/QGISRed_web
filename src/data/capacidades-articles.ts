@@ -1,9 +1,12 @@
 export interface CapacidadArticle {
   slug: string;
   title: string;
+  titleEn?: string;
   group: "novedades" | "capacidadesdestacadas";
   excerpt: string;
+  excerptEn?: string;
   paragraphs: string[];
+  paragraphsEn?: string[];
   image?: string;
   imageAlt?: string;
 }
@@ -13,8 +16,17 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "mejoras-en-el-almacenamiento-de-resultados-y-su-visualizacion-sobe-el-mapa",
     title: "Mejoras en el almacenamiento de resultados y su visualización sobre el mapa",
+    titleEn: "Improvements to the Storage of Results and their Display on the Map",
     group: "novedades",
     excerpt: "Hasta la versión 0.17 los resultados de una simulación se guardaban en un fichero propio desde donde se configuraban los diferentes ficheros shape asociados a cada variable.",
+    excerptEn: "Prior to version 0.17, simulation outcomes were preserved in dedicated files that generated distinct shapefiles for individual variables.",
+    paragraphsEn: [
+      "Prior to version 0.17, simulation outcomes were preserved in dedicated files that generated distinct shapefiles for individual variables. Network components appeared as rows in attribute tables, while columns represented time steps—a design that limited analytical flexibility.",
+      "Version 0.18 introduced substantial structural modifications. The system now extracts results directly from binary .out files produced by Toolkit 2.3.4, delivering faster performance and greater query adaptability.",
+      "In the revised framework, network elements continue occupying table rows, but columns now represent different quantities tied to either nodes or lines. The new structure has made it possible to generate various statistics for each element of the network, taking into account all their time-dependent values throughout the simulation.",
+      "The advancement enables statistical generation for network components by querying binary result files without requiring scenario resimulation. Users can export comprehensive results—all elements, quantities, and time points—to CSV format via the Calculate menu.",
+      "This storage and display methodology resolves numerous analytical scenarios. Comprehensive documentation covering the new on-map results analysis capabilities was planned for release.",
+    ],
     paragraphs: [
       "Hasta la versión 0.17 los resultados de una simulación se guardaban en un fichero propio desde donde se configuraban los diferentes ficheros shape asociados a cada variable. Las filas de la tabla de atributos eran los elementos de la red y sus columnas los diferentes instantes de simulación. Esta estructura resultaba finalmente demasiado rígida para desarrollar nuevas herramientas de análisis de los resultados.",
       "Por ello en la versión 0.18 se ha dado un cambio radical. Los diferentes resultados solicitados por cada herramienta de análisis se extraen ahora directamente del fichero binario de salida .out creado por la última versión de la Toolkit 2.3.4. La respuesta es ahora mucho más rápida y la flexibilidad ante cualquier tipo de consulta mucho mayor.",
@@ -26,8 +38,17 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "curvas-de-evolucion-de-las-variables-dinamicas",
     title: "Curvas de evolución de las variables dinámicas",
+    titleEn: "Time Series of Dynamic Variables",
     group: "novedades",
     excerpt: "Una de las prestaciones que más se echaba en falta en QGISRed era poder mostrar la evolución en el tiempo de cualquiera de las variables dinámicas contenidas en los resultados.",
+    excerptEn: "One of the most requested features in QGISRed was the ability to visualize how dynamic variables change over time.",
+    paragraphsEn: [
+      "One of the most requested features in QGISRed was the ability to visualize how dynamic variables change over time. A new \"Time Series\" option in the Calculate menu addresses this need by opening a dedicated panel that displays temporal evolution curves.",
+      "Clicking on any element highlights it on the map and automatically displays the time-series curve for the associated measure in the results panel. Users can switch between elements to refresh the visualization.",
+      "The tool supports displaying multiple curves simultaneously. When variables share the same magnitude, they reference a single automatically-scaled axis. A legend identifies each curve with its name and assigned color, while all selected elements are highlighted on the map. A slider enables users to view all curve values at a specific time point.",
+      "For variables at different scales, the system uses a second vertical axis on the right side. This enables meaningful comparisons such as the level of a tank with the status of the pump supplying it, or the pressure at a node against its demand.",
+      "The graph panel offers customization options for appearance and allows data export. Numerical values can also be displayed in table format for detailed analysis.",
+    ],
     paragraphs: [
       "Una de las prestaciones que más se echaba en falta en QGISRed era poder mostrar la evolución en el tiempo de cualquiera de las variables dinámicas contenidas en los resultados. Se trata de una consulta muy útil y habitual, ofrecida por la mayoría de las aplicaciones de análisis de redes.",
       "Para ello se ha añadido una nueva opción en el menú Calcular denominada Curvas Temporales, que abre un estado de la aplicación destinado a mostrar las diferentes curvas de evolución temporal. Estas se muestran en un nuevo panel propio, el cual por defecto se apila debajo del mapa.",
@@ -39,8 +60,16 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "confeccion-de-mapas-tematicos",
     title: "Confección de mapas temáticos",
+    titleEn: "Creation of Thematic Maps",
     group: "novedades",
     excerpt: "Si queremos ver en el mapa los valores de una determinada variable calculada para todos los elementos de la red en un instante dado, clasificados por colores o bien como etiquetas, disponemos del panel de resultados.",
+    excerptEn: "Thematic maps display static physical properties of network elements categorized by color ranges, complementing dynamic results maps.",
+    paragraphsEn: [
+      "If we want to display on the map the values of a static physical property of any element, classified by color ranges, this is the objective of thematic maps, which complement the results maps.",
+      "Users can access thematic map creation through the Queries menu, where they select the property to display on the map, with options sorted by element type. These layers appear in a subgroup within the Queries group and overlay the Inputs group layers.",
+      "A default classification is automatically set according to the chosen property, which can be edited in the QGISRed Legend Editor to make it permanent. The attribute table then shows only the ID and selected property while hiding others.",
+      "A key feature is that thematic maps share files with input layers, so any edits to the data in these layers are automatically reflected in the thematic maps. However, direct editing of thematic map layers is not allowed to maintain standardized editing procedures.",
+    ],
     paragraphs: [
       "Si queremos ver en el mapa los valores de una determinada variable calculada para todos los elementos de la red en un instante dado, clasificados por colores o bien como etiquetas, disponemos del panel de resultados para gestionar esta información. Estos valores además son dinámicos y cambian en el tiempo. Pero ¿y si lo que queremos mostrar en el mapa son los valores estáticos de una determinada propiedad física de cualquier elemento, clasificada por rangos de colores? Este es el objetivo de los mapas temáticos, que complementan a los mapas de resultados.",
       "La nueva opción alojada en el menú de Consultas abre un diálogo desde el que podemos elegir la propiedad a mostrar en el mapa, las cuales se muestran clasificadas por el tipo de elemento. Desde este diálogo se pueden activar o desactivar los diferentes mapas temáticos.",
@@ -51,8 +80,17 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "propiedades-de-los-elementos",
     title: "Propiedades de los elementos",
+    titleEn: "Properties of the Elements",
     group: "novedades",
     excerpt: "Los mapas temáticos y el panel de resultados permiten mostrar sobre el mapa los valores de cualquier propiedad elegida para todos los elementos de la red, o bien clasificarlos por colores.",
+    excerptEn: "A new feature called Element Properties has been integrated into QGISRed's Queries menu.",
+    paragraphsEn: [
+      "A new feature called Element Properties has been integrated into QGISRed's Queries menu. This tool allows users to examine comprehensive property information for any selected network element by clicking on it after activating the option.",
+      "When an element is selected, a dedicated window appears in the right-hand panel, typically below the results section. The window displays the selected feature's type and ID in its title bar, followed by Label and Description fields if available.",
+      "The properties window contains two tabs. The first tab shows all properties of the selected feature in a predefined format with corresponding units. Property availability depends on the feature type and whether a quality model has been established.",
+      "When simulation results exist, a second tab (highlighted in yellow) appears displaying results specific to the selected element. Quality values only display if a quality model was previously defined. The interface integrates with the time navigator in the results panel.",
+      "This Element Properties feature forms part of the broader QGISRed Element Explorer, working alongside element search by ID functionality to help users explore interconnected network elements.",
+    ],
     paragraphs: [
       "Los mapas temáticos y el panel de resultados permiten mostrar sobre el mapa los valores de cualquier propiedad elegida para todos los elementos de la red, o bien clasificarlos por colores. Pero ¿y si queremos ver todas las propiedades para un elemento elegido?",
       "En el menú de Consultas de QGISRed se ha añadido una nueva opción denominada Propiedades de los elementos, con este fin. Tras seleccionar esta opción y pinchar sobre cualquier elemento se abrirá una nueva ventana, apilada en el panel lateral derecho, normalmente debajo del panel de resultados, para mostrar las propiedades.",
@@ -65,8 +103,18 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "consultas-por-propiedades",
     title: "Consultas por Propiedades",
+    titleEn: "Queries by Properties",
     group: "novedades",
     excerpt: "A través de los mapas temáticos podemos mostrar sobre el mapa el valor de una determinada propiedad para todos sus elementos. Pero si queremos saber qué elementos cumplen un determinado criterio...",
+    excerptEn: "The Property Queries tool enables users to search for network elements meeting specific criteria rather than inspecting them visually.",
+    paragraphsEn: [
+      "Thematic maps let us display on the network map the value of a certain property for all its elements. The results panel does the same for simulation results. The element explorer shows all properties of a selected element. But if we want to know which elements meet a certain condition, we would have to review them all visually.",
+      "The Property Queries tool allows precisely showing elements that meet one or more criteria.",
+      "A new option in the Queries menu opens a new window in the right side panel, which remains open until the user closes it, allowing alternating between queries and any other action.",
+      "First, select the element type to search. Then choose the property to query. Specify the condition to meet, which depends on whether the property is numerical or text, and finally the threshold value to compare.",
+      "When the query is run, the elements that meet the condition will be highlighted on the map. The bottom of the window shows the number of matching elements and statistics if the variable is numerical. Statistics can be exported to a CSV file.",
+      "The tool allows combining multiple criteria using different properties. For dynamic properties from simulation results, the corresponding time is shown and selected elements update as you navigate through time.",
+    ],
     paragraphs: [
       "A través de los mapas temáticos podemos mostrar sobre el mapa de la red el valor de una determinada propiedad para todos sus elementos. Lo mismo puede decirse para los resultados de una simulación, usando el panel de resultados para elegir la variable a observar en el mapa. Finalmente, el explorador de elementos nos ofrece el valor de todas las propiedades de un elemento seleccionado, incluidos los resultados de la simulación para dicho elemento.",
       "Pero si queremos saber qué elementos cumplen un determinado criterio o condición nos veríamos obligados a revisarlos todos visualmente. La herramienta de Consultas por propiedades permite mostrar precisamente los elementos que cumplen uno o más criterios.",
@@ -80,8 +128,22 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "editor-de-leyendas",
     title: "Editor de leyendas",
+    titleEn: "Legends Editor",
     group: "novedades",
     excerpt: "Una de las prestaciones más importantes de QGIS es su capacidad para editar los estilos de las capas, y generar mapas muy variados. En QGISRed se ha creado una nueva opción para Editar las Leyendas.",
+    excerptEn: "One of QGIS's most important features is its ability to edit layer styles. QGISRed has introduced a Legends Editor with a practical, streamlined set of options.",
+    paragraphsEn: [
+      "One of QGIS's most important features is its ability to edit layer styles and generate a wide variety of maps. However, the sheer number of options available can be overwhelming.",
+      "To simplify matters, QGISRed has introduced a new option in the Project menu for editing legends, offering a more limited yet practical set of options, backed by powerful algorithms. Styles edited using the QGISRed Legend Editor are compatible with those edited in QGIS, and vice versa.",
+      "The QGISRed Legend Editor opens a dialogue box where you can essentially modify the classification ranges of the variables and the number of classes, the colour assigned to each class, and the size of the symbol used for each one.",
+      "Firstly, you must select the layer whose legend you wish to edit. Layers are displayed grouped according to existing layer groups and subgroups. The editor covers all layers managed by QGISRed, housed in the Inputs, Queries, Issues and Results groups.",
+      "Once the layer has been selected, the system determines whether the classification variable is numerical or text-based. In the first case, classification is by value ranges; in the second case by enumerated values.",
+      "The number of classes is variable and can be increased or decreased. The colour, size, range of values and legend for each class can be modified manually, although with certain restrictions.",
+      "For numerical variables, there is a wizard to classify the ranges automatically by equal intervals, equal percentiles, natural breaks, common breaks or based on the standard deviation.",
+      "Regarding symbol size, it can be the same for all classes, or it can increase gradually, quadratically or exponentially to highlight certain classes more prominently.",
+      "As for colours, the wizard allows assigning the same colour to all classes, generating each class colour randomly, interpolating between a gradient, or choosing from a predefined palette.",
+      "For layers in the Inputs group, only one class is available; you can only modify the colour and size. Once the legend has been edited, it can be displayed on the map or saved for use in the current project only or in all new projects.",
+    ],
     paragraphs: [
       "Una de las prestaciones más importantes de QGIS es su capacidad para editar los estilos de las capas, y generar mapas muy variados. Sin embargo la cantidad de opciones ofrecida es abrumadora.",
       "Para simplificar, en QGISRed se ha creado una nueva opción en el menú Project para Editar las Leyendas con unas opciones más limitadas y prácticas, pero asistidas por algoritmos potentes. En cualquier caso, los estilos editados con el Editor de Leyendas de QGISRed son compatibles con los editados desde QGIS y viceversa.",
@@ -98,8 +160,17 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "identificador-de-elementos-a-traves-de-su-id",
     title: "Identificador de elementos a través de su ID",
+    titleEn: "Identifying Elements by their ID",
     group: "novedades",
     excerpt: "QGISRed dispone ahora de una herramienta para identificar directamente un elemento a través de su Id, resaltándolo en el mapa y mostrando todos los elementos conectados.",
+    excerptEn: "QGISRed now has a tool to identify any element directly through its ID, highlighting it on the map and showing all connected elements.",
+    paragraphsEn: [
+      "When viewing network maps, elements can overlap despite being distinct. QGISRed, like EPANET, requires a unique identifier for all linear elements and nodes. This identifier is also used to exchange information between applications or to associate different data with the same element.",
+      "QGISRed now has a tool to identify any element directly through its ID. First select the element type, including multiple demands, sources and DT elements, then the IDs of all elements of that type or those matching a filter are displayed.",
+      "The selected element is highlighted on the map, with automatic view adjustment if needed.",
+      "A connected window also shows the IDs of all elements connected to the found element, including DT elements. Clicking once on any connected element highlights it on the map; clicking twice makes it the new search target, allowing navigation through adjacent elements.",
+      "Once the target element is identified, all its properties can be viewed. The reverse operation is also possible: click a map element and view its ID, properties, and connected element IDs.",
+    ],
     paragraphs: [
       "Cuando vemos el mapa de una red, fácilmente diferenciamos unos elementos de otros. Pero a veces algunos elementos pueden superponerse, siendo en realidad distintos. La única forma de diferenciarlos definitivamente es asignándoles un identificador único, al menos dentro de su tipo. QGISRed, al igual que EPANET, exige un identificador único para todos los elementos lineales, y también para los nodales. Este identificador se usa también para intercambiar información entre aplicaciones o para asociar diferentes datos a un mismo elemento.",
       "QGISRed dispone ahora de una herramienta para identificar directamente un elemento a través de su Id. Primeramente se elige el tipo de elemento, incluidas demandas múltiples, fuentes y elementos del GD, y a continuación se muestran los Id de todos los elementos de ese tipo o los que responden a un determinado filtro.",
@@ -111,8 +182,14 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "otras-y-depuracion-de-errores",
     title: "Otras y depuración de errores",
+    titleEn: "Miscellaneous and Debugging",
     group: "novedades",
     excerpt: "Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia y continúa depurando las prestaciones ofrecidas por QGISRed en versiones anteriores.",
+    excerptEn: "In addition to all of the above, version 0.18 includes many other minor improvements and continues to refine previous QGISRed features.",
+    paragraphsEn: [
+      "Version 0.18 of QGISRed introduces numerous enhancements beyond its core capabilities. New buttons for moving and exporting projects, and new options for renaming projects streamline workflow organization. The system now incorporates EPANET 2.3.5. A Status Report tab has been added to the results panel. The Demand Builder received algorithmic revisions. The release achieves compatibility with QGIS 4.0 and resolves an issue when loading field data related to the decimal separator.",
+      "For a complete list of all improvements and corrections made in version 0.18, visit the Version History section below.",
+    ],
     paragraphs: [
       "Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia. También se han continuado depurando las prestaciones ofrecidas por QGISRed en versiones anteriores.",
       "Si quieres conocer con más detalle la totalidad de mejoras y correcciones realizadas en la versión 0.18, visita más abajo el registro de todos los cambios, en la sección Histórico de versiones.",
@@ -123,8 +200,15 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "incorporacion-de-las-valvulas-de-corte-al-modelo-de-qgisred",
     title: "Incorporación de las Válvulas de Corte al Modelo de QGISRed",
+    titleEn: "Incorporation of Isolation Valves into the QGISRed Model",
     group: "capacidadesdestacadas",
     excerpt: "Si quieres utilizar el modelo de la red para analizar cómo se ven afectados los flujos al seccionar la red por las válvulas de corte, tendrás que incorporar antes al modelo todas las válvulas de corte existentes.",
+    excerptEn: "If you want to use the network model to analyse how flows are affected when sectioning the network by isolation valves, you must first include all isolation valves in the model.",
+    paragraphsEn: [
+      "If you want to use the network model to analyse how flows are affected when sectioning the network by isolation valves, either to permanently separate zones or to isolate a zone while a maintenance task is performed temporarily, you must first include all isolation valves existing in the network in the model.",
+      "In QGISRed, isolation valves are modelled separately from control valves and are not part of the hydraulic model so as not to flood the model with valves that are only used sporadically. These valves have a different symbol to distinguish them from control valves. However, they retain their full functionality and allow zones to be isolated as if they were part of the model. When a zone is disconnected from the supply sources by closing the valves, its demands are cancelled.",
+      "In QGISRed it is possible to create isolation valves, edit their layout and properties, delete them or import them from shape files.",
+    ],
     image: "/images/capacidades/Diapositiva12.png",
     imageAlt: "Válvulas de corte en QGISRed",
     paragraphs: [
@@ -136,8 +220,15 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "soporte-a-las-nuevas-opciones-de-analisis-de-epanet-2-2",
     title: "Soporte a las Nuevas Opciones de Análisis de EPANET 2.2",
+    titleEn: "Support for New EPANET 2.2 Analysis Options",
     group: "capacidadesdestacadas",
     excerpt: "Una de las mayores aportaciones de la versión 2.2 de la librería de EPANET es la posibilidad de considerar las demandas dependientes de la presión (PDA).",
+    excerptEn: "One of the most important contributions of EPANET 2.2 is the ability to consider pressure-dependent demands (PDA).",
+    paragraphsEn: [
+      "One of the most important contributions of version 2.2 of the EPANET library is the ability to consider pressure-dependent demands (PDA), as opposed to considering them fixed (DDA), to approximate network behaviour under insufficient pressures more closely to reality. However, the parameters that define such behaviour—the required pressure, the minimum pressure, and the pressure exponent—are currently set uniquely and globally for all nodes in the Analysis Options.",
+      "In QGISRed these options can now be set. In addition, all other analysis options have been revised so they can be interpreted correctly. Only the statistical options for displaying maximum, minimum or range values still need to be activated.",
+      "QGISRed also provides the option to allow tanks to overflow when full, another new feature of Toolkit 2.2.",
+    ],
     image: "/images/capacidades/Diapositiva16-1.png",
     imageAlt: "Opciones de análisis EPANET 2.2 en QGISRed",
     paragraphs: [
@@ -149,8 +240,15 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "asignacion-de-demandas-a-los-nudos-por-sectores-y-desde-los-puntos-de-consumo",
     title: "Asignación de Demandas a los Nudos por Sectores y desde los Puntos de Consumo",
+    titleEn: "Allocation of Demand to Nodes by Sectors and from Consumption Points",
     group: "capacidadesdestacadas",
     excerpt: "QGISRed ofrece dos herramientas muy potentes para asignar la demanda a los nudos de forma masiva, a partir de los consumos declarados por sectores, o bien a partir de la distribución de los puntos de consumo.",
+    excerptEn: "QGISRed offers two powerful tools for mass demand allocation to nodes, based on sector consumption data or service point distribution.",
+    paragraphsEn: [
+      "When dealing with numerous nodes, assigning demands individually proves impractical, as each node typically requires different allocations based on its served population.",
+      "QGISRed offers two powerful tools for mass demand allocation to nodes, based on sector consumption data or service points identified through methods like GPS meter coordinates. The system employs spatial analysis to identify the nodes that fall within each demand sector or the node closest to each service point.",
+      "Users can refine eligibility by filtering nodes based on pipe diameter. For sector-based allocation, the system distributes consumption proportionally according to pipe length. The platform allows users to delete all current demands and try again, providing flexibility during planning phases.",
+    ],
     image: "/images/capacidades/Diapositiva14-1.png",
     imageAlt: "Asignación de demandas en QGISRed",
     paragraphs: [
@@ -162,8 +260,15 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "mejoras-en-la-navegacion-desde-el-editor-de-propiedades",
     title: "Mejoras en la Navegación desde el Editor de Propiedades",
+    titleEn: "Improved Navigation from the Property Editor",
     group: "capacidadesdestacadas",
     excerpt: "El Editor de Propiedades de QGISRed permite modificar las propiedades del elemento seleccionado, cualquiera que sea su naturaleza, sin necesidad de tener la capa correspondiente previamente seleccionada.",
+    excerptEn: "The QGISRed Properties Editor enables users to modify element properties without pre-selecting corresponding layers.",
+    paragraphsEn: [
+      "The QGISRed Properties Editor enables users to modify element properties without pre-selecting corresponding layers, unlike QGIS's Info button. Users can click different network elements to update the window contents or search elements by ID without closing it.",
+      "A significant enhancement addresses previously missing functionality: the ability to browse related items without closing the window, and also to keep a list of recently visited items to return to them when needed. The spatial analysis identifies connections between pipes, nodes, valves, pumps, and other network components.",
+      "An important caveat: property changes remain unconsolidated until users close the Property Editor window by selecting Accept. Closing without accepting discards all modifications made since opening the window.",
+    ],
     image: "/images/capacidades/Diapositiva15.png",
     imageAlt: "Editor de Propiedades QGISRed",
     paragraphs: [
@@ -175,8 +280,14 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "nueva-herramienta-para-cambiar-el-estado-de-los-elementos-y-simbolizacion-segun-su-estado",
     title: "Nueva Herramienta para cambiar el Estado de los Elementos y Simbolización según su Estado",
+    titleEn: "New Tool for Changing the Status of Elements and Symbolisation According to their Status",
     group: "capacidadesdestacadas",
     excerpt: "Una de las operaciones más habituales a la hora de modificar un escenario de simulación es cambiar el estado de algún elemento de la red, sea de regulación o no.",
+    excerptEn: "One of the most common operations when modifying a simulation scenario is changing the status of network elements.",
+    paragraphsEn: [
+      "One of the most common operations in modifying a simulation scenario is to change the status of the network elements, whether they are regulating elements or not, from open to closed or vice versa.",
+      "To facilitate this task, QGISRed includes a specific tool that changes the status of elements by touching them, without having to open the Property Editor to modify it. In addition, all elements now have a colour depending on their status and change when the status is modified, including the stroke in the case of closed pipes. The tool is also applicable to service connections and shut-off valves. In the case of control valves, they go through the three possible statuses in a rotating shift.",
+    ],
     image: "/images/capacidades/Diapositiva13-1.png",
     imageAlt: "Herramienta de estados en QGISRed",
     paragraphs: [
@@ -187,8 +298,14 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "pequenas-mejoras-y-depuracion-de-errores",
     title: "Pequeñas mejoras y depuración de errores",
+    titleEn: "Minor Improvements and Bug Fixes",
     group: "capacidadesdestacadas",
     excerpt: "Además de todo lo anterior, en la versión 0.17 se ha continuado depurando las prestaciones ya ofrecidas por QGISRed.",
+    excerptEn: "In addition to all of the above, version 0.17 has continued to refine the features already offered by QGISRed.",
+    paragraphsEn: [
+      "In addition to all of the above, version 0.17 continues to refine existing QGISRed features. Nodes with assigned base demand are now filled in orange. The symbol of contaminant sources changes color according to their type. All layers display the number of elements they contain. Hovering the mouse over any element in the active layer displays its ID. Various corrections have been made in reading the INP file.",
+      "For a complete list of all minor improvements and corrections in version 0.17, visit the Version History section below.",
+    ],
     image: "/images/capacidades/qgis-bin_s5ZfejsaKh.png",
     imageAlt: "Mejoras versión 0.17 QGISRed",
     paragraphs: [
@@ -199,8 +316,15 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "epanet-2-3-ya-esta-integrado",
     title: "Integración de la versión 2.3 de la Toolkit de EPANET",
+    titleEn: "Integration of EPANET Toolkit Version 2.3",
     group: "capacidadesdestacadas",
     excerpt: "La versión 2.2 de la Toolkit de EPANET se lanzó en 2019 y fue incorporada a QGISRed en sus primeras versiones. Finalmente, en Julio de 2025 se lanzó la nueva versión 2.3.",
+    excerptEn: "The EPANET Toolkit version 2.2 was released in 2019 and incorporated into QGISRed in its early versions. Finally, in July 2025, the new version 2.3 was released.",
+    paragraphsEn: [
+      "The EPANET Toolkit version 2.2 was released in 2019 and was incorporated into QGISRed in its early versions. Over the following five years, many improvements were made to the Toolkit, although its consolidation was slow. Finally, in July 2025, the new version 2.3 was released. It has subsequently been corrected four times, the most recent being version 2.3.4, released in February 2026.",
+      "Among the improvements introduced in the new version 2.3 of the Toolkit: support for defining pipe leaks as a function of pressure, introduction of a new PCV valve type, emitters can now behave as uni- or bidirectional elements, pressures can be expressed in up to four different units, outflows at nodes can now be broken down into demanded/supplied/deficit/emitted/leakage, control rules can now be enabled or disabled, and the Status Report now includes a flow and mass balance.",
+      "The new QGISRed v0.17 incorporates the most recent version 2.3.4 of the Toolkit, allowing users to benefit from all the improvements introduced in the calculation engine. However, improvements that affect data or results will be progressively incorporated in future versions of QGISRed.",
+    ],
     image: "/images/capacidades/epanet2.3.png",
     imageAlt: "EPANET 2.3 integrado en QGISRed",
     paragraphs: [
@@ -212,8 +336,16 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "gestor-de-proyectos-renovado",
     title: "Nuevas opciones del Gestor de Proyectos",
+    titleEn: "New Options in the Project Manager",
     group: "capacidadesdestacadas",
     excerpt: "El Gestor de Proyectos de QGISRed es una de las herramientas más utilizadas por los usuarios, pues fácilmente permite pasar de un escenario a otro. La versión 0.17 viene a completar varias opciones muy demandadas.",
+    excerptEn: "The QGISRed Project Manager has received several enhancements in version 0.17 that streamline project organization and sharing.",
+    paragraphsEn: [
+      "The QGISRed Project Manager is one of the most used tools by QGISRed users, as it easily allows switching between scenarios. Version 0.17 completes several much-requested options.",
+      "Users can now click on the header of any column in the project list table to sort in ascending or descending order. Additionally, arrow buttons enable moving selected projects up or down, with the new arrangement persisting after closing the dialog.",
+      "A rename function allows changing project names, which automatically updates associated data filenames. The Remove button enables complete deletion of projects from disk after confirmation.",
+      "Finally, it is now possible to export an entire QGISRed project into a compressed .zip file and then import it from another machine, greatly facilitating collaboration between users.",
+    ],
     image: "/images/capacidades/projectManager.png",
     imageAlt: "Gestor de Proyectos QGISRed renovado",
     paragraphs: [
@@ -226,8 +358,15 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "nuevas-opciones-en-el-gestor-de-escenarios",
     title: "Gestión de escenarios compatibles con EPANET",
+    titleEn: "Scenario Manager Compatible with EPANET",
     group: "capacidadesdestacadas",
     excerpt: "El Gestor de Escenarios de QGISRed permite modificar en bloque los valores de un determinado parámetro del modelo. En la nueva versión los escenarios pueden exportarse/importarse siguiendo los mismos formatos usados por EPANET.",
+    excerptEn: "The QGISRed Scenario Manager allows bulk modification of model parameters. In the new version, scenarios can be exported/imported using the same formats as EPANET.",
+    paragraphsEn: [
+      "EPANET includes an option to export and import scenarios, allowing export of pipe diameters and roughness, node demands, initial quality, reaction coefficients, and control rules into different text files, which can later be edited and reimported.",
+      "The QGISRed Scenario Manager also allows bulk modification of a given model parameter: diameters for design tasks, roughness or elevations for calibration tasks, demands for planning tasks, reaction coefficients and initial quality for water quality modelling.",
+      "In the new version of QGISRed, scenarios can also be exported and imported using the same formats as EPANET, ensuring full compatibility between EPANET and QGISRed. Additionally, the new version includes the possibility of resetting current values for diameters, roughness, and elevations to configure new scenarios from scratch.",
+    ],
     image: "/images/capacidades/epanetScenarios.png",
     imageAlt: "Gestión de escenarios compatibles con EPANET",
     paragraphs: [
@@ -239,8 +378,16 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "transfiere-estados-y-calidad-para-encadenar-simulaciones-sucesivas",
     title: "Encadenamiento de simulaciones sucesivas",
+    titleEn: "Chaining Successive Simulations",
     group: "capacidadesdestacadas",
     excerpt: "La versión 0.17 de QGISRed permite encadenar simulaciones desde el Gestor de Escenarios, exportando el estado final de los elementos de regulación e importándolo como estado inicial para la etapa siguiente.",
+    excerptEn: "Version 0.17 of QGISRed allows chaining simulations from the Scenario Manager, exporting the final state of regulation elements and importing it as the initial state for the next stage.",
+    paragraphsEn: [
+      "As more real data becomes available, we have the opportunity to better adjust models to reality, and in practice no two days are the same. What if we could reproduce an entire year with the model? We could execute simulations in stages, for example monthly, and chain the end of one simulation with the beginning of the next seamlessly.",
+      "The key is how to chain the end of one simulation with the beginning of the next while maintaining full continuity in the results. This requires considering that the final state of regulation elements after a simulation period is not necessarily the same as the initial state to be declared for the next period.",
+      "Version 0.17 of QGISRed now allows chaining simulations from the Scenario Manager by exporting the state and setpoints of regulation elements at the end of a simulation and reimporting them as the initial state for the next stage.",
+      "For water quality models, chaining simulations requires imposing the node qualities at the end of one simulation period as the initial qualities for the next period. This can also be done from the Scenario Manager in the new version of QGISRed.",
+    ],
     image: "/images/capacidades/simulaciones.png",
     imageAlt: "Encadenamiento de simulaciones en QGISRed",
     paragraphs: [
@@ -253,8 +400,16 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "visualizacion-de-hasta-13-estados-en-tuberias-valvulas-y-bomas",
     title: "Identificación de hasta 13 estados en tuberías, bombas y válvulas",
+    titleEn: "Identification of up to 13 Statuses in Pipes, Pumps and Valves",
     group: "capacidadesdestacadas",
     excerpt: "Aunque EPANET diferencia hasta 8 estados distintos, en QGISRed se distinguen hasta 13 estados que completan las diferentes situaciones que pueden darse en tuberías, bombas y válvulas.",
+    excerptEn: "Although EPANET distinguishes up to 8 different states, QGISRed identifies up to 13 states covering all possible situations for pipes, pumps and valves.",
+    paragraphsEn: [
+      "Do not confuse the initial state of an element declared in EPANET with its state at a given moment obtained as a result of calculations.",
+      "The initial state of a transport element (pipe, pump, valve) can be Open, Closed, or Active (the latter applicable to hydraulic valves). However, the final state of these same elements can admit more situations.",
+      "The EPANET Toolkit 2.3 API returns only two states (Open and Closed), extended to four in the case of pumps, but the Toolkit itself reports up to eight states in the binary output file. QGISRed identifies up to 13 states that cover all possible situations. For example, if a valve is temporarily closed, QGISRed differentiates the cause depending on its type and the imposed setpoint.",
+      "These states are reported in a new column in the results table and can be graphically visualized as an additional selectable magnitude for line elements, displayed in different colors according to a legend.",
+    ],
     image: "/images/capacidades/statuses.png",
     imageAlt: "13 estados de tuberías y válvulas en QGISRed",
     paragraphs: [
@@ -267,8 +422,16 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "nueva-herramienta-para-la-exploracion-de-segmentos-aislados",
     title: "Nueva herramienta para la identificación de segmentos aislados",
+    titleEn: "New Isolated Segment Exploration Tool",
     group: "capacidadesdestacadas",
     excerpt: "Una de las prestaciones más solicitadas en un software de simulación es la determinación de las válvulas que hay que cerrar para aislar un segmento de la red en torno a un punto donde ha producido una avería.",
+    excerptEn: "One of the most requested features in simulation software is the determination of which valves must be closed to isolate a network segment around a failure point.",
+    paragraphsEn: [
+      "One of the most requested features in urban water distribution network simulation software is the determination of which valves must be closed to isolate a network segment around a failure point, or where works are to be carried out to extend service. This is also known as identifying the isolation polygon or shut-off area.",
+      "These operations involve isolation or shut-off valves, which are essentially on/off valves. In QGISRed, they are considered as complementary elements that do not split the pipe and therefore do not form part of the calculation model, but they do have the ability to act on the network.",
+      "The new version 0.17 of QGISRed already allows declaring a failure or intervention at a point in the network and then exploring its surroundings to determine which shut-off valves must be closed to isolate the affected area. The exploration takes into account both shut-off valves and regulation valves included in the model.",
+      "Finally, the map highlights the pipe sections that would be taken out of service as a result of the shut-off, up to the position of the closed valves, as well as the corresponding service connections if they have been previously digitised.",
+    ],
     image: "/images/capacidades/isolatedSegments-1.png",
     imageAlt: "Identificación de segmentos aislados en QGISRed",
     paragraphs: [
@@ -281,8 +444,14 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "depuracion-y-mejora-de-prestaciones-de-versiones-anteriores",
     title: "Depuración y Mejora de Prestaciones Anteriores",
+    titleEn: "Debugging and Enhancement of Previous Features",
     group: "capacidadesdestacadas",
     excerpt: "La versión 0.16 ha mejorado algunos aspectos de las versiones anteriores, como la barra de tiempos, el orden y clasificación de algunas opciones de menú, y nuevos campos en la importación de shapes.",
+    excerptEn: "Version 0.16 improved several aspects of previous versions, including the timeline feature, menu organization, and new fields during shape imports.",
+    paragraphsEn: [
+      "In addition to all of the above, version 0.16 improved several aspects of previous versions, including the timeline feature and the dropdown menu for viewing results observation timing, the order and classification of some menu options, and new fields added during shape imports.",
+      "For a complete list of all the minor improvements introduced in version 0.16 compared to earlier versions, visit the Version History section.",
+    ],
     image: "/images/capacidades/Diapositiva11.png",
     imageAlt: "Mejoras versión 0.16 QGISRed",
     paragraphs: [
@@ -293,8 +462,15 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "identificacion-de-los-sectores-de-demanda-dma",
     title: "Identificación de los Sectores de Demanda (DMA)",
+    titleEn: "Identification of Demand Sectors (DMA)",
     group: "capacidadesdestacadas",
     excerpt: "A partir de la versión 0.15 ya se pueden declarar las válvulas de corte superpuestas a las tuberías, y con la versión 0.16 también se pueden declarar caudalímetros y contadores para identificar sectores de demanda.",
+    excerptEn: "Starting with version 0.15, isolation valves can be declared on pipes, and version 0.16 introduced the ability to add flow meters to identify demand sectors.",
+    paragraphsEn: [
+      "Starting with version 0.15, isolation valves can be declared on pipes or nodes, and version 0.16 introduced the ability to add flow meters using the Add Meter tool.",
+      "Choose strategic pipes in your study network where isolation valves will separate sectors, create these valves and close them with the Touch tool. Then place flow meters on larger-diameter pipes. When invoking the Obtain Demand Sectors tool, the identified DMAs appear in the Queries group, each in a different color.",
+      "QGISRed does not currently offer automatic sectorization based on specific criteria, nor much information associated with each sector. However, this represents significant progress for complex networks, where ensuring entry and exit points align only with meter locations proves challenging.",
+    ],
     image: "/images/capacidades/Diapositiva10-1.png",
     imageAlt: "Sectores de Demanda DMA en QGISRed",
     paragraphs: [
@@ -306,8 +482,16 @@ export const capacidadesArticles: CapacidadArticle[] = [
   {
     slug: "incorporacion-de-los-medidores-al-modelo",
     title: "Incorporación de los Medidores al Modelo",
+    titleEn: "Adding Meters to the Model",
     group: "capacidadesdestacadas",
     excerpt: "Una de las características más importantes que se le deben exigir al modelo hidráulico de una red en explotación es que reproduzca fielmente la realidad. En QGISRed los medidores son tratados como objetos con sus propias propiedades.",
+    excerptEn: "One of the most important features required for the hydraulic model of a network in service is that it faithfully represents reality. In QGISRed, meters are treated as objects with their own properties.",
+    paragraphsEn: [
+      "One of the most important features required for the hydraulic model of a network in service is that it faithfully represents reality. In QGISRed, meters are treated as objects with their own properties, unlike EPANET, where measurements are directly linked to elements by their ID.",
+      "Each meter is spatially associated with a model element (pipe, tank, junction, etc.) according to its type and may have one or more associated signals. Each signal, in addition to its properties, is associated with a time series that stores the field data. This is a more complex structure than in EPANET, but much closer to the reality of the installations.",
+      "The new version 0.16 of QGISRed allows declaring up to 10 different types of meters (pressure meters, flow meters, energy analysers, etc.) and automatically linking them to network elements according to predefined rules. In addition, several signals can be attached to each meter and the associated field data uploaded in various formats.",
+      "By linking the meters to field data, they can already be exported in EPANET format for comparison with computed values and calibration reports. In the future, QGISRed will also be able to generate more complete calibration reports and perform all kinds of analyses with the data.",
+    ],
     image: "/images/capacidades/Diapositiva8-1.png",
     imageAlt: "Medidores en el modelo QGISRed",
     paragraphs: [

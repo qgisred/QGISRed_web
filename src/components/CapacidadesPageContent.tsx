@@ -1,5 +1,6 @@
 import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
+import { capacidadesArticles } from "@/data/capacidades-articles";
 
 interface SectionHeadingProps {
   title: string;
@@ -53,9 +54,10 @@ interface CapacidadCardProps {
   href: string;
   imageSrc?: string;
   imageAlt?: string;
+  readMoreText?: string;
 }
 
-function CapacidadCard({ title, description, href, imageSrc, imageAlt }: CapacidadCardProps) {
+function CapacidadCard({ title, description, href, imageSrc, imageAlt, readMoreText = "Leer más" }: CapacidadCardProps) {
   return (
     <div
       className="flex flex-col transition-shadow duration-200 hover:shadow-md"
@@ -86,7 +88,7 @@ function CapacidadCard({ title, description, href, imageSrc, imageAlt }: Capacid
           className="inline-flex items-center gap-1 font-medium transition-colors duration-150"
           style={{ fontSize: "12px", color: "rgb(95, 189, 211)" }}
         >
-          Leer más <span style={{ fontSize: "14px" }}>»</span>
+          {readMoreText} <span style={{ fontSize: "14px" }}>»</span>
         </Link>
       </div>
     </div>
@@ -628,128 +630,160 @@ const historico = [
   },
 ];
 
-export function CapacidadesPageContent() {
+export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
+  const isEn = locale === "en";
+  const readMoreText = isEn ? "Read more" : "Leer más";
+  const comingSoonText = isEn ? "Coming soon" : "Próximamente";
+
+  const novedadesArticles = capacidadesArticles.filter((a) => a.group === "novedades");
+  const destacadasArticles = capacidadesArticles.filter((a) => a.group === "capacidadesdestacadas");
+
   return (
     <main>
       {/* Intro */}
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            Después de la{" "}
-            <Link href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
-              Presentación
-            </Link>
-            , estarás ansioso por saber qué capacidades ofrece al usuario el plugin QGISRed. En esta sección te las
-            contamos. Pero puesto que es un producto aún en desarrollo, iniciado hace algunos años, lo vamos a hacer
-            por etapas.
-          </p>
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            En primer lugar te mostraremos las{" "}
-            <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novedades</a>
-            {" "}incluidas en la versión más reciente. A continuación te resaltaremos las{" "}
-            <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades más importantes</a>
-            {" "}ya desarrolladas, para que no tengas que descubrirlas haciendo un repaso exhaustivo del manual, pero si lo prefieres puedes echar una leída rápida a todas las
-            <a href="#prestacionesactuales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}> Capacidades ya implementadas</a>
-            . Finalmente te haremos un adelanto de lo que está por llegar en{" "}
-            <a href="#proximasprestaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Próximas prestaciones</a>
-            . Y para los más curiosos hemos reservado la última sección, donde podrás ver cómo ha ido evolucionando el producto desde sus inicios, y las mejoras introducidas en{" "}
-            <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versión</a>
-            .
-          </p>
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            Para que tengas una idea más exacta de la numeración seguida en el versionado, observa que todas las
-            versiones actuales empiezan por 0, por ser un producto aún en desarrollo. El objetivo de la primera versión
-            de QGISRed es concluir todas las mejoras previstas sobre lo que actualmente ofrece EPANET 2.2, completar
-            las capacidades adicionales orientadas a facilitar la construcción del modelo, y finalizar la extensión del
-            modelo para contemplar todos los elementos adicionales necesarios y sus funcionalidades, hasta poder
-            reproducir el comportamiento real de una red para cualquier periodo elegido, en conexión con los datos de
-            campo, como primer paso para confeccionar un Gemelo Digital.
-          </p>
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            En ese momento lanzaremos la versión 1.0 y abriremos las puertas a completar el producto con otras
-            prestaciones mucho más prácticas y profesionales. Mientras tanto, vamos por la versión 0.15 y estimamos
-            que quedan unas 5 versiones adicionales para concluir todos los objetivos previstos. Básicamente falta por
-            completar la introducción de los datos para hacerla aún más ágil y potente, añadir algunos parámetros más
-            a los componentes, mejorar ciertos aspectos estéticos, aumentar la agilidad y alternativas a la hora de
-            mostrar los resultados, y completar toda la casuística para reproducir la realidad con mayor fidelidad, lo
-            que puede conllevar añadir algunos componentes más en la parte del Gemelo Digital.
-          </p>
-          <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
-            Entra en las secciones siguientes, y conocerás todo ello con más detalle.
-          </p>
+          {isEn ? (
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                After the{" "}
+                <Link href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
+                  Presentation
+                </Link>
+                , you will be eager to know what capabilities the QGISRed plugin offers. In this section we will tell you. Since it is still a product in development, we will do it in stages.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                First we will show you the{" "}
+                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                {" "}included in the most recent version. Then we will highlight the{" "}
+                <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
+                {" "}already developed, so you don't have to discover them by reading the entire manual. If you prefer, you can also take a quick look at all{" "}
+                <a href="#prestacionesactuales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Current Capabilities</a>
+                . Finally, we will give you a preview of what is coming in{" "}
+                <a href="#proximasprestaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Road Map</a>
+                . And for the most curious, we have reserved the last section, where you can see how the product has evolved from its beginnings, and the improvements introduced in{" "}
+                <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>each Version</a>
+                .
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                To give you a more accurate idea of the versioning, note that all current versions start with 0, as the product is still in development. The goal of the first version of QGISRed is to complete all planned improvements over what EPANET 2.2 currently offers, complete the additional capabilities aimed at facilitating model construction, and finalize the model extension to include all additional necessary elements and their functionalities, until the real behaviour of a network can be reproduced for any chosen period, in connection with field data, as a first step towards building a Digital Twin.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                At that point we will launch version 1.0 and open the doors to completing the product with other much more practical and professional features. In the meantime, we are on version 0.15 and estimate that there are about 5 additional versions to complete all the planned objectives.
+              </p>
+              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Enter the following sections, and you will learn all about it in more detail.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Después de la{" "}
+                <Link href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
+                  Presentación
+                </Link>
+                , estarás ansioso por saber qué capacidades ofrece al usuario el plugin QGISRed. En esta sección te las
+                contamos. Pero puesto que es un producto aún en desarrollo, iniciado hace algunos años, lo vamos a hacer
+                por etapas.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                En primer lugar te mostraremos las{" "}
+                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novedades</a>
+                {" "}incluidas en la versión más reciente. A continuación te resaltaremos las{" "}
+                <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades más importantes</a>
+                {" "}ya desarrolladas, para que no tengas que descubrirlas haciendo un repaso exhaustivo del manual, pero si lo prefieres puedes echar una leída rápida a todas las
+                <a href="#prestacionesactuales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}> Capacidades ya implementadas</a>
+                . Finalmente te haremos un adelanto de lo que está por llegar en{" "}
+                <a href="#proximasprestaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Próximas prestaciones</a>
+                . Y para los más curiosos hemos reservado la última sección, donde podrás ver cómo ha ido evolucionando el producto desde sus inicios, y las mejoras introducidas en{" "}
+                <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versión</a>
+                .
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Para que tengas una idea más exacta de la numeración seguida en el versionado, observa que todas las
+                versiones actuales empiezan por 0, por ser un producto aún en desarrollo. El objetivo de la primera versión
+                de QGISRed es concluir todas las mejoras previstas sobre lo que actualmente ofrece EPANET 2.2, completar
+                las capacidades adicionales orientadas a facilitar la construcción del modelo, y finalizar la extensión del
+                modelo para contemplar todos los elementos adicionales necesarios y sus funcionalidades, hasta poder
+                reproducir el comportamiento real de una red para cualquier periodo elegido, en conexión con los datos de
+                campo, como primer paso para confeccionar un Gemelo Digital.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                En ese momento lanzaremos la versión 1.0 y abriremos las puertas a completar el producto con otras
+                prestaciones mucho más prácticas y profesionales. Mientras tanto, vamos por la versión 0.15 y estimamos
+                que quedan unas 5 versiones adicionales para concluir todos los objetivos previstos. Básicamente falta por
+                completar la introducción de los datos para hacerla aún más ágil y potente, añadir algunos parámetros más
+                a los componentes, mejorar ciertos aspectos estéticos, aumentar la agilidad y alternativas a la hora de
+                mostrar los resultados, y completar toda la casuística para reproducir la realidad con mayor fidelidad, lo
+                que puede conllevar añadir algunos componentes más en la parte del Gemelo Digital.
+              </p>
+              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Entra en las secciones siguientes, y conocerás todo ello con más detalle.
+              </p>
+            </>
+          )}
         </div>
       </section>
 
       {/* Novedades */}
       <section id="novedades" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
-          <SectionHeading title="Novedades versión 0.18" />
+          <SectionHeading title={isEn ? "What's New in version 0.18" : "Novedades versión 0.18"} />
 
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            En esta nueva versión 0.18 de QGISRed se recogen muchos de los avances realizado en los últimos 3 años
-            desde que se terminó la versión 0.17, aunque el lanzamiento de ésta última se haya retrasado hasta fechas
-            recientes.
-          </p>
-
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            El impulso dado en los últimos años ha sido gracias a la colaboración establecida con el Banco
-            Interamericano de Desarrollo (BID), quien ha confiado en QGISRed para su uso como herramienta libre en el
-            análisis de soluciones para los proyectos de mejora de los abastecimientos de agua que financia.
-          </p>
-
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            Algunas de estas mejoras se han ido adelantando a través de las versiones beta 0.17.1 a 0.17.4, liberadas en la plataforma de{" "}
-            <a href="https://github.com/qgisred/QGISRed" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GitHub</a>
-            {" "}de QGISRed.
-          </p>
-
-          <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            En las fichas siguentes se destacan las <strong>novedades más importantes de la versión 0.18. </strong>
-            Para una descripción más detallada de todas las novedades visitar la sección{" "}
-            <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</a>.
-          </p>
+          {isEn ? (
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                This new version 0.18 of QGISRed includes many of the advances made over the last 3 years since version 0.17 was completed, even though the launch of the latter was delayed until recently.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                The momentum in recent years has been thanks to the collaboration established with the Inter-American Development Bank (IDB), which has trusted QGISRed as a free tool for analysing solutions for the water supply improvement projects it finances.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Some of these improvements have been previewed through beta versions 0.17.1 to 0.17.4, released on the{" "}
+                <a href="https://github.com/qgisred/QGISRed" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GitHub</a>
+                {" "}platform of QGISRed.
+              </p>
+              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                The following cards highlight the <strong>most important new features of version 0.18.</strong>{" "}
+                For a more detailed description of all the new features, visit the{" "}
+                <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Version History</a> section.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                En esta nueva versión 0.18 de QGISRed se recogen muchos de los avances realizado en los últimos 3 años
+                desde que se terminó la versión 0.17, aunque el lanzamiento de ésta última se haya retrasado hasta fechas
+                recientes.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                El impulso dado en los últimos años ha sido gracias a la colaboración establecida con el Banco
+                Interamericano de Desarrollo (BID), quien ha confiado en QGISRed para su uso como herramienta libre en el
+                análisis de soluciones para los proyectos de mejora de los abastecimientos de agua que financia.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Algunas de estas mejoras se han ido adelantando a través de las versiones beta 0.17.1 a 0.17.4, liberadas en la plataforma de{" "}
+                <a href="https://github.com/qgisred/QGISRed" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GitHub</a>
+                {" "}de QGISRed.
+              </p>
+              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                En las fichas siguentes se destacan las <strong>novedades más importantes de la versión 0.18. </strong>
+                Para una descripción más detallada de todas las novedades visitar la sección{" "}
+                <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</a>.
+              </p>
+            </>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <CapacidadCard
-              href="/capacidades/mejoras-en-el-almacenamiento-de-resultados-y-su-visualizacion-sobe-el-mapa"
-              title="Mejoras en el almacenamiento de resultados y su visualización sobre el mapa"
-              description="Hasta la versión 0.17 los resultados de una simulación se guardaban en un fichero propio desde donde se configuraban los diferentes ficheros shape asociados a cada variable. Las filas de la tabla de atributos eran los elementos de la red y sus columnas los diferentes instantes de simulación."
-            />
-            <CapacidadCard
-              href="/capacidades/curvas-de-evolucion-de-las-variables-dinamicas"
-              title="Curvas de evolución de las variables dinámicas"
-              description="Una de las prestaciones que más se echaba en falta en QGISRed era poder mostrar la evolución en el tiempo de cualquiera de las variables dinámicas contenidas en los resultados. Se trata de una consulta muy útil y habitual, ofrecida por la mayoría de las aplicaciones de análisis de redes."
-            />
-            <CapacidadCard
-              href="/capacidades/confeccion-de-mapas-tematicos"
-              title="Confección de mapas temáticos"
-              description="Si queremos ver en el mapa los valores de una determinada variable calculada para todos los elementos de la red en un instante dado, clasificados por colores o bien como etiquetas, disponemos del panel de resultados para gestionar esta información."
-            />
-            <CapacidadCard
-              href="/capacidades/propiedades-de-los-elementos"
-              title="Propiedades de los elementos"
-              description="Los mapas temáticos y el panel de resultados permiten mostrar sobre el mapa los valores de cualquier propiedad elegida para todos los elementos de la red, o bien clasificarlos por colores. Pero ¿y si queremos ver todas las propiedades para un elemento elegido?"
-            />
-            <CapacidadCard
-              href="/capacidades/consultas-por-propiedades"
-              title="Consultas por Propiedades"
-              description="A través de los mapas temáticos podemos mostrar sobre el mapa de la rede el valor de una determinada propiedad para todos sus elementos. Pero si queremos saber qué elementos cumplen un determinado criterio o condición, la herramienta de Consultas por propiedades permite mostrar precisamente esos elementos."
-            />
-            <CapacidadCard
-              href="/capacidades/editor-de-leyendas"
-              title="Editor de leyendas"
-              description="Una de las prestaciones más importantes de QGIS es su capacidad para editar los estilos de las capas, y generar mapas muy variados. Sin embargo la cantidad de opciones ofrecida es abrumadora. Para simplificar, en QGISRed se ha creado una nueva opción con unas opciones más limitadas y prácticas."
-            />
-            <CapacidadCard
-              href="/capacidades/identificador-de-elementos-a-traves-de-su-id"
-              title="Identificador de elementos a través de su ID"
-              description="Cuando vemos el mapa de una red, fácilmente diferenciamos unos elementos de otros. Pero a veces algunos elementos pueden superponerse, siendo en realidad distintos. La única forma de diferenciarlos definitivamente es asignándoles un identificador único."
-            />
-            <CapacidadCard
-              href="/capacidades/otras-y-depuracion-de-errores"
-              title="Otras y depuración de errores"
-              description="Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia. También se han continuado depurando las prestaciones ofrecidas por QGISRed en versiones anteriores."
-            />
+            {novedadesArticles.map((article) => (
+              <CapacidadCard
+                key={article.slug}
+                href={`/capacidades/${article.slug}`}
+                title={isEn ? (article.titleEn ?? article.title) : article.title}
+                description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
+                readMoreText={readMoreText}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -757,127 +791,47 @@ export function CapacidadesPageContent() {
       {/* Capacidades Destacadas */}
       <section id="capacidadesdestacadas" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
-          <SectionHeading title="Capacidades destacadas" />
+          <SectionHeading title={isEn ? "Featured Capabilities" : "Capacidades destacadas"} />
 
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            En esta sección queremos resaltar las capacidades más destacadas de QGISRed, en lo que llevamos desarrollado
-            hasta ahora. Aunque en el Manual se reflejan todas las capacidades de la aplicación, su lectura no siempre
-            resulta amena. Por otra parte, desde aquí te podemos contar la motivación, peculiaridades y alcance de cada
-            una de las capacidades destacadas.
-          </p>
-
-          <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            Como son muchas, las hemos ordenado por temática. Además, poco a poco las iremos completando, a medida que tengamos más contenidos. Al igual que en la sección de{" "}
-            <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novedades</a>
-            , en las fichas siguientes pretendemos hacer solo una introducción a cada capacidad destacada para motivarte y despertar tu interés. Para profundizar más en ellas te remitiremos a los tutoriales y vídeos, y en último caso al Manual.
-          </p>
+          {isEn ? (
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                In this section we want to highlight the most outstanding capabilities of QGISRed developed so far. Although the Manual covers all application capabilities, it is not always easy reading. From here we can tell you the motivation, peculiarities and scope of each featured capability.
+              </p>
+              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                There are many, so we have ordered them by topic. We will gradually complete them as we have more content. As in the{" "}
+                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                {" "}section, the following cards are intended to provide only an introduction to each featured capability to motivate you. For further depth, we will refer you to tutorials and videos, and ultimately to the Manual.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                En esta sección queremos resaltar las capacidades más destacadas de QGISRed, en lo que llevamos desarrollado
+                hasta ahora. Aunque en el Manual se reflejan todas las capacidades de la aplicación, su lectura no siempre
+                resulta amena. Por otra parte, desde aquí te podemos contar la motivación, peculiaridades y alcance de cada
+                una de las capacidades destacadas.
+              </p>
+              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Como son muchas, las hemos ordenado por temática. Además, poco a poco las iremos completando, a medida que tengamos más contenidos. Al igual que en la sección de{" "}
+                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novedades</a>
+                , en las fichas siguientes pretendemos hacer solo una introducción a cada capacidad destacada para motivarte y despertar tu interés. Para profundizar más en ellas te remitiremos a los tutoriales y vídeos, y en último caso al Manual.
+              </p>
+            </>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            <CapacidadCard
-              href="/capacidades/incorporacion-de-las-valvulas-de-corte-al-modelo-de-qgisred"
-              title="Incorporación de las Válvulas de Corte al Modelo de QGISRed"
-              description="Si quieres utilizar el modelo de la red para analizar cómo se ven afectados los flujos al seccionar la red por las válvulas de corte, bien para separar zonas de forma permanente, o para aislar una zona de modo temporal, tendrás que incorporar antes al modelo todas las válvulas de corte existentes en la red."
-              imageSrc="/images/capacidades/Diapositiva12.png"
-              imageAlt="Válvulas de corte en QGISRed"
-            />
-            <CapacidadCard
-              href="/capacidades/soporte-a-las-nuevas-opciones-de-analisis-de-epanet-2-2"
-              title="Soporte a las Nuevas Opciones de Análisis de EPANET 2.2"
-              description="Una de las mayores aportaciones de la versión 2.2 de la librería de EPANET es la posibilidad de considerar las demandas dependientes de la presión (PDA), frente a la opción de considerarlas fijas (DDA), en un intento de acercar más el comportamiento de la red a la realidad."
-              imageSrc="/images/capacidades/Diapositiva16-1.png"
-              imageAlt="Opciones de análisis EPANET 2.2"
-            />
-            <CapacidadCard
-              href="/capacidades/asignacion-de-demandas-a-los-nudos-por-sectores-y-desde-los-puntos-de-consumo"
-              title="Asignación de Demandas a los Nudos por Sectores y desde los Puntos de Consumo"
-              description="La asignación de las demandas a los nudos de una red, cuando su número es elevado, no puede hacerse de uno en uno. QGISRed ofrece dos herramientas muy potentes para asignar la demanda de forma masiva, a partir de los consumos declarados por sectores o desde los puntos de consumo."
-              imageSrc="/images/capacidades/Diapositiva14-1.png"
-              imageAlt="Asignación de demandas"
-            />
-            <CapacidadCard
-              href="/capacidades/mejoras-en-la-navegacion-desde-el-editor-de-propiedades"
-              title="Mejoras en la Navegación desde el Editor de Propiedades"
-              description="El Editor de Propiedades de QGISRed abre una ventana desde la que se pueden modificar las propiedades del elemento seleccionado, cualquiera que sea su naturaleza. No es necesario tener la capa correspondiente previamente seleccionada, lo cual es una gran ventaja."
-              imageSrc="/images/capacidades/Diapositiva15.png"
-              imageAlt="Editor de Propiedades QGISRed"
-            />
-            <CapacidadCard
-              href="/capacidades/nueva-herramienta-para-cambiar-el-estado-de-los-elementos-y-simbolizacion-segun-su-estado"
-              title="Nueva Herramienta para cambiar el Estado de los Elementos y Simbolización según su Estado"
-              description="Una de las operaciones más habituales a la hora de modificar un escenario de simulación es cambiar el estado de algún elemento de la red, sea de regulación o no, pasando de estar abierto a cerrado o viceversa."
-              imageSrc="/images/capacidades/Diapositiva13-1.png"
-              imageAlt="Herramienta de estados en QGISRed"
-            />
-            <CapacidadCard
-              href="/capacidades/pequenas-mejoras-y-depuracion-de-errores"
-              title="Pequeñas mejoras y depuración de errores"
-              description="Además de todo lo anterior, en la versión 0.17 se ha continuado depurando las prestaciones ya ofrecidas por QGISRed en versiones anteriores."
-              imageSrc="/images/capacidades/qgis-bin_s5ZfejsaKh.png"
-              imageAlt="Mejoras versión 0.17"
-            />
-            <CapacidadCard
-              href="/capacidades/epanet-2-3-ya-esta-integrado"
-              title="Integración de la versión 2.3 de la Toolkit de EPANET"
-              description="La versión 2.2 de la Toolkit de EPANET se lanzó en 2019 y fue incorporada a QGISRed en sus primeras versiones. Finalmente, en Julio de 2025 se lanzó la nueva versión 2.3, la cual incorpora mejoras notables en el motor de cálculo."
-              imageSrc="/images/capacidades/epanet2.3.png"
-              imageAlt="EPANET 2.3 en QGISRed"
-            />
-            <CapacidadCard
-              href="/capacidades/gestor-de-proyectos-renovado"
-              title="Nuevas opciones del Gestor de Proyectos"
-              description="El Gestor de Proyectos de QGISRed es una de las herramientas más utilizadas por los usuarios. La versión 0.17 añade ordenación de columnas, renombrado de proyectos, eliminación definitiva y exportación/importación como fichero zip."
-              imageSrc="/images/capacidades/projectManager.png"
-              imageAlt="Gestor de Proyectos renovado"
-            />
-            <CapacidadCard
-              href="/capacidades/nuevas-opciones-en-el-gestor-de-escenarios"
-              title="Gestión de escenarios compatibles con EPANET"
-              description="En la nueva versión de QGISRed los escenarios pueden también exportarse/importarse siguiendo los mismos formatos usados por EPANET, para así mantener la compatibilidad total entre EPANET y QGISRed."
-              imageSrc="/images/capacidades/epanetScenarios.png"
-              imageAlt="Gestión de escenarios EPANET"
-            />
-            <CapacidadCard
-              href="/capacidades/transfiere-estados-y-calidad-para-encadenar-simulaciones-sucesivas"
-              title="Encadenamiento de simulaciones sucesivas"
-              description="La versión 0.17 de QGISRed permite encadenar simulaciones desde el Gestor de Escenarios, exportando el estado final de los elementos de regulación e importándolo como estado inicial para la etapa siguiente."
-              imageSrc="/images/capacidades/simulaciones.png"
-              imageAlt="Encadenamiento de simulaciones"
-            />
-            <CapacidadCard
-              href="/capacidades/visualizacion-de-hasta-13-estados-en-tuberias-valvulas-y-bomas"
-              title="Identificación de hasta 13 estados en tuberías, bombas y válvulas"
-              description="Aunque EPANET diferencia hasta 8 estados distintos, en QGISRed se distinguen hasta 13 estados que completan las diferentes situaciones que pueden darse en tuberías, bombas y válvulas."
-              imageSrc="/images/capacidades/statuses.png"
-              imageAlt="13 estados en QGISRed"
-            />
-            <CapacidadCard
-              href="/capacidades/nueva-herramienta-para-la-exploracion-de-segmentos-aislados"
-              title="Nueva herramienta para la identificación de segmentos aislados"
-              description="Una de las prestaciones más solicitadas en un software de simulación es la determinación de las válvulas que hay que cerrar para aislar un segmento de la red en torno a un punto donde ha producido una avería."
-              imageSrc="/images/capacidades/isolatedSegments-1.png"
-              imageAlt="Identificación de segmentos aislados"
-            />
-            <CapacidadCard
-              href="/capacidades/depuracion-y-mejora-de-prestaciones-de-versiones-anteriores"
-              title="Depuración y Mejora de Prestaciones Anteriores"
-              description="La versión 0.16 ha mejorado algunos aspectos de las versiones anteriores, como la barra de tiempos, el orden y clasificación de algunas opciones de menú, y nuevos campos en la importación de shapes."
-              imageSrc="/images/capacidades/Diapositiva11.png"
-              imageAlt="Mejoras versión 0.16"
-            />
-            <CapacidadCard
-              href="/capacidades/identificacion-de-los-sectores-de-demanda-dma"
-              title="Identificación de los Sectores de Demanda (DMA)"
-              description="A partir de la versión 0.15 ya se pueden declarar las válvulas de corte superpuestas a las tuberías, y con la versión 0.16 también se pueden declarar caudalímetros y contadores para identificar con precisión los Sectores de Demanda."
-              imageSrc="/images/capacidades/Diapositiva10-1.png"
-              imageAlt="Sectores de Demanda DMA"
-            />
-            <CapacidadCard
-              href="/capacidades/incorporacion-de-los-medidores-al-modelo"
-              title="Incorporación de los Medidores al Modelo"
-              description="Una de las características más importantes que se le deben exigir al modelo hidráulico de una red en explotación es que reproduzca fielmente la realidad. En QGISRed los medidores son tratados como objetos con sus propias propiedades."
-              imageSrc="/images/capacidades/Diapositiva8-1.png"
-              imageAlt="Medidores en el modelo QGISRed"
-            />
+            {destacadasArticles.map((article) => (
+              <CapacidadCard
+                key={article.slug}
+                href={`/capacidades/${article.slug}`}
+                title={isEn ? (article.titleEn ?? article.title) : article.title}
+                description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
+                imageSrc={article.image}
+                imageAlt={article.imageAlt}
+                readMoreText={readMoreText}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -885,35 +839,61 @@ export function CapacidadesPageContent() {
       {/* Prestaciones Actuales */}
       <section id="prestacionesactuales" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
-          <SectionHeading title="Prestaciones actuales" />
+          <SectionHeading title={isEn ? "Current Capabilities" : "Prestaciones actuales"} />
 
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            QGISRed ha cumplido ya casi cuatro años de vida, desde que comenzó su andadura a finales de 2018. Desde
-            entonces no hemos parado de introducir mejoras, aunque quizás no al ritmo deseado por no haberle podido
-            dedicar atención exclusiva durante ese tiempo. Pero si echamos la vista atrás, las prestaciones que
-            ofrece ya en su última versión son muy notables.
-          </p>
-
-          <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            Algunas de estas prestaciones se describen con más detalle en las{" "}
-            <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</a>
-            , o en las{" "}
-            <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</a>
-            , pero para saber más sobre otras prestaciones tendrás que consultar el{" "}
-            <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
-            , o los{" "}
-            <Link href={{ pathname: "/utilizacion", hash: "#tutoriales" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</Link>
-            {" "}y{" "}
-            <Link href={{ pathname: "/utilizacion", hash: "#videosformativos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</Link>
-            {" "}que poco a poco vamos desarrollando. También puedes apuntarte a nuestros{" "}
-            <Link href={{ pathname: "/difusion", hash: "#cursos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</Link>
-            {" "}presenciales o virtuales, aún en elaboración.
-          </p>
-
-          <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            A continuación, te listamos las principales prestaciones que ya ofrece la última versión descargable
-            desde el instalador de Complementos de QGIS, las cuales hemos ordenado por temáticas para más claridad.
-          </p>
+          {isEn ? (
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                QGISRed has now been in development for nearly four years since it started its journey at the end of 2018. Since then we have continued to introduce improvements, and looking back the capabilities offered in its latest version are very notable.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Some of these capabilities are described in more detail in{" "}
+                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                , or in{" "}
+                <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
+                , but to learn more about other capabilities you will need to consult the{" "}
+                <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
+                , or the{" "}
+                <Link href={{ pathname: "/utilizacion", hash: "#tutoriales" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutorials</Link>
+                {" "}and{" "}
+                <Link href={{ pathname: "/utilizacion", hash: "#videosformativos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Training Videos</Link>
+                {" "}we are gradually developing. You can also sign up for our{" "}
+                <Link href={{ pathname: "/difusion", hash: "#cursos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Courses</Link>
+                , both in-person and online, still in preparation.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Below, we list the main capabilities already offered by the latest version downloadable from the QGIS Plugin installer, ordered by topic.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                QGISRed ha cumplido ya casi cuatro años de vida, desde que comenzó su andadura a finales de 2018. Desde
+                entonces no hemos parado de introducir mejoras, aunque quizás no al ritmo deseado por no haberle podido
+                dedicar atención exclusiva durante ese tiempo. Pero si echamos la vista atrás, las prestaciones que
+                ofrece ya en su última versión son muy notables.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Algunas de estas prestaciones se describen con más detalle en las{" "}
+                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</a>
+                , o en las{" "}
+                <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</a>
+                , pero para saber más sobre otras prestaciones tendrás que consultar el{" "}
+                <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
+                , o los{" "}
+                <Link href={{ pathname: "/utilizacion", hash: "#tutoriales" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</Link>
+                {" "}y{" "}
+                <Link href={{ pathname: "/utilizacion", hash: "#videosformativos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</Link>
+                {" "}que poco a poco vamos desarrollando. También puedes apuntarte a nuestros{" "}
+                <Link href={{ pathname: "/difusion", hash: "#cursos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</Link>
+                {" "}presenciales o virtuales, aún en elaboración.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                A continuación, te listamos las principales prestaciones que ya ofrece la última versión descargable
+                desde el instalador de Complementos de QGIS, las cuales hemos ordenado por temáticas para más claridad.
+              </p>
+            </>
+          )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1">
             {prestacionesActuales.map((group) => (
@@ -926,45 +906,73 @@ export function CapacidadesPageContent() {
       {/* Próximas Prestaciones */}
       <section id="proximasprestaciones" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
-          <SectionHeading title="Próximas prestaciones" />
+          <SectionHeading title={isEn ? "Road Map" : "Próximas prestaciones"} />
 
-          <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-            Como ya sabes, la versión 1.0 de QGISRed está aún en desarrollo. A continuación, te adjuntamos una lista de
-            las principales mejoras que tenemos previsto incorporar para completar esta versión. La lista que se acompaña
-            no es cerrada, y puede estar sujeta a cambios.
-          </p>
+          {isEn ? (
+            <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+              As you know, version 1.0 of QGISRed is still under development. Below is a list of the main improvements we plan to incorporate to complete this version. The list is not exhaustive and may be subject to changes.
+            </p>
+          ) : (
+            <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+              Como ya sabes, la versión 1.0 de QGISRed está aún en desarrollo. A continuación, te adjuntamos una lista de
+              las principales mejoras que tenemos previsto incorporar para completar esta versión. La lista que se acompaña
+              no es cerrada, y puede estar sujeta a cambios.
+            </p>
+          )}
 
           <div className="mb-8">
             {proximasPrestaciones.map((group) => (
               <PrestacionGroup key={group.group} title={group.group} items={group.items} />
             ))}
           </div>
+
+          <p className="italic" style={{ fontSize: "15px", color: "rgb(120, 120, 120)", lineHeight: "1.7" }}>
+            {comingSoonText}
+          </p>
         </div>
       </section>
 
       {/* Histórico de Versiones */}
       <section id="historicodeversiones" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
-          <SectionHeading title="Histórico de versiones" />
+          <SectionHeading title={isEn ? "Version History" : "Histórico de versiones"} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 100%" }}>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                El proceso de desarrollo de un producto de software es complejo y requiere muchas horas de dedicación y
-                revisión del código. Desde la concepción inicial de un procedimiento hasta su implementación final hay
-                muchas pruebas intermedias, y al final siempre surgen errores donde menos se esperan. En cada nueva
-                versión se intentan introducir nuevas capacidades, pero al mismo tiempo es inevitable tener que corregir
-                errores de lo aparentemente ya consolidado.
-              </p>
-
-              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                Lo que sigue es una relación de los avances y correcciones realizados en las sucesivas versiones de
-                QGISRed, desde la versión 0.6 que se subió por vez primera al repositorio de QGIS.
-              </p>
+              {isEn ? (
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    The process of developing a software product is complex and requires many hours of dedication and code review. From the initial conception of a procedure to its final implementation there are many intermediate tests, and errors always arise where least expected. Each new version tries to introduce new capabilities, while at the same time it is inevitable to correct errors in what appeared to be already consolidated.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    What follows is a record of the advances and corrections made in successive versions of QGISRed, from version 0.6 which was first uploaded to the QGIS repository.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    El proceso de desarrollo de un producto de software es complejo y requiere muchas horas de dedicación y
+                    revisión del código. Desde la concepción inicial de un procedimiento hasta su implementación final hay
+                    muchas pruebas intermedias, y al final siempre surgen errores donde menos se esperan. En cada nueva
+                    versión se intentan introducir nuevas capacidades, pero al mismo tiempo es inevitable tener que corregir
+                    errores de lo aparentemente ya consolidado.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Lo que sigue es una relación de los avances y correcciones realizados en las sucesivas versiones de
+                    QGISRed, desde la versión 0.6 que se subió por vez primera al repositorio de QGIS.
+                  </p>
+                </>
+              )}
 
               <div className="mb-4">
                 {historico.map((item) => (
-                  <AccordionItem key={item.version} title={`Cambios en la versión ${item.version} – ${item.fecha}`}>
+                  <AccordionItem
+                    key={item.version}
+                    title={isEn
+                      ? `Changes in version ${item.version} – ${item.fecha}`
+                      : `Cambios en la versión ${item.version} – ${item.fecha}`
+                    }
+                  >
                     <ul className="list-none p-0 m-0">
                       {item.items.map((li, idx) => (
                         <li key={idx} className="flex items-start gap-2 mb-1.5">

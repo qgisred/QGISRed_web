@@ -34,7 +34,7 @@ export default async function CapacidadesPage({
         backgroundImage="/images/capacidades-bg.jpg"
         overlayOpacity={0.65}
       />
-      <CapacidadesPageContent />
+      <CapacidadesPageContent locale={locale} />
       <Footer />
     </>
   );

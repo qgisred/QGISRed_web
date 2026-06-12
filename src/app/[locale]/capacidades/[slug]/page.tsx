@@ -48,7 +48,7 @@ export default async function CapacidadSlugPage({
         backgroundImage="/images/capacidades-bg.jpg"
         overlayOpacity={0.65}
       />
-      <CapacidadDetailContent article={article} />
+      <CapacidadDetailContent article={article} locale={locale} />
       <Footer />
     </>
   );
