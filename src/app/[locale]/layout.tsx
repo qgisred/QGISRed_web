@@ -28,7 +28,7 @@ export async function generateMetadata({
     title: t("siteTitle"),
     description: t("siteDescription"),
     icons: {
-      icon: [{ url: "/seo/favicon.svg", type: "image/svg+xml" }],
+      icon: [{ url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/seo/favicon.svg`, type: "image/svg+xml" }],
     },
   };
 }
