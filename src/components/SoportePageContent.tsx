@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 interface SectionHeadingProps {
   title: string;
@@ -334,7 +334,7 @@ export function SoportePageContent() {
             detección de fugas, gestionar la demanda, detectar anticipadamente la entrada de un contaminante, planificar
             inversiones, recuperar el suministro permanente 24 h, etc. En este sentido, el IIAMA puede aportar igualmente
             su know-how en todas estas cuestiones, puesto de manifiesto a través de las numerosas{" "}
-            <Link href="/difusion#publicaciones" style={{ color: "rgb(95, 189, 211)" }}>publicaciones</Link>{" "}
+            <Link href={{ pathname: "/difusion", hash: "#publicaciones" }} style={{ color: "rgb(95, 189, 211)" }}>publicaciones</Link>{" "}
             sobre dichos temas.
           </p>
 
@@ -344,7 +344,7 @@ export function SoportePageContent() {
             planteado, dando participación abierta a todas las propuestas. Por ejemplo, para testar algoritmos que compitan
             por anticiparse a la detección de un evento o de una fuga, por optimizar los costes de operación del sistema,
             por maximizar la resiliencia de la red al mínimo coste, etc. utilizando para ello bases de datos comunes, y un{" "}
-            <Link href="/utilizacion#modelodatos" style={{ color: "rgb(95, 189, 211)" }}>modelo de datos</Link>{" "}
+            <Link href={{ pathname: "/utilizacion", hash: "#modelodatos" }} style={{ color: "rgb(95, 189, 211)" }}>modelo de datos</Link>{" "}
             que es público y compatible con otras aplicaciones, el cual alcanza a contemplar todos los elementos que
             configuran las redes reales. A tal fin, las librerías de QGISRed podrían hacerse también públicas algún día,
             si fuera necesario.

@@ -16,7 +16,7 @@ export function CapacidadesSection() {
     <section
       className="relative w-full flex items-start"
       style={{
-        backgroundImage: 'url("/images/capacidades-bg.jpg")',
+        backgroundImage: `url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/capacidades-bg.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

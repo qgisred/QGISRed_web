@@ -7,7 +7,7 @@ export function HeroSection() {
       className="relative w-full flex items-center"
       style={{
         height: "810px",
-        backgroundImage: 'url("/images/hero-bg.png")',
+        backgroundImage: `url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/hero-bg.png")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

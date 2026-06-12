@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 interface SectionHeadingProps {
   title: string;
@@ -645,15 +645,15 @@ export function CapacidadesPageContent() {
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
             En primer lugar te mostraremos las{" "}
-            <Link href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novedades</Link>
+            <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novedades</a>
             {" "}incluidas en la versión más reciente. A continuación te resaltaremos las{" "}
-            <Link href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades más importantes</Link>
+            <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades más importantes</a>
             {" "}ya desarrolladas, para que no tengas que descubrirlas haciendo un repaso exhaustivo del manual, pero si lo prefieres puedes echar una leída rápida a todas las
-            <Link href="#prestacionesactuales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}> Capacidades ya implementadas</Link>
+            <a href="#prestacionesactuales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}> Capacidades ya implementadas</a>
             . Finalmente te haremos un adelanto de lo que está por llegar en{" "}
-            <Link href="#proximasprestaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Próximas prestaciones</Link>
+            <a href="#proximasprestaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Próximas prestaciones</a>
             . Y para los más curiosos hemos reservado la última sección, donde podrás ver cómo ha ido evolucionando el producto desde sus inicios, y las mejoras introducidas en{" "}
-            <Link href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versión</Link>
+            <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versión</a>
             .
           </p>
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -706,7 +706,7 @@ export function CapacidadesPageContent() {
           <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
             En las fichas siguentes se destacan las <strong>novedades más importantes de la versión 0.18. </strong>
             Para una descripción más detallada de todas las novedades visitar la sección{" "}
-            <Link href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</Link>.
+            <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</a>.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -768,7 +768,7 @@ export function CapacidadesPageContent() {
 
           <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
             Como son muchas, las hemos ordenado por temática. Además, poco a poco las iremos completando, a medida que tengamos más contenidos. Al igual que en la sección de{" "}
-            <Link href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novedades</Link>
+            <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novedades</a>
             , en las fichas siguientes pretendemos hacer solo una introducción a cada capacidad destacada para motivarte y despertar tu interés. Para profundizar más en ellas te remitiremos a los tutoriales y vídeos, y en último caso al Manual.
           </p>
 
@@ -896,17 +896,17 @@ export function CapacidadesPageContent() {
 
           <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
             Algunas de estas prestaciones se describen con más detalle en las{" "}
-            <Link href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</Link>
+            <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</a>
             , o en las{" "}
-            <Link href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</Link>
+            <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</a>
             , pero para saber más sobre otras prestaciones tendrás que consultar el{" "}
-            <Link href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
+            <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
             , o los{" "}
-            <Link href="/utilizacion#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</Link>
+            <Link href={{ pathname: "/utilizacion", hash: "#tutoriales" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</Link>
             {" "}y{" "}
-            <Link href="/utilizacion#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</Link>
+            <Link href={{ pathname: "/utilizacion", hash: "#videosformativos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</Link>
             {" "}que poco a poco vamos desarrollando. También puedes apuntarte a nuestros{" "}
-            <Link href="/difusion#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</Link>
+            <Link href={{ pathname: "/difusion", hash: "#cursos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</Link>
             {" "}presenciales o virtuales, aún en elaboración.
           </p>
 

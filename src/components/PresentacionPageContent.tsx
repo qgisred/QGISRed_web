@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 interface SectionHeadingProps {
   title: string;
@@ -196,7 +196,7 @@ export function PresentacionPageContent() {
             <div style={{ flex: "1 1 55%" }}>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 La idea de potenciar las prestaciones de EPANET mediante su conexión con un GIS no es nueva para nuestro grupo de investigación. Ya en 2004 Fernando Martínez, director del actual proyecto QGISRed, dirigió un proyecto con similares objetivos y prestaciones, denominado <strong>GISRed. </strong>Hubo por entonces dos versiones, la 1.0 y la 2.0, y se difundieron sus capacidades a través de varias{" "}
-                <Link href="/difusion#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publicaciones</Link>.
+                <Link href={{ pathname: "/difusion", hash: "#publicaciones" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publicaciones</Link>.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 GISRed se programó en el lenguaje Avenue para ArcView 3.2, un precedente de lo que después fue ArcGIS,
@@ -572,7 +572,7 @@ export function PresentacionPageContent() {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 A continuación, se muestra el contenido de la pestaña que aloja el código de QGISRed. Desde las dos últimas líneas se puede acceder también a los{" "}
-                <Link href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuales en español e inglés</Link>
+                <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuales en español e inglés</Link>
               </p>
 
               <ToggleSection title="Saber más sobre el proyecto de QGISRed en GitHub">
@@ -582,9 +582,9 @@ export function PresentacionPageContent() {
                 </p>
                 <p className="mb-3">
                   En la parte de la derecha de esta pestaña se muestra también la licencia del plugin,{" "}
-                  <Link href="/capacidades#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>la última versión liberada</Link>
+                  <Link href={{ pathname: "/capacidades", hash: "#novedades" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>la última versión liberada</Link>
                   {" "}y todas las{" "}
-                  <Link href="/capacidades#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>versiones publicadas anteriormente con sus mejoras</Link>
+                  <Link href={{ pathname: "/capacidades", hash: "#historicodeversiones" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>versiones publicadas anteriormente con sus mejoras</Link>
                 </p>
                 <p className="mb-3">
                   Una sección muy importante de este portal es la pestaña Issues, que está plenamente activa, y donde

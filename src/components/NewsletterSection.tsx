@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -121,7 +121,7 @@ export function NewsletterSection() {
           </p>
           <p>
             <strong>{t("responsible")}</strong>{" "}
-            <Link href="/presentacion#creditos" style={{ color: "rgb(95, 189, 211)" }}>
+            <Link href={{ pathname: "/presentacion", hash: "#creditos" }} style={{ color: "rgb(95, 189, 211)" }}>
               {t("responsibleLink")}
             </Link>
           </p>

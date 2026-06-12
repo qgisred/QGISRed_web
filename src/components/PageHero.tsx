@@ -15,7 +15,7 @@ export function PageHero({
     <section
       className="relative w-full flex items-center justify-center"
       style={{
-        backgroundImage: `url("${backgroundImage}")`,
+        backgroundImage: `url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${backgroundImage}")`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

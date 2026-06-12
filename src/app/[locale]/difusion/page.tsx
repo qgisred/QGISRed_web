@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { NavBar } from "@/components/NavBar";
 import { PageHero } from "@/components/PageHero";
 import { DifusionPageContent } from "@/components/DifusionPageContent";
@@ -11,6 +11,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "pageHero" });
   return {
     title: `${t("diffusion")} – QGISRed`,
@@ -23,6 +24,7 @@ export default async function DifusionPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "pageHero" });
   return (
     <>

@@ -1,20 +1,21 @@
 import { useTranslations } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import type { Pathname } from "@/i18n/routing";
 
 export function DifusionSection() {
   const t = useTranslations("difusionSection");
 
-  const buttons = [
-    { key: "courses" as const, href: "/difusion#cursos" },
-    { key: "publications" as const, href: "/difusion#publicaciones" },
-    { key: "news" as const, href: "/difusion#noticias" },
+  const buttons: Array<{ key: "courses" | "publications" | "news"; pathname: Pathname; hash: string }> = [
+    { key: "courses", pathname: "/difusion", hash: "#cursos" },
+    { key: "publications", pathname: "/difusion", hash: "#publicaciones" },
+    { key: "news", pathname: "/difusion", hash: "#noticias" },
   ];
 
   return (
     <section
       className="relative w-full flex items-center"
       style={{
-        backgroundImage: 'url("/images/difusion-bg.jpg")',
+        backgroundImage: `url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/difusion-bg.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center right",
         backgroundRepeat: "no-repeat",
@@ -61,7 +62,7 @@ export function DifusionSection() {
             {buttons.map((btn) => (
               <Link
                 key={btn.key}
-                href={btn.href}
+                href={{ pathname: btn.pathname, hash: btn.hash }}
                 className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
                 style={{
                   background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",

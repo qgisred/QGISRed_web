@@ -8,7 +8,7 @@ export function UtilizacionSection() {
     <section
       className="relative w-full flex items-center"
       style={{
-        backgroundImage: 'url("/images/utilizacion-bg.jpg")',
+        backgroundImage: `url("${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/utilizacion-bg.jpg")`,
         backgroundSize: "cover",
         backgroundPosition: "center right",
         backgroundRepeat: "no-repeat",

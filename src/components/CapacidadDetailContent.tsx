@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { CapacidadArticle } from "@/data/capacidades-articles";
 
 export function CapacidadDetailContent({ article }: { article: CapacidadArticle }) {
@@ -12,7 +12,7 @@ export function CapacidadDetailContent({ article }: { article: CapacidadArticle 
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
           {/* Back link */}
           <Link
-            href={`/capacidades${backAnchor}`}
+            href={{ pathname: "/capacidades", hash: backAnchor }}
             className="inline-flex items-center gap-2 mb-8 text-[14px] font-medium transition-colors duration-150"
             style={{ color: "rgb(95, 189, 211)" }}
           >
@@ -43,7 +43,7 @@ export function CapacidadDetailContent({ article }: { article: CapacidadArticle 
 
               <div className="mt-10">
                 <Link
-                  href={`/capacidades${backAnchor}`}
+                  href={{ pathname: "/capacidades", hash: backAnchor }}
                   className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
                   style={{
                     background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",

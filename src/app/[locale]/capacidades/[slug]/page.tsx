@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { setRequestLocale } from "next-intl/server";
 import { NavBar } from "@/components/NavBar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
@@ -34,7 +35,8 @@ export default async function CapacidadSlugPage({
 }: {
   params: Promise<Params>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
   const article = getArticleBySlug(slug);
   if (!article) notFound();
 
