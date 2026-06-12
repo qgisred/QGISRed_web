@@ -97,16 +97,19 @@ function NavDropdownItem({ item }: { item: NavItem }) {
       </Link>
       {item.submenu && open && (
         <ul className="absolute left-0 top-full z-50 bg-white shadow-[0_4px_20px_rgba(0,9,25,0.13)] min-w-[200px] py-2">
-          {item.submenu.map((sub) => (
-            <li key={sub.href}>
-              <a
-                href={sub.href}
-                className="block px-5 py-2 text-[14px] text-[rgb(0,9,25)] hover:text-[rgb(95,189,211)] hover:bg-[rgb(249,249,249)] transition-colors duration-150"
-              >
-                {sub.text}
-              </a>
-            </li>
-          ))}
+          {item.submenu.map((sub) => {
+            const [subPathname, subHash] = sub.href.split("#");
+            return (
+              <li key={sub.href}>
+                <Link
+                  href={{ pathname: subPathname as "/", hash: subHash ? `#${subHash}` : undefined }}
+                  className="block px-5 py-2 text-[14px] text-[rgb(0,9,25)] hover:text-[rgb(95,189,211)] hover:bg-[rgb(249,249,249)] transition-colors duration-150"
+                >
+                  {sub.text}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </li>
@@ -230,17 +233,20 @@ export function NavBar() {
                 </Link>
                 {item.submenu && (
                   <ul className="bg-gray-50">
-                    {item.submenu.map((sub) => (
-                      <li key={sub.href}>
-                        <a
-                          href={sub.href}
-                          className="block px-10 py-2 text-[13px] text-[rgb(51,51,51)] hover:text-[rgb(95,189,211)]"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {sub.text}
-                        </a>
-                      </li>
-                    ))}
+                    {item.submenu.map((sub) => {
+                      const [subPathname, subHash] = sub.href.split("#");
+                      return (
+                        <li key={sub.href}>
+                          <Link
+                            href={{ pathname: subPathname as "/", hash: subHash ? `#${subHash}` : undefined }}
+                            className="block px-10 py-2 text-[13px] text-[rgb(51,51,51)] hover:text-[rgb(95,189,211)]"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            {sub.text}
+                          </Link>
+                        </li>
+                      );
+                    })}
                   </ul>
                 )}
               </li>
