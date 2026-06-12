@@ -900,13 +900,13 @@ export function CapacidadesPageContent() {
             , o en las{" "}
             <Link href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</Link>
             , pero para saber más sobre otras prestaciones tendrás que consultar el{" "}
-            <a href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</a>
+            <Link href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
             , o los{" "}
-            <a href="/utilizacion#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</a>
+            <Link href="/utilizacion#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</Link>
             {" "}y{" "}
-            <a href="/utilizacion#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</a>
+            <Link href="/utilizacion#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</Link>
             {" "}que poco a poco vamos desarrollando. También puedes apuntarte a nuestros{" "}
-            <a href="/difusion#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</a>
+            <Link href="/difusion#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</Link>
             {" "}presenciales o virtuales, aún en elaboración.
           </p>
 

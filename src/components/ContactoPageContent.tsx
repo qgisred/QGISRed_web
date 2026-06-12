@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 interface FormState {
   nombre: string;
@@ -135,9 +136,9 @@ function ContactForm() {
         />
         <span style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.5" }}>
           He leído y acepto la{" "}
-          <a href="/politica-de-privacidad" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
+          <Link href="/politica-de-privacidad" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
             Política de Privacidad
-          </a>
+          </Link>
           .
         </span>
       </label>
@@ -250,9 +251,9 @@ function NewsletterForm() {
         />
         <span style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.5" }}>
           He leído y acepto la{" "}
-          <a href="/politica-de-privacidad" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
+          <Link href="/politica-de-privacidad" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
             Política de Privacidad
-          </a>
+          </Link>
           .
         </span>
       </label>
