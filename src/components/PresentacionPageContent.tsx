@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface SectionHeadingProps {
   title: string;
@@ -195,7 +196,7 @@ export function PresentacionPageContent() {
             <div style={{ flex: "1 1 55%" }}>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 La idea de potenciar las prestaciones de EPANET mediante su conexión con un GIS no es nueva para nuestro grupo de investigación. Ya en 2004 Fernando Martínez, director del actual proyecto QGISRed, dirigió un proyecto con similares objetivos y prestaciones, denominado <strong>GISRed. </strong>Hubo por entonces dos versiones, la 1.0 y la 2.0, y se difundieron sus capacidades a través de varias{" "}
-                <a href="/difusion#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publicaciones</a>.
+                <Link href="/difusion#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publicaciones</Link>.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 GISRed se programó en el lenguaje Avenue para ArcView 3.2, un precedente de lo que después fue ArcGIS,
@@ -246,7 +247,7 @@ export function PresentacionPageContent() {
                 </p>
                 <p>
                   QGISRed está aún en construcción, y las prestaciones de la última versión oficial se pueden consultar en la sección{" "}
-                  <a href="/capacidades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CAPACIDADES</a>
+                  <Link href="/capacidades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CAPACIDADES</Link>
                   , donde se detallan especialmente las últimas novedades, y las prestaciones futuras por desarrollar. Se espera completar el alcance de todos los objetivos propuestos en la hoja de ruta, para la versión libre de este producto, en el plazo máximo de un año.
                 </p>
               </ToggleSection>
@@ -571,7 +572,7 @@ export function PresentacionPageContent() {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 A continuación, se muestra el contenido de la pestaña que aloja el código de QGISRed. Desde las dos últimas líneas se puede acceder también a los{" "}
-                <a href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuales en español e inglés</a>
+                <Link href="/utilizacion#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuales en español e inglés</Link>
               </p>
 
               <ToggleSection title="Saber más sobre el proyecto de QGISRed en GitHub">
@@ -581,9 +582,9 @@ export function PresentacionPageContent() {
                 </p>
                 <p className="mb-3">
                   En la parte de la derecha de esta pestaña se muestra también la licencia del plugin,{" "}
-                  <a href="/capacidades#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>la última versión liberada</a>
+                  <Link href="/capacidades#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>la última versión liberada</Link>
                   {" "}y todas las{" "}
-                  <a href="/capacidades#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>versiones publicadas anteriormente con sus mejoras</a>
+                  <Link href="/capacidades#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>versiones publicadas anteriormente con sus mejoras</Link>
                 </p>
                 <p className="mb-3">
                   Una sección muy importante de este portal es la pestaña Issues, que está plenamente activa, y donde
@@ -709,7 +710,7 @@ export function PresentacionPageContent() {
                 <strong>QGISRed v1.0</strong> está <strong>registrado en los servicios de{" "}
                 <a href="https://aplicat.upv.es/exploraupv/ficha-tecnologia/patente_software/34082?busqueda=qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CARTA de la UPV</a>
                 </strong>, con el número de registro S-072-2021, y licencia GNU GPL 2.0, siendo la titularidad 100 % de la UPV. La descarga y uso del plugin es libre, sin requerir ningún tipo de registro previo. Sin embargo, en cualquier uso de tipo profesional o educativo que se haga del plugin debe mencionarse su procedencia y proporcionar un enlace a esta página web. No obstante, los <strong>usuarios que voluntariamente quieran registrarse</strong> para estar al día de las novedades o contactar con los desarrolladores puede hacerlo desde nuestro formulario de{" "}
-                <a href="/contacto" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>contacto</a>
+                <Link href="/contacto" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>contacto</Link>
               </p>
             </div>
           </div>

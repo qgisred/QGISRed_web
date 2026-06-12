@@ -59,7 +59,7 @@ export function DifusionSection() {
 
           <div className="flex flex-col gap-3">
             {buttons.map((btn) => (
-              <a
+              <Link
                 key={btn.key}
                 href={btn.href}
                 className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
@@ -73,7 +73,7 @@ export function DifusionSection() {
                 }}
               >
                 {t(btn.key)}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

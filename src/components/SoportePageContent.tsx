@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface SectionHeadingProps {
   title: string;
@@ -193,7 +194,7 @@ export function SoportePageContent() {
             de desarrollar y mantener los modelos de las redes. Si este fuera tu caso,{" "}
             <strong>
               puedes ponerte en contacto con nosotros a través de la sección{" "}
-              <a href="/contacto" style={{ color: "inherit" }}>Contacto</a>
+              <Link href="/contacto" style={{ color: "inherit" }}>Contacto</Link>
             </strong>
             , para establecer las condiciones de la asistencia, la cual se haría siempre a distancia, bien por correo,
             por videoconferencia o por acceso remoto.
@@ -206,7 +207,7 @@ export function SoportePageContent() {
             en cada momento.
           </p>
 
-          <a
+          <Link
             href="/contacto"
             className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
             style={{
@@ -218,7 +219,7 @@ export function SoportePageContent() {
             }}
           >
             Solicitar soporte técnico
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -281,7 +282,7 @@ export function SoportePageContent() {
                 empresas gestoras del agua o bien directamente a los usuarios finales.
               </p>
 
-              <a
+              <Link
                 href="/contacto"
                 className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
                 style={{
@@ -293,7 +294,7 @@ export function SoportePageContent() {
                 }}
               >
                 Solicitar información
-              </a>
+              </Link>
             </div>
 
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
@@ -333,7 +334,7 @@ export function SoportePageContent() {
             detección de fugas, gestionar la demanda, detectar anticipadamente la entrada de un contaminante, planificar
             inversiones, recuperar el suministro permanente 24 h, etc. En este sentido, el IIAMA puede aportar igualmente
             su know-how en todas estas cuestiones, puesto de manifiesto a través de las numerosas{" "}
-            <a href="/difusion#publicaciones" style={{ color: "rgb(95, 189, 211)" }}>publicaciones</a>{" "}
+            <Link href="/difusion#publicaciones" style={{ color: "rgb(95, 189, 211)" }}>publicaciones</Link>{" "}
             sobre dichos temas.
           </p>
 
@@ -343,13 +344,13 @@ export function SoportePageContent() {
             planteado, dando participación abierta a todas las propuestas. Por ejemplo, para testar algoritmos que compitan
             por anticiparse a la detección de un evento o de una fuga, por optimizar los costes de operación del sistema,
             por maximizar la resiliencia de la red al mínimo coste, etc. utilizando para ello bases de datos comunes, y un{" "}
-            <a href="/utilizacion#modelodatos" style={{ color: "rgb(95, 189, 211)" }}>modelo de datos</a>{" "}
+            <Link href="/utilizacion#modelodatos" style={{ color: "rgb(95, 189, 211)" }}>modelo de datos</Link>{" "}
             que es público y compatible con otras aplicaciones, el cual alcanza a contemplar todos los elementos que
             configuran las redes reales. A tal fin, las librerías de QGISRed podrían hacerse también públicas algún día,
             si fuera necesario.
           </p>
 
-          <a
+          <Link
             href="/contacto"
             className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
             style={{
@@ -361,7 +362,7 @@ export function SoportePageContent() {
             }}
           >
             Proponer colaboración
-          </a>
+          </Link>
         </div>
       </section>
     </main>

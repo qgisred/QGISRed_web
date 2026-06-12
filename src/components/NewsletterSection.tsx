@@ -121,9 +121,9 @@ export function NewsletterSection() {
           </p>
           <p>
             <strong>{t("responsible")}</strong>{" "}
-            <a href="/presentacion#creditos" style={{ color: "rgb(95, 189, 211)" }}>
+            <Link href="/presentacion#creditos" style={{ color: "rgb(95, 189, 211)" }}>
               {t("responsibleLink")}
-            </a>
+            </Link>
           </p>
           <p>
             <strong>{t("purpose")}</strong>{" "}
