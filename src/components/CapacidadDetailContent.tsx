@@ -2,9 +2,15 @@ import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
 import type { CapacidadArticle } from "@/data/capacidades-articles";
 
-export function CapacidadDetailContent({ article }: { article: CapacidadArticle }) {
+export function CapacidadDetailContent({ article, locale }: { article: CapacidadArticle; locale: string }) {
+  const isEn = locale === "en";
   const backAnchor =
     article.group === "novedades" ? "#novedades" : "#capacidadesdestacadas";
+
+  const displayTitle = isEn ? (article.titleEn ?? article.title) : article.title;
+  const displayParagraphs = isEn ? (article.paragraphsEn ?? article.paragraphs) : article.paragraphs;
+  const backLinkText = isEn ? "Back to Capabilities" : "Volver a Capacidades";
+  const buttonText = isEn ? "See all capabilities" : "Ver todas las capacidades";
 
   return (
     <main>
@@ -17,7 +23,7 @@ export function CapacidadDetailContent({ article }: { article: CapacidadArticle 
             style={{ color: "rgb(95, 189, 211)" }}
           >
             <span style={{ fontSize: "18px" }}>‹</span>
-            Volver a Capacidades
+            {backLinkText}
           </Link>
 
           {/* Title */}
@@ -25,13 +31,13 @@ export function CapacidadDetailContent({ article }: { article: CapacidadArticle 
             className="font-semibold mb-8"
             style={{ fontSize: "36px", color: "rgb(0, 9, 25)", lineHeight: "1.2", maxWidth: "900px" }}
           >
-            {article.title}
+            {displayTitle}
           </h1>
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             {/* Text content */}
             <div style={{ flex: article.image ? "1 1 55%" : "1 1 100%" }}>
-              {article.paragraphs.map((p, i) => (
+              {displayParagraphs.map((p, i) => (
                 <p
                   key={i}
                   className="mb-4"
@@ -53,7 +59,7 @@ export function CapacidadDetailContent({ article }: { article: CapacidadArticle 
                     textDecoration: "none",
                   }}
                 >
-                  Ver todas las capacidades
+                  {buttonText}
                 </Link>
               </div>
             </div>
