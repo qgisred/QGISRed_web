@@ -1,13 +1,4 @@
 name: Build and publish to deploy branch
-
-# Compila el sitio estático y publica el contenido de out/ en la rama `deploy`.
-# Plesk tiene el repositorio enganchado a esa rama en modo automático: recibe
-# el webhook, hace pull y copia los ficheros al docroot. El servidor nunca
-# ejecuta un build ni necesita Node.
-#
-# El transporte por FTPS no es viable: el cortafuegos de la UPV bloquea el
-# rango de puertos pasivos, así que la conexión de datos muere con ECONNRESET.
-
 on:
   push:
     branches:
@@ -37,7 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Sin NEXT_PUBLIC_BASE_PATH: el sitio vive en la raíz del subdominio.
       - name: Build static site
         run: npm run build
 
