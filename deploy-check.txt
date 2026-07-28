@@ -1,5 +1,0 @@
-Fichero temporal para verificar el despliegue automatico.
-Prueba del 2026-07-28. Borrar una vez confirmado que la cadena
-push -> Actions -> rama deploy -> Plesk funciona de extremo a extremo.
-
-Segunda prueba: Plesk en modo automatico, disparado por webhook.
