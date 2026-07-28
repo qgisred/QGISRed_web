@@ -1,6 +1,6 @@
 # QGISRed Web
 
-Sitio web público de QGISRed. Next.js 16 (App Router) con exportación estática y despliegue en GitHub Pages.
+Sitio web público de QGISRed. Next.js 16 (App Router) con exportación estática y despliegue en Plesk.
 
 ## Requisitos
 
@@ -51,8 +51,15 @@ public/             # Imágenes y assets de SEO
 
 ## Despliegue
 
-Cada push a `master` dispara `.github/workflows/deploy.yml`, que genera el export estático con
-`NEXT_PUBLIC_BASE_PATH=/QGISRed_web` y lo publica en GitHub Pages.
+Cada push a `master` dispara `.github/workflows/deploy.yml`, que genera el export estático (sin
+`basePath`, el sitio vive en la raíz del subdominio) y sube el contenido de `out/` por FTPS al
+docroot del Plesk de `new.qgisred.webs.upv.es`.
+
+Todo el trabajo ocurre en el runner de GitHub: el servidor solo recibe ficheros ya compilados, no
+ejecuta ningún build ni necesita Node.
+
+Credenciales en *Settings → Secrets and variables → Actions*: los secrets `FTP_SERVER`,
+`FTP_USERNAME` y `FTP_PASSWORD`, y la variable `FTP_SERVER_DIR` con la ruta del docroot.
 
 ## Licencia
 

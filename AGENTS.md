@@ -5,7 +5,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # QGISRed Website
 
 ## What This Is
-The public website for QGISRed, built as a statically exported Next.js site and deployed to GitHub Pages.
+The public website for QGISRed, built as a statically exported Next.js site and deployed to a Plesk server.
 
 ## Tech Stack
 - **Framework:** Next.js 16 (App Router, React 19, TypeScript strict)
@@ -13,7 +13,7 @@ The public website for QGISRed, built as a statically exported Next.js site and 
 - **i18n:** `next-intl` — locales `es` (default) and `en`, messages in `messages/`
 - **Icons:** hand-written SVG components in `src/components/icons.tsx`
 - **Output:** `output: "export"` static build → `out/`
-- **Deployment:** GitHub Pages via `.github/workflows/deploy.yml` (`NEXT_PUBLIC_BASE_PATH=/QGISRed_web`)
+- **Deployment:** `.github/workflows/deploy.yml` builds on push to `master` and uploads `out/` over FTPS to the Plesk docroot of `new.qgisred.webs.upv.es`. The server never builds. No `basePath` — the site lives at the subdomain root.
 
 ## Commands
 - `npm run dev` — Start dev server
