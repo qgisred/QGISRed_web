@@ -13,7 +13,7 @@ The public website for QGISRed, built as a statically exported Next.js site and 
 - **i18n:** `next-intl` — locales `es` (default) and `en`, messages in `messages/`
 - **Icons:** hand-written SVG components in `src/components/icons.tsx`
 - **Output:** `output: "export"` static build → `out/`
-- **Deployment:** `.github/workflows/deploy.yml` builds on push to `master` and uploads `out/` over FTPS to the Plesk docroot of `new.qgisred.webs.upv.es`. The server never builds. No `basePath` — the site lives at the subdomain root.
+- **Deployment:** `.github/workflows/deploy.yml` builds on push to `master` and publishes `out/` to the `deploy` branch. Plesk pulls that branch into the docroot (`httpdocs_new`) of `new.qgisred.webs.upv.es`; the server never builds and needs no Node. FTPS is not an option — the UPV firewall blocks the passive port range. No `basePath` — the site lives at the subdomain root.
 
 ## Commands
 - `npm run dev` — Start dev server

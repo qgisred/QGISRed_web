@@ -52,14 +52,18 @@ public/             # Imágenes y assets de SEO
 ## Despliegue
 
 Cada push a `master` dispara `.github/workflows/deploy.yml`, que genera el export estático (sin
-`basePath`, el sitio vive en la raíz del subdominio) y sube el contenido de `out/` por FTPS al
-docroot del Plesk de `new.qgisred.webs.upv.es`.
+`basePath`, el sitio vive en la raíz del subdominio) y publica el contenido de `out/` en la rama
+`deploy`.
 
-Todo el trabajo ocurre en el runner de GitHub: el servidor solo recibe ficheros ya compilados, no
-ejecuta ningún build ni necesita Node.
+El Plesk de `new.qgisred.webs.upv.es` tiene el repositorio enganchado a la rama `deploy` en modo
+automático: recibe el webhook de GitHub, hace pull y copia los ficheros a `httpdocs_new`. Todo el
+build ocurre en el runner; el servidor solo recibe ficheros compilados y no necesita Node.
 
-Credenciales en *Settings → Secrets and variables → Actions*: los secrets `FTP_SERVER`,
-`FTP_USERNAME` y `FTP_PASSWORD`, y la variable `FTP_SERVER_DIR` con la ruta del docroot.
+El workflow no usa ningún secret configurable, solo el `GITHUB_TOKEN` que GitHub inyecta.
+
+Subir los ficheros por FTPS desde Actions no es viable: el cortafuegos de la UPV deja pasar el
+canal de control (puerto 21) pero bloquea el rango de puertos pasivos, y la transferencia muere
+con `ECONNRESET` en el socket de datos.
 
 ## Licencia
 

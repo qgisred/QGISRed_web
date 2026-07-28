@@ -1,4 +1,13 @@
-name: Deploy to Plesk
+name: Build and publish to deploy branch
+
+# Compila el sitio estático y publica el contenido de out/ en la rama `deploy`.
+# Plesk tiene el repositorio enganchado a esa rama en modo automático: recibe
+# el webhook, hace pull y copia los ficheros al docroot. El servidor nunca
+# ejecuta un build ni necesita Node.
+#
+# El transporte por FTPS no es viable: el cortafuegos de la UPV bloquea el
+# rango de puertos pasivos, así que la conexión de datos muere con ECONNRESET.
+
 on:
   push:
     branches:
@@ -6,14 +15,14 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: deploy-plesk
+  group: deploy-branch
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,12 +41,12 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Upload out/ to Plesk over FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Publish out/ to deploy branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./out/
-          server-dir: ${{ vars.FTP_SERVER_DIR || '/httpdocs_new/' }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: deploy
+          publish_dir: ./out
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy ${{ github.sha }}"
