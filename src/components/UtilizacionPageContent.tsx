@@ -1,5 +1,10 @@
 import Image from "@/components/AppImage";
 
+const bp = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+const MANUAL_ES = `${bp}/files/manuals/QGISRed_0.17_usermanual_es.pdf`;
+const MANUAL_EN = `${bp}/files/manuals/QGISRed_0.17_usermanual_en.pdf`;
+
 interface SectionHeadingProps {
   title: string;
   id?: string;
@@ -165,7 +170,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
 
               <div className="flex gap-4 flex-wrap">
                 <a
-                  href="https://github.com/qgisred/QGISRed/blob/master/QGISRed_UserManual_ES.pdf"
+                  href={MANUAL_ES}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
@@ -180,7 +185,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
                   {isEn ? "Manual in Spanish" : "Manual en Español"}
                 </a>
                 <a
-                  href="https://github.com/qgisred/QGISRed/blob/master/QGISRed_UserManual_EN.pdf"
+                  href={MANUAL_EN}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
