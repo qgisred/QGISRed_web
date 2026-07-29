@@ -74,7 +74,7 @@ export function Footer() {
       >
         <div
           className="mx-auto flex flex-col md:flex-row gap-[48px] md:gap-[60px] items-start"
-          style={{ maxWidth: "1280px", padding: "0 60px" }}
+          style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}
         >
           {/* Logos 2x2 grid */}
           <div

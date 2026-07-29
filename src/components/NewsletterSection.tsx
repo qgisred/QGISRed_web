@@ -21,7 +21,7 @@ export function NewsletterSection() {
     >
       <div
         className="mx-auto"
-        style={{ maxWidth: "800px", padding: "0 60px" }}
+        style={{ maxWidth: "800px", padding: "0 clamp(20px, 5vw, 60px)" }}
       >
         <p
           className="font-semibold mb-8 text-center"

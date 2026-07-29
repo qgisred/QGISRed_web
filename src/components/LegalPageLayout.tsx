@@ -7,7 +7,7 @@ export function LegalPageLayout({ title, children }: LegalPageLayoutProps) {
   return (
     <main style={{ paddingTop: "0" }}>
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "80px" }}>
-        <div className="mx-auto" style={{ maxWidth: "900px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "900px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <h1
             className="font-bold mb-8"
             style={{

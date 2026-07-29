@@ -19,7 +19,7 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
   return (
     <main>
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "64px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           {/* Back link */}
           <Link
             href={{ pathname: "/capacidades", hash: backAnchor }}
@@ -33,7 +33,7 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
           {/* Title */}
           <h1
             className="font-semibold mb-8"
-            style={{ fontSize: "36px", color: "rgb(0, 9, 25)", lineHeight: "1.2", maxWidth: "900px" }}
+            style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2", maxWidth: "900px" }}
           >
             {displayTitle}
           </h1>

@@ -6,12 +6,12 @@ export function PresentacionSection() {
   const t = useTranslations("presentacionSection");
 
   const listItems = [
-    { key: "whatIs", href: "/presentacion#quees" },
-    { key: "background", href: "/presentacion#antecedentes" },
-    { key: "applications", href: "/presentacion#aplicaciones" },
-    { key: "installation", href: "/presentacion#instalacion" },
-    { key: "github", href: "/presentacion#github" },
-    { key: "credits", href: "/presentacion#creditos" },
+    { key: "whatIs", hash: "#quees" },
+    { key: "background", hash: "#antecedentes" },
+    { key: "applications", hash: "#aplicaciones" },
+    { key: "installation", hash: "#instalacion" },
+    { key: "github", hash: "#github" },
+    { key: "credits", hash: "#creditos" },
   ] as const;
 
   return (
@@ -27,7 +27,7 @@ export function PresentacionSection() {
         className="mx-auto flex flex-col md:flex-row items-center gap-[60px]"
         style={{
           maxWidth: "1280px",
-          padding: "0 60px",
+          padding: "0 clamp(20px, 5vw, 60px)",
         }}
       >
         {/* Left text column */}
@@ -47,7 +47,7 @@ export function PresentacionSection() {
           <h2
             className="font-bold mb-5 leading-tight"
             style={{
-              fontSize: "48px",
+              fontSize: "clamp(30px, 6vw, 48px)",
               color: "rgb(0, 9, 25)",
               marginBottom: "20px",
               lineHeight: "1.2",
@@ -79,8 +79,8 @@ export function PresentacionSection() {
                     backgroundColor: "rgb(126, 167, 40)",
                   }}
                 />
-                <a
-                  href={item.href}
+                <Link
+                  href={{ pathname: "/presentacion", hash: item.hash }}
                   className="transition-colors duration-150 hover:text-[rgb(95,189,211)]"
                   style={{
                     fontSize: "14px",
@@ -90,7 +90,7 @@ export function PresentacionSection() {
                   }}
                 >
                   {t(`listItems.${item.key}`)}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

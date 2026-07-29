@@ -1,11 +1,12 @@
 import Image from "@/components/AppImage";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 type CardKey = "tutorials" | "examples" | "manual" | "videos" | "dataModel" | "faq";
 
 interface ResourceCard {
   key: CardKey;
-  href: string;
+  hash: string;
   imageSrc: string;
   imageAlt: string;
   imageLeft: boolean;
@@ -14,21 +15,21 @@ interface ResourceCard {
 const leftColumnCards: ResourceCard[] = [
   {
     key: "tutorials",
-    href: "/utilizacion#tutoriales",
+    hash: "#tutoriales",
     imageSrc: "/images/soporte-img1.jpg",
     imageAlt: "Young female programmer web developer working on computer software",
     imageLeft: true,
   },
   {
     key: "examples",
-    href: "/utilizacion#repositorioejemplos",
+    hash: "#repositorioejemplos",
     imageSrc: "/images/presentacion-img3.png",
     imageAlt: "Repository of Examples",
     imageLeft: false,
   },
   {
     key: "manual",
-    href: "/utilizacion#manualusuario",
+    hash: "#manualusuario",
     imageSrc: "/images/soporte-img2.jpg",
     imageAlt: "Girl sitting in front of laptop carefully looking at paper document",
     imageLeft: true,
@@ -38,21 +39,21 @@ const leftColumnCards: ResourceCard[] = [
 const rightColumnCards: ResourceCard[] = [
   {
     key: "videos",
-    href: "/utilizacion#videosformativos",
+    hash: "#videosformativos",
     imageSrc: "/images/soporte-img3.jpg",
     imageAlt: "Man Working On Laptop",
     imageLeft: false,
   },
   {
     key: "dataModel",
-    href: "/utilizacion#modelodatos",
+    hash: "#modelodatos",
     imageSrc: "/images/presentacion-img2.png",
     imageAlt: "Data Model",
     imageLeft: true,
   },
   {
     key: "faq",
-    href: "/utilizacion#preguntasfrecuentes",
+    hash: "#preguntasfrecuentes",
     imageSrc: "/images/soporte-img4.jpg",
     imageAlt: "Wooden dices with question mark",
     imageLeft: false,
@@ -61,26 +62,28 @@ const rightColumnCards: ResourceCard[] = [
 
 function ResourceCardItem({ card, t }: { card: ResourceCard; t: (key: CardKey) => string }) {
   const imageBlock = (
-    <a href={card.href} className="block overflow-hidden" tabIndex={-1} aria-hidden="true">
+    <Link
+      href={{ pathname: "/utilizacion", hash: card.hash }}
+      className="block overflow-hidden"
+      tabIndex={-1}
+      aria-hidden="true"
+    >
       <Image
         src={card.imageSrc}
         alt={card.imageAlt}
         width={300}
         height={200}
-        className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+        className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.07]"
         style={{ minHeight: "150px" }}
       />
-    </a>
+    </Link>
   );
 
   const titleBlock = (
-    <div
-      className="flex items-center justify-center p-5"
-      style={{ backgroundColor: "rgb(255, 255, 255)" }}
-    >
-      <a
-        href={card.href}
-        className="font-semibold text-center transition-colors duration-150 hover:text-[rgb(95,189,211)]"
+    <div className="flex items-center justify-center p-5">
+      <Link
+        href={{ pathname: "/utilizacion", hash: card.hash }}
+        className="font-semibold text-center transition-colors duration-200 group-hover:text-[rgb(95,189,211)]"
         style={{
           fontSize: "16px",
           color: "rgb(0, 9, 25)",
@@ -89,17 +92,20 @@ function ResourceCardItem({ card, t }: { card: ResourceCard; t: (key: CardKey) =
         }}
       >
         {t(card.key)}
-      </a>
+      </Link>
     </div>
   );
 
   return (
-    <div
-      className="grid grid-cols-2"
-      style={{ border: "1px solid rgb(242, 242, 242)", minHeight: "160px" }}
-    >
-      {card.imageLeft ? imageBlock : titleBlock}
-      {card.imageLeft ? titleBlock : imageBlock}
+    <div className="resource-card-reveal">
+      <div className="resource-card group relative grid grid-cols-2" style={{ minHeight: "160px" }}>
+        {card.imageLeft ? imageBlock : titleBlock}
+        {card.imageLeft ? titleBlock : imageBlock}
+        <span
+          aria-hidden="true"
+          className="resource-card__accent pointer-events-none absolute inset-x-0 bottom-0 h-[3px] bg-[rgb(95,189,211)]"
+        />
+      </div>
     </div>
   );
 }
@@ -110,21 +116,21 @@ export function RecursosSection() {
   return (
     <section
       className="w-full bg-white"
-      style={{ paddingTop: "16px", paddingBottom: "48px" }}
+      style={{ paddingTop: "24px", paddingBottom: "56px" }}
     >
       <div
-        className="mx-auto grid grid-cols-1 md:grid-cols-2"
-        style={{ maxWidth: "1280px", padding: "0 60px", gap: "0" }}
+        className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-5"
+        style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}
       >
         {/* Left column */}
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-5">
           {leftColumnCards.map((card) => (
             <ResourceCardItem key={card.key} card={card} t={t} />
           ))}
         </div>
 
         {/* Right column */}
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-5">
           {rightColumnCards.map((card) => (
             <ResourceCardItem key={card.key} card={card} t={t} />
           ))}

@@ -31,14 +31,14 @@ export function SoporteSection() {
     >
       <div
         className="mx-auto flex flex-col md:flex-row gap-[60px] items-start"
-        style={{ maxWidth: "1280px", padding: "0 60px" }}
+        style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}
       >
         {/* Left text column */}
-        <div style={{ flex: "0 0 45%", maxWidth: "45%" }}>
+        <div className="w-full min-w-0 md:flex-[1_1_45%] md:max-w-[45%]">
           <h2
             className="font-bold mb-5 leading-tight"
             style={{
-              fontSize: "48px",
+              fontSize: "clamp(30px, 6vw, 48px)",
               color: "rgb(255, 255, 255)",
               lineHeight: "1.2",
             }}
@@ -97,7 +97,7 @@ export function SoporteSection() {
         </div>
 
         {/* Right form column */}
-        <div style={{ flex: "0 0 55%", maxWidth: "55%" }} className="w-full">
+        <div className="w-full min-w-0 md:flex-[1_1_55%] md:max-w-[55%]">
           <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
             {formFields.map((field) => (
               <input

@@ -26,10 +26,10 @@ export function UtilizacionSection() {
 
       <div
         className="relative z-10 w-full mx-auto flex flex-col md:flex-row items-center gap-[60px]"
-        style={{ maxWidth: "1280px", padding: "0 60px" }}
+        style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}
       >
         {/* Left text column */}
-        <div style={{ flex: "0 0 45%", maxWidth: "45%" }} className="w-full md:w-auto">
+        <div className="w-full min-w-0 md:w-auto md:flex-[1_1_45%] md:max-w-[45%]">
           <h2
             className="font-bold mb-2"
             style={{
@@ -45,7 +45,7 @@ export function UtilizacionSection() {
           <h2
             className="font-bold mb-5 leading-tight"
             style={{
-              fontSize: "48px",
+              fontSize: "clamp(30px, 6vw, 48px)",
               color: "rgb(0, 9, 25)",
               lineHeight: "1.2",
             }}
@@ -79,7 +79,7 @@ export function UtilizacionSection() {
         </div>
 
         {/* Right image column */}
-        <div className="hidden md:block" style={{ flex: "0 0 55%", maxWidth: "55%" }}>
+        <div className="hidden min-w-0 md:block md:flex-[1_1_55%] md:max-w-[55%]">
           <Image
             src="/images/utilizacion-img.png"
             alt="QGISRed software interface"

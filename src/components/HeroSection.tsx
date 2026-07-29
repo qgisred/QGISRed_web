@@ -23,7 +23,7 @@ export function HeroSection() {
       />
 
       <div
-        className="relative z-10 w-full px-[60px] mx-auto"
+        className="relative z-10 w-full px-[clamp(20px,5vw,60px)] mx-auto"
         style={{ maxWidth: "1440px" }}
       >
         <div className="max-w-[640px]">

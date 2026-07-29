@@ -15,7 +15,7 @@ function SectionHeading({ title, id }: SectionHeadingProps) {
       />
       <h2
         className="font-semibold"
-        style={{ fontSize: "36px", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
+        style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
       >
         {title}
       </h2>
@@ -85,7 +85,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
     <main style={{ paddingTop: "0" }}>
       {/* Intro section */}
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "64px" }}>
-        <div className="mx-auto flex flex-col md:flex-row items-start gap-[60px]" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto flex flex-col md:flex-row items-start gap-[60px]" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <div style={{ flex: "1 1 55%" }}>
             {isEn ? (
               <>
@@ -127,7 +127,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
 
       {/* Qué es QGISRed / What is QGISRed */}
       <section id="quees" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px", borderTop: "1px solid rgb(240,240,240)" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "What is QGISRed" : "Qué es QGISRed"} id="quees-heading" />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
@@ -239,7 +239,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
 
       {/* Antecedentes / Background */}
       <section id="antecedentes" className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Background" : "Antecedentes"} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
@@ -355,9 +355,9 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                 className="w-full h-auto"
               />
               <div className="flex gap-3 mt-4">
-                <Image src="/images/presentacion-app1.jpg" alt="App screenshot 1" width={300} height={200} className="flex-1 h-auto" />
-                <Image src="/images/presentacion-app2.jpg" alt="App screenshot 2" width={300} height={200} className="flex-1 h-auto" />
-                <Image src="/images/presentacion-app3.png" alt="App screenshot 3" width={300} height={200} className="flex-1 h-auto" />
+                <Image src="/images/presentacion-app1.jpg" alt="App screenshot 1" width={300} height={200} className="flex-1 min-w-0 h-auto" />
+                <Image src="/images/presentacion-app2.jpg" alt="App screenshot 2" width={300} height={200} className="flex-1 min-w-0 h-auto" />
+                <Image src="/images/presentacion-app3.png" alt="App screenshot 3" width={300} height={200} className="flex-1 min-w-0 h-auto" />
               </div>
             </div>
           </div>
@@ -366,7 +366,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
 
       {/* Aplicaciones / Applications */}
       <section id="aplicaciones" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Applications" : "Aplicaciones"} />
 
           {isEn ? (
@@ -568,7 +568,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
 
       {/* Instalación / Installation */}
       <section id="instalacion" className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Installing QGISRed" : "Instalación de QGISRed"} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
@@ -736,7 +736,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
 
       {/* Proyecto en GitHub / GitHub Project */}
       <section id="github" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "GitHub Project" : "Proyecto en GitHub"} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
@@ -862,7 +862,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
 
       {/* Créditos / Credits */}
       <section id="creditos" className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "64px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Credits" : "Créditos"} />
 
           {isEn ? (

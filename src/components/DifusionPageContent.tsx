@@ -14,7 +14,7 @@ function SectionHeading({ title, id }: SectionHeadingProps) {
       />
       <h2
         className="font-semibold"
-        style={{ fontSize: "36px", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
+        style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
       >
         {title}
       </h2>
@@ -382,7 +382,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
     <main>
       {/* Intro */}
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           {isEn ? (
             <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
               This section gathers those activities aimed at disseminating the QGISRed application, highlighting the{" "}
@@ -422,7 +422,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Cursos de Formación / Training Courses */}
       <section id="cursos" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Training Courses" : "Cursos de formación"} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
@@ -510,7 +510,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Publicaciones / Publications */}
       <section id="publicaciones" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Publications" : "Publicaciones"} />
 
           <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -574,7 +574,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Noticias y Redes Sociales / News & Social Media */}
       <section id="noticias" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "News & Social Media" : "Noticias y Redes Sociales"} />
 
           <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>

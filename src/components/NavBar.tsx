@@ -135,7 +135,7 @@ export function NavBar() {
       style={{ transition: "background 0.3s, border 0.3s, box-shadow 0.3s" }}
     >
       {/* Desktop nav */}
-      <div className="hidden md:flex items-center h-[105px] px-[60px] max-w-[1440px] mx-auto">
+      <div className="hidden md:flex items-center h-[105px] px-[clamp(20px,5vw,60px)] max-w-[1440px] mx-auto">
         {/* Logo */}
         <div className="flex-shrink-0 w-[192px]">
           <Link href="/">

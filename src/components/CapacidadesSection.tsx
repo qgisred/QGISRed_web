@@ -5,11 +5,11 @@ export function CapacidadesSection() {
   const t = useTranslations("capacidadesSection");
 
   const cards = [
-    { key: "news", href: "/capacidades#novedades", icon: "✦" },
-    { key: "featured", href: "/capacidades#capacidadesdestacadas", icon: "⊞" },
-    { key: "current", href: "/capacidades#prestacionesactuales", icon: "✓" },
-    { key: "upcoming", href: "/capacidades#proximasprestaciones", icon: "◷" },
-    { key: "history", href: "/capacidades#historicodeversiones", icon: "≡" },
+    { key: "news", hash: "#novedades", icon: "✦" },
+    { key: "featured", hash: "#capacidadesdestacadas", icon: "⊞" },
+    { key: "current", hash: "#prestacionesactuales", icon: "✓" },
+    { key: "upcoming", hash: "#proximasprestaciones", icon: "◷" },
+    { key: "history", hash: "#historicodeversiones", icon: "≡" },
   ] as const;
 
   return (
@@ -33,7 +33,7 @@ export function CapacidadesSection() {
 
       <div
         className="relative z-10 w-full mx-auto flex flex-col items-center text-center"
-        style={{ maxWidth: "1280px", padding: "0 60px" }}
+        style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}
       >
         <h2
           className="font-bold text-white mb-4 leading-tight"
@@ -52,9 +52,9 @@ export function CapacidadesSection() {
         <div className="w-full mb-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
             {cards.slice(0, 3).map((card) => (
-              <a
+              <Link
                 key={card.key}
-                href={card.href}
+                href={{ pathname: "/capacidades", hash: card.hash }}
                 className="flex items-center gap-4 p-6 transition-shadow duration-200 hover:shadow-[0_8px_24px_rgba(0,9,25,0.25)]"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.95)",
@@ -71,14 +71,14 @@ export function CapacidadesSection() {
                 >
                   {t(`cards.${card.key}`)}
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:max-w-[66%] lg:mx-auto">
             {cards.slice(3).map((card) => (
-              <a
+              <Link
                 key={card.key}
-                href={card.href}
+                href={{ pathname: "/capacidades", hash: card.hash }}
                 className="flex items-center gap-4 p-6 transition-shadow duration-200 hover:shadow-[0_8px_24px_rgba(0,9,25,0.25)]"
                 style={{
                   backgroundColor: "rgba(255, 255, 255, 0.95)",
@@ -95,7 +95,7 @@ export function CapacidadesSection() {
                 >
                   {t(`cards.${card.key}`)}
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

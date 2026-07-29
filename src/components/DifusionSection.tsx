@@ -32,14 +32,14 @@ export function DifusionSection() {
 
       <div
         className="relative z-10 w-full mx-auto flex items-center"
-        style={{ maxWidth: "1280px", padding: "0 60px", minHeight: "707px" }}
+        style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)", minHeight: "707px" }}
       >
         {/* Left text column */}
         <div style={{ maxWidth: "480px" }}>
           <h2
             className="font-bold mb-5 leading-tight"
             style={{
-              fontSize: "48px",
+              fontSize: "clamp(30px, 6vw, 48px)",
               color: "rgb(0, 9, 25)",
               lineHeight: "1.2",
             }}

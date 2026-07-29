@@ -27,9 +27,9 @@ export function PageHero({
         className="absolute inset-0 pointer-events-none"
         style={{ backgroundColor: overlayColor, opacity: overlayOpacity }}
       />
-      <div className="relative z-10 text-center px-6">
+      <div className="relative z-10 w-full min-w-0 text-center px-6">
         <h1
-          className="font-bold text-white leading-tight"
+          className="font-bold text-white leading-tight break-words"
           style={{
             fontSize: "clamp(36px, 5vw, 64px)",
             lineHeight: "1.15",

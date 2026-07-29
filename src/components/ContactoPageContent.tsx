@@ -289,10 +289,10 @@ export function ContactoPageContent() {
           paddingBottom: "64px",
         }}
       >
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <h2
             className="font-bold mb-8"
-            style={{ fontSize: "36px", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
+            style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
           >
             ¿Quieres contactar con nosotros?
           </h2>
@@ -375,7 +375,7 @@ export function ContactoPageContent() {
         className="w-full"
         style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "64px", paddingBottom: "64px" }}
       >
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <div className="max-w-[600px]">
             <p
               className="font-semibold mb-2"
@@ -390,7 +390,7 @@ export function ContactoPageContent() {
             </p>
             <h2
               className="font-bold mb-6"
-              style={{ fontSize: "36px", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
+              style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
             >
               Regístrate en nuestra Newsletter
             </h2>

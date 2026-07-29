@@ -16,7 +16,7 @@ function SectionHeading({ title, id }: SectionHeadingProps) {
       />
       <h2
         className="font-semibold"
-        style={{ fontSize: "36px", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
+        style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
       >
         {title}
       </h2>
@@ -642,7 +642,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
     <main>
       {/* Intro */}
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           {isEn ? (
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -727,7 +727,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Novedades */}
       <section id="novedades" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "What's New in version 0.18" : "Novedades versión 0.18"} />
 
           {isEn ? (
@@ -790,7 +790,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Capacidades Destacadas */}
       <section id="capacidadesdestacadas" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Featured Capabilities" : "Capacidades destacadas"} />
 
           {isEn ? (
@@ -838,7 +838,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Prestaciones Actuales */}
       <section id="prestacionesactuales" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Current Capabilities" : "Prestaciones actuales"} />
 
           {isEn ? (
@@ -905,7 +905,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Próximas Prestaciones */}
       <section id="proximasprestaciones" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Road Map" : "Próximas prestaciones"} />
 
           {isEn ? (
@@ -934,7 +934,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Histórico de Versiones */}
       <section id="historicodeversiones" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Version History" : "Histórico de versiones"} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">

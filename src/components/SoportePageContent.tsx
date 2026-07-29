@@ -15,7 +15,7 @@ function SectionHeading({ title, id }: SectionHeadingProps) {
       />
       <h2
         className="font-semibold"
-        style={{ fontSize: "36px", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
+        style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
       >
         {title}
       </h2>
@@ -63,7 +63,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
     <main>
       {/* Intro */}
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           {isEn ? (
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -173,7 +173,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Incidencias / Issues */}
       <section id="incidencias" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Issues" : "Incidencias"} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
@@ -277,7 +277,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Soporte Técnico / Technical Support */}
       <section id="soportetecnico" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Technical Support" : "Soporte técnico"} />
 
           {isEn ? (
@@ -350,7 +350,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Servicios a Empresas / Business Services */}
       <section id="empresas" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Business Services" : "Servicios a empresas"} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
@@ -473,7 +473,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
 
       {/* Participación en Proyectos / Participation in Projects */}
       <section id="participacion" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "64px" }}>
-        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 60px" }}>
+        <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Participation in Projects" : "Participación en Proyectos"} />
 
           {isEn ? (
