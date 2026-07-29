@@ -591,7 +591,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                     . Users can install the most recent version for Windows, although it is also compatible with earlier versions.
                   </p>
                   <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    QGIS is currently the most widely distributed free GIS software in the world, and offers in its latest versions an innumerable list of features, including interoperability with all types of environments and data formats. It is available for Windows, macOS, Linux, BSD, mobiles and tablets. However, QGISRed currently only works on Windows and for versions later than 3.2. Furthermore, although QGIS can support up to 40 languages, QGISRed is currently only available in English.
+                    QGIS is currently the most widely distributed free GIS software in the world, and offers in its latest versions an innumerable list of features, including interoperability with all types of environments and data formats. It is available for Windows, macOS, Linux, BSD, mobiles and tablets. However, QGISRed currently only works on Windows and for versions 3.28 or later. Furthermore, although QGIS can support up to 40 languages, QGISRed is currently only available in English.
                   </p>
 
                   <div className="mb-6">
@@ -650,7 +650,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                     QGIS es el software de GIS libre de mayor difusión actualmente en el mundo, y ofrece en sus últimas
                     versiones una lista innumerable de prestaciones, incluida la interoperabilidad con todo tipo de entornos
                     y formato de los datos. Está disponible para Windows, macOS, Linux, BSD, móviles y tabletas. Sin
-                    embargo, QGISRed funciona por ahora solo sobre Windows y para versiones posteriores a la 3.2. Además,
+                    embargo, QGISRed funciona por ahora solo sobre Windows y para versiones 3.28 o posteriores. Además,
                     aunque QGIS puede soportar hasta 40 idiomas, QGISRed está disponible por ahora solo en inglés.
                   </p>
 
