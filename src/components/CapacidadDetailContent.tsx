@@ -9,6 +9,10 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
 
   const displayTitle = isEn ? (article.titleEn ?? article.title) : article.title;
   const displayParagraphs = isEn ? (article.paragraphsEn ?? article.paragraphs) : article.paragraphs;
+  const displayBulletList = isEn ? (article.bulletListEn ?? article.bulletList) : article.bulletList;
+  const displayParagraphsAfterList = isEn
+    ? (article.paragraphsAfterListEn ?? article.paragraphsAfterList)
+    : article.paragraphsAfterList;
   const backLinkText = isEn ? "Back to Capabilities" : "Volver a Capacidades";
   const buttonText = isEn ? "See all capabilities" : "Ver todas las capacidades";
 
@@ -38,6 +42,30 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
             {/* Text content */}
             <div style={{ flex: article.image ? "1 1 55%" : "1 1 100%" }}>
               {displayParagraphs.map((p, i) => (
+                <p
+                  key={i}
+                  className="mb-4"
+                  style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}
+                >
+                  {p}
+                </p>
+              ))}
+
+              {displayBulletList && (
+                <ul className="mb-4 list-disc pl-5" style={{ color: "rgb(51, 51, 51)" }}>
+                  {displayBulletList.map((item, i) => (
+                    <li
+                      key={i}
+                      className="mb-2"
+                      style={{ fontSize: "15px", lineHeight: "1.7" }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {displayParagraphsAfterList?.map((p, i) => (
                 <p
                   key={i}
                   className="mb-4"

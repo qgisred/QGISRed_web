@@ -7,6 +7,12 @@ export interface CapacidadArticle {
   excerptEn?: string;
   paragraphs: string[];
   paragraphsEn?: string[];
+  /** Bullet list rendered after `paragraphs`/`paragraphsEn`, before `paragraphsAfterList`. */
+  bulletList?: string[];
+  bulletListEn?: string[];
+  /** Closing paragraph(s) rendered after `bulletList`, e.g. a pointer to the changelog. */
+  paragraphsAfterList?: string[];
+  paragraphsAfterListEn?: string[];
   image?: string;
   imageAlt?: string;
 }
@@ -187,12 +193,44 @@ export const capacidadesArticles: CapacidadArticle[] = [
     excerpt: "Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia y continúa depurando las prestaciones ofrecidas por QGISRed en versiones anteriores.",
     excerptEn: "In addition to all of the above, version 0.18 includes many other minor improvements and continues to refine previous QGISRed features.",
     paragraphsEn: [
-      "Version 0.18 of QGISRed introduces numerous enhancements beyond its core capabilities. New buttons for moving and exporting projects, and new options for renaming projects streamline workflow organization. The system now incorporates EPANET 2.3.5. A Status Report tab has been added to the results panel. The Demand Builder received algorithmic revisions. The release achieves compatibility with QGIS 4.0 and resolves an issue when loading field data related to the decimal separator.",
-      "For a complete list of all improvements and corrections made in version 0.18, visit the Version History section below.",
+      "In addition to all of the above, version 0.18 includes many other minor improvements. We have also continued to refine the features offered by QGISRed in previous versions. Highlights:",
+    ],
+    bulletListEn: [
+      "Improvements to the Project Manager. New buttons for moving and exporting projects, and new options for renaming projects.",
+      "Improvement to the format in which the INP file is exported from QGISRed, similar to that exported from the EPANET Toolkit.",
+      "Replacement of the EPANET 2.2 calculation engine with the new version 2.3, up to the latest revision 2.3.5.",
+      "Incorporation of the Status Report into the results panel in a new tab, always accessible.",
+      "Improvements to the Demand Builder for point demands. Revision of algorithms and automatic loading of links. New theme for demand points.",
+      "Revision of the tool for identifying hydraulic sectors and detecting isolated consumption points.",
+      "Revision of the algorithm for identifying blockages. Detection of isolated consumption points.",
+      "New project-level options to transfer demand from connections to nodes. Classification of demand by patterns.",
+      "Compatibility of version 0.18 with the new versions of QGIS 4.0.",
+      "Resolved an issue when loading field data related to the decimal separator.",
+      "Fixed a bug that prevented the cancellation of requests for areas that remain isolated.",
+      "Limit on the size of the ‘Description’ field, used to provide information on the load demands on each node.",
+    ],
+    paragraphsAfterListEn: [
+      "If you would like more details on all the improvements and fixes made in version 0.18, please see the full changelog below, in the Version History section.",
     ],
     paragraphs: [
-      "Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia. También se han continuado depurando las prestaciones ofrecidas por QGISRed en versiones anteriores.",
-      "Si quieres conocer con más detalle la totalidad de mejoras y correcciones realizadas en la versión 0.18, visita más abajo el registro de todos los cambios, en la sección Histórico de versiones.",
+      "Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia. También se han continuado depurando las prestaciones ofrecidas por QGISRed en versiones anteriores. A destacar:",
+    ],
+    bulletList: [
+      "Mejoras en el Gestor de Proyectos. Nuevos botones para Mover y Exportar proyectos, y nuevas opciones para Renombrar proyectos.",
+      "Mejora del formato en que se exporta el fichero INP desde QGISRed, similar al que se exportaría desde la Toolkit de EPANET.",
+      "Sustitución del motor de cálculo de EPANET 2.2 por la nueva versión 2.3, hasta la revisión más reciente 2.3.5.",
+      "Incorporación del Informe de Estado al panel de resultados en una nueva pestaña, siempre accesible.",
+      "Mejoras en el Constructor de Demandas para las demandas puntuales. Revisión de los algoritmos y carga automática de los enlaces. Nuevo tema para los puntos de demanda.",
+      "Revisión de la herramienta de identificación de los sectores hidráulicos y detección de los consumos aislados.",
+      "Revisión del algoritmo para identificar cerradas. Detección de los consumos aislados.",
+      "Nuevas opciones a nivel de proyecto para trasladar las demandas de las acometidas a los nudos. Clasificación de las demandas por patrones.",
+      "Compatibilización de la versión 0.18 con las nuevas versiones de QGIS 4.0.",
+      "Resuelto un problema al cargar los datos de campo relacionado con el separador decimal.",
+      "Corregido un error que impedía cancelar la demandas de las zonas que quedan aisladas.",
+      "Limitación del tamaño del campo Descripción, usado para informar sobre las demandas de las acometidas cargadas a cada nudo.",
+    ],
+    paragraphsAfterList: [
+      "Si quieres conocer con más detalle la totalidad de mejoras y correcciones realizadas en la versión 0.18 visita más abajo el registro de todos los cambios, en la sección Histórico de versiones.",
     ],
   },
 
