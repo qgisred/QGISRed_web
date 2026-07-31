@@ -68,12 +68,19 @@ are: contact (`/contacto`), support (home), and two newsletter sign-ups (home an
   body, so their names are the labels the recipient sees. Any field whose name
   contains `honeypot` is stripped from the email — hence the trap field is named
   exactly `honeypot`. Errors come back in `error`, not the documented `message`.
-- **Newsletter → Brevo**, via the hosted `sibforms.com/serve/...` endpoint. The
-  uppercase field names in `subscribeToNewsletter` must match the contact attributes
-  configured on the Brevo form. The endpoint sends no CORS headers, so the request
-  uses `mode: "no-cors"` and the response is opaque — only network failures are
-  detectable, not Brevo-side rejections. The user's real confirmation is the
-  double opt-in email.
+- **Newsletter → Brevo**, via the hosted `<account>.sibforms.com/v2/serve/...`
+  endpoint. The field names in `subscribeToNewsletter` must match the ones the Brevo
+  form actually renders — fetch the form URL with GET and read its `name=` attributes
+  rather than assuming. They are currently `EMAIL`, `NOMBRE`, `PAIS`, `COMPANY_NAME`
+  (Empresa) and `JOB_TITLE` (Cargo) — Brevo's own standard contact attributes, not the
+  `EMPRESA`/`CARGO` names the form builder shows. Every field the Brevo form marks
+  `required` must be optional there, because the home newsletter submits an email
+  address and nothing else. `locale` is sent as the literal `es`
+  the form declares — the site's own locale is deliberately not forwarded, since an
+  unexpected value could be rejected. The endpoint sends no CORS headers, so the
+  request uses `mode: "no-cors"` and the response is opaque: only network failures are
+  detectable, not Brevo-side rejections, which makes any field-name drift fail
+  silently.
 
 Both keys are public by design: they ship in the client bundle, grant no account
 access, and are injected at build time from GitHub Actions **variables** (not

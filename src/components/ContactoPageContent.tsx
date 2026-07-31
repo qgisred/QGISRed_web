@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
   sendContactMessage,
@@ -261,7 +260,6 @@ function NewsletterForm() {
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [error, setError] = useState("");
-  const locale = useLocale();
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -275,7 +273,6 @@ function NewsletterForm() {
     try {
       await subscribeToNewsletter({
         email: form.email,
-        locale,
         nombre: form.nombre,
         pais: form.pais,
         empresa: form.empresa,
@@ -321,7 +318,7 @@ function NewsletterForm() {
         />
         <InputField
           type="text"
-          placeholder="Empresa/Institución"
+          placeholder="Empresa/Institución*"
           value={form.empresa}
           onChange={(v) => setForm({ ...form, empresa: v })}
         />
@@ -365,6 +362,7 @@ function NewsletterForm() {
           status === "sending" ||
           !form.nombre ||
           !form.pais ||
+          !form.empresa ||
           !form.email ||
           !form.privacidad
         }

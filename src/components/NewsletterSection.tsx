@@ -1,17 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { subscribeToNewsletter, type SubmitStatus } from "@/lib/forms";
 
+const fieldStyle = {
+  backgroundColor: "rgb(255, 255, 255)",
+  border: "1px solid rgb(193, 193, 193)",
+  borderRadius: "2px",
+  padding: "14px 16px",
+  fontSize: "14px",
+  color: "rgb(34, 34, 34)",
+} as const;
+
 export function NewsletterSection() {
+  const [nombre, setNombre] = useState("");
+  const [pais, setPais] = useState("");
+  const [empresa, setEmpresa] = useState("");
   const [email, setEmail] = useState("");
   const [accepted, setAccepted] = useState(false);
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const t = useTranslations("newsletterSection");
-  const locale = useLocale();
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,7 +33,7 @@ export function NewsletterSection() {
 
     setStatus("sending");
     try {
-      await subscribeToNewsletter({ email, locale });
+      await subscribeToNewsletter({ email, nombre, pais, empresa });
       setStatus("success");
     } catch {
       setStatus("error");
@@ -55,6 +66,37 @@ export function NewsletterSection() {
         </p>
 
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder={t("namePlaceholder")}
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+              required
+              className="w-full focus:outline-none transition-all duration-150"
+              style={fieldStyle}
+            />
+            <input
+              type="text"
+              placeholder={t("countryPlaceholder")}
+              value={pais}
+              onChange={(e) => setPais(e.target.value)}
+              required
+              className="w-full focus:outline-none transition-all duration-150"
+              style={fieldStyle}
+            />
+          </div>
+
+          <input
+            type="text"
+            placeholder={t("companyPlaceholder")}
+            value={empresa}
+            onChange={(e) => setEmpresa(e.target.value)}
+            required
+            className="w-full focus:outline-none transition-all duration-150"
+            style={fieldStyle}
+          />
+
           <input
             type="email"
             placeholder={t("emailPlaceholder")}
@@ -62,14 +104,7 @@ export function NewsletterSection() {
             onChange={(e) => setEmail(e.target.value)}
             required
             className="w-full focus:outline-none transition-all duration-150"
-            style={{
-              backgroundColor: "rgb(255, 255, 255)",
-              border: "1px solid rgb(193, 193, 193)",
-              borderRadius: "2px",
-              padding: "14px 16px",
-              fontSize: "14px",
-              color: "rgb(34, 34, 34)",
-            }}
+            style={fieldStyle}
           />
 
           <div className="flex items-start gap-3">
@@ -126,7 +161,15 @@ export function NewsletterSection() {
 
           <button
             type="submit"
-            disabled={status === "sending" || status === "success" || !email || !accepted}
+            disabled={
+              status === "sending" ||
+              status === "success" ||
+              !nombre ||
+              !pais ||
+              !empresa ||
+              !email ||
+              !accepted
+            }
             className="w-full font-bold uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             style={{
               background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",

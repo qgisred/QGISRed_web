@@ -52,7 +52,6 @@ export async function sendContactMessage(payload: ContactPayload): Promise<void>
 
 export interface NewsletterPayload {
   email: string;
-  locale: string;
   nombre?: string;
   pais?: string;
   empresa?: string;
@@ -66,14 +65,15 @@ export async function subscribeToNewsletter(payload: NewsletterPayload): Promise
 
   const body = new URLSearchParams({
     EMAIL: payload.email,
-    locale: payload.locale,
-    html_type: "simple",
+    locale: "es",
+    OPT_IN: "1",
     email_address_check: "",
   });
   if (payload.nombre) body.set("NOMBRE", payload.nombre);
   if (payload.pais) body.set("PAIS", payload.pais);
-  if (payload.empresa) body.set("EMPRESA", payload.empresa);
-  if (payload.cargo) body.set("CARGO", payload.cargo);
+  // Empresa cuelga de un registro de compañía vinculado; cargo es del contacto.
+  if (payload.empresa) body.set("COMPANY:name", payload.empresa);
+  if (payload.cargo) body.set("JOB_TITLE", payload.cargo);
 
   await fetch(BREVO_FORM_URL, {
     method: "POST",

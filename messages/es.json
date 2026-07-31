@@ -132,6 +132,9 @@
   },
   "newsletterSection": {
     "title": "Regístrate en nuestra Newsletter para estar al día de todas las novedades",
+    "namePlaceholder": "Nombre*",
+    "countryPlaceholder": "País*",
+    "companyPlaceholder": "Empresa/Institución*",
     "emailPlaceholder": "Email*",
     "privacyText": "He leído y acepto la",
     "privacyLink": "política de privacidad",

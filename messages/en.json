@@ -132,6 +132,9 @@
   },
   "newsletterSection": {
     "title": "Sign up for our Newsletter to keep up to date with all the news",
+    "namePlaceholder": "Name*",
+    "countryPlaceholder": "Country*",
+    "companyPlaceholder": "Company/Institution*",
     "emailPlaceholder": "Email*",
     "privacyText": "I have read and accept the",
     "privacyLink": "Privacy Policy",
