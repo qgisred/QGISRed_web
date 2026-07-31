@@ -1,13 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { subscribeToNewsletter, type SubmitStatus } from "@/lib/forms";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [accepted, setAccepted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<SubmitStatus>("idle");
   const t = useTranslations("newsletterSection");
+  const locale = useLocale();
+
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (honeypot) {
+      setStatus("success");
+      return;
+    }
+
+    setStatus("sending");
+    try {
+      await subscribeToNewsletter({ email, locale });
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <section
@@ -34,7 +54,7 @@ export function NewsletterSection() {
           {t("title")}
         </p>
 
-        <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder={t("emailPlaceholder")}
@@ -76,28 +96,38 @@ export function NewsletterSection() {
             </label>
           </div>
 
-          {/* reCAPTCHA placeholder */}
-          <div
-            className="flex items-center gap-3 rounded"
-            style={{
-              border: "1px solid rgb(193, 193, 193)",
-              backgroundColor: "rgb(249, 249, 249)",
-              padding: "12px 16px",
-              maxWidth: "300px",
-            }}
-          >
-            <div
-              className="flex-shrink-0 rounded"
-              style={{ width: "24px", height: "24px", border: "1px solid rgb(193, 193, 193)" }}
-            />
-            <span style={{ fontSize: "13px", color: "rgb(51, 51, 51)" }}>
-              {t("recaptcha")}
-            </span>
-          </div>
+          <input
+            type="text"
+            name="email_address_check"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+            className="hidden"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+
+          {status === "success" && (
+            <p
+              role="status"
+              style={{ fontSize: "14px", color: "rgb(21, 128, 61)", lineHeight: "1.5" }}
+            >
+              {t("successMessage")}
+            </p>
+          )}
+          {status === "error" && (
+            <p
+              role="alert"
+              style={{ fontSize: "14px", color: "rgb(185, 28, 28)", lineHeight: "1.5" }}
+            >
+              {t("errorMessage")}
+            </p>
+          )}
 
           <button
             type="submit"
-            className="w-full font-bold uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110 cursor-pointer"
+            disabled={status === "sending" || status === "success" || !email || !accepted}
+            className="w-full font-bold uppercase tracking-widest text-white transition-all duration-200 hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             style={{
               background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",
               fontSize: "13px",
@@ -107,11 +137,10 @@ export function NewsletterSection() {
               marginTop: "8px",
             }}
           >
-            {t("submit")}
+            {status === "sending" ? t("submitting") : t("submit")}
           </button>
         </form>
 
-        {/* Legal text */}
         <div
           className="mt-4"
           style={{ fontSize: "10px", lineHeight: "1.6", color: "rgb(51, 51, 51)" }}

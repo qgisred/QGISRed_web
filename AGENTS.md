@@ -50,3 +50,51 @@ public/
 
 ## Content
 - All user-facing copy lives in `messages/es.json` and `messages/en.json` — keep both in sync when adding keys.
+
+## Forms and email
+The site is a static export, so there is no backend to send mail from. Both form
+flows live in `src/lib/forms.ts` and delegate to external services. The four forms
+are: contact (`/contacto`), support (home), and two newsletter sign-ups (home and
+`/contacto`).
+
+- **Contact and support → Static Forms** (`api.staticforms.dev/submit`). Delivers to
+  the address that owns the API key, which must be `info@qgisred.com`; the recipient is
+  never sent from the client. That mailbox is deliberately **not** `qgisred@upv.es`:
+  the latter sits behind the UPV's Microsoft 365 filtering, which silently quarantined
+  the provider's own verification mail. A form whose messages vanish into an
+  organisation quarantine fails invisibly — the visitor still sees a success screen. `replyTo` is set to the visitor's address. Free tier is
+  500 submissions/month with email notification included. Fields other than the API's
+  own (`apiKey`, `subject`, `replyTo`, `honeypot`) are dumped verbatim into the email
+  body, so their names are the labels the recipient sees. Any field whose name
+  contains `honeypot` is stripped from the email — hence the trap field is named
+  exactly `honeypot`. Errors come back in `error`, not the documented `message`.
+- **Newsletter → Brevo**, via the hosted `sibforms.com/serve/...` endpoint. The
+  uppercase field names in `subscribeToNewsletter` must match the contact attributes
+  configured on the Brevo form. The endpoint sends no CORS headers, so the request
+  uses `mode: "no-cors"` and the response is opaque — only network failures are
+  detectable, not Brevo-side rejections. The user's real confirmation is the
+  double opt-in email.
+
+Both keys are public by design: they ship in the client bundle, grant no account
+access, and are injected at build time from GitHub Actions **variables** (not
+secrets). See `.env.example`.
+
+### Newsletter sender address
+Campaigns are sent from `info@qgisred.com` through Brevo, with `qgisred.com`
+authenticated in Brevo (DKIM + SPF) so DMARC aligns properly. All of this is Brevo
+dashboard and DNS configuration — nothing in this repo depends on it.
+
+`qgisred.com` DNS is hosted at `servicio-online.net`, i.e. under project control
+rather than the university's, which is what makes domain authentication possible
+without going through UPV IT.
+
+Why not an `@upv.es` From address: `upv.es` publishes `p=quarantine` DMARC (with
+`sp=quarantine`, so subdomains inherit it) and an SPF record authorising only the
+UPV's own SMTP servers and Microsoft 365. Brevo can never align there, so those
+campaigns would land in spam. Authorising Brevo on `upv.es` would also let it send as
+any address in the university, which is why UPV IT would realistically refuse.
+
+Watch out when editing DNS: the pre-existing `qgisred.com` SPF record was
+`v=spf1 redirect=qgisred.upv.es`, and that name is a CNAME to `genablo.cc.upv.es`
+with no SPF record of its own — an RFC 7208 `permerror`. It must be **replaced**,
+not appended to.

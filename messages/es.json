@@ -122,9 +122,12 @@
       "telefono": "Teléfono",
       "mensaje": "Mensaje",
       "submit": "Enviar",
+      "submitting": "Enviando…",
       "privacy": "He leído y acepto la",
       "privacyLink": "política de privacidad",
-      "recaptcha": "protección de reCAPTCHA"
+      "successTitle": "¡Gracias por tu mensaje!",
+      "successBody": "Nos pondremos en contacto contigo a la mayor brevedad posible.",
+      "errorMessage": "No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos a info@qgisred.com."
     }
   },
   "newsletterSection": {
@@ -132,8 +135,10 @@
     "emailPlaceholder": "Email*",
     "privacyText": "He leído y acepto la",
     "privacyLink": "política de privacidad",
-    "recaptcha": "protección de reCAPTCHA",
     "submit": "REGISTRARME",
+    "submitting": "ENVIANDO…",
+    "successMessage": "Te hemos enviado un email para que confirmes tu suscripción. Revisa también la carpeta de spam.",
+    "errorMessage": "No se ha podido completar la suscripción. Inténtalo de nuevo más tarde.",
     "dataProtectionTitle": "INFORMACIÓN BÁSICA SOBRE PROTECCIÓN DE DATOS RESPONSABLE DEL TRATAMIENTO",
     "responsible": "RESPONSABLE:",
     "responsibleLink": "Fernando Martínez Alzamora",

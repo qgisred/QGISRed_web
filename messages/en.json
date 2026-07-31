@@ -122,9 +122,12 @@
       "telefono": "Phone",
       "mensaje": "Message",
       "submit": "Send",
+      "submitting": "Sending…",
       "privacy": "I have read and accept the",
       "privacyLink": "Privacy Policy",
-      "recaptcha": "reCAPTCHA protection"
+      "successTitle": "Thanks for your message!",
+      "successBody": "We will get back to you as soon as possible.",
+      "errorMessage": "The message could not be sent. Please try again or write to us at info@qgisred.com."
     }
   },
   "newsletterSection": {
@@ -132,8 +135,10 @@
     "emailPlaceholder": "Email*",
     "privacyText": "I have read and accept the",
     "privacyLink": "Privacy Policy",
-    "recaptcha": "reCAPTCHA protection",
     "submit": "REGISTER",
+    "submitting": "SENDING…",
+    "successMessage": "We have sent you an email to confirm your subscription. Please check your spam folder too.",
+    "errorMessage": "The subscription could not be completed. Please try again later.",
     "dataProtectionTitle": "BASIC INFORMATION ON DATA PROTECTION CONTROLLER",
     "responsible": "CONTROLLER:",
     "responsibleLink": "Fernando Martínez Alzamora",

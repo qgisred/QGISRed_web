@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import {
+  sendContactMessage,
+  subscribeToNewsletter,
+  type SubmitStatus,
+} from "@/lib/forms";
 
 interface FormState {
   nombre: string;
@@ -10,6 +16,37 @@ interface FormState {
   asunto: string;
   mensaje: string;
   privacidad: boolean;
+}
+
+function HoneypotField({
+  name,
+  value,
+  onChange,
+}: {
+  name: string;
+  value: string;
+  onChange: (val: string) => void;
+}) {
+  return (
+    <input
+      type="text"
+      name={name}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+      className="hidden"
+      tabIndex={-1}
+      autoComplete="off"
+      aria-hidden="true"
+    />
+  );
+}
+
+function ErrorMessage({ children }: { children: React.ReactNode }) {
+  return (
+    <p role="alert" style={{ fontSize: "13px", color: "rgb(185, 28, 28)", lineHeight: "1.5" }}>
+      {children}
+    </p>
+  );
 }
 
 interface NewsletterState {
@@ -60,14 +97,38 @@ function ContactForm() {
     mensaje: "",
     privacidad: false,
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (honeypot) {
+      setStatus("success");
+      return;
+    }
+
+    setStatus("sending");
+    setError("");
+    try {
+      await sendContactMessage({
+        origen: "Contacto",
+        nombre: form.nombre,
+        telefono: form.telefono,
+        email: form.email,
+        asunto: form.asunto,
+        mensaje: form.mensaje,
+      });
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+      setError(
+        err instanceof Error ? err.message : "No se ha podido enviar el mensaje.",
+      );
+    }
   };
 
-  if (submitted) {
+  if (status === "success") {
     return (
       <div
         className="p-8 text-center"
@@ -143,9 +204,19 @@ function ContactForm() {
         </span>
       </label>
 
+      <HoneypotField name="honeypot" value={honeypot} onChange={setHoneypot} />
+
+      {status === "error" && <ErrorMessage>{error}</ErrorMessage>}
+
       <button
         type="submit"
-        disabled={!form.nombre || !form.email || !form.mensaje || !form.privacidad}
+        disabled={
+          status === "sending" ||
+          !form.nombre ||
+          !form.email ||
+          !form.mensaje ||
+          !form.privacidad
+        }
         className="w-full font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         style={{
           background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",
@@ -156,7 +227,7 @@ function ContactForm() {
           borderRadius: "2px",
         }}
       >
-        Enviar mensaje
+        {status === "sending" ? "Enviando…" : "Enviar mensaje"}
       </button>
 
       <details className="mt-2">
@@ -187,21 +258,47 @@ function NewsletterForm() {
     email: "",
     privacidad: false,
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [error, setError] = useState("");
+  const locale = useLocale();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (honeypot) {
+      setStatus("success");
+      return;
+    }
+
+    setStatus("sending");
+    setError("");
+    try {
+      await subscribeToNewsletter({
+        email: form.email,
+        locale,
+        nombre: form.nombre,
+        pais: form.pais,
+        empresa: form.empresa,
+        cargo: form.cargo,
+      });
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+      setError(
+        err instanceof Error ? err.message : "No se ha podido completar la suscripción.",
+      );
+    }
   };
 
-  if (submitted) {
+  if (status === "success") {
     return (
       <div className="p-6 text-center">
         <p className="font-semibold" style={{ fontSize: "16px", color: "rgb(0, 9, 25)" }}>
-          ¡Te has suscrito correctamente!
+          ¡Casi listo!
         </p>
         <p className="mt-2" style={{ fontSize: "14px", color: "rgb(51, 51, 51)" }}>
-          Recibirás noticias y novedades de QGISRed en tu email.
+          Te hemos enviado un email para que confirmes tu suscripción. Revisa también la carpeta
+          de spam.
         </p>
       </div>
     );
@@ -258,9 +355,19 @@ function NewsletterForm() {
         </span>
       </label>
 
+      <HoneypotField name="email_address_check" value={honeypot} onChange={setHoneypot} />
+
+      {status === "error" && <ErrorMessage>{error}</ErrorMessage>}
+
       <button
         type="submit"
-        disabled={!form.nombre || !form.pais || !form.email || !form.privacidad}
+        disabled={
+          status === "sending" ||
+          !form.nombre ||
+          !form.pais ||
+          !form.email ||
+          !form.privacidad
+        }
         className="w-full font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         style={{
           background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",
@@ -271,7 +378,7 @@ function NewsletterForm() {
           borderRadius: "2px",
         }}
       >
-        Suscribirme
+        {status === "sending" ? "Enviando…" : "Suscribirme"}
       </button>
     </form>
   );

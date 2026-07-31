@@ -102,10 +102,7 @@ interface PrestacionGroupProps {
 
 function PrestacionGroup({ title, items }: PrestacionGroupProps) {
   return (
-    <div className="mb-6">
-      <h4 className="font-semibold mb-3" style={{ fontSize: "16px", color: "rgb(0, 9, 25)" }}>
-        {title}
-      </h4>
+    <AccordionItem title={title}>
       <div className="flex flex-col gap-2">
         {items.map((item) => (
           <div key={item} className="flex items-start gap-3">
@@ -119,7 +116,7 @@ function PrestacionGroup({ title, items }: PrestacionGroupProps) {
           </div>
         ))}
       </div>
-    </div>
+    </AccordionItem>
   );
 }
 
@@ -895,7 +892,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
             </>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1 items-start">
             {prestacionesActuales.map((group) => (
               <PrestacionGroup key={group.group} title={group.group} items={group.items} />
             ))}
