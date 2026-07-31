@@ -499,8 +499,8 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
               <Image
                 src="/images/difusion-curso.png"
                 alt="Curso Managing Advanced Hydraulic Models with QGISRed"
-                width={800}
-                height={500}
+                width={404}
+                height={542}
                 className="w-full h-auto shadow-md"
               />
             </div>
@@ -593,8 +593,8 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
                 <Image
                   src={noticia.imageSrc}
                   alt=""
-                  width={800}
-                  height={405}
+                  width={1024}
+                  height={518}
                   className="w-full h-[200px] object-cover"
                 />
                 <div className="p-5 flex justify-center">

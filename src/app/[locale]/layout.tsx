@@ -47,6 +47,9 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      // Tells Next to suppress the smooth scroll from globals.css during route
+      // transitions, so a navigation jumps to the top instead of animating there.
+      data-scroll-behavior="smooth"
       className={`${workSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

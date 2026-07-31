@@ -42,6 +42,8 @@ const ejemplos = [
     description: "Se trata de un ejemplo sencillo para mostrar el decaimiento del cloro. Incluye coeficientes de reacción en el medio y en las paredes. Todas las unidades están expresadas en el Sistema Internacional. Incorpora además una válvula de regulación que puede configurarse de diferentes modos cambiando su tipo y consigna.",
     descriptionEn: "This is a simple example to show chlorine decay. It includes reaction coefficients in the bulk and at the wall. All units are expressed in the International System. It also incorporates a regulation valve that can be configured in different ways by changing its type and set point.",
     imageSrc: "/images/utilizacion-red1.jpg",
+    imageWidth: 100,
+    imageHeight: 126,
   },
 ];
 
@@ -204,8 +206,8 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
               <Image
                 src="/images/utilizacion-manual.png"
                 alt="Manual de usuario QGISRed"
-                width={600}
-                height={800}
+                width={1754}
+                height={2432}
                 className="w-full h-auto shadow-lg"
               />
             </div>
@@ -246,8 +248,8 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
                     <Image
                       src={ejemplo.imageSrc}
                       alt={ejemplo.name}
-                      width={200}
-                      height={150}
+                      width={ejemplo.imageWidth}
+                      height={ejemplo.imageHeight}
                       className="w-full md:w-[200px] h-auto object-cover"
                     />
                   </div>

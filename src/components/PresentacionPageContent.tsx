@@ -117,8 +117,8 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             <Image
               src="/images/presentacion-logo-svg.svg"
               alt="QGISRed Logo"
-              width={150}
-              height={150}
+              width={118}
+              height={118}
               className="w-[150px] h-auto"
             />
           </div>
@@ -350,14 +350,14 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
               <Image
                 src="/images/presentacion-diapositiva.png"
                 alt="Diapositiva antecedentes"
-                width={800}
-                height={400}
+                width={832}
+                height={656}
                 className="w-full h-auto"
               />
               <div className="flex gap-3 mt-4">
-                <Image src="/images/presentacion-app1.jpg" alt="App screenshot 1" width={300} height={200} className="flex-1 min-w-0 h-auto" />
-                <Image src="/images/presentacion-app2.jpg" alt="App screenshot 2" width={300} height={200} className="flex-1 min-w-0 h-auto" />
-                <Image src="/images/presentacion-app3.png" alt="App screenshot 3" width={300} height={200} className="flex-1 min-w-0 h-auto" />
+                <Image src="/images/presentacion-app1.jpg" alt="App screenshot 1" width={1024} height={576} className="flex-1 min-w-0 h-auto" />
+                <Image src="/images/presentacion-app2.jpg" alt="App screenshot 2" width={1920} height={1080} className="flex-1 min-w-0 h-auto" />
+                <Image src="/images/presentacion-app3.png" alt="App screenshot 3" width={1024} height={576} className="flex-1 min-w-0 h-auto" />
               </div>
             </div>
           </div>
@@ -558,8 +558,8 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             <Image
               src="/images/presentacion-screenshot.jpg"
               alt="QGISRed software screenshot"
-              width={1200}
-              height={600}
+              width={1000}
+              height={1000}
               className="w-full h-auto"
             />
           </div>
@@ -704,29 +704,29 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
               <Image
                 src="/images/presentacion-install.png"
                 alt="Instalación de QGISRed"
-                width={800}
-                height={500}
+                width={880}
+                height={511}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-toolbar.png"
                 alt="Barra de herramientas QGISRed"
-                width={800}
-                height={60}
+                width={483}
+                height={65}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-toolbar2.png"
                 alt="Barra de herramientas QGISRed 2"
-                width={800}
-                height={60}
+                width={423}
+                height={65}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-window.png"
                 alt="Ventana principal QGISRed"
-                width={800}
-                height={500}
+                width={521}
+                height={204}
                 className="w-full h-auto"
               />
             </div>
@@ -837,22 +837,22 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
               <Image
                 src="/images/github-emblem.png"
                 alt="GitHub"
-                width={960}
-                height={540}
+                width={1024}
+                height={576}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-credit1.png"
                 alt="GitHub QGISRed"
-                width={800}
-                height={400}
+                width={1243}
+                height={841}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-credit2.png"
                 alt="GitHub QGISRed Issues"
-                width={800}
-                height={200}
+                width={1024}
+                height={307}
                 className="w-full h-auto"
               />
             </div>
@@ -996,15 +996,15 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             <Image
               src="/images/presentacion-team1.jpg"
               alt="Equipo QGISRed"
-              width={400}
-              height={300}
+              width={500}
+              height={600}
               className="w-full md:w-1/2 h-auto object-cover"
             />
             <Image
               src="/images/presentacion-team2.jpg"
               alt="Equipo QGISRed"
-              width={400}
-              height={300}
+              width={500}
+              height={600}
               className="w-full md:w-1/2 h-auto object-cover"
             />
           </div>

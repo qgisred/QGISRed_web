@@ -9,6 +9,10 @@ interface ResourceCard {
   hash: string;
   imageSrc: string;
   imageAlt: string;
+  // Intrinsic pixel size of imageSrc. The card crops with object-cover, so these
+  // only feed the aspect-ratio hint that reserves space before the image loads.
+  imageWidth: number;
+  imageHeight: number;
   imageLeft: boolean;
 }
 
@@ -18,6 +22,8 @@ const leftColumnCards: ResourceCard[] = [
     hash: "#tutoriales",
     imageSrc: "/images/soporte-img1.jpg",
     imageAlt: "Young female programmer web developer working on computer software",
+    imageWidth: 2000,
+    imageHeight: 1333,
     imageLeft: true,
   },
   {
@@ -25,6 +31,8 @@ const leftColumnCards: ResourceCard[] = [
     hash: "#repositorioejemplos",
     imageSrc: "/images/presentacion-img3.png",
     imageAlt: "Repository of Examples",
+    imageWidth: 1280,
+    imageHeight: 720,
     imageLeft: false,
   },
   {
@@ -32,6 +40,8 @@ const leftColumnCards: ResourceCard[] = [
     hash: "#manualusuario",
     imageSrc: "/images/soporte-img2.jpg",
     imageAlt: "Girl sitting in front of laptop carefully looking at paper document",
+    imageWidth: 2000,
+    imageHeight: 1333,
     imageLeft: true,
   },
 ];
@@ -42,6 +52,8 @@ const rightColumnCards: ResourceCard[] = [
     hash: "#videosformativos",
     imageSrc: "/images/soporte-img3.jpg",
     imageAlt: "Man Working On Laptop",
+    imageWidth: 2000,
+    imageHeight: 1333,
     imageLeft: false,
   },
   {
@@ -49,6 +61,8 @@ const rightColumnCards: ResourceCard[] = [
     hash: "#modelodatos",
     imageSrc: "/images/presentacion-img2.png",
     imageAlt: "Data Model",
+    imageWidth: 1280,
+    imageHeight: 720,
     imageLeft: true,
   },
   {
@@ -56,6 +70,8 @@ const rightColumnCards: ResourceCard[] = [
     hash: "#preguntasfrecuentes",
     imageSrc: "/images/soporte-img4.jpg",
     imageAlt: "Wooden dices with question mark",
+    imageWidth: 2000,
+    imageHeight: 1339,
     imageLeft: false,
   },
 ];
@@ -71,8 +87,8 @@ function ResourceCardItem({ card, t }: { card: ResourceCard; t: (key: CardKey) =
       <Image
         src={card.imageSrc}
         alt={card.imageAlt}
-        width={300}
-        height={200}
+        width={card.imageWidth}
+        height={card.imageHeight}
         className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.07]"
         style={{ minHeight: "150px" }}
       />

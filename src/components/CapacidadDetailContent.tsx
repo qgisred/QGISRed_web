@@ -98,8 +98,8 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
                 <Image
                   src={article.image}
                   alt={article.imageAlt ?? article.title}
-                  width={800}
-                  height={500}
+                  width={article.imageWidth}
+                  height={article.imageHeight}
                   className="w-full h-auto shadow-md"
                 />
               </div>

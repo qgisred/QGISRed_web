@@ -54,10 +54,12 @@ interface CapacidadCardProps {
   href: string;
   imageSrc?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   readMoreText?: string;
 }
 
-function CapacidadCard({ title, description, href, imageSrc, imageAlt, readMoreText = "Leer más" }: CapacidadCardProps) {
+function CapacidadCard({ title, description, href, imageSrc, imageAlt, imageWidth, imageHeight, readMoreText = "Leer más" }: CapacidadCardProps) {
   return (
     <div
       className="flex flex-col transition-shadow duration-200 hover:shadow-md"
@@ -68,8 +70,8 @@ function CapacidadCard({ title, description, href, imageSrc, imageAlt, readMoreT
           <Image
             src={imageSrc}
             alt={imageAlt ?? title}
-            width={400}
-            height={155}
+            width={imageWidth}
+            height={imageHeight}
             className="w-full h-full object-cover object-top"
           />
         </div>
@@ -826,6 +828,8 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
                 imageSrc={article.image}
                 imageAlt={article.imageAlt}
+                imageWidth={article.imageWidth}
+                imageHeight={article.imageHeight}
                 readMoreText={readMoreText}
               />
             ))}

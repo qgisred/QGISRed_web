@@ -266,8 +266,8 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <Image
                 src="/images/soporte-github.png"
                 alt="GitHub Issues QGISRed"
-                width={800}
-                height={500}
+                width={1225}
+                height={367}
                 className="w-full h-auto shadow-md"
               />
             </div>
@@ -462,8 +462,8 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <Image
                 src="/images/soporte-team.jpg"
                 alt="Equipo de innovadores"
-                width={800}
-                height={540}
+                width={1024}
+                height={684}
                 className="w-full h-auto shadow-md"
               />
             </div>

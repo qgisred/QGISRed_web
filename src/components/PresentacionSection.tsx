@@ -114,8 +114,8 @@ export function PresentacionSection() {
           <Image
             src="/images/presentacion-screenshot.jpg"
             alt="QGISRed software screenshot"
-            width={600}
-            height={400}
+            width={1000}
+            height={1000}
             className="w-full h-auto object-cover"
           />
         </div>

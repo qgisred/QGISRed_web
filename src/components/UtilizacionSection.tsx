@@ -83,8 +83,8 @@ export function UtilizacionSection() {
           <Image
             src="/images/utilizacion-img.png"
             alt="QGISRed software interface"
-            width={800}
-            height={600}
+            width={1280}
+            height={720}
             className="w-full h-auto object-contain"
           />
         </div>
