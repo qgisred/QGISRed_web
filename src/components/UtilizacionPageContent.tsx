@@ -1,9 +1,7 @@
 import Image from "@/components/AppImage";
 
-const bp = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
-const MANUAL_ES = `${bp}/files/manuals/QGISRed_0.17_usermanual_es.pdf`;
-const MANUAL_EN = `${bp}/files/manuals/QGISRed_0.17_usermanual_en.pdf`;
+const MANUAL_ES = `https://qgisred.gitbook.io/manual-de-usuario`;
+const MANUAL_EN = `https://qgisred.gitbook.io/usermanual`;
 
 interface SectionHeadingProps {
   title: string;
