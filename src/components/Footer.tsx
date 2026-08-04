@@ -8,12 +8,10 @@ interface FooterLogo {
   alt: string;
   width: number;
   height: number;
-  /** External destination per locale, or `null` for the QGISRed logo, which links home. */
-  href: { es: string; en: string } | null;
+  href: { es: string; en: string };
 }
 
 const footerLogos: FooterLogo[] = [
-  { src: "/images/footer-logo-qgisred.png", alt: "QGISRed", width: 118, height: 118, href: null },
   {
     src: "/images/footer-logo-redhisp.png",
     alt: "RedHisp",
@@ -100,13 +98,17 @@ export function Footer() {
           className="mx-auto flex flex-col md:flex-row gap-[48px] md:gap-[60px] items-start"
           style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}
         >
-          {/* Logos 2x2 grid */}
-          <div
-            className="grid grid-cols-2 flex-shrink-0"
-            style={{ gap: "16px", width: "260px" }}
-          >
-            {footerLogos.map((logo) => {
-              const image = (
+          {/* Institutional logos, on a single row */}
+          <div className="flex flex-row flex-wrap items-center flex-shrink-0 gap-[28px]">
+            {footerLogos.map((logo) => (
+              <a
+                key={logo.src}
+                href={logo.href[locale]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center transition-opacity duration-150 hover:opacity-80"
+                aria-label={logo.alt}
+              >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -114,32 +116,8 @@ export function Footer() {
                   height={logo.height}
                   className="h-[60px] w-auto object-contain"
                 />
-              );
-
-              return (
-                <div key={logo.src} className="flex items-center justify-center">
-                  {logo.href ? (
-                    <a
-                      href={logo.href[locale]}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-opacity duration-150 hover:opacity-80"
-                      aria-label={logo.alt}
-                    >
-                      {image}
-                    </a>
-                  ) : (
-                    <Link
-                      href="/"
-                      className="transition-opacity duration-150 hover:opacity-80"
-                      aria-label={logo.alt}
-                    >
-                      {image}
-                    </Link>
-                  )}
-                </div>
-              );
-            })}
+              </a>
+            ))}
           </div>
 
           {/* Nav columns */}
