@@ -50,6 +50,40 @@ function ToggleSection({ title, children }: ToggleSectionProps) {
   );
 }
 
+interface CreditPersonProps {
+  photoSrc: string;
+  name: string;
+  /** Visible lead paragraph shown under the portrait. */
+  intro: React.ReactNode;
+  /** Full biography, revealed by the toggle. */
+  bio: React.ReactNode;
+  toggleLabel: string;
+}
+
+function CreditPerson({ photoSrc, name, intro, bio, toggleLabel }: CreditPersonProps) {
+  return (
+    // Full height + `mt-auto` on the toggle keeps both toggles on the same row,
+    // whatever the length of each lead paragraph.
+    <div className="flex flex-col h-full">
+      <div className="flex justify-center mb-6">
+        <Image
+          src={photoSrc}
+          alt={name}
+          width={500}
+          height={600}
+          className="w-[200px] h-auto object-cover"
+        />
+      </div>
+      <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+        {intro}
+      </p>
+      <div className="mt-auto">
+        <ToggleSection title={toggleLabel}>{bio}</ToggleSection>
+      </div>
+    </div>
+  );
+}
+
 interface AccordionItemProps {
   title: string;
   children: React.ReactNode;
@@ -869,7 +903,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 The QGISRed project was born at the <strong>initiative of the{" "}
-                <a href="https://www.iiama.upv.es/iiama/es/investigacion/grupos-de-investigacion/redes-hidraulicas-y-sistemas-a-presion.html" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Research Group on Hydraulic Networks and Pressurised Systems</a>
+                <a href="https://iiama.webs.upv.es/en/research/research-groups/hydraulic-networks-and-pressurised-systems/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Research Group on Hydraulic Networks and Pressurised Systems</a>
                 </strong>{" "}(REDHISP), of the{" "}
                 <a href="https://www.iiama.upv.es/iiama/es/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Institute for Water and Environmental Engineering</a>
                 {" "}(IIAMA) of the{" "}
@@ -882,35 +916,50 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                 {" "}until the end of 2022.
               </p>
 
-              <ToggleSection title="Learn more">
-                <p className="mb-3">
-                  The <strong>direction </strong>of the QGISRed Project is in the hands of <strong>Prof. Fernando Martínez Alzamora,</strong> Full Professor of Hydraulic Engineering at the UPV, with more than 40 years of experience in the modelling of pressurised hydraulic systems. A brief CV is attached, while a list of main publications can be found on his{" "}
-                  <a href="https://www.researchgate.net/profile/Fernando-Martinez-Alzamora" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>personal page</a>
-                  {" "}on Research Gate.
-                </p>
-                <p>
-                  Fernando Martínez Alzamora holds a degree in Industrial Engineering from the Universitat Politècnica de València (1978) and a PhD from the same university (1982). Since 1995 he has been Full Professor of Hydraulic Engineering at the UPV and since 2001 a researcher at the Institute for Water and Environmental Engineering (IIAMA) of the aforementioned University. He teaches in the area of Hydraulic Machinery and its industrial applications, including the harnessing of renewable energies through Hydroelectric Power Plants and Wind Farms. He has also taught subjects in doctoral and master's courses on the Modelling of Hydraulic Networks and the use of Geographic Information Systems (GIS). His research has focused on the analysis, design and operation of water distribution networks, both for urban water supply and pressurised irrigation. In particular he has worked on improving simulation algorithms, integrating hydraulic models into GIS for the preparation of master plans, and using models in real time for decision-making, in connection with SCADA systems. On these topics he has published 40 articles in prestigious journals, 70 papers at national and international Conferences, and supervised 11 doctoral theses. He has been principal investigator of 12 national research projects and has participated as team leader in 4 European projects under the framework programme. He regularly collaborates as a consultant or in the development of contracts with companies in the water transport and distribution sector, having been responsible to date for a total of 62 contracts.
-                </p>
-              </ToggleSection>
-
-              <ToggleSection title="Learn more">
-                <p className="mb-3">
-                  The <strong>QGISRed code</strong> was developed until the end of 2022 by <strong>Néstor Lerma Elvira</strong>, PhD in Civil Engineering from the UPV, and founding partner of the company{" "}
-                  <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>WaterPi Coop. V</a>
-                  . Much of the credit for the version of QGISRed offered here is due to Néstor's excellent work, which has managed to combine his engineering knowledge with his skills as a programmer. You can visit his research profile on his{" "}
-                  <a href="https://www.researchgate.net/profile/Nestor-Lerma" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>personal page</a>
-                  {" "}on Research Gate.
-                </p>
-                <p>
-                  Néstor Lerma Elvira holds a degree in Civil Engineering from the Universitat Politècnica de València (2010) and a PhD from the same university (2017). During the period 2009-2017 he specialised in water resources, applying evolutionary algorithms to optimise management in multi-reservoir systems in his final degree project, the final project of the Master's in Hydraulic Engineering and Environment (taught at the same university) and the aforementioned doctorate.
-                </p>
-              </ToggleSection>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px] items-stretch">
+                <CreditPerson
+                  photoSrc="/images/presentacion-team1.jpg"
+                  name="Fernando Martínez Alzamora"
+                  toggleLabel="Learn more"
+                  intro={
+                    <>
+                      The <strong>direction </strong>of the QGISRed Project is in the hands of <strong>Prof. Fernando Martínez Alzamora,</strong> Full Professor of Hydraulic Engineering at the UPV, with more than 40 years of experience in the modelling of pressurised hydraulic systems. A brief CV is attached, while a list of main publications can be found on his{" "}
+                      <a href="https://www.researchgate.net/profile/Fernando-Martinez-Alzamora" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>personal page</a>
+                      {" "}on Research Gate.
+                    </>
+                  }
+                  bio={
+                    <p>
+                      Fernando Martínez Alzamora holds a degree in Industrial Engineering from the Universitat Politècnica de València (1978) and a PhD from the same university (1982). Since 1995 he has been Full Professor of Hydraulic Engineering at the UPV and since 2001 a researcher at the Institute for Water and Environmental Engineering (IIAMA) of the aforementioned University. He teaches in the area of Hydraulic Machinery and its industrial applications, including the harnessing of renewable energies through Hydroelectric Power Plants and Wind Farms. He has also taught subjects in doctoral and master&apos;s courses on the Modelling of Hydraulic Networks and the use of Geographic Information Systems (GIS). His research has focused on the analysis, design and operation of water distribution networks, both for urban water supply and pressurised irrigation. In particular he has worked on improving simulation algorithms, integrating hydraulic models into GIS for the preparation of master plans, and using models in real time for decision-making, in connection with SCADA systems. On these topics he has published 40 articles in prestigious journals, 70 papers at national and international Conferences, and supervised 11 doctoral theses. He has been principal investigator of 12 national research projects and has participated as team leader in 4 European projects under the framework programme. He regularly collaborates as a consultant or in the development of contracts with companies in the water transport and distribution sector, having been responsible to date for a total of 62 contracts.
+                    </p>
+                  }
+                />
+                <CreditPerson
+                  photoSrc="/images/presentacion-team2.jpg"
+                  name="Néstor Lerma Elvira"
+                  toggleLabel="Learn more"
+                  intro={
+                    <>
+                      The <strong>QGISRed code</strong> was developed until the end of 2022 by <strong>Néstor Lerma Elvira</strong>, PhD in Civil Engineering from the UPV, and founding partner of the company{" "}
+                      <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>WaterPi Coop. V</a>
+                      . Much of the credit for the version of QGISRed offered here is due to Néstor&apos;s excellent work, which has managed to combine his engineering knowledge with his skills as a programmer. You can visit his research profile on his{" "}
+                      <a href="https://www.researchgate.net/profile/Nestor-Lerma" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>personal page</a>
+                      {" "}on Research Gate.
+                    </>
+                  }
+                  bio={
+                    <p>
+                      Néstor Lerma Elvira holds a degree in Civil Engineering from the Universitat Politècnica de València (2010) and a PhD from the same university (2017). During the period 2009-2017 he specialised in water resources, applying evolutionary algorithms to optimise management in multi-reservoir systems in his final degree project, the final project of the Master&apos;s in Hydraulic Engineering and Environment (taught at the same university) and the aforementioned doctorate.
+                    </p>
+                  }
+                />
+              </div>
             </>
           ) : (
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 El proyecto QGISRed nace por <strong>iniciativa del{" "}
-                <a href="https://www.iiama.upv.es/iiama/es/investigacion/grupos-de-investigacion/redes-hidraulicas-y-sistemas-a-presion.html" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Grupo de Investigación en Redes Hidráulicas y Sistemas a Presión</a>
+                <a href="https://iiama.webs.upv.es/investigacion/grupos-de-investigacion/redes-hidraulicas-y-sistemas-a-presion/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Grupo de Investigación en Redes Hidráulicas y Sistemas a Presión</a>
                 </strong>{" "}(REDHISP), del{" "}
                 <a href="https://www.iiama.upv.es/iiama/es/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Instituto de Ingeniería del Agua y Medio Ambiente</a>
                 {" "}(IIAMA) de la{" "}
@@ -923,13 +972,20 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                 {" "}hasta finales de 2022.
               </p>
 
-              <ToggleSection title="Saber más">
-                <p className="mb-3">
-                  La <strong>dirección </strong>del Proyecto QGISRed está a cargo del <strong>Prof. Fernando Martínez Alzamora,</strong> Catedrático de Ingeniería Hidráulica de la UPV, con más de 40 años de experiencia en la modelación de sistemas hidráulicos a presión. Se adjunta un breve CV, mientras que un listado de las principales publicaciones puede encontrarse en su{" "}
-                  <a href="https://www.researchgate.net/profile/Fernando-Martinez-Alzamora" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>página personal</a>
-                  {" "}de Research Gate.
-                </p>
-                <p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px] items-stretch">
+                <CreditPerson
+                  photoSrc="/images/presentacion-team1.jpg"
+                  name="Fernando Martínez Alzamora"
+                  toggleLabel="Saber más"
+                  intro={
+                    <>
+                      La <strong>dirección </strong>del Proyecto QGISRed está a cargo del <strong>Prof. Fernando Martínez Alzamora,</strong> Catedrático de Ingeniería Hidráulica de la UPV, con más de 40 años de experiencia en la modelación de sistemas hidráulicos a presión. Se adjunta un breve CV, mientras que un listado de las principales publicaciones puede encontrarse en su{" "}
+                      <a href="https://www.researchgate.net/profile/Fernando-Martinez-Alzamora" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>página personal</a>
+                      {" "}de Research Gate.
+                    </>
+                  }
+                  bio={
+                    <p>
                   Fernando Martínez Alzamora es Ingeniero Industrial por la Universitat Politècnica de València (1978) y
                   Doctor por la misma universidad (1982). Desde 1995 es Catedrático de Ingeniería Hidráulica de la UPV y
                   desde 2001 investigador del Instituto de Ingeniería del Agua y M.A. (IIAMA) de la referida Universidad.
@@ -946,25 +1002,34 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   investigación nacionales y participado como team leader en 4 proyectos europeos del programa marco.
                   Colabora asiduamente como consultor o en el desarrollo de contratos con empresas del sector del transporte
                   y distribución de agua, habiendo sido responsable hasta el presente de un total de 62 contratos.
-                </p>
-              </ToggleSection>
-
-              <ToggleSection title="Saber más">
-                <p className="mb-3">
-                  El <strong>código de QGISRed</strong> fue desarrollado hasta finales de 2022 por <strong>Néstor Lerma Elvira</strong>, Dr. Ing. Caminos por la UPV, y socio fundador de la empresa{" "}
-                  <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>WaterPi Coop. V</a>
-                  . Gran parte de los méritos de la versión de QGISRed que aquí se ofrece se deben al buen hacer de Néstor, que ha sabido conjugar sus conocimientos de ingeniería con sus habilidades como programador. Puedes visitar su perfil investigador en la{" "}
-                  <a href="https://www.researchgate.net/profile/Nestor-Lerma" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>página personal</a>
-                  {" "}de Research Gate.
-                </p>
-                <p>
-                  Néstor Lerma Elvira es Ingeniero de Caminos, Canales y Puertos por la Universitat Politècnica de València
-                  (2010) y Doctor por la misma universidad (2017). Durante el periodo 2009-2017 se especializó en recursos
-                  hídricos, aplicando algoritmos evolutivos para optimizar la gestión en sistemas multi-embalse en el mismo
-                  proyecto final de carrera, el trabajo final del Máster en Ingeniería Hidráulica y Medio ambiente
-                  (impartido en la misma universidad) y el propio doctorado ya mencionado.
-                </p>
-              </ToggleSection>
+                    </p>
+                  }
+                />
+                <CreditPerson
+                  photoSrc="/images/presentacion-team2.jpg"
+                  name="Néstor Lerma Elvira"
+                  toggleLabel="Saber más"
+                  intro={
+                    <>
+                      El <strong>código de QGISRed</strong> fue desarrollado hasta finales de 2022 por <strong>Néstor Lerma Elvira</strong>, Dr. Ing. Caminos por la UPV, y socio fundador de la empresa{" "}
+                      <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>WaterPi Coop. V</a>
+                      . Gran parte de los méritos de la versión de QGISRed que aquí se ofrece se deben al buen hacer de Néstor, que ha sabido conjugar sus conocimientos de ingeniería con sus habilidades como programador. Puedes visitar su perfil investigador en la{" "}
+                      <a href="https://www.researchgate.net/profile/Nestor-Lerma" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>página personal</a>
+                      {" "}de Research Gate.
+                    </>
+                  }
+                  bio={
+                    <p>
+                      Néstor Lerma Elvira es Ingeniero de Caminos, Canales y Puertos por la Universitat Politècnica de
+                      València (2010) y Doctor por la misma universidad (2017). Durante el periodo 2009-2017 se
+                      especializó en recursos hídricos, aplicando algoritmos evolutivos para optimizar la gestión en
+                      sistemas multi-embalse en el mismo proyecto final de carrera, el trabajo final del Máster en
+                      Ingeniería Hidráulica y Medio ambiente (impartido en la misma universidad) y el propio doctorado ya
+                      mencionado.
+                    </p>
+                  }
+                />
+              </div>
             </>
           )}
 
@@ -992,22 +1057,6 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-6 mt-8">
-            <Image
-              src="/images/presentacion-team1.jpg"
-              alt="Equipo QGISRed"
-              width={500}
-              height={600}
-              className="w-full md:w-1/2 h-auto object-cover"
-            />
-            <Image
-              src="/images/presentacion-team2.jpg"
-              alt="Equipo QGISRed"
-              width={500}
-              height={600}
-              className="w-full md:w-1/2 h-auto object-cover"
-            />
-          </div>
         </div>
       </section>
     </main>

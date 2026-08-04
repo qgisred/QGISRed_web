@@ -22,6 +22,29 @@ function SectionHeading({ title, id }: SectionHeadingProps) {
   );
 }
 
+interface PublicationGroupProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+/** Collapsible group holding one of the two publication lists. */
+function PublicationGroup({ title, children }: PublicationGroupProps) {
+  return (
+    <details className="border border-gray-200 mb-2 group" style={{ backgroundColor: "rgb(255,255,255)" }}>
+      <summary
+        className="flex items-center justify-between px-5 py-4 cursor-pointer list-none"
+        style={{ fontSize: "18px", fontWeight: "600", color: "rgb(0, 9, 25)" }}
+      >
+        <span>{title}</span>
+        <span className="flex-shrink-0 text-[rgb(95,189,211)] transition-transform duration-200 group-open:rotate-90 ml-4">
+          ›
+        </span>
+      </summary>
+      <div className="px-5 pb-4">{children}</div>
+    </details>
+  );
+}
+
 interface PublicationItemProps {
   children: React.ReactNode;
 }
@@ -430,7 +453,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
               {isEn ? (
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    The <strong>first training course</strong> on QGISRed was held at the Universitat Politècnica de València on 18 July, on the occasion of the{" "}
+                    The <strong>first training course</strong> on QGISRed was held at the Universitat Politècnica de València on 18 July 2022, on the occasion of the{" "}
                     <strong>2nd Joint WDSA-CCWI 2022 Congress</strong>, which brings together professionals and researchers from around the world in the field of urban water, with the collaboration of Dr. Paloma Batanero Akerman.
                   </p>
                   <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -440,8 +463,8 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
               ) : (
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    El <strong>primer curso de formación</strong> sobre QGISRed se va a impartir en la Universidad Politécnica de Valencia,
-                    el próximo 18 de julio, con motivo de la celebración del{" "}
+                    El <strong>primer curso de formación</strong> sobre QGISRed se impartió en la Universidad Politécnica de Valencia,
+                    el 18 de julio de 2022, con motivo de la celebración del{" "}
                     <strong>2º Congreso conjunto WDSA-CCWI 2022</strong>, que reúne a profesionales e investigadores de
                     todo el mundo en el ámbito del agua urbana, contando con la colaboración de la Dra. Paloma Batanero
                     Akerman.
@@ -519,10 +542,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
               : "En esta sección se reflejan algunas de las publicaciones más relevantes que, junto con el desarrollo de numerosos contratos, nos han permitido adquirir gran experiencia en la modelación de redes de distribución de agua, la cual poco a poco vamos trasladando a la aplicación QGISRed."}
           </p>
 
-          <div className="mb-8">
-            <h3 className="font-semibold mb-4" style={{ fontSize: "20px", color: "rgb(0, 9, 25)" }}>
-              {isEn ? "Articles and books" : "Artículos y libros"}
-            </h3>
+          <PublicationGroup title={isEn ? "Articles and books" : "Artículos y libros"}>
             <ul className="list-none p-0 m-0">
               {articulos.map((pub, i) => (
                 <PublicationItem key={i}>
@@ -543,12 +563,9 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
                 </PublicationItem>
               ))}
             </ul>
-          </div>
+          </PublicationGroup>
 
-          <div>
-            <h3 className="font-semibold mb-4" style={{ fontSize: "20px", color: "rgb(0, 9, 25)" }}>
-              {isEn ? "Conference Papers" : "Comunicaciones a Congresos"}
-            </h3>
+          <PublicationGroup title={isEn ? "Conference Papers" : "Comunicaciones a Congresos"}>
             <ul className="list-none p-0 m-0">
               {comunicaciones.map((pub, i) => (
                 <PublicationItem key={i}>
@@ -568,7 +585,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
                 </PublicationItem>
               ))}
             </ul>
-          </div>
+          </PublicationGroup>
         </div>
       </section>
 

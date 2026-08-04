@@ -23,6 +23,29 @@ function SectionHeading({ title, id }: SectionHeadingProps) {
   );
 }
 
+interface ServicesToggleProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+/** Collapsible list of the services offered to companies. */
+function ServicesToggle({ title, children }: ServicesToggleProps) {
+  return (
+    <details className="border border-gray-200 mb-8 group" style={{ backgroundColor: "rgb(255,255,255)" }}>
+      <summary
+        className="flex items-center justify-between px-5 py-4 cursor-pointer list-none"
+        style={{ fontSize: "15px", fontWeight: "500", color: "rgb(0, 9, 25)" }}
+      >
+        <span>{title}</span>
+        <span className="flex-shrink-0 text-[rgb(95,189,211)] transition-transform duration-200 group-open:rotate-90 ml-4">
+          ›
+        </span>
+      </summary>
+      <div className="px-5 pb-4">{children}</div>
+    </details>
+  );
+}
+
 const serviciosEmpresas = [
   "Confeccionar y calibrar un modelo hidráulico que reproduzca fielmente el comportamiento de la red, a partir de la información cartográfica, datos de consumos y medidas de campo",
   "Calibrar un modelo de calidad del agua para el análisis de diversas estrategias de operación, a fin de controlar los parámetros de calidad establecidos por la normativa",
@@ -370,9 +393,6 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     IIAMA can offer a <strong>wide variety of services to the managing companies</strong> of drinking water supplies.
                   </p>
-                  <p className="mb-4 font-medium" style={{ fontSize: "15px", color: "rgb(0, 9, 25)" }}>
-                    Expand to see some of the business services:
-                  </p>
                 </>
               ) : (
                 <>
@@ -396,25 +416,30 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                     El IIAMA puede ofrecer una <strong>amplia variedad de servicios a las empresas gestoras</strong> de los
                     suministros de agua potable.
                   </p>
-                  <p className="mb-4 font-medium" style={{ fontSize: "15px", color: "rgb(0, 9, 25)" }}>
-                    Despliega para ver algunos de los servicios a empresas:
-                  </p>
                 </>
               )}
 
-              <ul className="flex flex-col gap-3 mb-8 list-none p-0">
-                {servicios.map((servicio) => (
-                  <li key={servicio} className="flex items-start gap-3">
-                    <span
-                      className="flex-shrink-0 mt-1.5 rounded-full"
-                      style={{ width: "8px", height: "8px", backgroundColor: "rgb(126, 167, 40)" }}
-                    />
-                    <span style={{ fontSize: "14px", fontWeight: "500", color: "rgb(0, 9, 25)" }}>
-                      {servicio}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <ServicesToggle
+                title={
+                  isEn
+                    ? "Expand to see some of the business services"
+                    : "Despliega para ver algunos de los servicios a empresas"
+                }
+              >
+                <ul className="flex flex-col gap-3 list-none p-0">
+                  {servicios.map((servicio) => (
+                    <li key={servicio} className="flex items-start gap-3">
+                      <span
+                        className="flex-shrink-0 mt-1.5 rounded-full"
+                        style={{ width: "8px", height: "8px", backgroundColor: "rgb(126, 167, 40)" }}
+                      />
+                      <span style={{ fontSize: "14px", fontWeight: "500", color: "rgb(0, 9, 25)" }}>
+                        {servicio}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </ServicesToggle>
 
               {isEn ? (
                 <>

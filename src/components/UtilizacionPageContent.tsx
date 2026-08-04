@@ -136,8 +136,8 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "User's Manual" : "Manual del usuario"} />
 
-          <div className="flex flex-col md:flex-row gap-[60px] items-start">
-            <div style={{ flex: "1 1 55%" }}>
+          <div className="flex flex-col md:flex-row gap-[40px] items-start">
+            <div style={{ flex: "1 1 45%" }}>
               {isEn ? (
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -202,12 +202,12 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
               </div>
             </div>
 
-            <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
+            <div className="hidden md:block" style={{ flex: "0 0 52%" }}>
               <Image
-                src="/images/utilizacion-manual.png"
-                alt="Manual de usuario QGISRed"
-                width={1754}
-                height={2432}
+                src={isEn ? "/images/utilizacion-manual-en.png" : "/images/utilizacion-manual-es.png"}
+                alt={isEn ? "QGISRed User's Manual on GitBook" : "Manual de usuario de QGISRed en GitBook"}
+                width={1160}
+                height={805}
                 className="w-full h-auto shadow-lg"
               />
             </div>

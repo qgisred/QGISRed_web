@@ -1,5 +1,5 @@
 import Image from "@/components/AppImage";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { TwitterIcon, GitHubIcon } from "./icons";
 
@@ -8,13 +8,36 @@ interface FooterLogo {
   alt: string;
   width: number;
   height: number;
+  /** External destination per locale, or `null` for the QGISRed logo, which links home. */
+  href: { es: string; en: string } | null;
 }
 
 const footerLogos: FooterLogo[] = [
-  { src: "/images/footer-logo-qgisred.png", alt: "QGISRed", width: 118, height: 118 },
-  { src: "/images/footer-logo-redhisp.png", alt: "RedHisp", width: 118, height: 124 },
-  { src: "/images/footer-logo-iiama.png", alt: "IIAMA", width: 118, height: 70 },
-  { src: "/images/footer-logo-upv.png", alt: "UPV", width: 118, height: 118 },
+  { src: "/images/footer-logo-qgisred.png", alt: "QGISRed", width: 118, height: 118, href: null },
+  {
+    src: "/images/footer-logo-redhisp.png",
+    alt: "RedHisp",
+    width: 118,
+    height: 124,
+    href: {
+      es: "https://iiama.webs.upv.es/investigacion/grupos-de-investigacion/redes-hidraulicas-y-sistemas-a-presion/",
+      en: "https://iiama.webs.upv.es/en/research/research-groups/hydraulic-networks-and-pressurised-systems/",
+    },
+  },
+  {
+    src: "/images/footer-logo-iiama.png",
+    alt: "IIAMA",
+    width: 118,
+    height: 70,
+    href: { es: "https://www.iiama.upv.es/iiama/es/", en: "https://www.iiama.upv.es/iiama/en/" },
+  },
+  {
+    src: "/images/footer-logo-upv.png",
+    alt: "UPV",
+    width: 118,
+    height: 118,
+    href: { es: "https://www.upv.es/es", en: "https://www.upv.es/en" },
+  },
 ];
 
 function NavColumn({ items }: { items: { text: string; href: string }[] }) {
@@ -46,6 +69,7 @@ function NavColumn({ items }: { items: { text: string; href: string }[] }) {
 export function Footer() {
   const t = useTranslations("footer");
   const tn = useTranslations("nav");
+  const locale = useLocale() === "en" ? "en" : "es";
 
   const navCol1 = [
     { text: tn("presentation"), href: "/presentacion" as "/" },
@@ -81,8 +105,8 @@ export function Footer() {
             className="grid grid-cols-2 flex-shrink-0"
             style={{ gap: "16px", width: "260px" }}
           >
-            {footerLogos.map((logo) => (
-              <div key={logo.src} className="flex items-center justify-center">
+            {footerLogos.map((logo) => {
+              const image = (
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -90,8 +114,32 @@ export function Footer() {
                   height={logo.height}
                   className="h-[60px] w-auto object-contain"
                 />
-              </div>
-            ))}
+              );
+
+              return (
+                <div key={logo.src} className="flex items-center justify-center">
+                  {logo.href ? (
+                    <a
+                      href={logo.href[locale]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-opacity duration-150 hover:opacity-80"
+                      aria-label={logo.alt}
+                    >
+                      {image}
+                    </a>
+                  ) : (
+                    <Link
+                      href="/"
+                      className="transition-opacity duration-150 hover:opacity-80"
+                      aria-label={logo.alt}
+                    >
+                      {image}
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           {/* Nav columns */}
@@ -156,16 +204,7 @@ export function Footer() {
             margin: "0",
           }}
         >
-          {t("copyright")}{" "}
-          <a
-            href="https://brandinamic.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-            style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}
-          >
-            brandinàmic
-          </a>
+          {t("copyright")}
         </p>
       </div>
     </footer>
