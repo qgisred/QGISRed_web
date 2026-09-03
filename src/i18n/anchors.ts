@@ -18,7 +18,7 @@ const anchors = {
   github: { es: "github", en: "github" },
   creditos: { es: "creditos", en: "credits" },
   // Capacidades
-  novedades: { es: "novedades", en: "whats-new" },
+  novedades: { es: "novedades", en: "news" },
   capacidadesdestacadas: { es: "capacidadesdestacadas", en: "featured-capabilities" },
   prestacionesactuales: { es: "prestacionesactuales", en: "current-capabilities" },
   proximasprestaciones: { es: "proximasprestaciones", en: "road-map" },

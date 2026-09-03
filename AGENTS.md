@@ -71,7 +71,7 @@ language, the language switcher in `NavBar` cannot derive the counterpart URL on
 its own — the article page passes it down via the `localeParams` prop.
 
 The same applies to in-page anchors, mapped in `src/i18n/anchors.ts`
-(`/en/capabilities#whats-new`, not `#novedades`). Never write a raw `#anchor` in
+(`/en/capabilities#news`, not `#novedades`). Never write a raw `#anchor` in
 a component: the section `id` and every link to it come from `anchorId()` /
 `anchorHash()`, keyed by the internal (Spanish) name. A mismatch between the two
 is silent — the link just scrolls nowhere — so they have to share one source.
