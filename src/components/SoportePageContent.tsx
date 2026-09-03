@@ -486,7 +486,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
               <Image
                 src="/images/soporte-team.jpg"
-                alt="Equipo de innovadores"
+                alt={isEn ? "Team of innovators" : "Equipo de innovadores"}
                 width={1024}
                 height={684}
                 className="w-full h-auto shadow-md"

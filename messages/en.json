@@ -156,6 +156,56 @@
     "additionalInfo": "ADDITIONAL INFORMATION:",
     "additionalInfoLink": "additional information on the processing of your personal data here."
   },
+  "contactPage": {
+    "title": "Would you like to contact us?",
+    "form": {
+      "name": "Name*",
+      "phone": "Phone",
+      "email": "Email*",
+      "subject": "Subject",
+      "message": "Message*",
+      "privacy": "I have read and accept the",
+      "privacyLink": "Privacy Policy",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "successTitle": "Thanks for your message!",
+      "successBody": "We will get back to you as soon as possible.",
+      "errorMessage": "The message could not be sent.",
+      "dataProtectionSummary": "Basic information on data protection",
+      "responsible": "CONTROLLER:",
+      "responsibleName": "Fernando Martínez Alzamora.",
+      "purpose": "PURPOSE:",
+      "purposeText": "Managing your enquiry or request and responding to it.",
+      "legitimation": "LEGITIMACY:",
+      "legitimationText": "Your consent.",
+      "recipients": "RECIPIENTS:",
+      "recipientsText": "Data will not be shared with third parties except in cases of legal obligation.",
+      "rights": "RIGHTS:",
+      "rightsText": "You may exercise your rights of access, rectification, opposition, limitation, portability and erasure before the data controller."
+    },
+    "info": {
+      "institute": "Research Institute of Water and Environmental Engineering",
+      "university": "Universitat Politècnica de València",
+      "address": "Camino de Vera s/n, 46022 Valencia, Spain",
+      "social": "Social Media"
+    },
+    "newsletter": {
+      "title": "Sign up for our Newsletter",
+      "body": "Sign up for our Newsletter to keep up to date with all QGISRed news and upcoming training courses.",
+      "name": "Name*",
+      "country": "Country*",
+      "company": "Company/Institution*",
+      "jobTitle": "Position",
+      "email": "Email*",
+      "privacy": "I have read and accept the",
+      "privacyLink": "Privacy Policy",
+      "submit": "Subscribe",
+      "submitting": "Sending…",
+      "successTitle": "Almost there!",
+      "successBody": "We have sent you an email to confirm your subscription. Please check your spam folder too.",
+      "errorMessage": "The subscription could not be completed."
+    }
+  },
   "pageHero": {
     "presentation": "Presentation",
     "capabilities": "Capabilities",

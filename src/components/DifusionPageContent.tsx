@@ -521,7 +521,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
               <Image
                 src="/images/difusion-curso.png"
-                alt="Curso Managing Advanced Hydraulic Models with QGISRed"
+                alt={isEn ? "Managing Advanced Hydraulic Models with QGISRed course" : "Curso Managing Advanced Hydraulic Models with QGISRed"}
                 width={404}
                 height={542}
                 className="w-full h-auto shadow-md"

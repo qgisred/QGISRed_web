@@ -383,7 +383,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
               <Image
                 src="/images/presentacion-diapositiva.png"
-                alt="Diapositiva antecedentes"
+                alt={isEn ? "Background slide" : "Diapositiva antecedentes"}
                 width={832}
                 height={656}
                 className="w-full h-auto"
@@ -737,28 +737,28 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
               <Image
                 src="/images/presentacion-install.png"
-                alt="Instalación de QGISRed"
+                alt={isEn ? "QGISRed installation" : "Instalación de QGISRed"}
                 width={880}
                 height={511}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-toolbar.png"
-                alt="Barra de herramientas QGISRed"
+                alt={isEn ? "QGISRed toolbar" : "Barra de herramientas QGISRed"}
                 width={483}
                 height={65}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-toolbar2.png"
-                alt="Barra de herramientas QGISRed 2"
+                alt={isEn ? "QGISRed toolbar 2" : "Barra de herramientas QGISRed 2"}
                 width={423}
                 height={65}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-window.png"
-                alt="Ventana principal QGISRed"
+                alt={isEn ? "QGISRed main window" : "Ventana principal QGISRed"}
                 width={521}
                 height={204}
                 className="w-full h-auto"

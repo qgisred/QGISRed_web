@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
   sendContactMessage,
@@ -88,6 +89,7 @@ function InputField({
 }
 
 function ContactForm() {
+  const t = useTranslations("contactPage.form");
   const [form, setForm] = useState<FormState>({
     nombre: "",
     telefono: "",
@@ -122,7 +124,7 @@ function ContactForm() {
     } catch (err) {
       setStatus("error");
       setError(
-        err instanceof Error ? err.message : "No se ha podido enviar el mensaje.",
+        err instanceof Error ? err.message : t("errorMessage"),
       );
     }
   };
@@ -134,10 +136,10 @@ function ContactForm() {
         style={{ backgroundColor: "rgb(246,246,246)", border: "1px solid rgb(230,230,230)" }}
       >
         <p className="font-semibold" style={{ fontSize: "18px", color: "rgb(0, 9, 25)" }}>
-          ¡Gracias por tu mensaje!
+          {t("successTitle")}
         </p>
         <p className="mt-2" style={{ fontSize: "14px", color: "rgb(51, 51, 51)" }}>
-          Nos pondremos en contacto contigo a la mayor brevedad posible.
+          {t("successBody")}
         </p>
       </div>
     );
@@ -148,31 +150,31 @@ function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <InputField
           type="text"
-          placeholder="Nombre*"
+          placeholder={t("name")}
           value={form.nombre}
           onChange={(v) => setForm({ ...form, nombre: v })}
         />
         <InputField
           type="tel"
-          placeholder="Teléfono"
+          placeholder={t("phone")}
           value={form.telefono}
           onChange={(v) => setForm({ ...form, telefono: v })}
         />
       </div>
       <InputField
         type="email"
-        placeholder="Email*"
+        placeholder={t("email")}
         value={form.email}
         onChange={(v) => setForm({ ...form, email: v })}
       />
       <InputField
         type="text"
-        placeholder="Asunto"
+        placeholder={t("subject")}
         value={form.asunto}
         onChange={(v) => setForm({ ...form, asunto: v })}
       />
       <textarea
-        placeholder="Mensaje*"
+        placeholder={t("message")}
         value={form.mensaje}
         onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
         rows={6}
@@ -195,9 +197,9 @@ function ContactForm() {
           style={{ accentColor: "rgb(95, 189, 211)" }}
         />
         <span style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.5" }}>
-          He leído y acepto la{" "}
+          {t("privacy")}{" "}
           <Link href="/politica-de-privacidad" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
-            Política de Privacidad
+            {t("privacyLink")}
           </Link>
           .
         </span>
@@ -226,7 +228,7 @@ function ContactForm() {
           borderRadius: "2px",
         }}
       >
-        {status === "sending" ? "Enviando…" : "Enviar mensaje"}
+        {status === "sending" ? t("submitting") : t("submit")}
       </button>
 
       <details className="mt-2">
@@ -234,14 +236,13 @@ function ContactForm() {
           className="cursor-pointer list-none"
           style={{ fontSize: "11px", color: "rgb(120, 120, 120)", textDecoration: "underline" }}
         >
-          Información básica sobre protección de datos
+          {t("dataProtectionSummary")}
         </summary>
         <p className="mt-2" style={{ fontSize: "11px", color: "rgb(120, 120, 120)", lineHeight: "1.6" }}>
-          <strong>RESPONSABLE:</strong> Fernando Martínez Alzamora. <strong>FINALIDAD:</strong> Gestionar su
-          consulta/petición y dar una respuesta a la misma. <strong>LEGITIMACIÓN:</strong> Su consentimiento.{" "}
-          <strong>DESTINATARIOS:</strong> Los datos no se cederán a terceros salvo en los casos en los que exista una
-          obligación legal. <strong>DERECHOS:</strong> Puede ejercer sus derechos de acceso, rectificación, oposición,
-          limitación, portabilidad y supresión ante el responsable del tratamiento.
+          <strong>{t("responsible")}</strong> {t("responsibleName")} <strong>{t("purpose")}</strong>{" "}
+          {t("purposeText")} <strong>{t("legitimation")}</strong> {t("legitimationText")}{" "}
+          <strong>{t("recipients")}</strong> {t("recipientsText")} <strong>{t("rights")}</strong>{" "}
+          {t("rightsText")}
         </p>
       </details>
     </form>
@@ -249,6 +250,7 @@ function ContactForm() {
 }
 
 function NewsletterForm() {
+  const t = useTranslations("contactPage.newsletter");
   const [form, setForm] = useState<NewsletterState>({
     nombre: "",
     pais: "",
@@ -282,7 +284,7 @@ function NewsletterForm() {
     } catch (err) {
       setStatus("error");
       setError(
-        err instanceof Error ? err.message : "No se ha podido completar la suscripción.",
+        err instanceof Error ? err.message : t("errorMessage"),
       );
     }
   };
@@ -291,11 +293,10 @@ function NewsletterForm() {
     return (
       <div className="p-6 text-center">
         <p className="font-semibold" style={{ fontSize: "16px", color: "rgb(0, 9, 25)" }}>
-          ¡Casi listo!
+          {t("successTitle")}
         </p>
         <p className="mt-2" style={{ fontSize: "14px", color: "rgb(51, 51, 51)" }}>
-          Te hemos enviado un email para que confirmes tu suscripción. Revisa también la carpeta
-          de spam.
+          {t("successBody")}
         </p>
       </div>
     );
@@ -306,32 +307,32 @@ function NewsletterForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <InputField
           type="text"
-          placeholder="Nombre*"
+          placeholder={t("name")}
           value={form.nombre}
           onChange={(v) => setForm({ ...form, nombre: v })}
         />
         <InputField
           type="text"
-          placeholder="País*"
+          placeholder={t("country")}
           value={form.pais}
           onChange={(v) => setForm({ ...form, pais: v })}
         />
         <InputField
           type="text"
-          placeholder="Empresa/Institución*"
+          placeholder={t("company")}
           value={form.empresa}
           onChange={(v) => setForm({ ...form, empresa: v })}
         />
         <InputField
           type="text"
-          placeholder="Cargo"
+          placeholder={t("jobTitle")}
           value={form.cargo}
           onChange={(v) => setForm({ ...form, cargo: v })}
         />
       </div>
       <InputField
         type="email"
-        placeholder="Email*"
+        placeholder={t("email")}
         value={form.email}
         onChange={(v) => setForm({ ...form, email: v })}
       />
@@ -344,9 +345,9 @@ function NewsletterForm() {
           style={{ accentColor: "rgb(95, 189, 211)" }}
         />
         <span style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.5" }}>
-          He leído y acepto la{" "}
+          {t("privacy")}{" "}
           <Link href="/politica-de-privacidad" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
-            Política de Privacidad
+            {t("privacyLink")}
           </Link>
           .
         </span>
@@ -376,13 +377,14 @@ function NewsletterForm() {
           borderRadius: "2px",
         }}
       >
-        {status === "sending" ? "Enviando…" : "Suscribirme"}
+        {status === "sending" ? t("submitting") : t("submit")}
       </button>
     </form>
   );
 }
 
 export function ContactoPageContent() {
+  const t = useTranslations("contactPage");
   return (
     <main>
       {/* Contact Form Section */}
@@ -399,7 +401,7 @@ export function ContactoPageContent() {
             className="font-bold mb-8"
             style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
           >
-            ¿Quieres contactar con nosotros?
+            {t("title")}
           </h2>
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
@@ -417,11 +419,11 @@ export function ContactoPageContent() {
                     IIAMA – UPV
                   </p>
                   <p style={{ fontSize: "14px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    Instituto de Ingeniería del Agua y del Medio Ambiente
+                    {t("info.institute")}
                     <br />
-                    Universitat Politècnica de València
+                    {t("info.university")}
                     <br />
-                    Camino de Vera s/n, 46022 Valencia, España
+                    {t("info.address")}
                   </p>
                 </div>
                 <div>
@@ -446,7 +448,7 @@ export function ContactoPageContent() {
                     className="font-semibold mb-1"
                     style={{ fontSize: "14px", color: "rgb(95, 189, 211)", textTransform: "uppercase", letterSpacing: "2px" }}
                   >
-                    Redes Sociales
+                    {t("info.social")}
                   </p>
                   <div className="flex gap-3">
                     <a
@@ -497,11 +499,10 @@ export function ContactoPageContent() {
               className="font-bold mb-6"
               style={{ fontSize: "clamp(24px, 5vw, 36px)", color: "rgb(0, 9, 25)", lineHeight: "1.2" }}
             >
-              Regístrate en nuestra Newsletter
+              {t("newsletter.title")}
             </h2>
             <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-              Regístrate en nuestra Newsletter para estar al día de todas las novedades de QGISRed y las próximas
-              formaciones.
+              {t("newsletter.body")}
             </p>
 
             <NewsletterForm />

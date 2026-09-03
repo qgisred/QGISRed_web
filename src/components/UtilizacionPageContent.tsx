@@ -39,6 +39,7 @@ function ComingSoon({ text }: { text: string }) {
 const ejemplos = [
   {
     name: "Red1_SI.inp (Unidades SI)",
+    nameEn: "Red1_SI.inp (SI Units)",
     description: "Se trata de un ejemplo sencillo para mostrar el decaimiento del cloro. Incluye coeficientes de reacción en el medio y en las paredes. Todas las unidades están expresadas en el Sistema Internacional. Incorpora además una válvula de regulación que puede configurarse de diferentes modos cambiando su tipo y consigna.",
     descriptionEn: "This is a simple example to show chlorine decay. It includes reaction coefficients in the bulk and at the wall. All units are expressed in the International System. It also incorporates a regulation valve that can be configured in different ways by changing its type and set point.",
     imageSrc: "/images/utilizacion-red1.jpg",
@@ -247,7 +248,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
                   <div className="flex-shrink-0">
                     <Image
                       src={ejemplo.imageSrc}
-                      alt={ejemplo.name}
+                      alt={isEn ? ejemplo.nameEn : ejemplo.name}
                       width={ejemplo.imageWidth}
                       height={ejemplo.imageHeight}
                       className="w-full md:w-[200px] h-auto object-cover"
@@ -259,7 +260,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
                     className="font-semibold mb-2"
                     style={{ fontSize: "16px", color: "rgb(95, 189, 211)" }}
                   >
-                    {ejemplo.name}
+                    {isEn ? ejemplo.nameEn : ejemplo.name}
                   </h3>
                   <p style={{ fontSize: "14px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     {isEn ? ejemplo.descriptionEn : ejemplo.description}

@@ -122,18 +122,33 @@ function PrestacionGroup({ title, items }: PrestacionGroupProps) {
   );
 }
 
-const prestacionesActuales: { group: string; items: string[] }[] = [
+interface PrestacionGroupData {
+  group: string;
+  groupEn: string;
+  items: string[];
+  itemsEn: string[];
+}
+
+const prestacionesActuales: PrestacionGroupData[] = [
   {
     group: "Gestión de Proyecto",
+    groupEn: "Project Management",
     items: [
       "Gestor de proyectos para facilitar la carga y almacenamiento de los diferentes proyectos",
       "Creación automática de un nuevo proyecto vacío",
       "Creación automática de un proyecto desde un fichero INP",
       "Clonación de proyectos y creación de una copia de seguridad",
     ],
+    itemsEn: [
+      "Project manager that simplifies loading and storing the different projects",
+      "Automatic creation of a new empty project",
+      "Automatic creation of a project from an INP file",
+      "Project cloning and backup creation",
+    ],
   },
   {
     group: "Datos del Proyecto",
+    groupEn: "Project Data",
     items: [
       "Edición de los metadatos y propiedades del proyecto",
       "Resumen de las características del proyecto",
@@ -141,9 +156,17 @@ const prestacionesActuales: { group: string; items: string[] }[] = [
       "Declaración de valores por defecto",
       "Declaración de las opciones del modelo",
     ],
+    itemsEn: [
+      "Editing of the project metadata and properties",
+      "Summary of the project characteristics",
+      "Management of the model layers",
+      "Declaration of default values",
+      "Declaration of the model options",
+    ],
   },
   {
     group: "Herramientas de Edición Gráfica",
+    groupEn: "Graphical Editing Tools",
     items: [
       "Creación automática de los nudos a medida que se trazan las tuberías",
       "Creación automática de las relaciones topológicas entre todos los elementos cada vez que se necesita, liberando de ello al usuario",
@@ -152,9 +175,18 @@ const prestacionesActuales: { group: string; items: string[] }[] = [
       "Herramienta para invertir automáticamente el trazado de tuberías, bombas y válvulas",
       "Herramienta para cambiar el estado de tuberías, bombas y válvulas al toque",
     ],
+    itemsEn: [
+      "Automatic creation of nodes as the pipes are drawn",
+      "Automatic creation of the topological relationships between all elements whenever they are needed, relieving the user of the task",
+      "Insertion of valves and pumps as line elements at intermediate points along pipes or at nodes",
+      "Tools for the graphical editing of every basic network element (creation, deletion, displacement and layout editing)",
+      "Tool to automatically reverse the direction of pipes, pumps and valves",
+      "Tool to change the status of pipes, pumps and valves with a single click",
+    ],
   },
   {
     group: "Edición de Propiedades",
+    groupEn: "Property Editing",
     items: [
       "Asignación de propiedades por defecto al crear nuevos elementos",
       "Ventanas específicas para editar las propiedades de todos los elementos básicos de la red",
@@ -165,9 +197,20 @@ const prestacionesActuales: { group: string; items: string[] }[] = [
       "Reconocimiento de los emisores como puntos de descarga a la atmósfera siguiendo una ley exponencial",
       "Tratamiento de las fuentes contaminantes como una capa independiente, integrando la edición de sus propiedades con las de los nudos",
     ],
+    itemsEn: [
+      "Assignment of default properties when new elements are created",
+      "Dedicated windows for editing the properties of every basic network element",
+      "Element finder by type and Id",
+      "Browser for visiting the elements connected to the current one, or returning to those already visited",
+      "Selection of multiple elements by region for subsequent editing",
+      "Multiple demands handled as a separate layer, with their property editing integrated with that of the nodes",
+      "Emitters recognised as discharge points to the atmosphere following an exponential law",
+      "Contaminant sources handled as a separate layer, with their property editing integrated with that of the nodes",
+    ],
   },
   {
     group: "Asistentes para completar los Datos del Modelo",
+    groupEn: "Wizards for Completing the Model Data",
     items: [
       "Recálculo automático de las longitudes de las tuberías conforme al CRS",
       "Interpolación automática de las cotas de los nudos a partir de un MDT",
@@ -180,9 +223,22 @@ const prestacionesActuales: { group: string; items: string[] }[] = [
       "Editor avanzado de patrones y curvas de comportamiento de los elementos",
       "Editor avanzado de leyes de control simples y por reglas",
     ],
+    itemsEn: [
+      "Automatic recalculation of pipe lengths according to the CRS",
+      "Automatic interpolation of node elevations from a DTM",
+      "Automatic estimation of pipe roughness from the material and age of the pipes",
+      "Conversion of the roughness coefficient between different head loss formulas and unit systems",
+      "Automatic allocation of demands to nodes from consumption declared by sector or by point",
+      "Correction of demands using the water efficiency of each sector",
+      "Assignment of demand patterns by sector",
+      "Wizard for building scenarios with multiple demands, classified by category",
+      "Advanced editor for patterns and element behaviour curves",
+      "Advanced editor for simple and rule-based controls",
+    ],
   },
   {
     group: "Importación/exportación de Datos",
+    groupEn: "Data Import/Export",
     items: [
       "Importación completa de todos los datos de un fichero INP de EPANET. Detección de errores",
       "Importación de los elementos básicos de la red desde ficheros shape (SHP). Selección de campos",
@@ -190,9 +246,17 @@ const prestacionesActuales: { group: string; items: string[] }[] = [
       "Importación/exportación de curvas de modulación y de comportamiento de los elementos desde los Editores correspondientes",
       "Exportación de todos los datos del modelo actual a un fichero INP para continuar los análisis desde EPANET, incluidos los datos de campo si lo hay",
     ],
+    itemsEn: [
+      "Complete import of all the data in an EPANET INP file, with error detection",
+      "Import of the basic network elements from shapefiles (SHP), with field selection",
+      "Additive import of components from shapefiles",
+      "Import and export of patterns and element behaviour curves from the corresponding Editors",
+      "Export of all the current model data to an INP file so the analysis can continue in EPANET, including field data where available",
+    ],
   },
   {
     group: "Verificación y Depuración de los Datos del Modelo",
+    groupEn: "Model Data Verification and Debugging",
     items: [
       "Detección y eliminación de elementos superpuestos",
       "Simplificación del trazado de líneas con vértices alineados",
@@ -205,16 +269,34 @@ const prestacionesActuales: { group: string; items: string[] }[] = [
       "Verificación del rango de validez para algunas propiedades de los elementos (longitudes, diámetros, materiales y fechas)",
       "Identificación de los distintos sectores hidráulicos y su clasificación en función de la demanda aplicada y las fuentes de suministro",
     ],
+    itemsEn: [
+      "Detection and removal of overlapping elements",
+      "Simplification of line layouts with collinear vertices",
+      "Splitting of pipes by creating intermediate nodes",
+      "Merging of adjoining pipes that share the same properties",
+      "Merging and separation of demand nodes",
+      "Creation of T-connections, or their reversal where appropriate",
+      "Resolution of pipe crossings, either by creating intermediate nodes or by cancelling them",
+      "Verification of the connectivity of every element declared in the network",
+      "Verification of the valid range of certain element properties (lengths, diameters, materials and dates)",
+      "Identification of the different hydraulic sectors and their classification according to the demand applied and the supply sources",
+    ],
   },
   {
     group: "Gestión de Escenarios",
+    groupEn: "Scenario Management",
     items: [
       "Asistente para gestionar escenarios de datos cambiando diámetros, rugosidades, cotas, demandas, estados iniciales, calidades iniciales, coeficientes de reacción o fuentes contaminantes",
       "Creación de escenarios combinados modificando varias magnitudes al mismo tiempo",
     ],
+    itemsEn: [
+      "Wizard for managing data scenarios by changing diameters, roughness values, elevations, demands, initial statuses, initial quality, reaction coefficients or contaminant sources",
+      "Creation of combined scenarios that modify several quantities at once",
+    ],
   },
   {
     group: "Análisis y visualización de Resultados",
+    groupEn: "Analysis and Display of Results",
     items: [
       "Ventana específica para editar todas las Opciones de Análisis, ordenadas por categorías",
       "Conexión con la Toolkit 2.2 de EPANET para llevar a cabo las simulaciones. Reconocimiento de todas las funciones",
@@ -225,9 +307,20 @@ const prestacionesActuales: { group: string; items: string[] }[] = [
       "Opción para mostrar los resultados numéricos de la magnitud actual como etiquetas fijas o flotantes",
       "Barra de navegación para observar la evolución de los resultados con el tiempo, para el intervalo de simulación",
     ],
+    itemsEn: [
+      "Dedicated window for editing all the Analysis Options, arranged by category",
+      "Connection to the EPANET Toolkit 2.2 to run the simulations, with support for all its functions",
+      "Storage of the simulation results in a purpose-built data structure",
+      "Display of the results as colour maps per quantity, chosen from the results panel",
+      "Automatic definition of the legends and symbology used to inspect the results, which remain editable from QGIS",
+      "Option to show flow direction with arrows",
+      "Option to show the numerical results of the current quantity as fixed or floating labels",
+      "Navigation bar for following how the results evolve over the simulation period",
+    ],
   },
   {
     group: "Extensión para trabajar con Gemelos Digitales",
+    groupEn: "Extension for Working with Digital Twins",
     items: [
       "Edición y manejo de las acometidas como elementos diferenciados para la carga de demandas al modelo",
       "Importación de las acometidas desde ficheros shape e integración en el Editor de Propiedades",
@@ -243,33 +336,64 @@ const prestacionesActuales: { group: string; items: string[] }[] = [
       "Declaración de las señales registradas por cada uno de los medidores y su vinculación con los datos procedentes del SCADA o data-loggers",
       "Importación de las medidas de campo y comparación con los valores simulados desde el entorno de EPANET",
     ],
+    itemsEn: [
+      "Editing and handling of service connections as distinct elements for loading demands into the model",
+      "Import of service connections from shapefiles and their integration into the Property Editor",
+      "Wizard for drawing service connections automatically, either perpendicular to the pipes or by linking them to nodes and vertices",
+      "Loading of automated meter readings onto the service connections, and automatic transfer of the consumption to the model nodes",
+      "Optional integration of the service connections into the model, becoming part of it as pipes or as nodes",
+      "Editing and handling of isolation valves as distinct elements for controlling the passage of flow",
+      "Import of isolation valves from shapefiles and their integration into the Property Editor",
+      "Automatic transfer of the isolation valve status to the pipes",
+      "Identification of the areas isolated by the valves, and cancellation of the demands within them",
+      "Declaration of meters of various types, and their automatic association with the network elements",
+      "Import of meters from shapefiles and their integration into the Property Editor",
+      "Declaration of the signals recorded by each meter and their link to data coming from SCADA systems or data loggers",
+      "Import of field measurements and their comparison with the simulated values from within EPANET",
+    ],
   },
   {
     group: "Conexión del Gemelo con los Datos Reales",
+    groupEn: "Connecting the Twin to Real Data",
     items: [
       "Creación de un repositorio propio del proyecto con los datos de campo. Por ahora limitado a los registros de consumos, y las señales del SCADA o data-loggers",
       "Carga del modelo con los datos de campo para un intervalo cualquiera del pasado, dentro del rango cubierto por el repositorio",
     ],
+    itemsEn: [
+      "Creation of a project-owned repository for the field data, for now limited to consumption records and SCADA or data logger signals",
+      "Loading of the model with field data for any past interval within the range covered by the repository",
+    ],
   },
   {
     group: "Herramientas de Exploración",
+    groupEn: "Exploration Tools",
     items: [
       "Identificación de los sectores de demanda básicos, considerando las válvulas cerradas y la ubicación de los caudalímetros",
       "Trazado del árbol de mínima resistencia de la red, con parámetros configurables, para identificar los trayectos prioritarios del agua",
     ],
+    itemsEn: [
+      "Identification of the basic demand sectors, taking into account the closed valves and the position of the flow meters",
+      "Tracing of the minimum resistance tree of the network, with configurable parameters, to identify the paths the water takes first",
+    ],
   },
   {
     group: "Información",
+    groupEn: "Information",
     items: [
       "Ventana de información sobre la versión instalada, con algunos enlaces básicos y los créditos",
       "Botón de acceso directo al entorno de desarrollo GitHub para reportar incidencias",
     ],
+    itemsEn: [
+      "Information window about the installed version, with a few basic links and the credits",
+      "Shortcut button to the GitHub development environment for reporting issues",
+    ],
   },
 ];
 
-const proximasPrestaciones: { group: string; items: string[] }[] = [
+const proximasPrestaciones: PrestacionGroupData[] = [
   {
     group: "De carácter General de Proyecto",
+    groupEn: "General Project Matters",
     items: [
       "Completar algunas opciones del Gestor de Proyectos",
       "Revisar las opciones por defecto, y diferenciarlas a nivel de código, de usuario y de proyecto",
@@ -280,18 +404,36 @@ const proximasPrestaciones: { group: string; items: string[] }[] = [
       "Desarrollar un conversor de unidades para todos los datos",
       "Importar ficheros de CAD",
     ],
+    itemsEn: [
+      "Complete some of the Project Manager options",
+      "Review the default options and separate them at code, user and project level",
+      "Integrate the DTM and the roughness table into the project specifications, and make them easier to use from the Property Editor.",
+      "Complete the project-level Options (modes for assigning roughness, and so on)",
+      "Add further properties to the existing elements and complete the data model",
+      "Make the roughness table by material and age editable",
+      "Develop a unit converter covering all the data",
+      "Import CAD files",
+    ],
   },
   {
     group: "Edición de los Elementos",
+    groupEn: "Element Editing",
     items: [
       "Desarrollar una herramienta para mover los elementos superpuestos sobre el trazado de la red",
       "Desarrollar herramientas para clonar elementos y copiar sus propiedades",
       "Añadir un buscador de elementos por Id desde el Menú de Edición",
       "Desarrollar un Editor de Propiedades de elementos en Grup",
     ],
+    itemsEn: [
+      "Develop a tool for moving elements that overlap the network layout",
+      "Develop tools for cloning elements and copying their properties",
+      "Add an element finder by Id to the Edit menu",
+      "Develop a Property Editor that works on groups of elements",
+    ],
   },
   {
     group: "Asistentes para completar los Datos del Modelo",
+    groupEn: "Wizards for Completing the Model Data",
     items: [
       "Interpolar las cotas a partir de MDTs declarados como nubes de puntos",
       "Asistente para reasignar los Ids de los componentes",
@@ -301,9 +443,19 @@ const proximasPrestaciones: { group: string; items: string[] }[] = [
       "Aumentar las opciones de verificación y depuración de los datos del modelo",
       "Compatibilizar los ficheros de escenarios con los de EPANET",
     ],
+    itemsEn: [
+      "Interpolate elevations from DTMs supplied as point clouds",
+      "Wizard for reassigning component Ids",
+      "Reorient pipe directions to reduce the number of negative flows",
+      "Complete the Nodal Demand Editor so that consumption declared over polygons or line segments can be assigned to nodes.",
+      "Classify nodes and lines by sector in the Tag field",
+      "Extend the options for verifying and debugging the model data",
+      "Make the scenario files compatible with those of EPANET",
+    ],
   },
   {
     group: "Nuevos Elementos del Modelo",
+    groupEn: "New Model Elements",
     items: [
       "Mejorar la modelación de los depósitos de rotura de carga y de los pequeños depósitos de reserva",
       "Implementar emisores con exponente variable a nivel de nudo",
@@ -312,9 +464,18 @@ const proximasPrestaciones: { group: string; items: string[] }[] = [
       "Vincular el consumo energético de los bombeos con la producción solar fotovoltaica",
       "Tratar los puntos de inyección de contaminante como objetos con Id propio, desvinculados de los nudos. Crear un editor específico para sus atributos",
     ],
+    itemsEn: [
+      "Improve the modelling of break-pressure tanks and small storage tanks",
+      "Implement emitters with a variable exponent at node level",
+      "Extend the characterisation of pump and valve behaviour curves, including default curves.",
+      "Add turbines as elements for recovering energy",
+      "Link the energy consumption of pumping stations to photovoltaic solar production",
+      "Treat contaminant injection points as objects with their own Id, independent of the nodes, and create a dedicated editor for their attributes",
+    ],
   },
   {
     group: "Visualización de Datos y Resultados",
+    groupEn: "Display of Data and Results",
     items: [
       "Mejorar toda la iconografía: botones, componentes, simbología, etc.",
       "Simbolizar nudos los emisores con un icono diferente",
@@ -331,9 +492,26 @@ const proximasPrestaciones: { group: string; items: string[] }[] = [
       "Desarrollar herramientas para comparar datos de campo con valores calculados y elaborar informes de calibración propios",
       "Comparar los resultados de distintos escenarios entre sí",
     ],
+    itemsEn: [
+      "Improve the whole iconography: buttons, components, symbology and so on.",
+      "Symbolise emitter nodes with a distinct icon",
+      "Apply zoom options to the display of the components",
+      "Distinguish between transmission, arterial and distribution networks",
+      "Make the QGIS symbology and layer viewer compatible with those of QGISRed",
+      "Generate thematic maps from element properties: diameters, materials, age, roughness, elevations and so on",
+      "Develop a purpose-built legend editor",
+      "Speed up the rendering of results and improve navigation over the map",
+      "Complete the options for evaluating maxima, minima, ranges, means and deviations of the results",
+      "Develop time series charts for one or more variables.",
+      "Show results for intermediate events in the time charts",
+      "Develop new windows and layers for viewing and analysing the results",
+      "Develop tools for comparing field data with computed values and producing QGISRed's own calibration reports",
+      "Compare the results of different scenarios against each other",
+    ],
   },
   {
     group: "Flujos y Balances",
+    groupEn: "Flows and Balances",
     items: [
       "Potenciar las herramientas de exploración topológica. Trabajar con árboles",
       "Desarrollar herramientas de ayuda para gestionar el trayecto de los flujos en una red",
@@ -347,9 +525,23 @@ const proximasPrestaciones: { group: string; items: string[] }[] = [
       "Superponer las fuentes de procedencia para la sustancia total que llega a un nudo en un instante",
       "Superponer el análisis de calidad para diversas sustancias no reactivas entre sí",
     ],
+    itemsEn: [
+      "Strengthen the topological exploration tools and work with trees",
+      "Develop tools that help manage the path the flows take through a network",
+      "Produce hydraulic balances by sector and present them as diagrams",
+      "Identify the origin and destination of the energy consumed",
+      "Produce energy balances by sector and present them as diagrams",
+      "Show the paths the flow takes through the pipes graphically",
+      "Identify the areas upstream and downstream of any node",
+      "Produce mass balances by sector and present them as diagrams",
+      "Identify the areas of influence of the different supply sources",
+      "Superimpose the source origins for the total substance reaching a node at a given instant",
+      "Superimpose the quality analysis for several substances that do not react with one another",
+    ],
   },
   {
     group: "Gemelo Digital",
+    groupEn: "Digital Twin",
     items: [
       "Crear un Gestor de Acometidas para realizar asignaciones de demanda y otro tipo de operaciones masivas relacionadas con ellas",
       "Completar la asignación de demandas a las acometidas a partir de facturaciones periódicas",
@@ -369,6 +561,25 @@ const proximasPrestaciones: { group: string; items: string[] }[] = [
       "Incorporar los aljibes domiciliarios como nuevos elementos del Gemelo Digital",
       "Incorporar otros elementos al Gemelo Digital, como Hidrantes, Bocas de Riego, Válvulas de llenado y vaciado, Ventosas, etc",
     ],
+    itemsEn: [
+      "Create a Service Connection Manager for demand allocation and other bulk operations involving them",
+      "Complete the allocation of demands to service connections from periodic billing records",
+      "Create a Manual Valve Manager for carrying out bulk operations of every kind on the valves",
+      "Connect the model to the history of isolation valve statuses",
+      "Complete the identification of shutdowns (isolation polygons) and create the data structures associated with them",
+      "Connect the model to the shutdown history and make sector isolation more dynamic",
+      "Complete the characterisation of the demand sectors and create the associated data structures",
+      "Chain simulations over extended periods on real data, and evaluate KPIs for those periods",
+      "Add domestic meters as a new component of the Twin, and create a Meter Manager",
+      "Adjust demands to the flows injected into each sector, taking hourly smart metering readings into account.",
+      "Distribute background leakage between the network nodes and the service connections",
+      "Add burst leaks as a new element of the Twin, and create a Burst Leak Manager",
+      "Incorporate new laws for characterising leakage",
+      "Customise the parameters of the pressure-dependent demand (PDD) curves at node level",
+      "Incorporate new behaviour laws for the PDDs",
+      "Incorporate domestic storage tanks as new elements of the Digital Twin",
+      "Incorporate further elements into the Digital Twin, such as hydrants, irrigation outlets, filling and draining valves, air valves and so on",
+    ],
   },
 ];
 
@@ -376,6 +587,7 @@ const historico = [
   {
     version: "0.18",
     fecha: "30 abril 2026",
+    fechaEn: "30 April 2026",
     items: [
       "Mejoras en el Gestor de Proyectos. Nuevos botones para Mover y Exportar proyectos, y nuevas opciones para Renombrar proyectos.",
       "Identificación de todas las capas gestionadas por QGISRed mediante un Id propio, en lugar de hacerlo por el nombre, lo que permite trabajar en varios idiomas.",
@@ -411,10 +623,46 @@ const historico = [
       "Corregido un error que impedía cancelar la demandas de las zonas que quedan aisladas.",
       "Limitación del tamaño del campo Descripción, usado para informar sobre las demandas de las acometidas cargadas a cada nudo.",
     ],
+    itemsEn: [
+      "Improvements to the Project Manager. New buttons for moving and exporting projects, and new options for renaming them.",
+      "All layers managed by QGISRed are now identified by their own Id rather than by name, which makes it possible to work in several languages.",
+      "Revision of the map symbols, labels and warnings associated with every layer managed by QGISRed.",
+      "Closer integration of the Element Property Editor, preserving the layer properties and refreshing the data in every affected window, including the attribute table.",
+      "The style of every layer managed by QGISRed is stored in .qml files at three levels: default, user and project.",
+      "All the quantities handled by QGISRed are stored in a dedicated table, specifying the units and decimal places to display for each unit system and case.",
+      "A purpose-built Legend Editor for customising ranges or classes, colours and sizes of every legend managed by QGISRed.",
+      "Wizards for customising the legends automatically.",
+      "A new menu and a new toolbar to host the options aimed at querying data and results.",
+      "Reorganisation of the layers in the Queries group, and of the storage of the corresponding shapefiles within the project folder structure.",
+      "New tool for locating any element on the map by its Id and identifying the connected elements, with the option to navigate through them.",
+      "New panel for inspecting the data and results of any selected network element. The results are synchronised with the current simulation instant.",
+      "New dialog for creating thematic maps of some of the quantities associated with the different element types handled by QGISRed.",
+      "New panel for locating on the map the elements that meet certain criteria on the data or the results. Synchronised with the results for the current simulation instant.",
+      "Improved format for the INP file exported from QGISRed, closer to what the EPANET Toolkit would export.",
+      "The EPANET 2.2 calculation engine has been replaced by the new version 2.3, up to the most recent revision 2.3.5.",
+      "Simulation results are read directly from the EPANET binary files, for faster and smoother navigation.",
+      "The Status Report has been added to the results panel in a new tab, always available.",
+      "Export of all the results of a simulation to a structured CSV file.",
+      "New option to display various statistics on the results over the whole simulation period.",
+      "New window showing the time series of any quantity of an element over the simulation period, with the option to overlay several curves for the same or different quantities.",
+      "Improvements to the Demand Builder for point demands. Revision of the algorithms and automatic loading of the links. New theme for the demand points.",
+      "Revision of the hydraulic sector identification tool and detection of isolated consumption.",
+      "Revision of the algorithm for identifying shutdowns. Detection of isolated consumption.",
+      "New project-level options for transferring the demands of the service connections to the nodes. Classification of demands by pattern.",
+      "Version 0.18 has been made compatible with the new QGIS 4.0 releases.",
+      "All QGISRed dialogs, panels, messages and layer names have been translated into Spanish.",
+      "All QGISRed icons have been redesigned for a more uniform and pleasant appearance.",
+      "The provisional QGISRed manual is now hosted on the web in English and Spanish for online consultation through the GitBook collaborative platform.",
+      "Acknowledgement to the Inter-American Development Bank (IDB) for financially supporting all the improvements made in this version 0.18.",
+      "Fixed a problem when loading field data related to the decimal separator.",
+      "Fixed an error that prevented the demands of isolated areas from being cancelled.",
+      "The size of the Description field, used to report the service connection demands loaded onto each node, is now limited.",
+    ],
   },
   {
     version: "0.17",
     fecha: "febrero 2026",
+    fechaEn: "February 2026",
     items: [
       "Resueltas las incompatibilidades con las últimas versiones de QGISRed, hasta la 3.44",
       "Sustitución de la versión 2.2 de la Toolkit de EPANET por la nueva versión 2.3",
@@ -459,10 +707,55 @@ const historico = [
       "Corregidos ciertos errores de importación/exportación de curvas y patrones relacionados con el separador decimal",
       "Corregido un error en el símbolo decimal, en las opciones del modelo PDA",
     ],
+    itemsEn: [
+      "Resolved the incompatibilities with the latest QGIS versions, up to 3.44",
+      "Version 2.2 of the EPANET Toolkit has been replaced by the new version 2.3",
+      "New exploration tool for identifying isolation polygons, highlighting the manual valves and service connections affected",
+      "The results now show up to 13 statuses for pipes, valves and pumps",
+      "Transfer of statuses and quality values so simulations can be chained over successive periods",
+      "New options for resetting roughness values, elevations and diameters in the scenario builder",
+      "New option for exporting and importing scenarios in EPANET format",
+      "The projects listed in the Project Manager can now be sorted temporarily by the different fields by clicking on the column headers",
+      "New options in the Project Manager for sorting, exporting, deleting and renaming projects",
+      "New tab in the import dialog for importing QGISRed projects",
+      "New buttons and menu options for opening and saving projects",
+      "The path of the .qgz file is now stored as a relative path in the metadata.txt file",
+      "If the associated .qgz file cannot be found when opening a QGISRed project, the option to look for it is now offered",
+      "When a qgz project is opened directly from QGIS, it is automatically added to the Project Manager if it is a QGISRed project",
+      "Changes to the icons and wording of some menu options",
+      "Changes to the symbology of some elements: nodes with demand, multiple demands, emitters and contaminant sources",
+      "The layers in the Input group are now reordered automatically",
+      "The number of elements each layer contains is now shown next to its name",
+      "All elements now show their ID on mouse hover",
+      "Removed the default notification about pumps or valves with a free end",
+      "Increased precision when writing certain numeric values to the shapefiles",
+      "Changes to the message shown when downloading the required dependencies",
+      "The 'metadata.txt' file is now always closed after being opened from the About dialog",
+      "The default tolerance when creating a project or importing shapefiles is now 0, to avoid odd behaviour with WGS84 coordinates",
+      "Removed the default creation of the Signals.dbf file when a new project is created",
+      "Removed the unexpected creation of the service connections theme during some graphical editing operations",
+      "The representation of pump curves declared by 3 points has been extended to the whole quadrant",
+      "When a pipe material is declared and the installation date is omitted, its roughness is determined as if the pipe were new",
+      "Fixed an error that prevented pumps and valves from being added on nodes with a connectivity degree of two",
+      "Fixed an error when displaying the default pattern in the patterns dialog, and when declaring or modifying it in the analysis options",
+      "Fixed an error storing the installation date of isolation valves.",
+      "Fixed an error when interpolating elevations where the point falls on one of the edges of the grid",
+      "Fixed an error when distributing demands in proportion to pipe length",
+      "Pump and valve endpoints are now excluded from every option when assigning demands to nodes from the Nodal Demand Builder or from the service connections",
+      "Fixed an error that prevented demands from being accumulated on the same node when assigning point consumption from the Nodal Demand Builder",
+      "Fixed an error when loading demands from a sector layer",
+      "Fixed an error that confused the price pattern with the speed pattern when reading the INP file",
+      "Fixed an error when importing INP files with quality sources that have no pattern defined",
+      "Fixed several errors when importing an INP file, related to time formats and time-based controls",
+      "Fixed an error reading the LABELS section of an INP file, which treated keywords as case sensitive",
+      "Fixed certain import and export errors for curves and patterns related to the decimal separator",
+      "Fixed an error with the decimal symbol in the PDA model options",
+    ],
   },
   {
     version: "0.16",
     fecha: "14 julio 2022",
+    fechaEn: "14 July 2022",
     items: [
       "Nuevas opciones en el gestor de demandas nodales para declarar el consumo para toda la red o por zonas",
       "Posibilidad de exportar, editar y reimportar los enlaces entre los consumos puntuales y los nudos",
@@ -503,10 +796,51 @@ const historico = [
       "Corregido un error en la herramienta de selección mediante polígono, cuando el sistema de referencia no era el asumido por defecto",
       "Corregido un error con la herramienta de snapping (selección puntual de elementos) en la versión 3.26 de QGis",
     ],
+    itemsEn: [
+      "New options in the nodal demand manager for declaring consumption for the whole network or by zone",
+      "The links between point consumption and nodes can now be exported, edited and reimported",
+      "New options for importing, exporting and deleting demand scenarios by category",
+      "New tools in the nodal demand manager for taking water efficiency into account or assigning consumption patterns by sector.",
+      "New Scenario Manager for storing and retrieving various model parameters in bulk",
+      "Automatic calculation of pipe length from the coordinates of the vertices",
+      "Automatic completion of the service connection layout, either with a segment perpendicular to the nearest pipe or with a link to the nearest node.",
+      "Service connections of a preset length can now be drawn automatically from a point on a pipe or from a node.",
+      "New option to mirror a service connection with the reverse tool",
+      "New option to import service connections as points, creating perpendiculars to the pipes or connections to the nearest nodes.",
+      "New IsActive field on service connections to define whether they are operational",
+      "Verification of the contact point of a service connection with a pipe or node at both ends.",
+      "The status of the manual valves is now transferred before the hydraulic sectorisation is calculated",
+      "When exporting to INP, the head loss coefficient of the isolation valves is transferred to the pipes",
+      "Declaration, editing and deletion of meters of various types, as new elements of the Digital Twin",
+      "Editing, reading and saving of the signals associated with the meters",
+      "New dialog for reading field data and exporting to CSV the values corresponding to the simulation period",
+      "New option to export the field data together with the INP file",
+      "New fields in the import dialog, so more information about the elements can be imported",
+      "New option to show elements with any issue in the auxiliary themes during the shapefile import process.",
+      "New buttons and a new slider in the results panel",
+      "Improvements to the labels used to display the results",
+      "New result type for viewing the Status of the lines",
+      "Improvements to searching from the property editor",
+      "When exporting the INP file, a new drop-down lists the paths of the EPANET executables found, so the exported file can be opened automatically",
+      "Patterns are now classified by type when an INP file is imported",
+      "New warning when the Id of an element is autocompleted",
+      "Changes to the order and names of some toolbar buttons",
+      "Changes to the visual styles of some of the elements",
+      "New link to the QGISRed website in the info window",
+      "Fixed the reading of the curve Id on GPV valves and its editing from the element properties window",
+      "Fixed an error assigning default values when importing the bulk and wall reaction coefficients",
+      "Fixed an error, and the message shown, when reading contaminant sources in tanks and reservoirs",
+      "Fixed a problem that caused the point selection tools to stop working for certain elements",
+      "Fixed an error in the tool that creates T-connections in bulk",
+      "Fixed an error with the multiple selection tool",
+      "Fixed an error in the polygon selection tool when the reference system was not the assumed default",
+      "Fixed an error with the snapping tool (point selection of elements) in QGIS 3.26",
+    ],
   },
   {
     version: "0.15",
     fecha: "10 marzo 2022",
+    fechaEn: "10 March 2022",
     items: [
       "Gestión de válvulas manuales (importación, creación, borrado, edición de propiedades, interacción con el estado de las tuberías...)",
       "Nueva herramienta para cambiar el estado de los elementos lineales y válvulas manuales",
@@ -528,10 +862,32 @@ const historico = [
       "Corregido problema al asignar la proyección del proyecto",
       "Corregido error al editar propiedades trabajando con capas ráster",
     ],
+    itemsEn: [
+      "Management of manual valves (import, creation, deletion, property editing, interaction with the pipe status, and so on)",
+      "New tool for changing the status of line elements and manual valves",
+      "New symbology for pipes, pumps, control valves and manual valves according to their status",
+      "Cancellation of the demands isolated by the closure of pipes or overlapping valves during the simulations",
+      "Assignment of demands to nodes from demand sectors and point demands, with a range of options",
+      "Improvements to the property editing window (multiple selection, connected elements, visited elements, centring the selected element)",
+      "Revision and extension of the analysis options (hydraulics, quality, times and energy)",
+      "The new EPANET 2.2 parameters have been added to the forms (tank overflow, pressure-dependent demands)",
+      "The buttons and menus of the main toolbar have been highlighted",
+      "English is the default and, for now, the only language",
+      "Improved rule editing (with times and clock times)",
+      "Fixed an error writing demand values with more than 4 digits to the left of the decimal point",
+      "Fixed an error with the time labels used to select results",
+      "Fixed an error converting numbers during the elevation interpolation process",
+      "Fixed errors reading and writing rules",
+      "Fixed an error with the order of the rules",
+      "Fixed an error with rules that use the comma as the decimal separator",
+      "Fixed a problem assigning the project projection",
+      "Fixed an error editing properties while working with raster layers",
+    ],
   },
   {
     version: "0.14",
     fecha: "11 junio 2021",
+    fechaEn: "11 June 2021",
     items: [
       "Nueva herramienta para editar la geometría de las acometidas",
       "Prioridad de los elementos del Gemelo Digital a la hora de seleccionar los objetos para editar sus propiedades o borrarlos",
@@ -541,10 +897,20 @@ const historico = [
       "Corregido un error al instalar el plugin sin disponer previamente de las dependencias necesarias",
       "Corregido un error al interpretar el formato de la hora en las leyes de control simples",
     ],
+    itemsEn: [
+      "New tool for editing the geometry of the service connections",
+      "Digital Twin elements now take priority when selecting objects to edit their properties or delete them",
+      "The Demand Multiplier hydraulic option now accepts a decimal value",
+      "The decimal separator defined by the user is now shown in the various plugin windows",
+      "Fixed a serious error reading the metadata of earlier models, which made it impossible to work with them",
+      "Fixed an error when installing the plugin without the required dependencies already in place",
+      "Fixed an error interpreting the time format in simple controls",
+    ],
   },
   {
     version: "0.13",
     fecha: "26 mayo 2021",
+    fechaEn: "26 May 2021",
     items: [
       "Nuevo menú para agrupar las herramientas destinadas al manejo de los Gemelos Digitales",
       "Creación de acometidas a través de una herramienta propia, e incorporación de las mismas a la herramienta de borrado",
@@ -566,10 +932,32 @@ const historico = [
       "Corregido el error de importación de SHPs cuando alguna feature no tiene su geometría declarada",
       "Corregido un error de visualización en las capas de resultados",
     ],
+    itemsEn: [
+      "New menu grouping the tools for working with Digital Twins",
+      "Creation of service connections through a dedicated tool, and their addition to the delete tool",
+      "Dedicated form for editing the properties of the service connections",
+      "Loading of automated meter readings in various formats onto the service connections or the model nodes",
+      "The service connection demand curves have been added to the pattern editor",
+      "New demand manager rounding out the import from file, the export to file and the selective deletion of base demands at the nodes and their patterns",
+      "Faster access to the element property editing window for large networks",
+      "Opening the INP file from the EPANET interface after exporting is now optional",
+      "New options for defining the units and the head loss formula when importing data from GIS",
+      "The head loss coefficient converter now checks that pipes have been declared before changing formula",
+      "Fixed the format of the time options so days can be entered as well as hours, minutes and seconds",
+      "Deleting patterns on multiple demands is now limited strictly to the demands that were removed",
+      "Fixed the reading of dates in the metadata",
+      "Fixed the error that prevented shapefiles from being imported when the same field was selected for different properties",
+      "Fixed the error by which some shapefile fields were imported without having been explicitly selected",
+      "Translated into English some texts that were only shown in Spanish",
+      "Fixed the failure of the graphical selection tools when the QGIS CRS differs from that of the QGISRed data",
+      "Fixed the shapefile import error when a feature has no geometry declared",
+      "Fixed a display error in the results layers",
+    ],
   },
   {
     version: "0.12",
     fecha: "7 enero 2021",
+    fechaEn: "7 January 2021",
     items: [
       "Edición de la tabla de materiales-rugosidad para el cálculo de la rugosidad en función de material y edad",
       "Nueva importación y exportación de patrones/curvas en formato CSV",
@@ -586,10 +974,27 @@ const historico = [
       "Corrección de un error de acceso cuando el Pattern TimeStep es 0:00",
       "Las acometidas se leen ahora correctamente",
     ],
+    itemsEn: [
+      "Editing of the material-roughness table used to compute roughness as a function of material and age",
+      "New import and export of patterns and curves in CSV format",
+      "New tool for importing the base demands at the nodes and the Ids of the patterns (single or multiple) from a CSV file",
+      "Import of service connections from shapefiles",
+      "New tool for obtaining the minimum resistance tree of the network",
+      "The EPANET library has been updated to version 2.2",
+      "Improved interface for converting the roughness coefficients",
+      "Fixed an error displaying Quality results",
+      "The current units and head loss formula are refreshed in the status bar when a QGIS project is loaded",
+      "Projects imported from INP files are now shown in the project list",
+      "Fixed an error occurring when nodes have no coordinates",
+      "Negative lengths are now avoided when inserting valves or pumps into pipes",
+      "Fixed an access error when the Pattern TimeStep is 0:00",
+      "Service connections are now read correctly",
+    ],
   },
   {
     version: "0.11",
     fecha: "15 septiembre 2020",
+    fechaEn: "15 September 2020",
     items: [
       "Creación de un archivo Json para definir las diferentes proyecciones (contenido del .prj) en el caso de no disponer de Internet",
       "Implementada la lectura de los formatos de la sección PUMPS heredados de la versión 1.1 de EPANET",
@@ -606,10 +1011,27 @@ const historico = [
       "Corregido el error al guardar un escenario de resultados y quedarse congelado el mapa",
       "Nuevo orden alfabético en las listas de links y nodes en los Controles Simples",
     ],
+    itemsEn: [
+      "Creation of a Json file defining the different projections (the content of the .prj) for use when there is no Internet connection",
+      "Implemented the reading of the PUMPS section formats inherited from EPANET 1.1",
+      "New single installer for both architectures (x86 and x64)",
+      "The units and the head loss formula are shown in the status bar.",
+      "The estimation of the roughness coefficient from age and material now supports different head loss formulas and unit systems",
+      "Conversion of roughness coefficients between different head loss formulas",
+      "Tool for creating a backup copy of the project (manual restore)",
+      "Fixed the error loading the plugin in QGIS 3.14.15",
+      "Fixed an error caused by not allowing times to be expressed in a format other than AM/PM in the Controls section",
+      "Fixed an error caused by being unable to access the Windows user information on certain computers",
+      "New blue colour in the labels for line-type results",
+      "Fixed the error that lost the metadata when cloning a project",
+      "Fixed the error that froze the map when saving a results scenario",
+      "New alphabetical order in the link and node lists of the Simple Controls",
+    ],
   },
   {
     version: "0.10",
     fecha: "12 mayo 2020",
+    fechaEn: "12 May 2020",
     items: [
       "Corregido el comportamiento anormal de la herramienta crear/importar cuando hay otras capas abiertas",
       "Las cabeceras de las secciones del fichero INP se escriben ahora en inglés",
@@ -625,6 +1047,22 @@ const historico = [
       "Corregido un error en la lectura del separador decimal cuando el usuario utiliza el formato en Inglés y cambia el separador decimal por coma",
       "Desde EditProject se accede ahora a LayerManagement para controlar la visibilidad de las capas y su creación",
       "Ahora se almacena correctamente la proyección en los ficheros shape",
+    ],
+    itemsEn: [
+      "Fixed the abnormal behaviour of the create/import tool when other layers are open",
+      "The section headers of the INP file are now written in English",
+      "Element properties are now validated to prevent lines from having the same ID at both end nodes",
+      "Fixed an error importing tanks",
+      "Improved vertex simplification to remove repetitions at the starting point",
+      "Fixed an error writing the Time Options",
+      "The metadata has been restructured and unified into the _Metadata.txt file",
+      "Fixed the error merging pipes with the same characteristics when they start and end at the same node",
+      "The plugin now checks whether a new version exists and notifies the user",
+      "Fixed the display of the legend icons for QGIS 3.12",
+      "Fixed a failure that prevented result styles from being stored",
+      "Fixed an error reading the decimal separator when the user works in the English format and changes the decimal separator to a comma",
+      "LayerManagement is now reached from EditProject to control layer visibility and creation",
+      "The projection is now stored correctly in the shapefiles",
     ],
   },
 ];
@@ -827,7 +1265,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 title={isEn ? (article.titleEn ?? article.title) : article.title}
                 description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
                 imageSrc={article.image}
-                imageAlt={article.imageAlt}
+                imageAlt={isEn ? (article.imageAltEn ?? article.imageAlt) : article.imageAlt}
                 imageWidth={article.imageWidth}
                 imageHeight={article.imageHeight}
                 readMoreText={readMoreText}
@@ -898,7 +1336,11 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1 items-start">
             {prestacionesActuales.map((group) => (
-              <PrestacionGroup key={group.group} title={group.group} items={group.items} />
+              <PrestacionGroup
+                key={group.group}
+                title={isEn ? group.groupEn : group.group}
+                items={isEn ? group.itemsEn : group.items}
+              />
             ))}
           </div>
         </div>
@@ -923,7 +1365,11 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
 
           <div className="mb-8">
             {proximasPrestaciones.map((group) => (
-              <PrestacionGroup key={group.group} title={group.group} items={group.items} />
+              <PrestacionGroup
+                key={group.group}
+                title={isEn ? group.groupEn : group.group}
+                items={isEn ? group.itemsEn : group.items}
+              />
             ))}
           </div>
 
@@ -970,12 +1416,12 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                   <AccordionItem
                     key={item.version}
                     title={isEn
-                      ? `Changes in version ${item.version} – ${item.fecha}`
+                      ? `Changes in version ${item.version} – ${item.fechaEn}`
                       : `Cambios en la versión ${item.version} – ${item.fecha}`
                     }
                   >
                     <ul className="list-none p-0 m-0">
-                      {item.items.map((li, idx) => (
+                      {(isEn ? item.itemsEn : item.items).map((li, idx) => (
                         <li key={idx} className="flex items-start gap-2 mb-1.5">
                           <span className="flex-shrink-0" style={{ color: "rgb(95, 189, 211)", marginTop: "3px", fontSize: "10px" }}>●</span>
                           <span>{li}</span>

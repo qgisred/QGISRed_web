@@ -24,10 +24,11 @@ export async function generateMetadata({
 }: {
   params: Promise<Params>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const article = getArticleBySlug(slug);
   if (!article) return {};
-  return { title: `${article.title} – QGISRed` };
+  const title = locale === "en" ? (article.titleEn ?? article.title) : article.title;
+  return { title: `${title} – QGISRed` };
 }
 
 export default async function CapacidadSlugPage({
@@ -44,7 +45,7 @@ export default async function CapacidadSlugPage({
     <>
       <NavBar />
       <PageHero
-        title={article.title}
+        title={locale === "en" ? (article.titleEn ?? article.title) : article.title}
         backgroundImage="/images/capacidades-bg.jpg"
         overlayOpacity={0.65}
       />

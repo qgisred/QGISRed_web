@@ -156,6 +156,56 @@
     "additionalInfo": "INFORMACIÓN ADICIONAL:",
     "additionalInfoLink": "información adicional sobre el tratamiento de sus datos personales aquí."
   },
+  "contactPage": {
+    "title": "¿Quieres contactar con nosotros?",
+    "form": {
+      "name": "Nombre*",
+      "phone": "Teléfono",
+      "email": "Email*",
+      "subject": "Asunto",
+      "message": "Mensaje*",
+      "privacy": "He leído y acepto la",
+      "privacyLink": "Política de Privacidad",
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando…",
+      "successTitle": "¡Gracias por tu mensaje!",
+      "successBody": "Nos pondremos en contacto contigo a la mayor brevedad posible.",
+      "errorMessage": "No se ha podido enviar el mensaje.",
+      "dataProtectionSummary": "Información básica sobre protección de datos",
+      "responsible": "RESPONSABLE:",
+      "responsibleName": "Fernando Martínez Alzamora.",
+      "purpose": "FINALIDAD:",
+      "purposeText": "Gestionar su consulta/petición y dar una respuesta a la misma.",
+      "legitimation": "LEGITIMACIÓN:",
+      "legitimationText": "Su consentimiento.",
+      "recipients": "DESTINATARIOS:",
+      "recipientsText": "Los datos no se cederán a terceros salvo en los casos en los que exista una obligación legal.",
+      "rights": "DERECHOS:",
+      "rightsText": "Puede ejercer sus derechos de acceso, rectificación, oposición, limitación, portabilidad y supresión ante el responsable del tratamiento."
+    },
+    "info": {
+      "institute": "Instituto de Ingeniería del Agua y del Medio Ambiente",
+      "university": "Universitat Politècnica de València",
+      "address": "Camino de Vera s/n, 46022 Valencia, España",
+      "social": "Redes Sociales"
+    },
+    "newsletter": {
+      "title": "Regístrate en nuestra Newsletter",
+      "body": "Regístrate en nuestra Newsletter para estar al día de todas las novedades de QGISRed y las próximas formaciones.",
+      "name": "Nombre*",
+      "country": "País*",
+      "company": "Empresa/Institución*",
+      "jobTitle": "Cargo",
+      "email": "Email*",
+      "privacy": "He leído y acepto la",
+      "privacyLink": "Política de Privacidad",
+      "submit": "Suscribirme",
+      "submitting": "Enviando…",
+      "successTitle": "¡Casi listo!",
+      "successBody": "Te hemos enviado un email para que confirmes tu suscripción. Revisa también la carpeta de spam.",
+      "errorMessage": "No se ha podido completar la suscripción."
+    }
+  },
   "pageHero": {
     "presentation": "Presentación",
     "capabilities": "Capacidades",

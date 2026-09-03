@@ -97,7 +97,7 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
               <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
                 <Image
                   src={article.image}
-                  alt={article.imageAlt ?? article.title}
+                  alt={(isEn ? article.imageAltEn : article.imageAlt) ?? displayTitle}
                   width={article.imageWidth}
                   height={article.imageHeight}
                   className="w-full h-auto shadow-md"

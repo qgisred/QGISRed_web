@@ -15,6 +15,8 @@ export interface CapacidadArticle {
   paragraphsAfterListEn?: string[];
   image?: string;
   imageAlt?: string;
+  /** English wording of `imageAlt`. */
+  imageAltEn?: string;
   /**
    * Intrinsic pixel size of `image`. Required alongside it: `next/image` needs the
    * real ratio to reserve the right space, and a declared size that happens to match
@@ -258,6 +260,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageAlt: "Válvulas de corte en QGISRed",
+    imageAltEn: "Isolation valves in QGISRed",
     paragraphs: [
       "Si quieres utilizar el modelo de la red para analizar cómo se ven afectados los flujos al seccionar la red por las válvulas de corte, bien para separar zonas de forma permanente, o para aislar una zona de modo temporal mientras se efectúa una operación de mantenimiento, tendrás que incorporar antes al modelo todas las válvulas de corte existentes en la red.",
       "En QGISRed las válvulas de corte se modelan aparte de las válvulas de regulación, y no forman parte del modelo hidráulico para evitar inundar éste con válvulas que solo se utilizan de forma esporádica. Estas válvulas tienen un símbolo distinto para diferenciarlas de las válvulas de regulación. Sin embargo, conservan toda su funcionalidad, permitiendo aislar las zonas como si formaran parte del modelo. Además, si una zona queda desconectada de las fuentes de suministro por el cierre de las válvulas, se anulan sus demandas.",
@@ -280,6 +283,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageAlt: "Opciones de análisis EPANET 2.2 en QGISRed",
+    imageAltEn: "EPANET 2.2 analysis options in QGISRed",
     paragraphs: [
       "Una de las mayores aportaciones de la versión 2.2 de la librería de EPANET es la posibilidad de considerar las demandas dependientes de la presión (PDA), frente a la opción de considerarlas fijas (DDA), en un intento de acercar más el comportamiento de la red a la realidad cuando las presiones son insuficientes. Sin embargo, los parámetros que definen dicho comportamiento: la presión requerida, la presión mínima y el exponente de la presión, se declaran por ahora de forma única y global para todos los nudos desde las Opciones de Análisis.",
       "En QGISRed ya se pueden establecer dichas opciones. Además se han revisado todas las demás Opciones de Análisis, para verificar su correcta interpretación. Solamente quedan por activar las opciones estadísticas para mostrar valores máximos, mínimos o rangos.",
@@ -302,6 +306,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageAlt: "Asignación de demandas en QGISRed",
+    imageAltEn: "Demand allocation in QGISRed",
     paragraphs: [
       "La asignación de las demandas a los nudos de una red, cuando su número es elevado, no puede hacerse de uno en uno. Tampoco es factible asignarlas en grupo, pues cada nudo suele tener una demanda distinta en función de la población abastecida.",
       "QGISRed ofrece dos herramientas muy potentes para asignar la demanda a los nudos de forma masiva, a partir de los consumos declarados por sectores, o bien a partir de la distribución de los puntos de consumo, determinados por las coordenadas GPS de los contadores, por ejemplo.",
@@ -324,6 +329,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageAlt: "Editor de Propiedades QGISRed",
+    imageAltEn: "QGISRed Property Editor",
     paragraphs: [
       "El Editor de Propiedades de QGISRed abre una ventana desde la que se pueden modificar las propiedades del elemento seleccionado, cualquiera que sea su naturaleza. No es necesario tener la capa correspondiente a dicho elemento previamente seleccionada, como ocurre con el botón Info de QGIS, lo cual es una gran ventaja. Además, sin cerrar la ventana puedes pinchar sobre otro elemento de la red y actualizar el contenido de la ventana.",
       "En la nueva versión ya es posible navegar por los elementos contiguos sin cerrar la ventana, y además mantener un listado de los últimos elementos visitados para volver a ellos si fuera necesario. Las relaciones de contigüidad se crean al abrir el Editor de Propiedades por análisis espacial, lo que permite saber cuáles son los nudos extremos de una tubería, válvula o bomba; con qué tuberías conecta un nudo, depósito o embalse; qué elementos están sobre una tubería o nudo; o al revés.",
@@ -345,6 +351,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageAlt: "Herramienta de estados en QGISRed",
+    imageAltEn: "Status tool in QGISRed",
     paragraphs: [
       "Una de las operaciones más habituales a la hora de modificar un escenario de simulación es cambiar el estado de algún elemento de la red, sea de regulación o no, pasando de estar abierto a cerrado o viceversa.",
       "Para facilitar esta tarea, QGISRed incorpora una herramienta específica que cambia el estado de los elementos al tocar sobre ellos, sin necesidad de abrir el Editor de Propiedades para modificarlo. Además, ahora todos los elementos tienen un color en función de su estado, que cambia al modificar el mismo, incluido el trazo en el caso de las tuberías cerradas. La herramienta es aplicable igualmente a las acometidas y válvulas de corte. En el caso de las válvulas de regulación, éstas pasan por los tres estados posibles en un turno rotativo.",
@@ -365,6 +372,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 968,
     imageHeight: 1187,
     imageAlt: "Mejoras versión 0.17 QGISRed",
+    imageAltEn: "QGISRed version 0.17 improvements",
     paragraphs: [
       "Además de todo lo anterior, en la versión 0.17 hemos continuado depurando las prestaciones ya ofrecidas por QGISRed.",
       "Si quieres conocer con más detalle todas las pequeñas mejoras y correcciones realizadas en la versión 0.17, visita más abajo el registro de todos los cambios, en la sección Histórico de versiones.",
@@ -386,6 +394,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 666,
     imageHeight: 555,
     imageAlt: "EPANET 2.3 integrado en QGISRed",
+    imageAltEn: "EPANET 2.3 integrated into QGISRed",
     paragraphs: [
       "La versión 2.2 de la Toolkit de EPANET se lanzó en 2019 y fue incorporada a QGISRed en sus primeras versiones. A lo largo de los 5 años siguientes se han ido realizando bastantes mejoras en la Toolkit, aunque su consolidación ha sido lenta. Finalmente, en Julio de 2025 se lanzó la nueva versión 2.3, la cual ha sido corregida posteriormente en 4 ocasiones, siendo la versión más reciente la 2.3.4 lanzada en febrero de 2026.",
       "Entre las mejoras que incorpora la nueva versión 2.3 de la Toolkit cabe destacar mejoras en la precisión de los cálculos, nuevas opciones de análisis y mayor robustez en la resolución de modelos complejos.",
@@ -409,6 +418,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 800,
     imageHeight: 404,
     imageAlt: "Gestor de Proyectos QGISRed renovado",
+    imageAltEn: "Redesigned QGISRed Project Manager",
     paragraphs: [
       "El Gestor de Proyectos de QGISRed es una de las herramientas más utilizadas por los usuarios de QGISRed, pues fácilmente permite pasar de un escenario a otro. En el uso cotidiano quizás habrá echado en falta algunas opciones que la versión 0.17 viene a completar.",
       "Ahora puedes pinchar en la cabecera de cualquiera de las columnas de la tabla que muestra la lista de proyectos para ordenarlos en orden creciente, o en un segundo clic en orden decreciente. Además, el nuevo diálogo incluye dos botones con flechas que permiten desplazar arriba o abajo el proyecto seleccionado para mantener un orden permanente.",
@@ -432,6 +442,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1103,
     imageHeight: 1178,
     imageAlt: "Gestión de escenarios compatibles con EPANET",
+    imageAltEn: "EPANET-compatible scenario management",
     paragraphs: [
       "EPANET dispone de una opción para exportar/importar escenarios, ofreciendo la opción de exportar los datos relativos a diámetros y rugosidades de tuberías, demandas en nudos, calidad inicial, coeficientes de reacción y leyes de control en distintos ficheros de texto, los cuales pueden ser editados y posteriormente reimportados.",
       "El Gestor de Escenarios de QGISRed permite también modificar en bloque los valores de un determinado parámetro del modelo: los diámetros para tareas de diseño, las rugosidades o las cotas para tareas de calibración, las demandas para tareas de planificación, los coeficientes de reacción y calidad inicial para analizar alternativas del modelo de calidad, etc.",
@@ -455,6 +466,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1104,
     imageHeight: 1236,
     imageAlt: "Encadenamiento de simulaciones en QGISRed",
+    imageAltEn: "Chaining simulations in QGISRed",
     paragraphs: [
       "A medida que disponemos de más datos reales, se nos ofrece la oportunidad de ajustar más el modelo a la realidad, y en la práctica no hay dos días iguales. ¿Y si pudiéramos reproducir con el modelo todo un año entero? Podríamos ejecutar las simulaciones por etapas, por ejemplo de un mes de duración, y encadenar el final de una simulación con el comienzo de la siguiente sin que se note. Así podríamos obtener resultados para periodos prolongados y calcular todo tipo de indicadores anuales.",
       "La clave es cómo encadenar el final de una simulación con el comienzo de la siguiente, de modo que haya una continuidad total sin que se note ningún cambio en los resultados. Para ello hay que tener en cuenta que el estado final de los elementos de regulación tras un periodo de simulación, no es el mismo necesariamente que el estado inicial a declarar para el periodo siguiente.",
@@ -479,6 +491,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 385,
     imageHeight: 381,
     imageAlt: "13 estados de tuberías y válvulas en QGISRed",
+    imageAltEn: "13 pipe and valve statuses in QGISRed",
     paragraphs: [
       "No debes confundir el estado inicial de un elemento declarado en EPANET con el estado del mismo en un instante dado, obtenido como resultado de los cálculos.",
       "El estado inicial de un elemento de transporte (Tubería, Bomba, Válvula) puede ser Abierto, Cerrado o Activo (este último aplicable en el caso de las válvulas hidráulicas). Sin embargo, el estado final de estos mismos elementos admite más situaciones.",
@@ -503,6 +516,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 868,
     imageHeight: 690,
     imageAlt: "Identificación de segmentos aislados en QGISRed",
+    imageAltEn: "Identification of isolated segments in QGISRed",
     paragraphs: [
       "Una de las prestaciones más solicitadas en un software de simulación de las redes urbanas de distribución de agua, es la determinación de las válvulas que hay que cerrar para aislar un segmento de la red en torno a un punto donde ha producido una avería, o donde se quiere realizar una actuación para ampliar el servicio, lo que se conoce también como la identificación del polígono de corte o 'cerrada'.",
       "En este tipo de actuaciones intervienen las válvulas de seccionamiento o válvulas de corte, que son válvulas en principio todo/nada. En QGISRed se contemplan como un elemento complementario que no parte la tubería, y por tanto no forma parte del modelo de cálculo, pero que sí tiene la capacidad de actuar sobre la red, modificando el estado de la tubería en que se sitúa.",
@@ -525,6 +539,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageAlt: "Mejoras versión 0.16 QGISRed",
+    imageAltEn: "QGISRed version 0.16 improvements",
     paragraphs: [
       "Además de todo lo anterior, la versión 0.16 ha mejorado algunos aspectos de las versiones anteriores, como la barra de tiempos y el desplegable para elegir el instante de observación de los resultados, el orden y clasificación de algunas opciones de menú, nuevos campos en la importación de shapes, etc.",
       "Si quieres conocer todas las pequeñas mejoras que la versión 0.16 ha añadido sobre las versiones anteriores, visita la sección Histórico de versiones.",
@@ -546,6 +561,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageAlt: "Sectores de Demanda DMA en QGISRed",
+    imageAltEn: "DMA demand sectors in QGISRed",
     paragraphs: [
       "Las primeras versiones de QGISRed ya ofrecían la opción de obtener los sectores de demanda desde el menú Tools. Para ello había que cerrar antes las tuberías destinadas a actuar como frontera y ubicar manualmente un medidor sobre las tuberías destinadas a alimentar el sector. A partir de la versión 0.15 ya se pueden declarar las válvulas de corte superpuestas a las tuberías, y con la versión 0.16 podemos ahora también declarar caudalímetros y contadores sobre las tuberías utilizando la herramienta de Añadir Medidores.",
       "Elige en tu red de estudio las tuberías estratégicas donde piensas ubicar las válvulas de corte que aislarán los sectores, crea dichas válvulas y ciérralas a continuación con la Herramienta de Toque; al mismo tiempo se cerrarán también las tuberías que hay debajo. Elige ahora las tuberías de mayor diámetro por donde has previsto que entre o salga el agua al sector, y coloca sobre ellas los caudalímetros. Al lanzar la herramienta de Obtener los Sectores de Demanda, verás al momento en el grupo de Consultas los Sectores de Demanda (DMAs) identificados por QGISRed, cada uno en un color.",
@@ -569,6 +585,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
     imageWidth: 1280,
     imageHeight: 720,
     imageAlt: "Medidores en el modelo QGISRed",
+    imageAltEn: "Meters in the QGISRed model",
     paragraphs: [
       "Una de las características más importantes que se le deben exigir al modelo hidráulico de una red en explotación es que reproduzca fielmente la realidad, y para ello antes hay que medir. En QGISRed los medidores son tratados como objetos con sus propias propiedades, a diferencia de EPANET, donde las medidas se asocian directamente a los elementos a través de su identificativo Id.",
       "Cada medidor se vincula espacialmente a un elemento del modelo (tubería, depósito, nudo, etc) según su naturaleza, y puede tener asociada una o más señales. Por su parte cada señal, además de las propiedades que la definen, está vinculada a una serie temporal que almacena los datos de campo. Es una estructura más compleja que en EPANET, pero mucho más próxima a la realidad de las instalaciones.",
