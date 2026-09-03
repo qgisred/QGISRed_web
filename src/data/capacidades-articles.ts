@@ -1,5 +1,8 @@
 export interface CapacidadArticle {
+  /** URL segment used under `/capacidades/` in Spanish. */
   slug: string;
+  /** URL segment used under `/capabilities/` in English. */
+  slugEn: string;
   title: string;
   titleEn?: string;
   group: "novedades" | "capacidadesdestacadas";
@@ -30,6 +33,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   // ── Novedades versión 0.18 ────────────────────────────────────────────────
   {
     slug: "mejoras-en-el-almacenamiento-de-resultados-y-su-visualizacion-sobe-el-mapa",
+    slugEn: "improvements-to-the-storage-of-results-and-their-display-on-the-map",
     title: "Mejoras en el almacenamiento de resultados y su visualización sobre el mapa",
     titleEn: "Improvements to the Storage of Results and their Display on the Map",
     group: "novedades",
@@ -52,6 +56,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "curvas-de-evolucion-de-las-variables-dinamicas",
+    slugEn: "time-series-of-dynamic-variables",
     title: "Curvas de evolución de las variables dinámicas",
     titleEn: "Time Series of Dynamic Variables",
     group: "novedades",
@@ -74,6 +79,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "confeccion-de-mapas-tematicos",
+    slugEn: "creation-of-thematic-maps",
     title: "Confección de mapas temáticos",
     titleEn: "Creation of Thematic Maps",
     group: "novedades",
@@ -94,6 +100,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "propiedades-de-los-elementos",
+    slugEn: "properties-of-the-elements",
     title: "Propiedades de los elementos",
     titleEn: "Properties of the Elements",
     group: "novedades",
@@ -117,6 +124,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "consultas-por-propiedades",
+    slugEn: "queries-by-properties",
     title: "Consultas por Propiedades",
     titleEn: "Queries by Properties",
     group: "novedades",
@@ -142,6 +150,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "editor-de-leyendas",
+    slugEn: "legends-editor",
     title: "Editor de leyendas",
     titleEn: "Legends Editor",
     group: "novedades",
@@ -174,6 +183,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "identificador-de-elementos-a-traves-de-su-id",
+    slugEn: "identifying-elements-by-their-id",
     title: "Identificador de elementos a través de su ID",
     titleEn: "Identifying Elements by their ID",
     group: "novedades",
@@ -196,6 +206,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "otras-y-depuracion-de-errores",
+    slugEn: "miscellaneous-and-debugging",
     title: "Otras y depuración de errores",
     titleEn: "Miscellaneous and Debugging",
     group: "novedades",
@@ -246,6 +257,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   // ── Capacidades Destacadas ────────────────────────────────────────────────
   {
     slug: "incorporacion-de-las-valvulas-de-corte-al-modelo-de-qgisred",
+    slugEn: "incorporation-of-isolation-valves-into-the-qgisred-model",
     title: "Incorporación de las Válvulas de Corte al Modelo de QGISRed",
     titleEn: "Incorporation of Isolation Valves into the QGISRed Model",
     group: "capacidadesdestacadas",
@@ -269,6 +281,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "soporte-a-las-nuevas-opciones-de-analisis-de-epanet-2-2",
+    slugEn: "support-for-new-epanet-2-2-analysis-options",
     title: "Soporte a las Nuevas Opciones de Análisis de EPANET 2.2",
     titleEn: "Support for New EPANET 2.2 Analysis Options",
     group: "capacidadesdestacadas",
@@ -292,6 +305,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "asignacion-de-demandas-a-los-nudos-por-sectores-y-desde-los-puntos-de-consumo",
+    slugEn: "allocation-of-demand-to-nodes-by-sectors-and-from-consumption-points",
     title: "Asignación de Demandas a los Nudos por Sectores y desde los Puntos de Consumo",
     titleEn: "Allocation of Demand to Nodes by Sectors and from Consumption Points",
     group: "capacidadesdestacadas",
@@ -315,6 +329,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "mejoras-en-la-navegacion-desde-el-editor-de-propiedades",
+    slugEn: "improved-navigation-from-the-property-editor",
     title: "Mejoras en la Navegación desde el Editor de Propiedades",
     titleEn: "Improved Navigation from the Property Editor",
     group: "capacidadesdestacadas",
@@ -338,6 +353,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "nueva-herramienta-para-cambiar-el-estado-de-los-elementos-y-simbolizacion-segun-su-estado",
+    slugEn: "new-tool-for-changing-the-status-of-elements-and-symbolisation-according-to-their-status",
     title: "Nueva Herramienta para cambiar el Estado de los Elementos y Simbolización según su Estado",
     titleEn: "New Tool for Changing the Status of Elements and Symbolisation According to their Status",
     group: "capacidadesdestacadas",
@@ -359,6 +375,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "pequenas-mejoras-y-depuracion-de-errores",
+    slugEn: "minor-improvements-and-bug-fixes",
     title: "Pequeñas mejoras y depuración de errores",
     titleEn: "Minor Improvements and Bug Fixes",
     group: "capacidadesdestacadas",
@@ -380,6 +397,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "epanet-2-3-ya-esta-integrado",
+    slugEn: "integration-of-epanet-toolkit-version-2-3",
     title: "Integración de la versión 2.3 de la Toolkit de EPANET",
     titleEn: "Integration of EPANET Toolkit Version 2.3",
     group: "capacidadesdestacadas",
@@ -403,6 +421,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "gestor-de-proyectos-renovado",
+    slugEn: "new-options-in-the-project-manager",
     title: "Nuevas opciones del Gestor de Proyectos",
     titleEn: "New Options in the Project Manager",
     group: "capacidadesdestacadas",
@@ -428,6 +447,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "nuevas-opciones-en-el-gestor-de-escenarios",
+    slugEn: "scenario-manager-compatible-with-epanet",
     title: "Gestión de escenarios compatibles con EPANET",
     titleEn: "Scenario Manager Compatible with EPANET",
     group: "capacidadesdestacadas",
@@ -451,6 +471,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "transfiere-estados-y-calidad-para-encadenar-simulaciones-sucesivas",
+    slugEn: "chaining-successive-simulations",
     title: "Encadenamiento de simulaciones sucesivas",
     titleEn: "Chaining Successive Simulations",
     group: "capacidadesdestacadas",
@@ -476,6 +497,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "visualizacion-de-hasta-13-estados-en-tuberias-valvulas-y-bomas",
+    slugEn: "identification-of-up-to-13-statuses-in-pipes-pumps-and-valves",
     title: "Identificación de hasta 13 estados en tuberías, bombas y válvulas",
     titleEn: "Identification of up to 13 Statuses in Pipes, Pumps and Valves",
     group: "capacidadesdestacadas",
@@ -501,6 +523,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "nueva-herramienta-para-la-exploracion-de-segmentos-aislados",
+    slugEn: "new-isolated-segment-exploration-tool",
     title: "Nueva herramienta para la identificación de segmentos aislados",
     titleEn: "New Isolated Segment Exploration Tool",
     group: "capacidadesdestacadas",
@@ -526,6 +549,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "depuracion-y-mejora-de-prestaciones-de-versiones-anteriores",
+    slugEn: "debugging-and-enhancement-of-previous-features",
     title: "Depuración y Mejora de Prestaciones Anteriores",
     titleEn: "Debugging and Enhancement of Previous Features",
     group: "capacidadesdestacadas",
@@ -547,6 +571,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "identificacion-de-los-sectores-de-demanda-dma",
+    slugEn: "identification-of-demand-sectors-dma",
     title: "Identificación de los Sectores de Demanda (DMA)",
     titleEn: "Identification of Demand Sectors (DMA)",
     group: "capacidadesdestacadas",
@@ -570,6 +595,7 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
   {
     slug: "incorporacion-de-los-medidores-al-modelo",
+    slugEn: "adding-meters-to-the-model",
     title: "Incorporación de los Medidores al Modelo",
     titleEn: "Adding Meters to the Model",
     group: "capacidadesdestacadas",
@@ -595,8 +621,13 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
 ];
 
-export function getArticleBySlug(slug: string): CapacidadArticle | undefined {
-  return capacidadesArticles.find((a) => a.slug === slug);
+/** The URL segment an article is published under in the given locale. */
+export function getArticleSlug(article: CapacidadArticle, locale: string): string {
+  return locale === "en" ? article.slugEn : article.slug;
+}
+
+export function getArticleBySlug(slug: string, locale: string): CapacidadArticle | undefined {
+  return capacidadesArticles.find((a) => getArticleSlug(a, locale) === slug);
 }
 
 export function getArticlesByGroup(group: CapacidadArticle["group"]): CapacidadArticle[] {

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { anchorHash } from "@/i18n/anchors";
 import { subscribeToNewsletter, type SubmitStatus } from "@/lib/forms";
 
 const fieldStyle = {
@@ -23,6 +24,7 @@ export function NewsletterSection() {
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const t = useTranslations("newsletterSection");
+  const locale = useLocale();
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -193,7 +195,7 @@ export function NewsletterSection() {
           </p>
           <p>
             <strong>{t("responsible")}</strong>{" "}
-            <Link href={{ pathname: "/presentacion", hash: "#creditos" }} style={{ color: "rgb(95, 189, 211)" }}>
+            <Link href={{ pathname: "/presentacion", hash: anchorHash("creditos", locale) }} style={{ color: "rgb(95, 189, 211)" }}>
               {t("responsibleLink")}
             </Link>
           </p>

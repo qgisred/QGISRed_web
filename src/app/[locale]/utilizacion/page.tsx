@@ -5,6 +5,12 @@ import { PageHero } from "@/components/PageHero";
 import { UtilizacionPageContent } from "@/components/UtilizacionPageContent";
 import { Footer } from "@/components/Footer";
 
+// Spanish URL only — the English one is `/usage`, generated from
+// `../usage/page.tsx`. See `src/i18n/routing.ts`.
+export function generateStaticParams() {
+  return [{ locale: "es" }];
+}
+
 export async function generateMetadata({
   params,
 }: {

@@ -1,6 +1,7 @@
 import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
-import { capacidadesArticles } from "@/data/capacidades-articles";
+import { capacidadesArticles, getArticleSlug } from "@/data/capacidades-articles";
+import { anchorHash, anchorId } from "@/i18n/anchors";
 
 interface SectionHeadingProps {
   title: string;
@@ -51,7 +52,8 @@ function AccordionItem({ title, children }: AccordionItemProps) {
 interface CapacidadCardProps {
   title: string;
   description: string;
-  href: string;
+  /** URL segment of the article in the current locale. */
+  slug: string;
   imageSrc?: string;
   imageAlt?: string;
   imageWidth?: number;
@@ -59,7 +61,8 @@ interface CapacidadCardProps {
   readMoreText?: string;
 }
 
-function CapacidadCard({ title, description, href, imageSrc, imageAlt, imageWidth, imageHeight, readMoreText = "Leer más" }: CapacidadCardProps) {
+function CapacidadCard({ title, description, slug, imageSrc, imageAlt, imageWidth, imageHeight, readMoreText = "Leer más" }: CapacidadCardProps) {
+  const href = { pathname: "/capacidades/[slug]", params: { slug } } as const;
   return (
     <div
       className="flex flex-col transition-shadow duration-200 hover:shadow-md"
@@ -78,7 +81,7 @@ function CapacidadCard({ title, description, href, imageSrc, imageAlt, imageWidt
       )}
       <div className="p-4 flex flex-col flex-1">
         <h3 className="font-semibold mb-2" style={{ fontSize: "14px", color: "rgb(0, 9, 25)", lineHeight: "1.35" }}>
-          <Link href={href as "/"} style={{ color: "inherit", textDecoration: "none" }} className="hover:text-[rgb(95,189,211)] transition-colors">
+          <Link href={href} style={{ color: "inherit", textDecoration: "none" }} className="hover:text-[rgb(95,189,211)] transition-colors">
             {title}
           </Link>
         </h3>
@@ -86,7 +89,7 @@ function CapacidadCard({ title, description, href, imageSrc, imageAlt, imageWidt
           {description}
         </p>
         <Link
-          href={href as "/"}
+          href={href}
           className="inline-flex items-center gap-1 font-medium transition-colors duration-150"
           style={{ fontSize: "12px", color: "rgb(95, 189, 211)" }}
         >
@@ -1091,15 +1094,15 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 First we will show you the{" "}
-                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
                 {" "}included in the most recent version. Then we will highlight the{" "}
-                <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
+                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
                 {" "}already developed, so you don't have to discover them by reading the entire manual. If you prefer, you can also take a quick look at all{" "}
-                <a href="#prestacionesactuales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Current Capabilities</a>
+                <a href={anchorHash("prestacionesactuales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Current Capabilities</a>
                 . Finally, we will give you a preview of what is coming in{" "}
-                <a href="#proximasprestaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Road Map</a>
+                <a href={anchorHash("proximasprestaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Road Map</a>
                 . And for the most curious, we have reserved the last section, where you can see how the product has evolved from its beginnings, and the improvements introduced in{" "}
-                <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>each Version</a>
+                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>each Version</a>
                 .
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -1125,15 +1128,15 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 En primer lugar te mostraremos las{" "}
-                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novedades</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novedades</a>
                 {" "}incluidas en la versión más reciente. A continuación te resaltaremos las{" "}
-                <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades más importantes</a>
+                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades más importantes</a>
                 {" "}ya desarrolladas, para que no tengas que descubrirlas haciendo un repaso exhaustivo del manual, pero si lo prefieres puedes echar una leída rápida a todas las
-                <a href="#prestacionesactuales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}> Capacidades ya implementadas</a>
+                <a href={anchorHash("prestacionesactuales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}> Capacidades ya implementadas</a>
                 . Finalmente te haremos un adelanto de lo que está por llegar en{" "}
-                <a href="#proximasprestaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Próximas prestaciones</a>
+                <a href={anchorHash("proximasprestaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Próximas prestaciones</a>
                 . Y para los más curiosos hemos reservado la última sección, donde podrás ver cómo ha ido evolucionando el producto desde sus inicios, y las mejoras introducidas en{" "}
-                <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versión</a>
+                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versión</a>
                 .
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -1163,7 +1166,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Novedades */}
-      <section id="novedades" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("novedades", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "What's New in version 0.18" : "Novedades versión 0.18"} />
 
@@ -1183,7 +1186,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 The following cards highlight the <strong>most important new features of version 0.18.</strong>{" "}
                 For a more detailed description of all the new features, visit the{" "}
-                <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Version History</a> section.
+                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Version History</a> section.
               </p>
             </>
           ) : (
@@ -1206,7 +1209,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 En las fichas siguentes se destacan las <strong>novedades más importantes de la versión 0.18. </strong>
                 Para una descripción más detallada de todas las novedades visitar la sección{" "}
-                <a href="#historicodeversiones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</a>.
+                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</a>.
               </p>
             </>
           )}
@@ -1215,7 +1218,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
             {novedadesArticles.map((article) => (
               <CapacidadCard
                 key={article.slug}
-                href={`/capacidades/${article.slug}`}
+                slug={getArticleSlug(article, locale)}
                 title={isEn ? (article.titleEn ?? article.title) : article.title}
                 description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
                 readMoreText={readMoreText}
@@ -1226,7 +1229,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Capacidades Destacadas */}
-      <section id="capacidadesdestacadas" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("capacidadesdestacadas", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Featured Capabilities" : "Capacidades destacadas"} />
 
@@ -1237,7 +1240,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 There are many, so we have ordered them by topic. We will gradually complete them as we have more content. As in the{" "}
-                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
                 {" "}section, the following cards are intended to provide only an introduction to each featured capability to motivate you. For further depth, we will refer you to tutorials and videos, and ultimately to the Manual.
               </p>
             </>
@@ -1251,7 +1254,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 Como son muchas, las hemos ordenado por temática. Además, poco a poco las iremos completando, a medida que tengamos más contenidos. Al igual que en la sección de{" "}
-                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novedades</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novedades</a>
                 , en las fichas siguientes pretendemos hacer solo una introducción a cada capacidad destacada para motivarte y despertar tu interés. Para profundizar más en ellas te remitiremos a los tutoriales y vídeos, y en último caso al Manual.
               </p>
             </>
@@ -1261,7 +1264,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
             {destacadasArticles.map((article) => (
               <CapacidadCard
                 key={article.slug}
-                href={`/capacidades/${article.slug}`}
+                slug={getArticleSlug(article, locale)}
                 title={isEn ? (article.titleEn ?? article.title) : article.title}
                 description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
                 imageSrc={article.image}
@@ -1276,7 +1279,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Prestaciones Actuales */}
-      <section id="prestacionesactuales" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("prestacionesactuales", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Current Capabilities" : "Prestaciones actuales"} />
 
@@ -1287,17 +1290,17 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 Some of these capabilities are described in more detail in{" "}
-                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
                 , or in{" "}
-                <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
+                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
                 , but to learn more about other capabilities you will need to consult the{" "}
-                <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
                 , or the{" "}
-                <Link href={{ pathname: "/utilizacion", hash: "#tutoriales" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutorials</Link>
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("tutoriales", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutorials</Link>
                 {" "}and{" "}
-                <Link href={{ pathname: "/utilizacion", hash: "#videosformativos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Training Videos</Link>
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("videosformativos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Training Videos</Link>
                 {" "}we are gradually developing. You can also sign up for our{" "}
-                <Link href={{ pathname: "/difusion", hash: "#cursos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Courses</Link>
+                <Link href={{ pathname: "/difusion", hash: anchorHash("cursos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Courses</Link>
                 , both in-person and online, still in preparation.
               </p>
               <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -1314,17 +1317,17 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 Algunas de estas prestaciones se describen con más detalle en las{" "}
-                <a href="#novedades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novedades</a>
                 , o en las{" "}
-                <a href="#capacidadesdestacadas" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</a>
+                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades Destacadas</a>
                 , pero para saber más sobre otras prestaciones tendrás que consultar el{" "}
-                <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
                 , o los{" "}
-                <Link href={{ pathname: "/utilizacion", hash: "#tutoriales" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</Link>
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("tutoriales", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriales</Link>
                 {" "}y{" "}
-                <Link href={{ pathname: "/utilizacion", hash: "#videosformativos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</Link>
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("videosformativos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Videos Formativos</Link>
                 {" "}que poco a poco vamos desarrollando. También puedes apuntarte a nuestros{" "}
-                <Link href={{ pathname: "/difusion", hash: "#cursos" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</Link>
+                <Link href={{ pathname: "/difusion", hash: anchorHash("cursos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</Link>
                 {" "}presenciales o virtuales, aún en elaboración.
               </p>
               <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -1347,7 +1350,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Próximas Prestaciones */}
-      <section id="proximasprestaciones" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("proximasprestaciones", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Road Map" : "Próximas prestaciones"} />
 
@@ -1380,7 +1383,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Histórico de Versiones */}
-      <section id="historicodeversiones" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
+      <section id={anchorId("historicodeversiones", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Version History" : "Histórico de versiones"} />
 

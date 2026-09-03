@@ -41,12 +41,45 @@ src/
     icons.tsx         # SVG icons as React components
   data/               # Static content data
   i18n/               # next-intl routing, navigation and request config
-  proxy.ts            # next-intl locale middleware
 messages/             # es.json / en.json translation catalogs
 public/
   images/             # Site imagery
   seo/                # Favicon and SEO assets
 ```
+
+## Routing and URLs
+
+Each route has a different URL per language (`/es/capacidades`, `/en/capabilities`).
+The map lives in `pathnames` in `src/i18n/routing.ts`; the keys are the internal
+pathnames used throughout the code, and they are always the Spanish ones because
+`es` is the default locale. `Link`, `usePathname` and friends from
+`src/i18n/navigation.ts` take and return those internal pathnames and translate
+to the real URL, so nothing outside `routing.ts` should hardcode an English URL.
+
+Localized pathnames are normally rewritten by next-intl's middleware, which a
+static export cannot run. So **every localized pathname also needs its own
+directory** under `src/app/[locale]/`, and each page must restrict
+`generateStaticParams` to its own locale — otherwise both languages get both
+URLs and the site ships duplicate content. The Spanish directory holds the real
+page; the English one re-exports it (see `src/app/[locale]/presentation/page.tsx`).
+Adding a route therefore means: a `pathnames` entry, the Spanish directory, and
+the English one.
+
+Capability articles are translated too (`slug` / `slugEn` in
+`src/data/capacidades-articles.ts`). Because their URL segment differs per
+language, the language switcher in `NavBar` cannot derive the counterpart URL on
+its own — the article page passes it down via the `localeParams` prop.
+
+The same applies to in-page anchors, mapped in `src/i18n/anchors.ts`
+(`/en/capabilities#whats-new`, not `#novedades`). Never write a raw `#anchor` in
+a component: the section `id` and every link to it come from `anchorId()` /
+`anchorHash()`, keyed by the internal (Spanish) name. A mismatch between the two
+is silent — the link just scrolls nowhere — so they have to share one source.
+
+Types in `routing.ts` keep link targets honest: `Pathname` is every route,
+`StaticPathname` drops the ones needing params (what `Link` accepts on its own),
+and `PathnameWithHash` is the `{ pathname, hash }` form. Prefer them over casts:
+an unrecognized pathname is emitted verbatim and 404s in English.
 
 ## Content
 - All user-facing copy lives in `messages/es.json` and `messages/en.json` — keep both in sync when adding keys.

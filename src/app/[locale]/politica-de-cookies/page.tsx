@@ -5,6 +5,12 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { LegalPageLayout, LegalSection } from "@/components/LegalPageLayout";
 
+// Spanish URL only — the English one is `/cookies-policy`, generated from
+// `../cookies-policy/page.tsx`. See `src/i18n/routing.ts`.
+export function generateStaticParams() {
+  return [{ locale: "es" }];
+}
+
 export async function generateMetadata({
   params,
 }: {

@@ -1,4 +1,5 @@
 import Image from "@/components/AppImage";
+import { anchorHash, anchorId } from "@/i18n/anchors";
 
 const MANUAL_ES = `https://qgisred.gitbook.io/manual-de-usuario`;
 const MANUAL_EN = `https://qgisred.gitbook.io/usermanual`;
@@ -64,27 +65,27 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 In the first part, a set of{" "}
-                <a href="#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Tutorials</strong></a>
+                <a href={anchorHash("tutoriales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Tutorials</strong></a>
                 {" "}will be offered here so that you can calmly follow all the steps needed to achieve the goal set in each one of them. They will be PDF documents that you can download and use at your leisure. However, the more advanced tutorials will be reserved for development in the courses we offer <span style={{ fontStyle: "italic" }}>(link to courses).</span>
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 The{" "}
-                <a href="#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Videos </strong></a>
+                <a href={anchorHash("videosformativos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Videos </strong></a>
                 section will follow the same scheme as the tutorials, and will normally be based on them, although due to time constraints it is likely that some features will be omitted, so if you want more complete and detailed information it is recommended to refer to the tutorials. To give the videos a wider reach, we have decided to distribute them through Youtube.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 We will also use this section to post the{" "}
-                <a href="#repositorioejemplos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Examples</strong></a>
+                <a href={anchorHash("repositorioejemplos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Examples</strong></a>
                 {" "}used in the tutorials or in the videos, so that you can easily access them.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 In another section, the{" "}
-                <a href="#modelodatos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Data Model</strong></a>
+                <a href={anchorHash("modelodatos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Data Model</strong></a>
                 {" "}used by QGISRed to store all the information that configures a project is planned to be published, as well as the structure of the different auxiliary files used by QGISRed.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 For more complete information on everything developed so far you can refer to the application{" "}
-                <a href="#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Manual</strong></a>
+                <a href={anchorHash("manualusuario", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Manual</strong></a>
                 {" "}in PDF, which you will find in the following section. The manual has always been available in Spanish and English, and we update it every time we release a new version. In the future we hope to put this information online, expand it and share its contents.
               </p>
               <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -100,27 +101,27 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 En una primera parte se ofrecerán aquí un conjunto de{" "}
-                <a href="#tutoriales" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Tutoriales</strong></a>
+                <a href={anchorHash("tutoriales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Tutoriales</strong></a>
                 {" "}para que puedas seguir con calma todos los pasos necesarios para alcanzar el objetivo marcado en cada uno de ellos. Serán documentos en PDF que puedes descargar y manejar a tu gusto. Sin embargo, los tutoriales más avanzados los reservaremos para su desarrollo en los cursos que ofrecemos <span style={{ fontStyle: "italic" }}>(enlace a cursos).</span>
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 La sección de{" "}
-                <a href="#videosformativos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Vídeos </strong></a>
+                <a href={anchorHash("videosformativos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Vídeos </strong></a>
                 seguirá el mismo esquema que los tutoriales, y normalmente estarán basados en ellos, aunque por limitación de tiempo es probable que se omitan algunas prestaciones, así que si quieres tener una información más completa y detallada se recomienda acudir a los tutoriales. Para darle una mayor difusión a los vídeos, hemos decidido distribuirlos a través de Youtube.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 También aprovecharemos esta sección para colgar los{" "}
-                <a href="#repositorioejemplos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Ejemplos</strong></a>
+                <a href={anchorHash("repositorioejemplos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Ejemplos</strong></a>
                 {" "}utilizados en los tutoriales o en los vídeos, de modo que te resulte fácil acceder a ellos.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 En otro apartado está previsto publicar el{" "}
-                <a href="#modelodatos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Modelo de Datos</strong></a>
+                <a href={anchorHash("modelodatos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Modelo de Datos</strong></a>
                 {" "}utilizado por QGISRed para alojar toda la información que configura un proyecto, así como la estructura de los diferentes ficheros auxiliares utilizados por QGISRed.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 Para una información más completa de todo lo que hay desarrollado hasta ahora puedes recurrir al{" "}
-                <a href="#manualusuario" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Manual</strong></a>
+                <a href={anchorHash("manualusuario", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Manual</strong></a>
                 {" "}de la aplicación en PDF, que encontrarás en la sección siguiente. El manual siempre ha estado disponible en español y en inglés, y lo vamos actualizando cada vez que sacamos una nueva versión. En el futuro esperamos poner esta información en red, ampliarla y compartir sus contenidos.
               </p>
               <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -133,7 +134,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Manual del Usuario */}
-      <section id="manualusuario" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("manualusuario", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "User's Manual" : "Manual del usuario"} />
 
@@ -217,7 +218,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Tutoriales */}
-      <section id="tutoriales" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("tutoriales", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Tutorials" : "Tutoriales"} />
           <ComingSoon text={comingSoonText} />
@@ -225,7 +226,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Vídeos Formativos */}
-      <section id="videosformativos" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("videosformativos", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Training Videos" : "Vídeos formativos"} />
           <ComingSoon text={comingSoonText} />
@@ -233,7 +234,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Repositorio de Ejemplos */}
-      <section id="repositorioejemplos" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("repositorioejemplos", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Examples Repository" : "Repositorio de ejemplos"} />
 
@@ -273,7 +274,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Modelo de Datos */}
-      <section id="modelodatos" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
+      <section id={anchorId("modelodatos", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Data Model" : "Modelo de datos"} />
           <ComingSoon text={comingSoonText} />

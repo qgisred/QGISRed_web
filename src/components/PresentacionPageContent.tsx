@@ -1,5 +1,6 @@
 import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
+import { anchorHash, anchorId } from "@/i18n/anchors";
 
 interface SectionHeadingProps {
   title: string;
@@ -160,9 +161,9 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       </section>
 
       {/* Qué es QGISRed / What is QGISRed */}
-      <section id="quees" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px", borderTop: "1px solid rgb(240,240,240)" }}>
+      <section id={anchorId("quees", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px", borderTop: "1px solid rgb(240,240,240)" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "What is QGISRed" : "Qué es QGISRed"} id="quees-heading" />
+          <SectionHeading title={isEn ? "What is QGISRed" : "Qué es QGISRed"} id={`${anchorId("quees", locale)}-heading`} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
@@ -272,7 +273,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       </section>
 
       {/* Antecedentes / Background */}
-      <section id="antecedentes" className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("antecedentes", locale)} className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Background" : "Antecedentes"} />
 
@@ -282,7 +283,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     The idea of enhancing EPANET's capabilities by connecting it with a GIS is not new for our research group. Back in 2004, Fernando Martínez, director of the current QGISRed project, directed a project with similar objectives and features, called <strong>GISRed. </strong>There were two versions at the time, 1.0 and 2.0, and its capabilities were disseminated through several{" "}
-                    <Link href={{ pathname: "/difusion", hash: "#publicaciones" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publications</Link>.
+                    <Link href={{ pathname: "/difusion", hash: anchorHash("publicaciones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publications</Link>.
                   </p>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     GISRed was programmed in the Avenue language for ArcView 3.2, a predecessor of what later became ArcGIS, and came to be configured by more than 600 scripts. It was used internally as a tool to help build several master plans for improving water supplies, including the water supply for the city of Valencia and its metropolitan area, with a served population of 1.5 million inhabitants, as the most important milestone.
@@ -321,7 +322,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     La idea de potenciar las prestaciones de EPANET mediante su conexión con un GIS no es nueva para nuestro grupo de investigación. Ya en 2004 Fernando Martínez, director del actual proyecto QGISRed, dirigió un proyecto con similares objetivos y prestaciones, denominado <strong>GISRed. </strong>Hubo por entonces dos versiones, la 1.0 y la 2.0, y se difundieron sus capacidades a través de varias{" "}
-                    <Link href={{ pathname: "/difusion", hash: "#publicaciones" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publicaciones</Link>.
+                    <Link href={{ pathname: "/difusion", hash: anchorHash("publicaciones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publicaciones</Link>.
                   </p>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     GISRed se programó en el lenguaje Avenue para ArcView 3.2, un precedente de lo que después fue ArcGIS,
@@ -399,7 +400,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       </section>
 
       {/* Aplicaciones / Applications */}
-      <section id="aplicaciones" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("aplicaciones", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Applications" : "Aplicaciones"} />
 
@@ -601,7 +602,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       </section>
 
       {/* Instalación / Installation */}
-      <section id="instalacion" className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("instalacion", locale)} className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Installing QGISRed" : "Instalación de QGISRed"} />
 
@@ -769,7 +770,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       </section>
 
       {/* Proyecto en GitHub / GitHub Project */}
-      <section id="github" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("github", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "GitHub Project" : "Proyecto en GitHub"} />
 
@@ -786,7 +787,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   </p>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     Below, the content of the tab hosting the QGISRed code is shown. From the last two lines you can also access the{" "}
-                    <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuals in Spanish and English</Link>
+                    <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuals in Spanish and English</Link>
                   </p>
 
                   <ToggleSection title="Learn more about the QGISRed project on GitHub">
@@ -795,9 +796,9 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                     </p>
                     <p className="mb-3">
                       On the right-hand side of this tab, the plugin's licence is also shown,{" "}
-                      <Link href={{ pathname: "/capacidades", hash: "#novedades" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>the latest released version</Link>
+                      <Link href={{ pathname: "/capacidades", hash: anchorHash("novedades", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>the latest released version</Link>
                       {" "}and all{" "}
-                      <Link href={{ pathname: "/capacidades", hash: "#historicodeversiones" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>previously published versions with their improvements</Link>
+                      <Link href={{ pathname: "/capacidades", hash: anchorHash("historicodeversiones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>previously published versions with their improvements</Link>
                     </p>
                     <p className="mb-3">
                       A very important section of this portal is the Issues tab, which is fully active, and where users can report any incident. It is divided into two sections, one for Open issues (most are suggestions for the future) and another for Closed or resolved issues, which are all those that seriously affect some functionality of the application.
@@ -826,7 +827,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   </p>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     A continuación, se muestra el contenido de la pestaña que aloja el código de QGISRed. Desde las dos últimas líneas se puede acceder también a los{" "}
-                    <Link href={{ pathname: "/utilizacion", hash: "#manualusuario" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuales en español e inglés</Link>
+                    <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuales en español e inglés</Link>
                   </p>
 
                   <ToggleSection title="Saber más sobre el proyecto de QGISRed en GitHub">
@@ -836,9 +837,9 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                     </p>
                     <p className="mb-3">
                       En la parte de la derecha de esta pestaña se muestra también la licencia del plugin,{" "}
-                      <Link href={{ pathname: "/capacidades", hash: "#novedades" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>la última versión liberada</Link>
+                      <Link href={{ pathname: "/capacidades", hash: anchorHash("novedades", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>la última versión liberada</Link>
                       {" "}y todas las{" "}
-                      <Link href={{ pathname: "/capacidades", hash: "#historicodeversiones" }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>versiones publicadas anteriormente con sus mejoras</Link>
+                      <Link href={{ pathname: "/capacidades", hash: anchorHash("historicodeversiones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>versiones publicadas anteriormente con sus mejoras</Link>
                     </p>
                     <p className="mb-3">
                       Una sección muy importante de este portal es la pestaña Issues, que está plenamente activa, y donde
@@ -895,7 +896,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       </section>
 
       {/* Créditos / Credits */}
-      <section id="creditos" className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "64px" }}>
+      <section id={anchorId("creditos", locale)} className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Credits" : "Créditos"} />
 

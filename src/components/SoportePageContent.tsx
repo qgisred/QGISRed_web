@@ -1,5 +1,6 @@
 import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
+import { anchorHash, anchorId } from "@/i18n/anchors";
 
 interface SectionHeadingProps {
   title: string;
@@ -95,7 +96,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 First of all, we remind you that there is a portal to report any{" "}
                 <a
-                  href="#incidencias"
+                  href={anchorHash("incidencias", locale)}
                   style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
                 >
                   issue
@@ -105,7 +106,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 But if you want more continuous and personalised attention, you can subscribe to the{" "}
                 <a
-                  href="#soportetecnico"
+                  href={anchorHash("soportetecnico", locale)}
                   style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
                 >
                   Technical Support Service
@@ -115,7 +116,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 Attention to your needs can go even further, offering a{" "}
                 <a
-                  href="#empresas"
+                  href={anchorHash("empresas", locale)}
                   style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
                 >
                   Direct Assistance Service to Companies
@@ -125,7 +126,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 Finally, our university spirit leads us to propose our preferred form of collaboration, which is through participation in{" "}
                 <a
-                  href="#participacion"
+                  href={anchorHash("participacion", locale)}
                   style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
                 >
                   Research and Development Projects
@@ -146,7 +147,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 En primer lugar, te recordamos que existe un portal para reportar cualquier{" "}
                 <a
-                  href="#incidencias"
+                  href={anchorHash("incidencias", locale)}
                   style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
                 >
                   incidencia
@@ -157,7 +158,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 Pero si quieres una atención más continua y personalizada, puedes suscribirte al{" "}
                 <a
-                  href="#soportetecnico"
+                  href={anchorHash("soportetecnico", locale)}
                   style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
                 >
                   Servicio de Soporte Técnico
@@ -167,7 +168,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 La atención a tus necesidades puede ir aún más lejos, ofreciendo un{" "}
                 <a
-                  href="#empresas"
+                  href={anchorHash("empresas", locale)}
                   style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
                 >
                   Servicio de Asistencia directo a las Empresas
@@ -179,7 +180,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                 Finalmente, nuestro espíritu universitario nos lleva a proponerte la forma preferida de colaboración por nuestra parte,
                 y es mediante la participación en{" "}
                 <a
-                  href="#participacion"
+                  href={anchorHash("participacion", locale)}
                   style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
                 >
                   Proyectos de Investigación y Desarrollo
@@ -195,7 +196,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Incidencias / Issues */}
-      <section id="incidencias" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("incidencias", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Issues" : "Incidencias"} />
 
@@ -299,7 +300,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Soporte Técnico / Technical Support */}
-      <section id="soportetecnico" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("soportetecnico", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Technical Support" : "Soporte técnico"} />
 
@@ -307,7 +308,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 One of the things that free-to-use applications are usually criticised for is the lack of direct user assistance, compared to the advantage of not having to pay for licences. Although there is the option of using the{" "}
-                <a href="#incidencias" style={{ color: "rgb(95, 189, 211)" }}>issues</a>
+                <a href={anchorHash("incidencias", locale)} style={{ color: "rgb(95, 189, 211)" }}>issues</a>
                 {" "}portal, or the user forum, there is no guarantee of a quick and effective response.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -330,7 +331,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                 Una de las cosas que se les suele criticar a las aplicaciones de uso libre, es la falta de una ayuda
                 directa al usuario, frente a la ventaja de no tener que pagar licencias. Aunque está la opción de utilizar
                 el portal de{" "}
-                <a href="#incidencias" style={{ color: "rgb(95, 189, 211)" }}>incidencias</a>
+                <a href={anchorHash("incidencias", locale)} style={{ color: "rgb(95, 189, 211)" }}>incidencias</a>
                 , o el foro de usuarios, no hay garantía de una respuesta rápida y efectiva.
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -372,7 +373,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Servicios a Empresas / Business Services */}
-      <section id="empresas" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("empresas", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Business Services" : "Servicios a empresas"} />
 
@@ -497,7 +498,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Participación en Proyectos / Participation in Projects */}
-      <section id="participacion" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "64px" }}>
+      <section id={anchorId("participacion", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Participation in Projects" : "Participación en Proyectos"} />
 
@@ -513,13 +514,13 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 Furthermore, in a research project the hydraulic model does not normally constitute the end in itself, but the means to achieve the intended results: minimising energy consumption, reducing losses, facilitating leak detection, managing demand, detecting the entry of a contaminant in advance, planning investments, recovering 24-hour continuous supply, etc. In this regard, IIAMA can equally contribute its know-how in all these matters, as demonstrated through the numerous{" "}
-                <Link href={{ pathname: "/difusion", hash: "#publicaciones" }} style={{ color: "rgb(95, 189, 211)" }}>publications</Link>{" "}
+                <Link href={{ pathname: "/difusion", hash: anchorHash("publicaciones", locale) }} style={{ color: "rgb(95, 189, 211)" }}>publications</Link>{" "}
                 on these topics.
               </p>
               <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 Finally, QGISRed, due to its public nature and its link to a University, can also serve as a{" "}
                 <strong>testing platform </strong>for testing various alternatives to solving any given problem, giving open participation to all proposals. For example, to test algorithms that compete to anticipate the detection of an event or a leak, to optimise system operating costs, to maximise network resilience at minimum cost, etc., using common databases and a{" "}
-                <Link href={{ pathname: "/utilizacion", hash: "#modelodatos" }} style={{ color: "rgb(95, 189, 211)" }}>data model</Link>{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("modelodatos", locale) }} style={{ color: "rgb(95, 189, 211)" }}>data model</Link>{" "}
                 that is public and compatible with other applications, which covers all the elements that make up real networks. To this end, QGISRed's libraries could also be made public one day, if necessary.
               </p>
             </>
@@ -542,7 +543,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                 detección de fugas, gestionar la demanda, detectar anticipadamente la entrada de un contaminante, planificar
                 inversiones, recuperar el suministro permanente 24 h, etc. En este sentido, el IIAMA puede aportar igualmente
                 su know-how en todas estas cuestiones, puesto de manifiesto a través de las numerosas{" "}
-                <Link href={{ pathname: "/difusion", hash: "#publicaciones" }} style={{ color: "rgb(95, 189, 211)" }}>publicaciones</Link>{" "}
+                <Link href={{ pathname: "/difusion", hash: anchorHash("publicaciones", locale) }} style={{ color: "rgb(95, 189, 211)" }}>publicaciones</Link>{" "}
                 sobre dichos temas.
               </p>
               <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
@@ -551,7 +552,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                 planteado, dando participación abierta a todas las propuestas. Por ejemplo, para testar algoritmos que compitan
                 por anticiparse a la detección de un evento o de una fuga, por optimizar los costes de operación del sistema,
                 por maximizar la resiliencia de la red al mínimo coste, etc. utilizando para ello bases de datos comunes, y un{" "}
-                <Link href={{ pathname: "/utilizacion", hash: "#modelodatos" }} style={{ color: "rgb(95, 189, 211)" }}>modelo de datos</Link>{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("modelodatos", locale) }} style={{ color: "rgb(95, 189, 211)" }}>modelo de datos</Link>{" "}
                 que es público y compatible con otras aplicaciones, el cual alcanza a contemplar todos los elementos que
                 configuran las redes reales. A tal fin, las librerías de QGISRed podrían hacerse también públicas algún día,
                 si fuera necesario.

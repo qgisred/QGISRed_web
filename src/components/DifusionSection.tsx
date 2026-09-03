@@ -1,14 +1,16 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import type { Pathname } from "@/i18n/routing";
+import type { PathnameWithHash } from "@/i18n/routing";
+import { anchorHash } from "@/i18n/anchors";
 
 export function DifusionSection() {
   const t = useTranslations("difusionSection");
+  const locale = useLocale();
 
-  const buttons: Array<{ key: "courses" | "publications" | "news"; pathname: Pathname; hash: string }> = [
-    { key: "courses", pathname: "/difusion", hash: "#cursos" },
-    { key: "publications", pathname: "/difusion", hash: "#publicaciones" },
-    { key: "news", pathname: "/difusion", hash: "#noticias" },
+  const buttons: Array<{ key: "courses" | "publications" | "news"; href: PathnameWithHash }> = [
+    { key: "courses", href: { pathname: "/difusion", hash: anchorHash("cursos", locale) } },
+    { key: "publications", href: { pathname: "/difusion", hash: anchorHash("publicaciones", locale) } },
+    { key: "news", href: { pathname: "/difusion", hash: anchorHash("noticias", locale) } },
   ];
 
   return (
@@ -62,7 +64,7 @@ export function DifusionSection() {
             {buttons.map((btn) => (
               <Link
                 key={btn.key}
-                href={{ pathname: btn.pathname, hash: btn.hash }}
+                href={btn.href}
                 className="inline-block font-semibold uppercase tracking-wider text-white transition-all duration-200 hover:brightness-110"
                 style={{
                   background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",

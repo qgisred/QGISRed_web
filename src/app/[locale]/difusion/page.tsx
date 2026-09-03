@@ -5,6 +5,12 @@ import { PageHero } from "@/components/PageHero";
 import { DifusionPageContent } from "@/components/DifusionPageContent";
 import { Footer } from "@/components/Footer";
 
+// Spanish URL only — the English one is `/dissemination`, generated from
+// `../dissemination/page.tsx`. See `src/i18n/routing.ts`.
+export function generateStaticParams() {
+  return [{ locale: "es" }];
+}
+
 export async function generateMetadata({
   params,
 }: {

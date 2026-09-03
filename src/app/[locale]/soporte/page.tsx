@@ -5,6 +5,12 @@ import { PageHero } from "@/components/PageHero";
 import { SoportePageContent } from "@/components/SoportePageContent";
 import { Footer } from "@/components/Footer";
 
+// Spanish URL only — the English one is `/support`, generated from
+// `../support/page.tsx`. See `src/i18n/routing.ts`.
+export function generateStaticParams() {
+  return [{ locale: "es" }];
+}
+
 export async function generateMetadata({
   params,
 }: {

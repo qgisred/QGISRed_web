@@ -1,6 +1,7 @@
 import Image from "@/components/AppImage";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import type { StaticPathname } from "@/i18n/routing";
 import { TwitterIcon, GitHubIcon } from "./icons";
 
 interface FooterLogo {
@@ -38,14 +39,19 @@ const footerLogos: FooterLogo[] = [
   },
 ];
 
-function NavColumn({ items }: { items: { text: string; href: string }[] }) {
+interface NavColumnItem {
+  text: string;
+  href: StaticPathname;
+}
+
+function NavColumn({ items }: { items: NavColumnItem[] }) {
   return (
     <nav>
       <ul className="flex flex-col gap-3 list-none p-0 m-0">
         {items.map((item) => (
           <li key={item.href}>
             <Link
-              href={item.href as "/"}
+              href={item.href}
               className="transition-colors duration-150 hover:text-[rgb(95,189,211)]"
               style={{
                 fontSize: "14px",
@@ -69,22 +75,22 @@ export function Footer() {
   const tn = useTranslations("nav");
   const locale = useLocale() === "en" ? "en" : "es";
 
-  const navCol1 = [
-    { text: tn("presentation"), href: "/presentacion" as "/" },
-    { text: tn("capabilities"), href: "/capacidades" as "/" },
-    { text: tn("usage"), href: "/utilizacion" as "/" },
+  const navCol1: NavColumnItem[] = [
+    { text: tn("presentation"), href: "/presentacion" },
+    { text: tn("capabilities"), href: "/capacidades" },
+    { text: tn("usage"), href: "/utilizacion" },
   ];
 
-  const navCol2 = [
-    { text: tn("diffusion"), href: "/difusion" as "/" },
-    { text: tn("support"), href: "/soporte" as "/" },
-    { text: tn("contact"), href: "/contacto" as "/" },
+  const navCol2: NavColumnItem[] = [
+    { text: tn("diffusion"), href: "/difusion" },
+    { text: tn("support"), href: "/soporte" },
+    { text: tn("contact"), href: "/contacto" },
   ];
 
-  const navCol3 = [
-    { text: t("legalNotice"), href: "/aviso-legal" as "/" },
-    { text: t("privacyPolicy"), href: "/politica-de-privacidad" as "/" },
-    { text: t("cookiesPolicy"), href: "/politica-de-cookies" as "/" },
+  const navCol3: NavColumnItem[] = [
+    { text: t("legalNotice"), href: "/aviso-legal" },
+    { text: t("privacyPolicy"), href: "/politica-de-privacidad" },
+    { text: t("cookiesPolicy"), href: "/politica-de-cookies" },
   ];
 
   return (

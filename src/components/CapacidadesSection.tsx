@@ -1,15 +1,17 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { anchorHash } from "@/i18n/anchors";
 
 export function CapacidadesSection() {
   const t = useTranslations("capacidadesSection");
+  const locale = useLocale();
 
   const cards = [
-    { key: "news", hash: "#novedades", icon: "✦" },
-    { key: "featured", hash: "#capacidadesdestacadas", icon: "⊞" },
-    { key: "current", hash: "#prestacionesactuales", icon: "✓" },
-    { key: "upcoming", hash: "#proximasprestaciones", icon: "◷" },
-    { key: "history", hash: "#historicodeversiones", icon: "≡" },
+    { key: "news", hash: anchorHash("novedades", locale), icon: "✦" },
+    { key: "featured", hash: anchorHash("capacidadesdestacadas", locale), icon: "⊞" },
+    { key: "current", hash: anchorHash("prestacionesactuales", locale), icon: "✓" },
+    { key: "upcoming", hash: anchorHash("proximasprestaciones", locale), icon: "◷" },
+    { key: "history", hash: anchorHash("historicodeversiones", locale), icon: "≡" },
   ] as const;
 
   return (

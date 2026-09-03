@@ -1,4 +1,5 @@
 import Image from "@/components/AppImage";
+import { anchorHash, anchorId } from "@/i18n/anchors";
 
 interface SectionHeadingProps {
   title: string;
@@ -409,15 +410,15 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
           {isEn ? (
             <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
               This section gathers those activities aimed at disseminating the QGISRed application, highlighting the{" "}
-              <a href="#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+              <a href={anchorHash("cursos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
                 Training Courses
               </a>
               , whose programme will be announced in due course. In addition, links to some{" "}
-              <a href="#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+              <a href={anchorHash("publicaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
                 Publications
               </a>{" "}
               from the REDHISP group of IIAMA related to the application and its features are also included, as well as links to{" "}
-              <a href="#noticias" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+              <a href={anchorHash("noticias", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
                 News
               </a>{" "}
               appearing in various media and social networks.
@@ -426,15 +427,15 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
             <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
               En esta sección se recogen aquellas actividades destinadas a dar difusión de la aplicación QGISRed,
               destacando los{" "}
-              <a href="#cursos" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+              <a href={anchorHash("cursos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
                 Cursos de Formación
               </a>
               , cuya programación se irá anunciando oportunamente. Además, se incluyen también enlaces a algunas{" "}
-              <a href="#publicaciones" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+              <a href={anchorHash("publicaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
                 Publicaciones
               </a>{" "}
               del grupo REDHISP del IIAMA relacionadas con la aplicación y sus prestaciones, así como enlaces a{" "}
-              <a href="#noticias" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+              <a href={anchorHash("noticias", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
                 Noticias
               </a>{" "}
               aparecidas en diversos medios y redes sociales.
@@ -444,7 +445,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Cursos de Formación / Training Courses */}
-      <section id="cursos" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("cursos", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Training Courses" : "Cursos de formación"} />
 
@@ -532,7 +533,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Publicaciones / Publications */}
-      <section id="publicaciones" className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
+      <section id={anchorId("publicaciones", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "Publications" : "Publicaciones"} />
 
@@ -590,7 +591,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
       </section>
 
       {/* Noticias y Redes Sociales / News & Social Media */}
-      <section id="noticias" className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
+      <section id={anchorId("noticias", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <SectionHeading title={isEn ? "News & Social Media" : "Noticias y Redes Sociales"} />
 

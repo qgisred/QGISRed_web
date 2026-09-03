@@ -1,12 +1,13 @@
 import Image from "@/components/AppImage";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { anchorHash, type AnchorKey } from "@/i18n/anchors";
 
 type CardKey = "tutorials" | "examples" | "manual" | "videos" | "dataModel" | "faq";
 
 interface ResourceCard {
   key: CardKey;
-  hash: string;
+  anchor: AnchorKey;
   imageSrc: string;
   imageAlt: string;
   // Intrinsic pixel size of imageSrc. The card crops with object-cover, so these
@@ -19,7 +20,7 @@ interface ResourceCard {
 const leftColumnCards: ResourceCard[] = [
   {
     key: "tutorials",
-    hash: "#tutoriales",
+    anchor: "tutoriales",
     imageSrc: "/images/soporte-img1.jpg",
     imageAlt: "Young female programmer web developer working on computer software",
     imageWidth: 2000,
@@ -28,7 +29,7 @@ const leftColumnCards: ResourceCard[] = [
   },
   {
     key: "examples",
-    hash: "#repositorioejemplos",
+    anchor: "repositorioejemplos",
     imageSrc: "/images/presentacion-img3.png",
     imageAlt: "Repository of Examples",
     imageWidth: 1280,
@@ -37,7 +38,7 @@ const leftColumnCards: ResourceCard[] = [
   },
   {
     key: "manual",
-    hash: "#manualusuario",
+    anchor: "manualusuario",
     imageSrc: "/images/soporte-img2.jpg",
     imageAlt: "Girl sitting in front of laptop carefully looking at paper document",
     imageWidth: 2000,
@@ -49,7 +50,7 @@ const leftColumnCards: ResourceCard[] = [
 const rightColumnCards: ResourceCard[] = [
   {
     key: "videos",
-    hash: "#videosformativos",
+    anchor: "videosformativos",
     imageSrc: "/images/soporte-img3.jpg",
     imageAlt: "Man Working On Laptop",
     imageWidth: 2000,
@@ -58,7 +59,7 @@ const rightColumnCards: ResourceCard[] = [
   },
   {
     key: "dataModel",
-    hash: "#modelodatos",
+    anchor: "modelodatos",
     imageSrc: "/images/presentacion-img2.png",
     imageAlt: "Data Model",
     imageWidth: 1280,
@@ -67,7 +68,7 @@ const rightColumnCards: ResourceCard[] = [
   },
   {
     key: "faq",
-    hash: "#preguntasfrecuentes",
+    anchor: "preguntasfrecuentes",
     imageSrc: "/images/soporte-img4.jpg",
     imageAlt: "Wooden dices with question mark",
     imageWidth: 2000,
@@ -76,10 +77,19 @@ const rightColumnCards: ResourceCard[] = [
   },
 ];
 
-function ResourceCardItem({ card, t }: { card: ResourceCard; t: (key: CardKey) => string }) {
+function ResourceCardItem({
+  card,
+  t,
+  locale,
+}: {
+  card: ResourceCard;
+  t: (key: CardKey) => string;
+  locale: string;
+}) {
+  const hash = anchorHash(card.anchor, locale);
   const imageBlock = (
     <Link
-      href={{ pathname: "/utilizacion", hash: card.hash }}
+      href={{ pathname: "/utilizacion", hash }}
       className="block overflow-hidden"
       tabIndex={-1}
       aria-hidden="true"
@@ -98,7 +108,7 @@ function ResourceCardItem({ card, t }: { card: ResourceCard; t: (key: CardKey) =
   const titleBlock = (
     <div className="flex items-center justify-center p-5">
       <Link
-        href={{ pathname: "/utilizacion", hash: card.hash }}
+        href={{ pathname: "/utilizacion", hash }}
         className="font-semibold text-center transition-colors duration-200 group-hover:text-[rgb(95,189,211)]"
         style={{
           fontSize: "16px",
@@ -128,6 +138,7 @@ function ResourceCardItem({ card, t }: { card: ResourceCard; t: (key: CardKey) =
 
 export function RecursosSection() {
   const t = useTranslations("recursosSection");
+  const locale = useLocale();
 
   return (
     <section
@@ -141,14 +152,14 @@ export function RecursosSection() {
         {/* Left column */}
         <div className="flex flex-col gap-5">
           {leftColumnCards.map((card) => (
-            <ResourceCardItem key={card.key} card={card} t={t} />
+            <ResourceCardItem key={card.key} card={card} t={t} locale={locale} />
           ))}
         </div>
 
         {/* Right column */}
         <div className="flex flex-col gap-5">
           {rightColumnCards.map((card) => (
-            <ResourceCardItem key={card.key} card={card} t={t} />
+            <ResourceCardItem key={card.key} card={card} t={t} locale={locale} />
           ))}
         </div>
       </div>

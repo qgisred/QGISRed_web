@@ -12,11 +12,10 @@ interface Params {
   slug: string;
 }
 
-export async function generateStaticParams(): Promise<{ locale: string; slug: string }[]> {
-  const locales = ["es", "en"];
-  return locales.flatMap((locale) =>
-    capacidadesArticles.map((article) => ({ locale, slug: article.slug }))
-  );
+// Spanish URLs only — the English ones are `/capabilities/[slug]`, generated from
+// `../../capabilities/[slug]/page.tsx` with the English slugs. See `src/i18n/routing.ts`.
+export function generateStaticParams(): Params[] {
+  return capacidadesArticles.map((article) => ({ locale: "es", slug: article.slug }));
 }
 
 export async function generateMetadata({
@@ -25,7 +24,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const article = getArticleBySlug(slug);
+  const article = getArticleBySlug(slug, locale);
   if (!article) return {};
   const title = locale === "en" ? (article.titleEn ?? article.title) : article.title;
   return { title: `${title} – QGISRed` };
@@ -38,12 +37,12 @@ export default async function CapacidadSlugPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const article = getArticleBySlug(slug);
+  const article = getArticleBySlug(slug, locale);
   if (!article) notFound();
 
   return (
     <>
-      <NavBar />
+      <NavBar localeParams={{ es: { slug: article.slug }, en: { slug: article.slugEn } }} />
       <PageHero
         title={locale === "en" ? (article.titleEn ?? article.title) : article.title}
         backgroundImage="/images/capacidades-bg.jpg"

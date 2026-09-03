@@ -1,22 +1,24 @@
 import Image from "@/components/AppImage";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { anchorHash, anchorId } from "@/i18n/anchors";
 
 export function PresentacionSection() {
   const t = useTranslations("presentacionSection");
+  const locale = useLocale();
 
   const listItems = [
-    { key: "whatIs", hash: "#quees" },
-    { key: "background", hash: "#antecedentes" },
-    { key: "applications", hash: "#aplicaciones" },
-    { key: "installation", hash: "#instalacion" },
-    { key: "github", hash: "#github" },
-    { key: "credits", hash: "#creditos" },
+    { key: "whatIs", hash: anchorHash("quees", locale) },
+    { key: "background", hash: anchorHash("antecedentes", locale) },
+    { key: "applications", hash: anchorHash("aplicaciones", locale) },
+    { key: "installation", hash: anchorHash("instalacion", locale) },
+    { key: "github", hash: anchorHash("github", locale) },
+    { key: "credits", hash: anchorHash("creditos", locale) },
   ] as const;
 
   return (
     <section
-      id="bajo"
+      id={anchorId("bajo", locale)}
       className="w-full bg-white"
       style={{
         paddingTop: "64px",

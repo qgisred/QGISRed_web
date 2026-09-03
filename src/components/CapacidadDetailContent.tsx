@@ -1,11 +1,12 @@
 import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
 import type { CapacidadArticle } from "@/data/capacidades-articles";
+import { anchorHash } from "@/i18n/anchors";
 
 export function CapacidadDetailContent({ article, locale }: { article: CapacidadArticle; locale: string }) {
   const isEn = locale === "en";
-  const backAnchor =
-    article.group === "novedades" ? "#novedades" : "#capacidadesdestacadas";
+  // Both group names double as anchor keys on the capabilities page.
+  const backAnchor = anchorHash(article.group, locale);
 
   const displayTitle = isEn ? (article.titleEn ?? article.title) : article.title;
   const displayParagraphs = isEn ? (article.paragraphsEn ?? article.paragraphs) : article.paragraphs;

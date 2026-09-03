@@ -1,7 +1,9 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { anchorHash } from "@/i18n/anchors";
 
 export function HeroSection() {
   const t = useTranslations("hero");
+  const locale = useLocale();
   return (
     <section
       className="relative w-full flex items-center"
@@ -48,7 +50,7 @@ export function HeroSection() {
             {t("subtitle")}
           </p>
           <a
-            href="#bajo"
+            href={anchorHash("bajo", locale)}
             className="inline-block text-white font-semibold uppercase tracking-wider transition-all duration-200 hover:brightness-110"
             style={{
               background: "linear-gradient(135deg, rgb(95, 189, 211) 0%, rgb(95, 189, 211) 100%)",
