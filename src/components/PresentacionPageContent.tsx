@@ -1,6 +1,7 @@
 import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
 import { anchorHash, anchorId } from "@/i18n/anchors";
+import { localize } from "@/i18n/localize";
 
 interface SectionHeadingProps {
   title: string;
@@ -114,24 +115,13 @@ function AccordionItem({ title, children, open }: AccordionItemProps) {
 }
 
 export function PresentacionPageContent({ locale = "es" }: { locale?: string }) {
-  const isEn = locale === "en";
-
   return (
     <main style={{ paddingTop: "0" }}>
       {/* Intro section */}
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "64px" }}>
         <div className="mx-auto flex flex-col md:flex-row items-start gap-[60px]" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <div style={{ flex: "1 1 55%" }}>
-            {isEn ? (
-              <>
-                <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", marginBottom: "16px" }}>
-                  Welcome to QGISRed. On this page you will find everything you would probably want to know when making contact with this product for the first time. What is it and what are its objectives? How did it come about? What is it for? How can I install it? Who is behind it? I encourage you to visit the following sections of this page to answer all your beginner questions.
-                </p>
-                <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                  If you want to learn more about all the product&apos;s capabilities and its current development status, how to use the application, the publications where its foundations are described, or how to contact us to get support or collaborate on this exciting project, visit the other sections of this website. Oh! And you can also register to be permanently informed of new developments.
-                </p>
-              </>
-            ) : (
+            {localize(locale,
               <>
                 <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", marginBottom: "16px" }}>
                   Bienvenido a QGISRed. En esta página encontrarás todo aquello que probablemente desearías conocer al tomar
@@ -144,6 +134,14 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   sobre cómo usar la aplicación, las publicaciones donde se cuentan sus fundamentos, o cómo conectar con
                   nosotros para obtener soporte o colaborar en este apasionante proyecto, visita las otras secciones de esta
                   web. Ah! Y también puedes registrarte para estar permanentemente informado de las novedades.
+                </p>
+              </>,
+              <>
+                <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", marginBottom: "16px" }}>
+                  Welcome to QGISRed. On this page you will find everything you would probably want to know when making contact with this product for the first time. What is it and what are its objectives? How did it come about? What is it for? How can I install it? Who is behind it? I encourage you to visit the following sections of this page to answer all your beginner questions.
+                </p>
+                <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                  If you want to learn more about all the product&apos;s capabilities and its current development status, how to use the application, the publications where its foundations are described, or how to contact us to get support or collaborate on this exciting project, visit the other sections of this website. Oh! And you can also register to be permanently informed of new developments.
                 </p>
               </>
             )}
@@ -163,41 +161,11 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       {/* Qué es QGISRed / What is QGISRed */}
       <section id={anchorId("quees", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px", borderTop: "1px solid rgb(240,240,240)" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "What is QGISRed" : "Qué es QGISRed"} id={`${anchorId("quees", locale)}-heading`} />
+          <SectionHeading title={localize(locale, "Qué es QGISRed", "What is QGISRed")} id={`${anchorId("quees", locale)}-heading`} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
-              {isEn ? (
-                <>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    QGISRed is a QGIS plugin designed to facilitate the task of building and analysing hydraulic models of water distribution networks, from the simplest schemes to the level of detail required by Digital Twins.
-                  </p>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    The plugin is free to use and takes advantage of all the benefits of working in a GIS environment to geo-reference network elements, overlay them on geographic backgrounds, edit graphic and alphanumeric information, visualise information by layers, customise symbology, perform geoprocessing operations, etc.
-                  </p>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    Unlike other plugins, QGISRed is not a set of isolated tools to facilitate certain tasks, but rather a working platform from which you can build or import the network model, edit its layout, declare the properties of the elements, build a calculation scenario and analyse the results, all from the same environment. In this way QGISRed can emulate all the capabilities of EPANET 2.3, extending its editing and calculation options.
-                  </p>
-                  <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    In addition to this, QGISRed offers some aids for building models, such as the verification of all data, automatic calculation of lengths, interpolation of elevations from a DEM, assignment of roughness to pipes based on material and age, assignment of demands to nodes from population data or registered average consumption, and management of calculation scenarios.
-                  </p>
-
-                  <ToggleSection title="Learn more">
-                    <p className="mb-3">
-                      As an advanced modelling tool, QGISRed offers additional options to extend the model and connect it with real data, thus progressively converting the hydraulic model of the network into a Digital Twin. For example, through service connections the billing or meter reading data can be loaded into the model, and through sensors the field measurements can be compared with the simulated values. Shut-off valves allow isolation for maintenance operations or to sectorise the network temporarily or permanently. Having access to real data, water balances can be performed, performance indicators (or KPIs) obtained, etc.
-                    </p>
-                    <p className="mb-3">
-                      Emulating EPANET&apos;s capabilities allows accelerating the learning curve in handling QGISRed. Moreover, the QGIS knowledge required for its use is minimal, since dedicated tools have been developed to carry out all necessary operations. However, QGIS specialists will be able to get even more out of the features offered by QGISRed.
-                    </p>
-                    <p className="mb-3">
-                      Through this page, numerous resources are offered to quickly become an expert in network modelling, and to offer professional solutions to companies using the tools associated with the Digital Twin. Finally, it is worth noting that the data model used by QGISRed is public and has a very simple structure, fundamentally oriented to carrying out all types of analysis, which allows QGISRed to connect with other network modelling applications such as EPANET, InfoWorks or WaterGEMS.
-                    </p>
-                    <p>
-                      QGISRed (pronounced as Koo_his_rred following Spanish phonetics) is currently offered only in English, and will soon be available in Spanish as well. It could potentially be offered in more than 40 languages supported by QGIS.
-                    </p>
-                  </ToggleSection>
-                </>
-              ) : (
+              {localize(locale,
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     QGISRed es un complemento de QGIS (o plugin) destinado a facilitar la tarea de construir y analizar
@@ -255,6 +223,35 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                       40 idiomas soportados por QGIS.
                     </p>
                   </ToggleSection>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    QGISRed is a QGIS plugin designed to facilitate the task of building and analysing hydraulic models of water distribution networks, from the simplest schemes to the level of detail required by Digital Twins.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    The plugin is free to use and takes advantage of all the benefits of working in a GIS environment to geo-reference network elements, overlay them on geographic backgrounds, edit graphic and alphanumeric information, visualise information by layers, customise symbology, perform geoprocessing operations, etc.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Unlike other plugins, QGISRed is not a set of isolated tools to facilitate certain tasks, but rather a working platform from which you can build or import the network model, edit its layout, declare the properties of the elements, build a calculation scenario and analyse the results, all from the same environment. In this way QGISRed can emulate all the capabilities of EPANET 2.3, extending its editing and calculation options.
+                  </p>
+                  <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    In addition to this, QGISRed offers some aids for building models, such as the verification of all data, automatic calculation of lengths, interpolation of elevations from a DEM, assignment of roughness to pipes based on material and age, assignment of demands to nodes from population data or registered average consumption, and management of calculation scenarios.
+                  </p>
+
+                  <ToggleSection title="Learn more">
+                    <p className="mb-3">
+                      As an advanced modelling tool, QGISRed offers additional options to extend the model and connect it with real data, thus progressively converting the hydraulic model of the network into a Digital Twin. For example, through service connections the billing or meter reading data can be loaded into the model, and through sensors the field measurements can be compared with the simulated values. Shut-off valves allow isolation for maintenance operations or to sectorise the network temporarily or permanently. Having access to real data, water balances can be performed, performance indicators (or KPIs) obtained, etc.
+                    </p>
+                    <p className="mb-3">
+                      Emulating EPANET&apos;s capabilities allows accelerating the learning curve in handling QGISRed. Moreover, the QGIS knowledge required for its use is minimal, since dedicated tools have been developed to carry out all necessary operations. However, QGIS specialists will be able to get even more out of the features offered by QGISRed.
+                    </p>
+                    <p className="mb-3">
+                      Through this page, numerous resources are offered to quickly become an expert in network modelling, and to offer professional solutions to companies using the tools associated with the Digital Twin. Finally, it is worth noting that the data model used by QGISRed is public and has a very simple structure, fundamentally oriented to carrying out all types of analysis, which allows QGISRed to connect with other network modelling applications such as EPANET, InfoWorks or WaterGEMS.
+                    </p>
+                    <p>
+                      QGISRed (pronounced as Koo_his_rred following Spanish phonetics) is currently offered only in English, and will soon be available in Spanish as well. It could potentially be offered in more than 40 languages supported by QGIS.
+                    </p>
+                  </ToggleSection>
                 </>
               )}
             </div>
@@ -275,50 +272,11 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       {/* Antecedentes / Background */}
       <section id={anchorId("antecedentes", locale)} className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "Background" : "Antecedentes"} />
+          <SectionHeading title={localize(locale, "Antecedentes", "Background")} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
-              {isEn ? (
-                <>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    The idea of enhancing EPANET&apos;s capabilities by connecting it with a GIS is not new for our research group. Back in 2004, Fernando Martínez, director of the current QGISRed project, directed a project with similar objectives and features, called <strong>GISRed. </strong>There were two versions at the time, 1.0 and 2.0, and its capabilities were disseminated through several{" "}
-                    <Link href={{ pathname: "/difusion", hash: anchorHash("publicaciones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publications</Link>.
-                  </p>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    GISRed was programmed in the Avenue language for ArcView 3.2, a predecessor of what later became ArcGIS, and came to be configured by more than 600 scripts. It was used internally as a tool to help build several master plans for improving water supplies, including the water supply for the city of Valencia and its metropolitan area, with a served population of 1.5 million inhabitants, as the most important milestone.
-                  </p>
-                  <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    However, the lack of robustness of the product initially limited its dissemination, and before long ArcView became obsolete, and the Avenue language was also abandoned.
-                  </p>
-
-                  <ToggleSection title="Read more">
-                    <p className="mb-3">
-                      In the following 15 years, no application, apart from commercial products, managed to provide the features that GISRed offered to help build water supply network models. Meanwhile the EPANET code was liberalised, and in 2015 a section was founded within{" "}
-                      <a href="http://community.wateranalytics.org/c/epanet" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Open Water Analytics</strong></a>
-                      {" "}(OWA) to continue developing the EPANET calculation module (also known as the Toolkit), with the contribution of the entire research community. Finally, in December 2019 the latest{" "}
-                      <a href="https://github.com/OpenWaterAnalytics/EPANET/releases" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>version 2.2 of the Toolkit</a>
-                      {" "}was launched from this platform. Shortly afterwards, in July 2020, the EPA also improved the graphical interface of{" "}
-                      <a href="https://www.epa.gov/water-research/epanet" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>EPANET to version 2.2</a>
-                      , integrating the latest version of the Toolkit. This version 2.2 of the Toolkit remained current until July 2025, when it was superseded by the new version 2.3.
-                    </p>
-                    <p className="mb-3">
-                      However, these advances in EPANET did not enhance the tools for building models, nor did they incorporate new types of elements into the network. They were basically limited to making all the data in a scenario accessible to programmers and offering the option of using the function library in concurrent mode, with the greatest contribution being the possibility of running models with pressure-dependent demands (PDA). The challenges of the old GISRed were still present, so in 2018, following the spectacular advances of the free software QGIS, we decided to reproduce GISRed&apos;s features in this new environment, and in the process improve both the features of that initial product, bringing them up to the level offered by the latest version of EPANET 2.2. The first public presentation of the new product, now called QGISRed, took place during the CCWI 2019 Conference, in Exeter (UK).
-                    </p>
-                    <p className="mb-3">
-                      On the other hand, the experience gained by the authors in the development of one of the first Digital Twins in the world for the city of Valencia led us to further enhance the capabilities of the new plugin to allow migration from a conventional hydraulic model to the construction of a Digital Twin.
-                    </p>
-                    <p className="mb-3">
-                      The result of this effort is the QGISRed product presented here, with the intention of marking a milestone among free-to-use products aimed at facilitating the construction of water distribution network models, which will be increasingly required by water supply management companies for decision-making, at a time when the digitalisation of this sector is beginning to gallop ahead.
-                    </p>
-                    <p>
-                      QGISRed is still under construction, and the features of the latest official version can be consulted in the{" "}
-                      <Link href="/capacidades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CAPABILITIES</Link>
-                      {" "}section, where the latest developments and future features to be developed are detailed. It is expected that the scope of all the objectives proposed in the roadmap will be completed, for the free version of this product, within a maximum of one year.
-                    </p>
-                  </ToggleSection>
-                </>
-              ) : (
+              {localize(locale,
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     La idea de potenciar las prestaciones de EPANET mediante su conexión con un GIS no es nueva para nuestro grupo de investigación. Ya en 2004 Fernando Martínez, director del actual proyecto QGISRed, dirigió un proyecto con similares objetivos y prestaciones, denominado <strong>GISRed. </strong>Hubo por entonces dos versiones, la 1.0 y la 2.0, y se difundieron sus capacidades a través de varias{" "}
@@ -377,6 +335,44 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                       , donde se detallan especialmente las últimas novedades, y las prestaciones futuras por desarrollar. Se espera completar el alcance de todos los objetivos propuestos en la hoja de ruta, para la versión libre de este producto, en el plazo máximo de un año.
                     </p>
                   </ToggleSection>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    The idea of enhancing EPANET&apos;s capabilities by connecting it with a GIS is not new for our research group. Back in 2004, Fernando Martínez, director of the current QGISRed project, directed a project with similar objectives and features, called <strong>GISRed. </strong>There were two versions at the time, 1.0 and 2.0, and its capabilities were disseminated through several{" "}
+                    <Link href={{ pathname: "/difusion", hash: anchorHash("publicaciones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publications</Link>.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    GISRed was programmed in the Avenue language for ArcView 3.2, a predecessor of what later became ArcGIS, and came to be configured by more than 600 scripts. It was used internally as a tool to help build several master plans for improving water supplies, including the water supply for the city of Valencia and its metropolitan area, with a served population of 1.5 million inhabitants, as the most important milestone.
+                  </p>
+                  <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    However, the lack of robustness of the product initially limited its dissemination, and before long ArcView became obsolete, and the Avenue language was also abandoned.
+                  </p>
+
+                  <ToggleSection title="Read more">
+                    <p className="mb-3">
+                      In the following 15 years, no application, apart from commercial products, managed to provide the features that GISRed offered to help build water supply network models. Meanwhile the EPANET code was liberalised, and in 2015 a section was founded within{" "}
+                      <a href="http://community.wateranalytics.org/c/epanet" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Open Water Analytics</strong></a>
+                      {" "}(OWA) to continue developing the EPANET calculation module (also known as the Toolkit), with the contribution of the entire research community. Finally, in December 2019 the latest{" "}
+                      <a href="https://github.com/OpenWaterAnalytics/EPANET/releases" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>version 2.2 of the Toolkit</a>
+                      {" "}was launched from this platform. Shortly afterwards, in July 2020, the EPA also improved the graphical interface of{" "}
+                      <a href="https://www.epa.gov/water-research/epanet" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>EPANET to version 2.2</a>
+                      , integrating the latest version of the Toolkit. This version 2.2 of the Toolkit remained current until July 2025, when it was superseded by the new version 2.3.
+                    </p>
+                    <p className="mb-3">
+                      However, these advances in EPANET did not enhance the tools for building models, nor did they incorporate new types of elements into the network. They were basically limited to making all the data in a scenario accessible to programmers and offering the option of using the function library in concurrent mode, with the greatest contribution being the possibility of running models with pressure-dependent demands (PDA). The challenges of the old GISRed were still present, so in 2018, following the spectacular advances of the free software QGIS, we decided to reproduce GISRed&apos;s features in this new environment, and in the process improve both the features of that initial product, bringing them up to the level offered by the latest version of EPANET 2.2. The first public presentation of the new product, now called QGISRed, took place during the CCWI 2019 Conference, in Exeter (UK).
+                    </p>
+                    <p className="mb-3">
+                      On the other hand, the experience gained by the authors in the development of one of the first Digital Twins in the world for the city of Valencia led us to further enhance the capabilities of the new plugin to allow migration from a conventional hydraulic model to the construction of a Digital Twin.
+                    </p>
+                    <p className="mb-3">
+                      The result of this effort is the QGISRed product presented here, with the intention of marking a milestone among free-to-use products aimed at facilitating the construction of water distribution network models, which will be increasingly required by water supply management companies for decision-making, at a time when the digitalisation of this sector is beginning to gallop ahead.
+                    </p>
+                    <p>
+                      QGISRed is still under construction, and the features of the latest official version can be consulted in the{" "}
+                      <Link href="/capacidades" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CAPABILITIES</Link>
+                      {" "}section, where the latest developments and future features to be developed are detailed. It is expected that the scope of all the objectives proposed in the roadmap will be completed, for the free version of this product, within a maximum of one year.
+                    </p>
+                  </ToggleSection>
                 </>
               )}
             </div>
@@ -384,7 +380,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
               <Image
                 src="/images/presentacion-diapositiva.png"
-                alt={isEn ? "Background slide" : "Diapositiva antecedentes"}
+                alt={localize(locale, "Diapositiva antecedentes", "Background slide")}
                 width={832}
                 height={656}
                 className="w-full h-auto"
@@ -402,21 +398,9 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       {/* Aplicaciones / Applications */}
       <section id={anchorId("aplicaciones", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "Applications" : "Aplicaciones"} />
+          <SectionHeading title={localize(locale, "Aplicaciones", "Applications")} />
 
-          {isEn ? (
-            <>
-              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                We would not have made all this effort if the use of simulation models were not increasingly required and necessary. Water distribution networks become complex systems to manage over time, due to their continuous expansion and adaptation according to needs. On the other hand, their highly non-linear behaviour, caused not so much by the pipe head loss equation, but mainly by the operating mode of the regulation elements, with continuous starts, stops and changes in set points, means that the intuition of network operators in estimating network behaviour fails on numerous occasions.
-              </p>
-              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                Models were initially used for design purposes, and for this it was sufficient to simulate the most unfavourable case, normally the peak situation, on a simplified network. Over time their use extended to simulate the dynamic behaviour of networks in operation, normally for a typical day, initially seeking to reproduce variations in reservoir levels, or to determine the extreme values of pressures, flows and velocities throughout the day, and their use was finally enhanced to make predictions about the evolution of water quality as it is transported through the network. Today models are required to faithfully reproduce the behaviour of the network at any instant in the past or present, and to predict its short-term behaviour through digital twins.
-              </p>
-              <p className="mb-4 font-semibold" style={{ fontSize: "15px", color: "rgb(0, 9, 25)" }}>
-                QGISRed aims to cover all these situations, with the main applications for each case being:
-              </p>
-            </>
-          ) : (
+          {localize(locale,
             <>
               <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 Todo este esfuerzo no lo habríamos hecho si el uso de los modelos de simulación no fuera cada vez más
@@ -440,23 +424,26 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
               <p className="mb-4 font-semibold" style={{ fontSize: "15px", color: "rgb(0, 9, 25)" }}>
                 QGISRed pretende cubrir todas estas situaciones, siendo las principales aplicaciones cada caso:
               </p>
+            </>,
+            <>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                We would not have made all this effort if the use of simulation models were not increasingly required and necessary. Water distribution networks become complex systems to manage over time, due to their continuous expansion and adaptation according to needs. On the other hand, their highly non-linear behaviour, caused not so much by the pipe head loss equation, but mainly by the operating mode of the regulation elements, with continuous starts, stops and changes in set points, means that the intuition of network operators in estimating network behaviour fails on numerous occasions.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Models were initially used for design purposes, and for this it was sufficient to simulate the most unfavourable case, normally the peak situation, on a simplified network. Over time their use extended to simulate the dynamic behaviour of networks in operation, normally for a typical day, initially seeking to reproduce variations in reservoir levels, or to determine the extreme values of pressures, flows and velocities throughout the day, and their use was finally enhanced to make predictions about the evolution of water quality as it is transported through the network. Today models are required to faithfully reproduce the behaviour of the network at any instant in the past or present, and to predict its short-term behaviour through digital twins.
+              </p>
+              <p className="mb-4 font-semibold" style={{ fontSize: "15px", color: "rgb(0, 9, 25)" }}>
+                QGISRed aims to cover all these situations, with the main applications for each case being:
+              </p>
             </>
           )}
 
           {/* Accordion tabs */}
           <div className="mb-8">
             {/* Tab: Static Models */}
-            <AccordionItem title={isEn ? "Working with Static Models" : "Trabajando con Modelos Estáticos"} open>
+            <AccordionItem title={localize(locale, "Trabajando con Modelos Estáticos", "Working with Static Models")} open>
               <ul className="flex flex-col gap-3 list-none p-0">
-                {(isEn ? [
-                  "Sizing pipes and regulation elements for the most unfavourable scenario",
-                  "Planning new scenarios for network extensions, rehabilitation of components, reforms, etc.",
-                  "Calibrating the model from measurements at specific moments",
-                  "Simulating the system response in extreme situations such as pipe breaks, elements out of service, etc.",
-                  "Analysing network criticality to detect the weakest elements",
-                  "Sectorising the network guaranteeing supply under the most unfavourable conditions",
-                  "Carrying out energy audits affecting the design and conception of the transport and distribution system",
-                ] : [
+                {localize(locale, [
                   "El dimensionado de tuberías y elementos de regulación para el escenario más desfavorable",
                   "La planificación de nuevos escenarios ante ampliaciones de la red, rehabilitación de componentes, reformas, etc.",
                   "La calibración del modelo a partir de medidas en momentos puntuales.",
@@ -464,6 +451,14 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   "El análisis de la criticidad de la red, para detectar los elementos más débiles",
                   "La sectorización de la red garantizando el suministro en las condiciones más desfavorables",
                   "La realización de auditorías energéticas que afecten al diseño y concepción del sistema de transporte y distribución",
+                ], [
+                  "Sizing pipes and regulation elements for the most unfavourable scenario",
+                  "Planning new scenarios for network extensions, rehabilitation of components, reforms, etc.",
+                  "Calibrating the model from measurements at specific moments",
+                  "Simulating the system response in extreme situations such as pipe breaks, elements out of service, etc.",
+                  "Analysing network criticality to detect the weakest elements",
+                  "Sectorising the network guaranteeing supply under the most unfavourable conditions",
+                  "Carrying out energy audits affecting the design and conception of the transport and distribution system",
                 ]).map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span
@@ -477,21 +472,9 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             </AccordionItem>
 
             {/* Tab: Dynamic Models */}
-            <AccordionItem title={isEn ? "Working with Dynamic Models" : "Trabajando con Modelos Dinámicos"}>
+            <AccordionItem title={localize(locale, "Trabajando con Modelos Dinámicos", "Working with Dynamic Models")}>
               <ul className="flex flex-col gap-3 list-none p-0">
-                {(isEn ? [
-                  "Establishing the set points of regulation elements to guarantee appropriate values of hydraulic variables at all times: pressures, flow velocities, etc.",
-                  "Calibrating the model from measurements over extended periods",
-                  "Analysing the reliability and responsiveness of the network in any eventuality and at any time. Managing reservoir reserves.",
-                  "Analysing the dynamic behaviour of sectorised networks and the actions to be taken when necessary to guarantee supply.",
-                  "Programming network maintenance activities that affect the supply system. Determining the optimal start time of works and the permitted duration.",
-                  "Optimising the system operating regime to reduce energy consumption on a typical day.",
-                  "Monitoring water quality and programming the actions required to maintain quality parameters throughout the network: periodic discharges to sewers, rechlorination stations, etc.",
-                  "Analysing optimal operating modes for sudden or prolonged demand increases (events, tourist populations) or reductions (weekends, summer depopulation, etc.)",
-                  "Managing supply pressures to reduce network leaks",
-                  "Managing demand during scarcity periods. Establishing intermittent supply programmes if necessary.",
-                  "Determining performance indicators (KPIs) for extended periods, considering the variability of hydraulic and quality parameters.",
-                ] : [
+                {localize(locale, [
                   "El establecimiento de las consignas de los elementos de regulación para garantizar unos valores adecuados de las variables hidráulicas en todo momento: presiones, velocidades de circulación, etc.",
                   "La calibración del modelo a partir de medidas en periodos prolongados",
                   "El análisis de la fiabilidad y capacidad de respuesta de la red ante cualquier eventualidad y en cualquier momento. Gestión de las reservas en depósitos.",
@@ -503,6 +486,18 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   "La gestión de las presiones de suministro para reducir las fugas en la red",
                   "La gestión de la demanda en periodos de escasez. Establecimiento de programas de suministro intermitente si fuera necesario.",
                   "La determinación de indicadores de desempeño (KPIs) para periodos prolongados, considerando la variabilidad de los parámetros hidráulicos y de calidad.",
+                ], [
+                  "Establishing the set points of regulation elements to guarantee appropriate values of hydraulic variables at all times: pressures, flow velocities, etc.",
+                  "Calibrating the model from measurements over extended periods",
+                  "Analysing the reliability and responsiveness of the network in any eventuality and at any time. Managing reservoir reserves.",
+                  "Analysing the dynamic behaviour of sectorised networks and the actions to be taken when necessary to guarantee supply.",
+                  "Programming network maintenance activities that affect the supply system. Determining the optimal start time of works and the permitted duration.",
+                  "Optimising the system operating regime to reduce energy consumption on a typical day.",
+                  "Monitoring water quality and programming the actions required to maintain quality parameters throughout the network: periodic discharges to sewers, rechlorination stations, etc.",
+                  "Analysing optimal operating modes for sudden or prolonged demand increases (events, tourist populations) or reductions (weekends, summer depopulation, etc.)",
+                  "Managing supply pressures to reduce network leaks",
+                  "Managing demand during scarcity periods. Establishing intermittent supply programmes if necessary.",
+                  "Determining performance indicators (KPIs) for extended periods, considering the variability of hydraulic and quality parameters.",
                 ]).map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span
@@ -516,23 +511,9 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             </AccordionItem>
 
             {/* Tab: Digital Twins */}
-            <AccordionItem title={isEn ? "Working with Digital Twins" : "Trabajando con Gemelos Digitales"}>
+            <AccordionItem title={localize(locale, "Trabajando con Gemelos Digitales", "Working with Digital Twins")}>
               <ul className="flex flex-col gap-3 list-none p-0">
-                {(isEn ? [
-                  "Loading the model with real data at any given moment, relating to demands, reservoir levels, operating modes of regulation elements, etc.",
-                  "Keeping the hydraulic and quality model permanently calibrated",
-                  "Inferring the value of any unmeasured quantity through simulation",
-                  "Calculating any type of indicator based on real historical and simulated (unmeasured) data",
-                  "Detecting any anomaly in the network's control parameters, and estimating their possible causes",
-                  "Simulating possible actions before executing them, in response to any unforeseen event, using the regulation elements available at that moment",
-                  "Early detection of any water contamination event and determination of the actions required to return to a normal state",
-                  "Monitoring night flows in sectorised networks and analysing other variables for leak localisation",
-                  "Continuously contrasting supplied flows with registered demands, if meter reading is available",
-                  "Real-time monitoring of all types of hydraulic, energy or dissolved substance balances in the water",
-                  "Training operators by reproducing past situations and applying actions to correct supposed anomalies",
-                  "Predicting short-term network behaviour, estimating demands and applying planned regulation rules",
-                  "Optimising the network's regulation scheme to achieve the desired objectives in the next 24 h, taking into account the current state of the network, resource availability, energy prices, etc.",
-                ] : [
+                {localize(locale, [
                   "La carga del modelo con datos reales en cada momento, relativos a demandas, niveles en depósitos, modos de operación de los elementos de regulación, etc.",
                   "El mantenimiento del modelo hidráulico y de calidad permanentemente calibrado",
                   "La inferencia del valor de cualquier magnitud no medida, a través de la simulación.",
@@ -546,6 +527,20 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   "El entrenamiento de operadores mediante la reproducción de situaciones pasadas y la aplicación de actuaciones para corregir supuestas anomalías.",
                   "La predicción del comportamiento de la red a corto plazo, estimando las demandas y aplicando las leyes de regulación previstas.",
                   "La optimización del esquema de regulación de la red para alcanzar los objetivos buscados en las próximas 24 h, teniendo en cuenta el estado actual de la red, la disponibilidad de recursos, los precios de la energía, etc.",
+                ], [
+                  "Loading the model with real data at any given moment, relating to demands, reservoir levels, operating modes of regulation elements, etc.",
+                  "Keeping the hydraulic and quality model permanently calibrated",
+                  "Inferring the value of any unmeasured quantity through simulation",
+                  "Calculating any type of indicator based on real historical and simulated (unmeasured) data",
+                  "Detecting any anomaly in the network's control parameters, and estimating their possible causes",
+                  "Simulating possible actions before executing them, in response to any unforeseen event, using the regulation elements available at that moment",
+                  "Early detection of any water contamination event and determination of the actions required to return to a normal state",
+                  "Monitoring night flows in sectorised networks and analysing other variables for leak localisation",
+                  "Continuously contrasting supplied flows with registered demands, if meter reading is available",
+                  "Real-time monitoring of all types of hydraulic, energy or dissolved substance balances in the water",
+                  "Training operators by reproducing past situations and applying actions to correct supposed anomalies",
+                  "Predicting short-term network behaviour, estimating demands and applying planned regulation rules",
+                  "Optimising the network's regulation scheme to achieve the desired objectives in the next 24 h, taking into account the current state of the network, resource availability, energy prices, etc.",
                 ]).map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span
@@ -559,16 +554,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             </AccordionItem>
           </div>
 
-          {isEn ? (
-            <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                In any case, it must be made clear that the free version of QGISRed is not going to offer solutions to all these formulated problems, nor is it its intention. QGISRed is limited to simulating the behaviour of the network under predefined conditions, as EPANET currently does. Only it offers many more modelling tools, covers more types of elements, and allows the model to be connected with real data.
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                While reproducing reality is a verifiable challenge, offering solutions to many of the problems raised requires taking into account the criteria of those responsible for managing the network. The solution in these cases is not unique, and optimisation or artificial intelligence techniques are often used to reach feasible solutions. These techniques are currently beyond the scope of the free version of QGISRed. However, the user will be able to check with the product on offer the response to any given situation, which already represents an important advance. Consequently, engineering judgement and the good expertise of specialists are still of great value in offering the right solutions to these problems.
-              </p>
-            </>
-          ) : (
+          {localize(locale,
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 En cualquier caso, hay que dejar claro que la versión libre del QGISRed no va a ofrecer soluciones a todos
@@ -585,6 +571,14 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                 situación planteada, lo que supone ya un avance importante. En consecuencia, el criterio ingenieril y el
                 buen saber hacer de los expertos resultan aún de gran valor para ofrecer soluciones acertadas a estos
                 problemas.
+              </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                In any case, it must be made clear that the free version of QGISRed is not going to offer solutions to all these formulated problems, nor is it its intention. QGISRed is limited to simulating the behaviour of the network under predefined conditions, as EPANET currently does. Only it offers many more modelling tools, covers more types of elements, and allows the model to be connected with real data.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                While reproducing reality is a verifiable challenge, offering solutions to many of the problems raised requires taking into account the criteria of those responsible for managing the network. The solution in these cases is not unique, and optimisation or artificial intelligence techniques are often used to reach feasible solutions. These techniques are currently beyond the scope of the free version of QGISRed. However, the user will be able to check with the product on offer the response to any given situation, which already represents an important advance. Consequently, engineering judgement and the good expertise of specialists are still of great value in offering the right solutions to these problems.
               </p>
             </>
           )}
@@ -604,63 +598,11 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       {/* Instalación / Installation */}
       <section id={anchorId("instalacion", locale)} className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "Installing QGISRed" : "Instalación de QGISRed"} />
+          <SectionHeading title={localize(locale, "Instalación de QGISRed", "Installing QGISRed")} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
-              {isEn ? (
-                <>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    QGISRed is not a conventional standalone desktop application that you first download and then install by running the downloaded file. Nor is it a web application that downloads at the moment you run it.
-                  </p>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    QGISRed is a QGIS plugin, and therefore this product must be installed first, in its desktop version, from the official website{" "}
-                    <a
-                      href="https://www.qgis.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}
-                    >
-                      https://www.qgis.org
-                    </a>
-                    . Users can install the most recent version for Windows, although it is also compatible with earlier versions.
-                  </p>
-                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    QGIS is currently the most widely distributed free GIS software in the world, and offers in its latest versions an innumerable list of features, including interoperability with all types of environments and data formats. It is available for Windows, macOS, Linux, BSD, mobiles and tablets. However, QGISRed currently only works on Windows and for versions 3.28 or later. Furthermore, although QGIS can support up to 40 languages, QGISRed is currently only available in English.
-                  </p>
-
-                  <div className="mb-6">
-                    <AccordionItem title="Installing the QGISRed plugin">
-                      <ol className="flex flex-col gap-2 list-decimal pl-5">
-                        <li>From the Plugins menu, choose the <strong>Manage and Install Plugins</strong> option.</li>
-                        <li>From the All tab, search for the QGISRed plugin by name, and the following screen should appear, as it is a plugin registered in the official QGIS repository.</li>
-                        <li>Click the <strong>Install Plugin</strong> button, and within seconds the application will be installed. Finally close the window.</li>
-                        <li>The new QGISRed menu will appear in the menu bar and the new QGISRed toolbar will also be shown, from which all QGISRed features can alternatively be accessed.</li>
-                        <li>One final step remains. As soon as you try to use any QGISRed option for the first time, a new screen will appear asking you to complete the installation with the libraries (dlls) that contain all the algorithms that make up the QGISRed core. It only takes a few more seconds.</li>
-                        <li>This completes the installation of an application that will surprise you with the numerous features added on top of those already offered by QGIS, all oriented towards the creation and operation of hydraulic network models.</li>
-                      </ol>
-                    </AccordionItem>
-                    <AccordionItem title="The QGIS plugin repository">
-                      <p>
-                        There are currently more than 1100 active QGIS plugins registered, but barely half a dozen have to do with hydraulic networks. Among them, QGISRed is the one that offers the most features today. If you open the QGISRed plugin window again you can see a summary of its features, the current number of downloads and its rating.
-                      </p>
-                      <p className="mt-2">
-                        In the same window you have a link to the QGISRed entry in the QGIS repository (you can also get there by clicking{" "}
-                        <a href="https://plugins.qgis.org/plugins/QGISRed/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>here</a>
-                        ), where you will find some further details, and the version history since September 2019 when the first version of QGISRed was uploaded to the repository. By clicking on them you can see the improvements brought in each one.
-                      </p>
-                    </AccordionItem>
-                    <AccordionItem title="Beta versions and updates">
-                      <p>
-                        QGIS also allows installing provisional beta versions through the Install from ZIP tab in the same installation window, but this is reserved for collaborating users. Each time a new official version is released, a pop-up message will appear informing you of its existence, which will take the user to the QGIS plugin repository to find out about the new features, although you will also have them on this website. Furthermore, from the QGISRed plugin window itself, the user will be invited to update the current version. Simply click the <strong>Upgrade Plugin</strong> button at the bottom of the window, which will be shown as active, to automatically replace the previous version with the new one in a matter of seconds. Then, when you click any QGISRed button, you will be asked to also update the libraries.
-                      </p>
-                      <p className="mt-2">
-                        Finally, if you want to know which version of QGISRed is currently installed, you only need to read it in the plugin window itself or by clicking on the About QGISRed menu option.
-                      </p>
-                    </AccordionItem>
-                  </div>
-                </>
-              ) : (
+              {localize(locale,
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     QGISRed no es una aplicación autónoma de escritorio al uso, que haya que descargar primero y después
@@ -731,6 +673,57 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                       </p>
                     </AccordionItem>
                   </div>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    QGISRed is not a conventional standalone desktop application that you first download and then install by running the downloaded file. Nor is it a web application that downloads at the moment you run it.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    QGISRed is a QGIS plugin, and therefore this product must be installed first, in its desktop version, from the official website{" "}
+                    <a
+                      href="https://www.qgis.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}
+                    >
+                      https://www.qgis.org
+                    </a>
+                    . Users can install the most recent version for Windows, although it is also compatible with earlier versions.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    QGIS is currently the most widely distributed free GIS software in the world, and offers in its latest versions an innumerable list of features, including interoperability with all types of environments and data formats. It is available for Windows, macOS, Linux, BSD, mobiles and tablets. However, QGISRed currently only works on Windows and for versions 3.28 or later. Furthermore, although QGIS can support up to 40 languages, QGISRed is currently only available in English.
+                  </p>
+
+                  <div className="mb-6">
+                    <AccordionItem title="Installing the QGISRed plugin">
+                      <ol className="flex flex-col gap-2 list-decimal pl-5">
+                        <li>From the Plugins menu, choose the <strong>Manage and Install Plugins</strong> option.</li>
+                        <li>From the All tab, search for the QGISRed plugin by name, and the following screen should appear, as it is a plugin registered in the official QGIS repository.</li>
+                        <li>Click the <strong>Install Plugin</strong> button, and within seconds the application will be installed. Finally close the window.</li>
+                        <li>The new QGISRed menu will appear in the menu bar and the new QGISRed toolbar will also be shown, from which all QGISRed features can alternatively be accessed.</li>
+                        <li>One final step remains. As soon as you try to use any QGISRed option for the first time, a new screen will appear asking you to complete the installation with the libraries (dlls) that contain all the algorithms that make up the QGISRed core. It only takes a few more seconds.</li>
+                        <li>This completes the installation of an application that will surprise you with the numerous features added on top of those already offered by QGIS, all oriented towards the creation and operation of hydraulic network models.</li>
+                      </ol>
+                    </AccordionItem>
+                    <AccordionItem title="The QGIS plugin repository">
+                      <p>
+                        There are currently more than 1100 active QGIS plugins registered, but barely half a dozen have to do with hydraulic networks. Among them, QGISRed is the one that offers the most features today. If you open the QGISRed plugin window again you can see a summary of its features, the current number of downloads and its rating.
+                      </p>
+                      <p className="mt-2">
+                        In the same window you have a link to the QGISRed entry in the QGIS repository (you can also get there by clicking{" "}
+                        <a href="https://plugins.qgis.org/plugins/QGISRed/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>here</a>
+                        ), where you will find some further details, and the version history since September 2019 when the first version of QGISRed was uploaded to the repository. By clicking on them you can see the improvements brought in each one.
+                      </p>
+                    </AccordionItem>
+                    <AccordionItem title="Beta versions and updates">
+                      <p>
+                        QGIS also allows installing provisional beta versions through the Install from ZIP tab in the same installation window, but this is reserved for collaborating users. Each time a new official version is released, a pop-up message will appear informing you of its existence, which will take the user to the QGIS plugin repository to find out about the new features, although you will also have them on this website. Furthermore, from the QGISRed plugin window itself, the user will be invited to update the current version. Simply click the <strong>Upgrade Plugin</strong> button at the bottom of the window, which will be shown as active, to automatically replace the previous version with the new one in a matter of seconds. Then, when you click any QGISRed button, you will be asked to also update the libraries.
+                      </p>
+                      <p className="mt-2">
+                        Finally, if you want to know which version of QGISRed is currently installed, you only need to read it in the plugin window itself or by clicking on the About QGISRed menu option.
+                      </p>
+                    </AccordionItem>
+                  </div>
                 </>
               )}
             </div>
@@ -738,28 +731,28 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
               <Image
                 src="/images/presentacion-install.png"
-                alt={isEn ? "QGISRed installation" : "Instalación de QGISRed"}
+                alt={localize(locale, "Instalación de QGISRed", "QGISRed installation")}
                 width={880}
                 height={511}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-toolbar.png"
-                alt={isEn ? "QGISRed toolbar" : "Barra de herramientas QGISRed"}
+                alt={localize(locale, "Barra de herramientas QGISRed", "QGISRed toolbar")}
                 width={483}
                 height={65}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-toolbar2.png"
-                alt={isEn ? "QGISRed toolbar 2" : "Barra de herramientas QGISRed 2"}
+                alt={localize(locale, "Barra de herramientas QGISRed 2", "QGISRed toolbar 2")}
                 width={423}
                 height={65}
                 className="w-full h-auto mb-4"
               />
               <Image
                 src="/images/presentacion-window.png"
-                alt={isEn ? "QGISRed main window" : "Ventana principal QGISRed"}
+                alt={localize(locale, "Ventana principal QGISRed", "QGISRed main window")}
                 width={521}
                 height={204}
                 className="w-full h-auto"
@@ -772,51 +765,11 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       {/* Proyecto en GitHub / GitHub Project */}
       <section id={anchorId("github", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "GitHub Project" : "Proyecto en GitHub"} />
+          <SectionHeading title={localize(locale, "Proyecto en GitHub", "GitHub Project")} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
-              {isEn ? (
-                <>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    QGISRed is not a closed product. The part of QGISRed&apos;s code that interacts with QGIS functionalities is developed in <em>Python</em> and is in the public domain, in accordance with the terms of the{" "}
-                    <a href="https://docs.qgis.org/3.22/en/docs/user_manual/appendices/GNU_GPL.html" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GNU GPL 2.0 QGIS licence</a>
-                    , which is extensible to all plugins distributed through its official repository. This code is accessible through the GitHub portal{" "}
-                    <a href="https://github.com/qgisred/qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>QGISRed</a>
-                    {" "}and hosts all the functionalities affecting the customisation of the QGIS graphical interface after installing the plugin, as well as certain editing and selection capabilities of the network elements.
-                  </p>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    Below, the content of the tab hosting the QGISRed code is shown. From the last two lines you can also access the{" "}
-                    <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuals in Spanish and English</Link>
-                  </p>
-
-                  <ToggleSection title="Learn more about the QGISRed project on GitHub">
-                    <p className="mb-3">
-                      The QGISRed project is in its first implementation phase, and for now the development of the free code is not collaborative, although it is planned to open it to the research community in the future.
-                    </p>
-                    <p className="mb-3">
-                      On the right-hand side of this tab, the plugin&apos;s licence is also shown,{" "}
-                      <Link href={{ pathname: "/capacidades", hash: anchorHash("novedades", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>the latest released version</Link>
-                      {" "}and all{" "}
-                      <Link href={{ pathname: "/capacidades", hash: anchorHash("historicodeversiones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>previously published versions with their improvements</Link>
-                    </p>
-                    <p className="mb-3">
-                      A very important section of this portal is the Issues tab, which is fully active, and where users can report any incident. It is divided into two sections, one for Open issues (most are suggestions for the future) and another for Closed or resolved issues, which are all those that seriously affect some functionality of the application.
-                    </p>
-                    <p className="mb-3">
-                      To create a new issue, users must first register on GitHub, through the Sign up button at the top, and then follow the instructions. They can then create a new issue using the New Issue button, or respond to open issues raised by other users.
-                    </p>
-                    <p className="mb-3">
-                      Also in the future we will host in the Wiki tab of this portal an open and collaborative version of the application manuals, both in Spanish and English.
-                    </p>
-                    <p>
-                      However, <strong>the majority of QGISRed&apos;s code is developed in C# for Windows</strong>, configuring a series of libraries called <strong><em>GISRed.xxx.dll</em>,</strong> which are used by the graphical interface. These libraries contain the majority of the algorithms, forms and dialogue boxes specific to the application, and are installed in the …/AppData/Roaming/QGISRed/dlls/… folder of the user&apos;s profile when any button or option of the plugin is pressed, once installed. All the algorithms contained in this library have been developed from scratch, and do not use any other external library, nor those of QGIS itself, thus not generating any dependency, except with the <em>Epanet2.dll</em> library corresponding to the EPANET 2.3 Toolkit (version 2.3.4), used to launch hydraulic and quality simulations, and the <em>Shapelib.dll</em> library used to read and write .shp files; both libraries are installed at the same time as the QGISRed libraries. On the other hand, the Python dialogues have been built using the{" "}
-                      <a href="https://www.qt.io/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Qt</a>
-                      {" "}platform, which is also in the public domain.
-                    </p>
-                  </ToggleSection>
-                </>
-              ) : (
+              {localize(locale,
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     QGISRed no es un producto cerrado. La parte del código de QGISRed que interacciona con las funcionalidades de QGIS está desarrollada en <em>Python</em> y es dominio público, de acuerdo con los términos de la licencia{" "}
@@ -864,6 +817,45 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                       , que es también de dominio público.
                     </p>
                   </ToggleSection>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    QGISRed is not a closed product. The part of QGISRed&apos;s code that interacts with QGIS functionalities is developed in <em>Python</em> and is in the public domain, in accordance with the terms of the{" "}
+                    <a href="https://docs.qgis.org/3.22/en/docs/user_manual/appendices/GNU_GPL.html" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GNU GPL 2.0 QGIS licence</a>
+                    , which is extensible to all plugins distributed through its official repository. This code is accessible through the GitHub portal{" "}
+                    <a href="https://github.com/qgisred/qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>QGISRed</a>
+                    {" "}and hosts all the functionalities affecting the customisation of the QGIS graphical interface after installing the plugin, as well as certain editing and selection capabilities of the network elements.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Below, the content of the tab hosting the QGISRed code is shown. From the last two lines you can also access the{" "}
+                    <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>manuals in Spanish and English</Link>
+                  </p>
+
+                  <ToggleSection title="Learn more about the QGISRed project on GitHub">
+                    <p className="mb-3">
+                      The QGISRed project is in its first implementation phase, and for now the development of the free code is not collaborative, although it is planned to open it to the research community in the future.
+                    </p>
+                    <p className="mb-3">
+                      On the right-hand side of this tab, the plugin&apos;s licence is also shown,{" "}
+                      <Link href={{ pathname: "/capacidades", hash: anchorHash("novedades", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>the latest released version</Link>
+                      {" "}and all{" "}
+                      <Link href={{ pathname: "/capacidades", hash: anchorHash("historicodeversiones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>previously published versions with their improvements</Link>
+                    </p>
+                    <p className="mb-3">
+                      A very important section of this portal is the Issues tab, which is fully active, and where users can report any incident. It is divided into two sections, one for Open issues (most are suggestions for the future) and another for Closed or resolved issues, which are all those that seriously affect some functionality of the application.
+                    </p>
+                    <p className="mb-3">
+                      To create a new issue, users must first register on GitHub, through the Sign up button at the top, and then follow the instructions. They can then create a new issue using the New Issue button, or respond to open issues raised by other users.
+                    </p>
+                    <p className="mb-3">
+                      Also in the future we will host in the Wiki tab of this portal an open and collaborative version of the application manuals, both in Spanish and English.
+                    </p>
+                    <p>
+                      However, <strong>the majority of QGISRed&apos;s code is developed in C# for Windows</strong>, configuring a series of libraries called <strong><em>GISRed.xxx.dll</em>,</strong> which are used by the graphical interface. These libraries contain the majority of the algorithms, forms and dialogue boxes specific to the application, and are installed in the …/AppData/Roaming/QGISRed/dlls/… folder of the user&apos;s profile when any button or option of the plugin is pressed, once installed. All the algorithms contained in this library have been developed from scratch, and do not use any other external library, nor those of QGIS itself, thus not generating any dependency, except with the <em>Epanet2.dll</em> library corresponding to the EPANET 2.3 Toolkit (version 2.3.4), used to launch hydraulic and quality simulations, and the <em>Shapelib.dll</em> library used to read and write .shp files; both libraries are installed at the same time as the QGISRed libraries. On the other hand, the Python dialogues have been built using the{" "}
+                      <a href="https://www.qt.io/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Qt</a>
+                      {" "}platform, which is also in the public domain.
+                    </p>
+                  </ToggleSection>
                 </>
               )}
             </div>
@@ -898,65 +890,9 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
       {/* Créditos / Credits */}
       <section id={anchorId("creditos", locale)} className="w-full" style={{ backgroundColor: "rgb(246, 246, 246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "Credits" : "Créditos"} />
+          <SectionHeading title={localize(locale, "Créditos", "Credits")} />
 
-          {isEn ? (
-            <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                The QGISRed project was born at the <strong>initiative of the{" "}
-                <a href="https://iiama.webs.upv.es/en/research/research-groups/hydraulic-networks-and-pressurised-systems/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Research Group on Hydraulic Networks and Pressurised Systems</a>
-                </strong>{" "}(REDHISP), of the{" "}
-                <a href="https://www.iiama.upv.es/iiama/es/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Institute for Water and Environmental Engineering</a>
-                {" "}(IIAMA) of the{" "}
-                <a href="http://www.upv.es/es" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Universitat Politècnica de València</a>
-                {" "}(UPV), as a proposal to resume the features of the old GISRed application and adapt them to a more modern working environment, while promoting its dissemination worldwide.
-              </p>
-              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                The project started with a <strong>Grant from the Generalitat Valenciana</strong> for the hiring of Technology Transfer Support Staff (APOTI/2018/006), for an effective amount of €18,300 and duration from November 2018 to July 2019. From that date the project continued through the economic support of the REDHISP group&apos;s R&D Sustainability Fund, fed by its own resources generated through contracts and with the collaboration of the company{" "}
-                <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "bold" }}>WaterPi</a>
-                {" "}until the end of 2022.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px] items-stretch">
-                <CreditPerson
-                  photoSrc="/images/presentacion-team1.jpg"
-                  name="Fernando Martínez Alzamora"
-                  toggleLabel="Learn more"
-                  intro={
-                    <>
-                      The <strong>direction </strong>of the QGISRed Project is in the hands of <strong>Prof. Fernando Martínez Alzamora,</strong> Full Professor of Hydraulic Engineering at the UPV, with more than 40 years of experience in the modelling of pressurised hydraulic systems. A brief CV is attached, while a list of main publications can be found on his{" "}
-                      <a href="https://www.researchgate.net/profile/Fernando-Martinez-Alzamora" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>personal page</a>
-                      {" "}on Research Gate.
-                    </>
-                  }
-                  bio={
-                    <p>
-                      Fernando Martínez Alzamora holds a degree in Industrial Engineering from the Universitat Politècnica de València (1978) and a PhD from the same university (1982). Since 1995 he has been Full Professor of Hydraulic Engineering at the UPV and since 2001 a researcher at the Institute for Water and Environmental Engineering (IIAMA) of the aforementioned University. He teaches in the area of Hydraulic Machinery and its industrial applications, including the harnessing of renewable energies through Hydroelectric Power Plants and Wind Farms. He has also taught subjects in doctoral and master&apos;s courses on the Modelling of Hydraulic Networks and the use of Geographic Information Systems (GIS). His research has focused on the analysis, design and operation of water distribution networks, both for urban water supply and pressurised irrigation. In particular he has worked on improving simulation algorithms, integrating hydraulic models into GIS for the preparation of master plans, and using models in real time for decision-making, in connection with SCADA systems. On these topics he has published 40 articles in prestigious journals, 70 papers at national and international Conferences, and supervised 11 doctoral theses. He has been principal investigator of 12 national research projects and has participated as team leader in 4 European projects under the framework programme. He regularly collaborates as a consultant or in the development of contracts with companies in the water transport and distribution sector, having been responsible to date for a total of 62 contracts.
-                    </p>
-                  }
-                />
-                <CreditPerson
-                  photoSrc="/images/presentacion-team2.jpg"
-                  name="Néstor Lerma Elvira"
-                  toggleLabel="Learn more"
-                  intro={
-                    <>
-                      The <strong>QGISRed code</strong> was developed until the end of 2022 by <strong>Néstor Lerma Elvira</strong>, PhD in Civil Engineering from the UPV, and founding partner of the company{" "}
-                      <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>WaterPi Coop. V</a>
-                      . Much of the credit for the version of QGISRed offered here is due to Néstor&apos;s excellent work, which has managed to combine his engineering knowledge with his skills as a programmer. You can visit his research profile on his{" "}
-                      <a href="https://www.researchgate.net/profile/Nestor-Lerma" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>personal page</a>
-                      {" "}on Research Gate.
-                    </>
-                  }
-                  bio={
-                    <p>
-                      Néstor Lerma Elvira holds a degree in Civil Engineering from the Universitat Politècnica de València (2010) and a PhD from the same university (2017). During the period 2009-2017 he specialised in water resources, applying evolutionary algorithms to optimise management in multi-reservoir systems in his final degree project, the final project of the Master&apos;s in Hydraulic Engineering and Environment (taught at the same university) and the aforementioned doctorate.
-                    </p>
-                  }
-                />
-              </div>
-            </>
-          ) : (
+          {localize(locale,
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 El proyecto QGISRed nace por <strong>iniciativa del{" "}
@@ -1031,6 +967,61 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   }
                 />
               </div>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                The QGISRed project was born at the <strong>initiative of the{" "}
+                <a href="https://iiama.webs.upv.es/en/research/research-groups/hydraulic-networks-and-pressurised-systems/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Research Group on Hydraulic Networks and Pressurised Systems</a>
+                </strong>{" "}(REDHISP), of the{" "}
+                <a href="https://www.iiama.upv.es/iiama/es/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Institute for Water and Environmental Engineering</a>
+                {" "}(IIAMA) of the{" "}
+                <a href="http://www.upv.es/es" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Universitat Politècnica de València</a>
+                {" "}(UPV), as a proposal to resume the features of the old GISRed application and adapt them to a more modern working environment, while promoting its dissemination worldwide.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                The project started with a <strong>Grant from the Generalitat Valenciana</strong> for the hiring of Technology Transfer Support Staff (APOTI/2018/006), for an effective amount of €18,300 and duration from November 2018 to July 2019. From that date the project continued through the economic support of the REDHISP group&apos;s R&D Sustainability Fund, fed by its own resources generated through contracts and with the collaboration of the company{" "}
+                <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "bold" }}>WaterPi</a>
+                {" "}until the end of 2022.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px] items-stretch">
+                <CreditPerson
+                  photoSrc="/images/presentacion-team1.jpg"
+                  name="Fernando Martínez Alzamora"
+                  toggleLabel="Learn more"
+                  intro={
+                    <>
+                      The <strong>direction </strong>of the QGISRed Project is in the hands of <strong>Prof. Fernando Martínez Alzamora,</strong> Full Professor of Hydraulic Engineering at the UPV, with more than 40 years of experience in the modelling of pressurised hydraulic systems. A brief CV is attached, while a list of main publications can be found on his{" "}
+                      <a href="https://www.researchgate.net/profile/Fernando-Martinez-Alzamora" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>personal page</a>
+                      {" "}on Research Gate.
+                    </>
+                  }
+                  bio={
+                    <p>
+                      Fernando Martínez Alzamora holds a degree in Industrial Engineering from the Universitat Politècnica de València (1978) and a PhD from the same university (1982). Since 1995 he has been Full Professor of Hydraulic Engineering at the UPV and since 2001 a researcher at the Institute for Water and Environmental Engineering (IIAMA) of the aforementioned University. He teaches in the area of Hydraulic Machinery and its industrial applications, including the harnessing of renewable energies through Hydroelectric Power Plants and Wind Farms. He has also taught subjects in doctoral and master&apos;s courses on the Modelling of Hydraulic Networks and the use of Geographic Information Systems (GIS). His research has focused on the analysis, design and operation of water distribution networks, both for urban water supply and pressurised irrigation. In particular he has worked on improving simulation algorithms, integrating hydraulic models into GIS for the preparation of master plans, and using models in real time for decision-making, in connection with SCADA systems. On these topics he has published 40 articles in prestigious journals, 70 papers at national and international Conferences, and supervised 11 doctoral theses. He has been principal investigator of 12 national research projects and has participated as team leader in 4 European projects under the framework programme. He regularly collaborates as a consultant or in the development of contracts with companies in the water transport and distribution sector, having been responsible to date for a total of 62 contracts.
+                    </p>
+                  }
+                />
+                <CreditPerson
+                  photoSrc="/images/presentacion-team2.jpg"
+                  name="Néstor Lerma Elvira"
+                  toggleLabel="Learn more"
+                  intro={
+                    <>
+                      The <strong>QGISRed code</strong> was developed until the end of 2022 by <strong>Néstor Lerma Elvira</strong>, PhD in Civil Engineering from the UPV, and founding partner of the company{" "}
+                      <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>WaterPi Coop. V</a>
+                      . Much of the credit for the version of QGISRed offered here is due to Néstor&apos;s excellent work, which has managed to combine his engineering knowledge with his skills as a programmer. You can visit his research profile on his{" "}
+                      <a href="https://www.researchgate.net/profile/Nestor-Lerma" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>personal page</a>
+                      {" "}on Research Gate.
+                    </>
+                  }
+                  bio={
+                    <p>
+                      Néstor Lerma Elvira holds a degree in Civil Engineering from the Universitat Politècnica de València (2010) and a PhD from the same university (2017). During the period 2009-2017 he specialised in water resources, applying evolutionary algorithms to optimise management in multi-reservoir systems in his final degree project, the final project of the Master&apos;s in Hydraulic Engineering and Environment (taught at the same university) and the aforementioned doctorate.
+                    </p>
+                  }
+                />
+              </div>
             </>
           )}
 
@@ -1039,20 +1030,19 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
               className="p-6"
               style={{ backgroundColor: "rgb(255, 255, 255)", border: "1px solid rgb(230,230,230)" }}
             >
-              {isEn ? (
+              {localize(locale,
+                <p style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.6" }}>
+                  <strong>QGISRed v1.0</strong> está <strong>registrado en los servicios de{" "}
+                  <a href="https://aplicat.upv.es/exploraupv/ficha-tecnologia/patente_software/34082?busqueda=qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CARTA de la UPV</a>
+                  </strong>, con el número de registro S-072-2021, y licencia GNU GPL 2.0, siendo la titularidad 100 % de la UPV. La descarga y uso del plugin es libre, sin requerir ningún tipo de registro previo. Sin embargo, en cualquier uso de tipo profesional o educativo que se haga del plugin debe mencionarse su procedencia y proporcionar un enlace a esta página web. No obstante, los <strong>usuarios que voluntariamente quieran registrarse</strong> para estar al día de las novedades o contactar con los desarrolladores puede hacerlo desde nuestro formulario de{" "}
+                  <Link href="/contacto" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>contacto</Link>
+                </p>,
                 <p style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.6" }}>
                   <strong>QGISRed v1.0</strong> is <strong>registered with the{" "}
                   <a href="https://aplicat.upv.es/exploraupv/ficha-tecnologia/patente_software/34082?busqueda=qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CARTA services of the UPV</a>
                   </strong>, with registration number S-072-2021, and GNU GPL 2.0 licence, with 100% ownership belonging to the UPV. Downloading and using the plugin is free, without requiring any prior registration. However, in any professional or educational use of the plugin, its origin must be mentioned and a link to this website provided. Nevertheless, <strong>users who voluntarily wish to register</strong> to keep up to date with new developments or contact the developers can do so from our{" "}
                   <Link href="/contacto" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>contact</Link>
                   {" "}form.
-                </p>
-              ) : (
-                <p style={{ fontSize: "13px", color: "rgb(51, 51, 51)", lineHeight: "1.6" }}>
-                  <strong>QGISRed v1.0</strong> está <strong>registrado en los servicios de{" "}
-                  <a href="https://aplicat.upv.es/exploraupv/ficha-tecnologia/patente_software/34082?busqueda=qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>CARTA de la UPV</a>
-                  </strong>, con el número de registro S-072-2021, y licencia GNU GPL 2.0, siendo la titularidad 100 % de la UPV. La descarga y uso del plugin es libre, sin requerir ningún tipo de registro previo. Sin embargo, en cualquier uso de tipo profesional o educativo que se haga del plugin debe mencionarse su procedencia y proporcionar un enlace a esta página web. No obstante, los <strong>usuarios que voluntariamente quieran registrarse</strong> para estar al día de las novedades o contactar con los desarrolladores puede hacerlo desde nuestro formulario de{" "}
-                  <Link href="/contacto" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>contacto</Link>
                 </p>
               )}
             </div>

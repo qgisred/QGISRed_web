@@ -2,6 +2,7 @@ import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
 import { capacidadesArticles, getArticleSlug } from "@/data/capacidades-articles";
 import { anchorHash, anchorId } from "@/i18n/anchors";
+import { localize } from "@/i18n/localize";
 
 interface SectionHeadingProps {
   title: string;
@@ -138,8 +139,12 @@ function PrestacionGroup({ title, items }: PrestacionGroupProps) {
 interface PrestacionGroupData {
   group: string;
   groupEn: string;
+  groupFr?: string;
+  groupPt?: string;
   items: string[];
   itemsEn: string[];
+  itemsFr?: string[];
+  itemsPt?: string[];
 }
 
 const prestacionesActuales: PrestacionGroupData[] = [
@@ -596,7 +601,19 @@ const proximasPrestaciones: PrestacionGroupData[] = [
   },
 ];
 
-const historico = [
+interface HistoricoEntry {
+  version: string;
+  fecha: string;
+  fechaEn: string;
+  fechaFr?: string;
+  fechaPt?: string;
+  items: string[];
+  itemsEn: string[];
+  itemsFr?: string[];
+  itemsPt?: string[];
+}
+
+const historico: HistoricoEntry[] = [
   {
     version: "0.19",
     fecha: "septiembre 2026",
@@ -1302,8 +1319,7 @@ const historico = [
 ];
 
 export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
-  const isEn = locale === "en";
-  const readMoreText = isEn ? "Read more" : "Leer más";
+  const readMoreText = localize(locale, "Leer más", "Read more");
 
   const novedadesArticles = capacidadesArticles.filter((a) => a.group === "novedades");
   const destacadasArticles = capacidadesArticles.filter((a) => a.group === "capacidadesdestacadas");
@@ -1318,39 +1334,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
           <div className="columns-1 md:columns-2 gap-12">
-          {isEn ? (
-            <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
-                After the{" "}
-                <Link href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
-                  Presentation
-                </Link>
-                , you will be eager to know what capabilities the QGISRed plugin offers. In this section we will tell you. Since it is still a product in development, we will do it in stages.
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                First we will show you the{" "}
-                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
-                {" "}included in the most recent version. Then we will highlight the{" "}
-                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
-                {" "}already developed, so you don&apos;t have to discover them by reading the entire manual. If you prefer, you can also take a quick look at all{" "}
-                <a href={anchorHash("prestacionesactuales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Current Capabilities</a>
-                . Finally, we will give you a preview of what is coming in{" "}
-                <a href={anchorHash("proximasprestaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Road Map</a>
-                . And for the most curious, we have reserved the last section, where you can see how the product has evolved from its beginnings, and the improvements introduced in{" "}
-                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>each Version</a>
-                .
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                To give you a more accurate idea of the versioning, note that all current versions start with 0, as the product is still in development. The goal of the first version of QGISRed is to complete all planned improvements over what EPANET 2.2 currently offers, complete the additional capabilities aimed at facilitating model construction, and finalize the model extension to include all additional necessary elements and their functionalities, until the real behaviour of a network can be reproduced for any chosen period, in connection with field data, as a first step towards building a Digital Twin.
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                At that point we will launch version 1.0 and open the doors to completing the product with other much more practical and professional features. In the meantime, we are on version 0.15 and estimate that there are about 5 additional versions to complete all the planned objectives.
-              </p>
-              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
-                Enter the following sections, and you will learn all about it in more detail.
-              </p>
-            </>
-          ) : (
+          {localize(locale,
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 Después de la{" "}
@@ -1395,6 +1379,37 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 Entra en las secciones siguientes, y conocerás todo ello con más detalle.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
+                After the{" "}
+                <Link href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
+                  Presentation
+                </Link>
+                , you will be eager to know what capabilities the QGISRed plugin offers. In this section we will tell you. Since it is still a product in development, we will do it in stages.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                First we will show you the{" "}
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
+                {" "}included in the most recent version. Then we will highlight the{" "}
+                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
+                {" "}already developed, so you don&apos;t have to discover them by reading the entire manual. If you prefer, you can also take a quick look at all{" "}
+                <a href={anchorHash("prestacionesactuales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Current Capabilities</a>
+                . Finally, we will give you a preview of what is coming in{" "}
+                <a href={anchorHash("proximasprestaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Road Map</a>
+                . And for the most curious, we have reserved the last section, where you can see how the product has evolved from its beginnings, and the improvements introduced in{" "}
+                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>each Version</a>
+                .
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                To give you a more accurate idea of the versioning, note that all current versions start with 0, as the product is still in development. The goal of the first version of QGISRed is to complete all planned improvements over what EPANET 2.2 currently offers, complete the additional capabilities aimed at facilitating model construction, and finalize the model extension to include all additional necessary elements and their functionalities, until the real behaviour of a network can be reproduced for any chosen period, in connection with field data, as a first step towards building a Digital Twin.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                At that point we will launch version 1.0 and open the doors to completing the product with other much more practical and professional features. In the meantime, we are on version 0.15 and estimate that there are about 5 additional versions to complete all the planned objectives.
+              </p>
+              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
+                Enter the following sections, and you will learn all about it in more detail.
+              </p>
             </>
           )}
           </div>
@@ -1404,19 +1419,18 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Novedades */}
       <section id={anchorId("novedades", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "What's New in version 0.19" : "Novedades versión 0.19"} />
+          <SectionHeading title={localize(locale, "Novedades versión 0.19", "What's New in version 0.19")} />
 
-          {isEn ? (
-            <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-              This new version 0.19 of QGISRed includes numerous new features and improvements. The following cards highlight the <strong>most important new features of version 0.19.</strong>{" "}
-              For a more detailed description of all the new features, visit the{" "}
-              <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Version History</a> section.
-            </p>
-          ) : (
+          {localize(locale,
             <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
               Esta nueva versión 0.19 de QGISRed incluye numerosas mejoras y nuevas prestaciones. En las fichas siguientes se destacan las <strong>novedades más importantes de la versión 0.19. </strong>
               Para una descripción más detallada de todas las novedades visitar la sección{" "}
               <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</a>.
+            </p>,
+            <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+              This new version 0.19 of QGISRed includes numerous new features and improvements. The following cards highlight the <strong>most important new features of version 0.19.</strong>{" "}
+              For a more detailed description of all the new features, visit the{" "}
+              <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Version History</a> section.
             </p>
           )}
 
@@ -1425,8 +1439,8 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               <CapacidadCard
                 key={article.slug}
                 slug={getArticleSlug(article, locale)}
-                title={isEn ? (article.titleEn ?? article.title) : article.title}
-                description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
+                title={localize(locale, article.title, article.titleEn, article.titleFr, article.titlePt)}
+                description={localize(locale, article.excerpt, article.excerptEn, article.excerptFr, article.excerptPt)}
                 readMoreText={readMoreText}
               />
             ))}
@@ -1437,20 +1451,9 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Capacidades Destacadas */}
       <section id={anchorId("capacidadesdestacadas", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "Featured Capabilities" : "Capacidades destacadas"} />
+          <SectionHeading title={localize(locale, "Capacidades destacadas", "Featured Capabilities")} />
 
-          {isEn ? (
-            <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                In this section we want to highlight the most outstanding capabilities of QGISRed developed so far. Although the Manual covers all application capabilities, it is not always easy reading. From here we can tell you the motivation, peculiarities and scope of each featured capability.
-              </p>
-              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                There are many, so we have ordered them by topic. We will gradually complete them as we have more content. As in the{" "}
-                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
-                {" "}section, the following cards are intended to provide only an introduction to each featured capability to motivate you. For further depth, we will refer you to tutorials and videos, and ultimately to the Manual.
-              </p>
-            </>
-          ) : (
+          {localize(locale,
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 En esta sección queremos resaltar las capacidades más destacadas de QGISRed, en lo que llevamos desarrollado
@@ -1463,6 +1466,16 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novedades</a>
                 , en las fichas siguientes pretendemos hacer solo una introducción a cada capacidad destacada para motivarte y despertar tu interés. Para profundizar más en ellas te remitiremos a los tutoriales y vídeos, y en último caso al Manual.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                In this section we want to highlight the most outstanding capabilities of QGISRed developed so far. Although the Manual covers all application capabilities, it is not always easy reading. From here we can tell you the motivation, peculiarities and scope of each featured capability.
+              </p>
+              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                There are many, so we have ordered them by topic. We will gradually complete them as we have more content. As in the{" "}
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
+                {" "}section, the following cards are intended to provide only an introduction to each featured capability to motivate you. For further depth, we will refer you to tutorials and videos, and ultimately to the Manual.
+              </p>
             </>
           )}
 
@@ -1471,10 +1484,10 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               <CapacidadCard
                 key={article.slug}
                 slug={getArticleSlug(article, locale)}
-                title={isEn ? (article.titleEn ?? article.title) : article.title}
-                description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
+                title={localize(locale, article.title, article.titleEn, article.titleFr, article.titlePt)}
+                description={localize(locale, article.excerpt, article.excerptEn, article.excerptFr, article.excerptPt)}
                 imageSrc={article.image}
-                imageAlt={isEn ? (article.imageAltEn ?? article.imageAlt) : article.imageAlt}
+                imageAlt={localize(locale, article.imageAlt, article.imageAltEn, article.imageAltFr, article.imageAltPt)}
                 imageWidth={article.imageWidth}
                 imageHeight={article.imageHeight}
                 readMoreText={readMoreText}
@@ -1487,33 +1500,9 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Prestaciones Actuales */}
       <section id={anchorId("prestacionesactuales", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "Current Capabilities" : "Prestaciones actuales"} />
+          <SectionHeading title={localize(locale, "Prestaciones actuales", "Current Capabilities")} />
 
-          {isEn ? (
-            <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                QGISRed has now been in development for nearly four years since it started its journey at the end of 2018. Since then we have continued to introduce improvements, and looking back the capabilities offered in its latest version are very notable.
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                Some of these capabilities are described in more detail in{" "}
-                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
-                , or in{" "}
-                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
-                , but to learn more about other capabilities you will need to consult the{" "}
-                <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
-                , or the{" "}
-                <Link href={{ pathname: "/utilizacion", hash: anchorHash("tutoriales", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutorials</Link>
-                {" "}and{" "}
-                <Link href={{ pathname: "/utilizacion", hash: anchorHash("videosformativos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Training Videos</Link>
-                {" "}we are gradually developing. You can also sign up for our{" "}
-                <Link href={{ pathname: "/difusion", hash: anchorHash("cursos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Courses</Link>
-                , both in-person and online, still in preparation.
-              </p>
-              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                Below, we list the main capabilities already offered by the latest version downloadable from the QGIS Plugin installer, ordered by topic.
-              </p>
-            </>
-          ) : (
+          {localize(locale,
             <>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 QGISRed ha cumplido ya casi cuatro años de vida, desde que comenzó su andadura a finales de 2018. Desde
@@ -1540,6 +1529,29 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 A continuación, te listamos las principales prestaciones que ya ofrece la última versión descargable
                 desde el instalador de Complementos de QGIS, las cuales hemos ordenado por temáticas para más claridad.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                QGISRed has now been in development for nearly four years since it started its journey at the end of 2018. Since then we have continued to introduce improvements, and looking back the capabilities offered in its latest version are very notable.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Some of these capabilities are described in more detail in{" "}
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
+                , or in{" "}
+                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
+                , but to learn more about other capabilities you will need to consult the{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
+                , or the{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("tutoriales", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutorials</Link>
+                {" "}and{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("videosformativos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Training Videos</Link>
+                {" "}we are gradually developing. You can also sign up for our{" "}
+                <Link href={{ pathname: "/difusion", hash: anchorHash("cursos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Courses</Link>
+                , both in-person and online, still in preparation.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Below, we list the main capabilities already offered by the latest version downloadable from the QGIS Plugin installer, ordered by topic.
+              </p>
             </>
           )}
 
@@ -1547,8 +1559,8 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
             {prestacionesActuales.map((group) => (
               <PrestacionGroup
                 key={group.group}
-                title={isEn ? group.groupEn : group.group}
-                items={isEn ? group.itemsEn : group.items}
+                title={localize(locale, group.group, group.groupEn, group.groupFr, group.groupPt)}
+                items={localize(locale, group.items, group.itemsEn, group.itemsFr, group.itemsPt)}
               />
             ))}
           </div>
@@ -1558,17 +1570,16 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Próximas Prestaciones */}
       <section id={anchorId("proximasprestaciones", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "Road Map" : "Próximas prestaciones"} />
+          <SectionHeading title={localize(locale, "Próximas prestaciones", "Road Map")} />
 
-          {isEn ? (
-            <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-              As you know, version 1.0 of QGISRed is still under development. Below is a list of the main improvements we plan to incorporate to complete this version. The list is not exhaustive and may be subject to changes.
-            </p>
-          ) : (
+          {localize(locale,
             <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
               Como ya sabes, la versión 1.0 de QGISRed está aún en desarrollo. A continuación, te adjuntamos una lista de
               las principales mejoras que tenemos previsto incorporar para completar esta versión. La lista que se acompaña
               no es cerrada, y puede estar sujeta a cambios.
+            </p>,
+            <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+              As you know, version 1.0 of QGISRed is still under development. Below is a list of the main improvements we plan to incorporate to complete this version. The list is not exhaustive and may be subject to changes.
             </p>
           )}
 
@@ -1576,8 +1587,8 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
             {proximasPrestaciones.map((group) => (
               <PrestacionGroup
                 key={group.group}
-                title={isEn ? group.groupEn : group.group}
-                items={isEn ? group.itemsEn : group.items}
+                title={localize(locale, group.group, group.groupEn, group.groupFr, group.groupPt)}
+                items={localize(locale, group.items, group.itemsEn, group.itemsFr, group.itemsPt)}
               />
             ))}
           </div>
@@ -1587,20 +1598,11 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Histórico de Versiones */}
       <section id={anchorId("historicodeversiones", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "Version History" : "Histórico de versiones"} />
+          <SectionHeading title={localize(locale, "Histórico de versiones", "Version History")} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 100%" }}>
-              {isEn ? (
-                <>
-                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    The process of developing a software product is complex and requires many hours of dedication and code review. From the initial conception of a procedure to its final implementation there are many intermediate tests, and errors always arise where least expected. Each new version tries to introduce new capabilities, while at the same time it is inevitable to correct errors in what appeared to be already consolidated.
-                  </p>
-                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    What follows is a record of the advances and corrections made in successive versions of QGISRed, from version 0.6 which was first uploaded to the QGIS repository.
-                  </p>
-                </>
-              ) : (
+              {localize(locale,
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     El proceso de desarrollo de un producto de software es complejo y requiere muchas horas de dedicación y
@@ -1613,6 +1615,14 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                     Lo que sigue es una relación de los avances y correcciones realizados en las sucesivas versiones de
                     QGISRed, desde la versión 0.6 que se subió por vez primera al repositorio de QGIS.
                   </p>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    The process of developing a software product is complex and requires many hours of dedication and code review. From the initial conception of a procedure to its final implementation there are many intermediate tests, and errors always arise where least expected. Each new version tries to introduce new capabilities, while at the same time it is inevitable to correct errors in what appeared to be already consolidated.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    What follows is a record of the advances and corrections made in successive versions of QGISRed, from version 0.6 which was first uploaded to the QGIS repository.
+                  </p>
                 </>
               )}
 
@@ -1620,13 +1630,14 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 {historico.map((item) => (
                   <AccordionItem
                     key={item.version}
-                    title={isEn
-                      ? `Changes in version ${item.version} – ${item.fechaEn}`
-                      : `Cambios en la versión ${item.version} – ${item.fecha}`
-                    }
+                    title={localize(
+                      locale,
+                      `Cambios en la versión ${item.version} – ${item.fecha}`,
+                      `Changes in version ${item.version} – ${item.fechaEn}`
+                    )}
                   >
                     <ul className="list-none p-0 m-0">
-                      {(isEn ? item.itemsEn : item.items).map((li, idx) => (
+                      {localize(locale, item.items, item.itemsEn, item.itemsFr, item.itemsPt).map((li, idx) => (
                         <li key={idx} className="flex items-start gap-2 mb-1.5">
                           <span className="flex-shrink-0" style={{ color: "rgb(95, 189, 211)", marginTop: "3px", fontSize: "10px" }}>●</span>
                           <span>{li}</span>
@@ -1647,14 +1658,14 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                   <CapacidadCard
                     key={article.slug}
                     slug={getArticleSlug(article, locale)}
-                    title={isEn ? (article.titleEn ?? article.title) : article.title}
-                    description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
+                    title={localize(locale, article.title, article.titleEn, article.titleFr, article.titlePt)}
+                    description={localize(locale, article.excerpt, article.excerptEn, article.excerptFr, article.excerptPt)}
                     imageSrc={article.image}
-                    imageAlt={isEn ? (article.imageAltEn ?? article.imageAlt) : article.imageAlt}
+                    imageAlt={localize(locale, article.imageAlt, article.imageAltEn, article.imageAltFr, article.imageAltPt)}
                     imageWidth={article.imageWidth}
                     imageHeight={article.imageHeight}
                     readMoreText={readMoreText}
-                    eyebrow={isEn ? `What's New v${version}` : `Novedades v${version}`}
+                    eyebrow={localize(locale, `Novedades v${version}`, `What's New v${version}`)}
                   />
                 ))}
             </div>

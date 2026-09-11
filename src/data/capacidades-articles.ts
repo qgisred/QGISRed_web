@@ -5,23 +5,35 @@ export interface CapacidadArticle {
   slugEn: string;
   title: string;
   titleEn?: string;
+  titleFr?: string;
+  titlePt?: string;
   group: "novedades" | "capacidadesdestacadas" | "historicodeversiones";
   /** Version this article's card is filed under; only set for `group: "historicodeversiones"`. */
   version?: string;
   excerpt: string;
   excerptEn?: string;
+  excerptFr?: string;
+  excerptPt?: string;
   paragraphs: string[];
   paragraphsEn?: string[];
+  paragraphsFr?: string[];
+  paragraphsPt?: string[];
   /** Bullet list rendered after `paragraphs`/`paragraphsEn`, before `paragraphsAfterList`. */
   bulletList?: string[];
   bulletListEn?: string[];
+  bulletListFr?: string[];
+  bulletListPt?: string[];
   /** Closing paragraph(s) rendered after `bulletList`, e.g. a pointer to the changelog. */
   paragraphsAfterList?: string[];
   paragraphsAfterListEn?: string[];
+  paragraphsAfterListFr?: string[];
+  paragraphsAfterListPt?: string[];
   image?: string;
   imageAlt?: string;
   /** English wording of `imageAlt`. */
   imageAltEn?: string;
+  imageAltFr?: string;
+  imageAltPt?: string;
   /**
    * Intrinsic pixel size of `image`. Required alongside it: `next/image` needs the
    * real ratio to reserve the right space, and a declared size that happens to match
@@ -33,6 +45,8 @@ export interface CapacidadArticle {
   inlineIcon?: string;
   inlineIconAlt?: string;
   inlineIconAltEn?: string;
+  inlineIconAltFr?: string;
+  inlineIconAltPt?: string;
   inlineIconWidth?: number;
   inlineIconHeight?: number;
 }
