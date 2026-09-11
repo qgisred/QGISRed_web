@@ -1,27 +1,45 @@
+import { localize } from "@/i18n/localize";
+
 export interface CapacidadArticle {
-  /** URL segment used under `/capacidades/` in Spanish. */
+  /** URL segment used under `/capacidades/` in Spanish (and Portuguese — they share it). */
   slug: string;
   /** URL segment used under `/capabilities/` in English. */
   slugEn: string;
+  /** URL segment used under `/capacites/` in French. */
+  slugFr?: string;
+  /** URL segment used under `/capacidades/` in Portuguese. */
+  slugPt?: string;
   title: string;
   titleEn?: string;
+  titleFr?: string;
+  titlePt?: string;
   group: "novedades" | "capacidadesdestacadas" | "historicodeversiones";
   /** Version this article's card is filed under; only set for `group: "historicodeversiones"`. */
   version?: string;
   excerpt: string;
   excerptEn?: string;
+  excerptFr?: string;
+  excerptPt?: string;
   paragraphs: string[];
   paragraphsEn?: string[];
-  /** Bullet list rendered after `paragraphs`/`paragraphsEn`, before `paragraphsAfterList`. */
+  paragraphsFr?: string[];
+  paragraphsPt?: string[];
+  /** Bullet list rendered after `paragraphs`/`paragraphsEn`/..., before `paragraphsAfterList`. */
   bulletList?: string[];
   bulletListEn?: string[];
+  bulletListFr?: string[];
+  bulletListPt?: string[];
   /** Closing paragraph(s) rendered after `bulletList`, e.g. a pointer to the changelog. */
   paragraphsAfterList?: string[];
   paragraphsAfterListEn?: string[];
+  paragraphsAfterListFr?: string[];
+  paragraphsAfterListPt?: string[];
   image?: string;
   imageAlt?: string;
   /** English wording of `imageAlt`. */
   imageAltEn?: string;
+  imageAltFr?: string;
+  imageAltPt?: string;
   /**
    * Intrinsic pixel size of `image`. Required alongside it: `next/image` needs the
    * real ratio to reserve the right space, and a declared size that happens to match
@@ -33,6 +51,8 @@ export interface CapacidadArticle {
   inlineIcon?: string;
   inlineIconAlt?: string;
   inlineIconAltEn?: string;
+  inlineIconAltFr?: string;
+  inlineIconAltPt?: string;
   inlineIconWidth?: number;
   inlineIconHeight?: number;
 }
@@ -785,9 +805,15 @@ export const capacidadesArticles: CapacidadArticle[] = [
   },
 ];
 
-/** The URL segment an article is published under in the given locale. */
+/**
+ * The URL segment an article is published under in the given locale. Falls
+ * back to the Spanish slug when a French/Portuguese translation is still
+ * missing — see `generateStaticParams` in the `capacites`/`capacidades`
+ * `[slug]` route directories, which filter those out instead of relying on
+ * this fallback for routing itself.
+ */
 export function getArticleSlug(article: CapacidadArticle, locale: string): string {
-  return locale === "en" ? article.slugEn : article.slug;
+  return localize(locale, article.slug, article.slugEn, article.slugFr, article.slugPt);
 }
 
 export function getArticleBySlug(slug: string, locale: string): CapacidadArticle | undefined {

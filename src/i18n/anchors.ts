@@ -6,7 +6,17 @@
  * default locale). Never write a raw `#anchor` in a component: the section `id`
  * and every link to it have to come from here, or they drift apart silently —
  * a wrong anchor doesn't error, it just scrolls nowhere.
+ *
+ * `fr`/`pt` are optional while those translations are still in progress —
+ * `anchorId` falls back to the Spanish anchor when missing.
  */
+interface AnchorEntry {
+  es: string;
+  en: string;
+  fr?: string;
+  pt?: string;
+}
+
 const anchors = {
   // Home
   bajo: { es: "bajo", en: "presentation" },
@@ -39,13 +49,17 @@ const anchors = {
   soportetecnico: { es: "soportetecnico", en: "technical-support" },
   empresas: { es: "empresas", en: "company-services" },
   participacion: { es: "participacion", en: "participation" },
-} as const;
+} satisfies Record<string, AnchorEntry>;
 
 export type AnchorKey = keyof typeof anchors;
 
 /** The `id` to put on the section, in the given locale. */
 export function anchorId(key: AnchorKey, locale: string): string {
-  return locale === "en" ? anchors[key].en : anchors[key].es;
+  const entry: AnchorEntry = anchors[key];
+  if (locale === "en") return entry.en;
+  if (locale === "fr") return entry.fr ?? entry.es;
+  if (locale === "pt") return entry.pt ?? entry.es;
+  return entry.es;
 }
 
 /** The same anchor as a link target, i.e. prefixed with `#`. */

@@ -5,10 +5,12 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { LegalPageLayout, LegalSection } from "@/components/LegalPageLayout";
 
-// Spanish URL only — the English one is `/legal-notice`, generated from
-// `../legal-notice/page.tsx`. See `src/i18n/routing.ts`.
+// Spanish AND Portuguese URL (both happen to use the word "aviso-legal") — the
+// English one is `/legal-notice`, generated from `../legal-notice/page.tsx`,
+// and the French one is `/mentions-legales`, generated from
+// `../mentions-legales/page.tsx`. See `src/i18n/routing.ts`.
 export function generateStaticParams() {
-  return [{ locale: "es" }];
+  return [{ locale: "es" }, { locale: "pt" }];
 }
 
 export async function generateMetadata({
@@ -44,7 +46,10 @@ export default async function AvisoLegalPage({
         overlayOpacity={0.7}
       />
       <LegalPageLayout title={t("title")}>
-        {locale === "es" ? <AvisoLegalEs /> : <LegalWarningEn />}
+        {locale === "es" ? <AvisoLegalEs />
+          : locale === "fr" ? <AvisoLegalFr />
+          : locale === "pt" ? <AvisoLegalPt />
+          : <LegalWarningEn />}
       </LegalPageLayout>
       <Footer />
     </>
@@ -175,6 +180,16 @@ function AvisoLegalEs() {
       </LegalSection>
     </>
   );
+}
+
+// TODO(i18n-fr): translate — placeholder falls back to the Spanish text.
+function AvisoLegalFr() {
+  return <AvisoLegalEs />;
+}
+
+// TODO(i18n-pt): translate — placeholder falls back to the Spanish text.
+function AvisoLegalPt() {
+  return <AvisoLegalEs />;
 }
 
 function LegalWarningEn() {

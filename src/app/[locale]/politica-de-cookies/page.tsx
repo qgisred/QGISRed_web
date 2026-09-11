@@ -5,10 +5,13 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { LegalPageLayout, LegalSection } from "@/components/LegalPageLayout";
 
-// Spanish URL only — the English one is `/cookies-policy`, generated from
-// `../cookies-policy/page.tsx`. See `src/i18n/routing.ts`.
+// Spanish AND Portuguese URL (both happen to use the word
+// "politica-de-cookies") — the English one is `/cookies-policy`, generated
+// from `../cookies-policy/page.tsx`, and the French one is
+// `/politique-de-cookies`, generated from `../politique-de-cookies/page.tsx`.
+// See `src/i18n/routing.ts`.
 export function generateStaticParams() {
-  return [{ locale: "es" }];
+  return [{ locale: "es" }, { locale: "pt" }];
 }
 
 export async function generateMetadata({
@@ -44,7 +47,10 @@ export default async function PoliticaCookiesPage({
         overlayOpacity={0.7}
       />
       <LegalPageLayout title={t("title")}>
-        {locale === "es" ? <PoliticaCookiesEs /> : <CookiesPolicyEn />}
+        {locale === "es" ? <PoliticaCookiesEs />
+          : locale === "fr" ? <PoliticaCookiesFr />
+          : locale === "pt" ? <PoliticaCookiesPt />
+          : <CookiesPolicyEn />}
       </LegalPageLayout>
       <Footer />
     </>
@@ -163,6 +169,16 @@ function PoliticaCookiesEs() {
       </LegalSection>
     </>
   );
+}
+
+// TODO(i18n-fr): translate — placeholder falls back to the Spanish text.
+function PoliticaCookiesFr() {
+  return <PoliticaCookiesEs />;
+}
+
+// TODO(i18n-pt): translate — placeholder falls back to the Spanish text.
+function PoliticaCookiesPt() {
+  return <PoliticaCookiesEs />;
 }
 
 function CookiesPolicyEn() {

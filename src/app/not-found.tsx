@@ -4,16 +4,24 @@ import { usePathname } from "next/navigation";
 import { routing, type Locale } from "@/i18n/routing";
 import esMessages from "../../messages/es.json";
 import enMessages from "../../messages/en.json";
+import frMessages from "../../messages/fr.json";
+import ptMessages from "../../messages/pt.json";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const copy: Record<Locale, typeof esMessages.notFound> = {
   es: esMessages.notFound,
   en: enMessages.notFound,
+  fr: frMessages.notFound,
+  pt: ptMessages.notFound,
 };
 
 function detectLocale(pathname: string | null): Locale {
   const path = pathname?.startsWith(basePath) ? pathname.slice(basePath.length) : pathname;
-  return path === "/en" || path?.startsWith("/en/") ? "en" : routing.defaultLocale;
+  for (const locale of routing.locales) {
+    if (locale === routing.defaultLocale) continue;
+    if (path === `/${locale}` || path?.startsWith(`/${locale}/`)) return locale;
+  }
+  return routing.defaultLocale;
 }
 
 // This is the single static 404.html served by the host for every unmatched

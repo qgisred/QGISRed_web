@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "@/components/AppImage";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
-import type { Locale, PathnameWithHash, StaticPathname } from "@/i18n/routing";
+import { routing, type Locale, type PathnameWithHash, type StaticPathname } from "@/i18n/routing";
 import { anchorHash } from "@/i18n/anchors";
 import { ChevronDownIcon, MenuIcon, CloseIcon } from "./icons";
 
@@ -120,24 +120,31 @@ interface NavBarProps {
   /**
    * Route params to use per locale in the language switcher. Only needed on
    * routes whose dynamic segments are translated (capability articles): the
-   * current URL's slug is not valid in the other language, and this component
+   * current URL's slug is not valid in another language, and this component
    * has no access to the article data to translate it.
    */
   localeParams?: Partial<Record<Locale, { slug: string }>>;
 }
 
+const LOCALE_FLAGS: Record<Locale, string> = { es: "🇪🇸", en: "🇬🇧", fr: "🇫🇷", pt: "🇧🇷" };
+
 export function NavBar({ localeParams }: NavBarProps = {}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const locale: Locale = useLocale() === "en" ? "en" : "es";
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
+  const locale = useLocale() as Locale;
   const t = useTranslations("nav");
   const navItems = useNavItems();
   const pathname = usePathname();
 
-  // Compute alternate locale href for language switcher
-  const otherLocale: Locale = locale === "es" ? "en" : "es";
-  const otherLocaleLabel = locale === "es" ? t("english") : t("spanish");
-  const currentLocaleLabel = locale === "es" ? t("spanish") : t("english");
+  function localeLabel(target: Locale) {
+    switch (target) {
+      case "es": return t("spanish");
+      case "en": return t("english");
+      case "fr": return t("french");
+      case "pt": return t("portuguese");
+    }
+  }
 
   // The same page in the given locale. `usePathname` returns the internal
   // (Spanish) route, which `Link` maps back to the localized URL.
@@ -188,30 +195,24 @@ export function NavBar({ localeParams }: NavBarProps = {}) {
             onMouseLeave={() => setLangOpen(false)}
           >
             <button className="flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-[rgb(0,9,25)] hover:text-[rgb(95,189,211)] transition-colors">
-              <span className="mr-1">{locale === "es" ? "🇪🇸" : "🇬🇧"}</span>
-              {currentLocaleLabel}
+              <span className="mr-1">{LOCALE_FLAGS[locale]}</span>
+              {localeLabel(locale)}
               <ChevronDownIcon className="w-2.5 h-2.5 ml-0.5 opacity-60" />
             </button>
             {langOpen && (
               <ul className="absolute right-0 top-full z-50 bg-white shadow-[0_4px_20px_rgba(0,9,25,0.13)] min-w-[140px] py-2">
-                <li>
-                  <Link
-                    href={localeHref(locale)}
-                    locale={locale}
-                    className="block px-5 py-2 text-[14px] text-[rgb(0,9,25)] hover:text-[rgb(95,189,211)]"
-                  >
-                    {currentLocaleLabel}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={localeHref(otherLocale)}
-                    locale={otherLocale}
-                    className="block px-5 py-2 text-[14px] text-[rgb(0,9,25)] hover:text-[rgb(95,189,211)]"
-                  >
-                    {otherLocaleLabel}
-                  </Link>
-                </li>
+                {routing.locales.map((target) => (
+                  <li key={target}>
+                    <Link
+                      href={localeHref(target)}
+                      locale={target}
+                      className="flex items-center gap-2 px-5 py-2 text-[14px] text-[rgb(0,9,25)] hover:text-[rgb(95,189,211)]"
+                    >
+                      <span>{LOCALE_FLAGS[target]}</span>
+                      {localeLabel(target)}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             )}
           </div>
@@ -273,14 +274,34 @@ export function NavBar({ localeParams }: NavBarProps = {}) {
 
           {/* Mobile language switcher */}
           <div className="px-6 py-3 border-t border-gray-100">
-            <Link
-              href={localeHref(otherLocale)}
-              locale={otherLocale}
-              className="text-[14px] text-[rgb(0,9,25)] hover:text-[rgb(95,189,211)]"
-              onClick={() => setMobileOpen(false)}
+            <button
+              className="flex items-center gap-1 text-[14px] text-[rgb(0,9,25)] hover:text-[rgb(95,189,211)]"
+              onClick={() => setMobileLangOpen((open) => !open)}
             >
-              {locale === "es" ? "🇬🇧" : "🇪🇸"} {otherLocaleLabel}
-            </Link>
+              <span className="mr-1">{LOCALE_FLAGS[locale]}</span>
+              {localeLabel(locale)}
+              <ChevronDownIcon className="w-2.5 h-2.5 ml-0.5 opacity-60" />
+            </button>
+            {mobileLangOpen && (
+              <ul className="mt-2">
+                {routing.locales.map((target) => (
+                  <li key={target}>
+                    <Link
+                      href={localeHref(target)}
+                      locale={target}
+                      className="flex items-center gap-2 py-2 text-[13px] text-[rgb(51,51,51)] hover:text-[rgb(95,189,211)]"
+                      onClick={() => {
+                        setMobileLangOpen(false);
+                        setMobileOpen(false);
+                      }}
+                    >
+                      <span>{LOCALE_FLAGS[target]}</span>
+                      {localeLabel(target)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       )}

@@ -1,7 +1,7 @@
 import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
-  locales: ["es", "en"],
+  locales: ["es", "en", "fr", "pt"],
   defaultLocale: "es",
   localePrefix: "always",
   // Keys are the internal pathnames used in code (always the Spanish ones, since
@@ -12,16 +12,16 @@ export const routing = defineRouting({
   // matching locale. See `src/app/[locale]/presentation/page.tsx` for the shape.
   pathnames: {
     "/": "/",
-    "/presentacion": { es: "/presentacion", en: "/presentation" },
-    "/capacidades": { es: "/capacidades", en: "/capabilities" },
-    "/capacidades/[slug]": { es: "/capacidades/[slug]", en: "/capabilities/[slug]" },
-    "/utilizacion": { es: "/utilizacion", en: "/usage" },
-    "/difusion": { es: "/difusion", en: "/dissemination" },
-    "/soporte": { es: "/soporte", en: "/support" },
-    "/contacto": { es: "/contacto", en: "/contact" },
-    "/aviso-legal": { es: "/aviso-legal", en: "/legal-notice" },
-    "/politica-de-privacidad": { es: "/politica-de-privacidad", en: "/privacy-policy" },
-    "/politica-de-cookies": { es: "/politica-de-cookies", en: "/cookies-policy" },
+    "/presentacion": { es: "/presentacion", en: "/presentation", fr: "/presentation", pt: "/apresentacao" },
+    "/capacidades": { es: "/capacidades", en: "/capabilities", fr: "/capacites", pt: "/capacidades" },
+    "/capacidades/[slug]": { es: "/capacidades/[slug]", en: "/capabilities/[slug]", fr: "/capacites/[slug]", pt: "/capacidades/[slug]" },
+    "/utilizacion": { es: "/utilizacion", en: "/usage", fr: "/utilisation", pt: "/utilizacao" },
+    "/difusion": { es: "/difusion", en: "/dissemination", fr: "/diffusion", pt: "/difusao" },
+    "/soporte": { es: "/soporte", en: "/support", fr: "/assistance", pt: "/suporte" },
+    "/contacto": { es: "/contacto", en: "/contact", fr: "/contact", pt: "/contato" },
+    "/aviso-legal": { es: "/aviso-legal", en: "/legal-notice", fr: "/mentions-legales", pt: "/aviso-legal" },
+    "/politica-de-privacidad": { es: "/politica-de-privacidad", en: "/privacy-policy", fr: "/politique-de-confidentialite", pt: "/politica-de-privacidade" },
+    "/politica-de-cookies": { es: "/politica-de-cookies", en: "/cookies-policy", fr: "/politique-de-cookies", pt: "/politica-de-cookies" },
   },
 });
 

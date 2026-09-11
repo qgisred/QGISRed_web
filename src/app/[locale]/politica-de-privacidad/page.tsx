@@ -5,8 +5,12 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { LegalPageLayout, LegalSection } from "@/components/LegalPageLayout";
 
-// Spanish URL only — the English one is `/privacy-policy`, generated from
-// `../privacy-policy/page.tsx`. See `src/i18n/routing.ts`.
+// Spanish URL only — the English one is `/privacy-policy` (generated from
+// `../privacy-policy/page.tsx`), the French one is
+// `/politique-de-confidentialite` (generated from
+// `../politique-de-confidentialite/page.tsx`), and the Portuguese one is
+// `/politica-de-privacidade` (generated from
+// `../politica-de-privacidade/page.tsx`). See `src/i18n/routing.ts`.
 export function generateStaticParams() {
   return [{ locale: "es" }];
 }
@@ -44,7 +48,10 @@ export default async function PoliticaPrivacidadPage({
         overlayOpacity={0.7}
       />
       <LegalPageLayout title={t("title")}>
-        {locale === "es" ? <PoliticaPrivacidadEs /> : <PrivacyPolicyEn />}
+        {locale === "es" ? <PoliticaPrivacidadEs />
+          : locale === "fr" ? <PoliticaPrivacidadFr />
+          : locale === "pt" ? <PoliticaPrivacidadPt />
+          : <PrivacyPolicyEn />}
       </LegalPageLayout>
       <Footer />
     </>
@@ -123,6 +130,16 @@ function PoliticaPrivacidadEs() {
       </LegalSection>
     </>
   );
+}
+
+// TODO(i18n-fr): translate — placeholder falls back to the Spanish text.
+function PoliticaPrivacidadFr() {
+  return <PoliticaPrivacidadEs />;
+}
+
+// TODO(i18n-pt): translate — placeholder falls back to the Spanish text.
+function PoliticaPrivacidadPt() {
+  return <PoliticaPrivacidadEs />;
 }
 
 function PrivacyPolicyEn() {

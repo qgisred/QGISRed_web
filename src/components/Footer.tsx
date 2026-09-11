@@ -73,7 +73,10 @@ function NavColumn({ items }: { items: NavColumnItem[] }) {
 export function Footer() {
   const t = useTranslations("footer");
   const tn = useTranslations("nav");
-  const locale = useLocale() === "en" ? "en" : "es";
+  const locale = useLocale();
+  // The institutional logos link to external university sites that only exist
+  // in Spanish and English — fr/pt visitors get the English version.
+  const logoLocale = locale === "es" ? "es" : "en";
 
   const navCol1: NavColumnItem[] = [
     { text: tn("presentation"), href: "/presentacion" },
@@ -109,7 +112,7 @@ export function Footer() {
             {footerLogos.map((logo) => (
               <a
                 key={logo.src}
-                href={logo.href[locale]}
+                href={logo.href[logoLocale]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center transition-opacity duration-150 hover:opacity-80"
