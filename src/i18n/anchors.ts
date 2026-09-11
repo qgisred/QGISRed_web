@@ -19,36 +19,36 @@ interface AnchorEntry {
 
 const anchors = {
   // Home
-  bajo: { es: "bajo", en: "presentation" },
+  bajo: { es: "bajo", en: "presentation", fr: "presentation" },
   // Presentación
-  quees: { es: "quees", en: "what-is" },
-  antecedentes: { es: "antecedentes", en: "background" },
-  aplicaciones: { es: "aplicaciones", en: "applications" },
-  instalacion: { es: "instalacion", en: "installation" },
-  github: { es: "github", en: "github" },
-  creditos: { es: "creditos", en: "credits" },
+  quees: { es: "quees", en: "what-is", fr: "quest-ce-que" },
+  antecedentes: { es: "antecedentes", en: "background", fr: "contexte" },
+  aplicaciones: { es: "aplicaciones", en: "applications", fr: "applications" },
+  instalacion: { es: "instalacion", en: "installation", fr: "installation" },
+  github: { es: "github", en: "github", fr: "github" },
+  creditos: { es: "creditos", en: "credits", fr: "credits" },
   // Capacidades
-  novedades: { es: "novedades", en: "news" },
-  capacidadesdestacadas: { es: "capacidadesdestacadas", en: "featured-capabilities" },
-  prestacionesactuales: { es: "prestacionesactuales", en: "current-capabilities" },
-  proximasprestaciones: { es: "proximasprestaciones", en: "road-map" },
-  historicodeversiones: { es: "historicodeversiones", en: "version-history" },
+  novedades: { es: "novedades", en: "news", fr: "actualites" },
+  capacidadesdestacadas: { es: "capacidadesdestacadas", en: "featured-capabilities", fr: "capacites-phares" },
+  prestacionesactuales: { es: "prestacionesactuales", en: "current-capabilities", fr: "prestations-actuelles" },
+  proximasprestaciones: { es: "proximasprestaciones", en: "road-map", fr: "prochaines-prestations" },
+  historicodeversiones: { es: "historicodeversiones", en: "version-history", fr: "historique-des-versions" },
   // Utilización
-  manualusuario: { es: "manualusuario", en: "user-manual" },
-  tutoriales: { es: "tutoriales", en: "tutorials" },
-  videosformativos: { es: "videosformativos", en: "training-videos" },
-  repositorioejemplos: { es: "repositorioejemplos", en: "examples-repository" },
-  modelodatos: { es: "modelodatos", en: "data-model" },
-  preguntasfrecuentes: { es: "preguntasfrecuentes", en: "faq" },
+  manualusuario: { es: "manualusuario", en: "user-manual", fr: "manuel-utilisateur" },
+  tutoriales: { es: "tutoriales", en: "tutorials", fr: "tutoriels" },
+  videosformativos: { es: "videosformativos", en: "training-videos", fr: "videos-formation" },
+  repositorioejemplos: { es: "repositorioejemplos", en: "examples-repository", fr: "repertoire-exemples" },
+  modelodatos: { es: "modelodatos", en: "data-model", fr: "modele-donnees" },
+  preguntasfrecuentes: { es: "preguntasfrecuentes", en: "faq", fr: "faq" },
   // Difusión
-  cursos: { es: "cursos", en: "courses" },
-  publicaciones: { es: "publicaciones", en: "publications" },
-  noticias: { es: "noticias", en: "news" },
+  cursos: { es: "cursos", en: "courses", fr: "cours" },
+  publicaciones: { es: "publicaciones", en: "publications", fr: "publications" },
+  noticias: { es: "noticias", en: "news", fr: "actualites" },
   // Soporte
-  incidencias: { es: "incidencias", en: "issues" },
-  soportetecnico: { es: "soportetecnico", en: "technical-support" },
-  empresas: { es: "empresas", en: "company-services" },
-  participacion: { es: "participacion", en: "participation" },
+  incidencias: { es: "incidencias", en: "issues", fr: "incidents" },
+  soportetecnico: { es: "soportetecnico", en: "technical-support", fr: "support-technique" },
+  empresas: { es: "empresas", en: "company-services", fr: "services-entreprises" },
+  participacion: { es: "participacion", en: "participation", fr: "participation" },
 } satisfies Record<string, AnchorEntry>;
 
 export type AnchorKey = keyof typeof anchors;

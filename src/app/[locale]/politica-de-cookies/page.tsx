@@ -171,9 +171,122 @@ function PoliticaCookiesEs() {
   );
 }
 
-// TODO(i18n-fr): translate — placeholder falls back to the Spanish text.
 function PoliticaCookiesFr() {
-  return <PoliticaCookiesEs />;
+  return (
+    <>
+      <LegalSection>
+        <p className="mb-4 text-sm" style={{ color: "rgb(120,120,120)" }}>
+          Cette politique de cookies a été mise à jour pour la dernière fois le 15 juillet 2022 et s&apos;applique
+          aux citoyens et résidents légaux permanents de l&apos;Espace Économique Européen et de la Suisse.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="1. Introduction">
+        <p>
+          Notre site web, https://qgisred.upv.es, utilise des cookies et d&apos;autres technologies apparentées (par
+          commodité, toutes ces technologies sont désignées par le terme « cookies »). Des cookies sont également
+          déposés par des tiers que nous avons engagés. Dans le document suivant, nous vous informons de
+          l&apos;utilisation des cookies sur notre site web.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="2. Que sont les cookies ?">
+        <p>
+          Un cookie est un petit fichier envoyé avec les pages de ce site web et que votre navigateur enregistre sur
+          le disque dur de votre ordinateur ou de tout autre appareil. Les informations qui y sont stockées peuvent
+          être renvoyées à nos serveurs ou aux serveurs des tiers concernés lors d&apos;une visite ultérieure.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="3. Que sont les scripts ?">
+        <p>
+          Un script est un fragment de code de programme utilisé pour faire fonctionner notre site web correctement
+          et de manière interactive. Ce code s&apos;exécute sur notre serveur ou sur votre appareil.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="4. Qu'est-ce qu'un pixel espion ?">
+        <p>
+          Un pixel espion (ou balise pixel) est un petit élément de texte ou d&apos;image, invisible, présent sur un
+          site web et utilisé pour surveiller le trafic sur ce site. À cette fin, diverses données vous concernant
+          sont stockées au moyen de ces pixels espions.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="5. Cookies">
+        <p className="mb-4">
+          <strong>5.1 Cookies techniques ou fonctionnels</strong><br />
+          Certains cookies garantissent le bon fonctionnement de certaines parties du site web et permettent de
+          conserver vos préférences d&apos;utilisateur. En déposant des cookies fonctionnels, nous facilitons votre
+          visite sur notre site web. Nous pouvons déposer ces cookies sans votre consentement.
+        </p>
+        <p className="mb-4">
+          <strong>5.2 Cookies statistiques</strong><br />
+          Nous utilisons des cookies statistiques pour optimiser l&apos;expérience du site web pour nos utilisateurs.
+          Ces cookies statistiques nous permettent d&apos;obtenir des informations sur l&apos;utilisation de notre
+          site web. Nous vous demandons votre autorisation pour déposer des cookies statistiques.
+        </p>
+        <p className="mb-4">
+          <strong>5.3 Cookies marketing/de suivi</strong><br />
+          Les cookies marketing/de suivi sont des cookies, ou toute autre forme de stockage local, utilisés pour
+          créer des profils d&apos;utilisateurs afin d&apos;afficher de la publicité ou de suivre
+          l&apos;utilisateur sur ce site web ou sur plusieurs sites web à des fins marketing similaires.
+        </p>
+        <p>
+          <strong>5.4 Réseaux sociaux</strong><br />
+          Sur notre site web, nous avons inclus du contenu de X (anciennement Twitter) afin de promouvoir des pages
+          web ou de partager sur les réseaux sociaux. Ce contenu est intégré avec du code provenant de X
+          (anciennement Twitter) et enregistre des cookies.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="6. Cookies utilisés">
+        <p className="mb-4">
+          Nous utilisons des cookies de : <strong>Elementor</strong>, <strong>WordPress</strong>,{" "}
+          <strong>Polylang</strong>, <strong>mailpoet</strong>, <strong>Google Analytics</strong>,{" "}
+          <strong>Google reCAPTCHA</strong>, <strong>YouTube</strong> et <strong>Twitter</strong>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="7. Consentement">
+        <p>
+          Lors de votre première visite sur notre site web, une fenêtre contextuelle s&apos;affichera pour vous
+          expliquer l&apos;utilisation des cookies. Dès que vous cliquez sur « Enregistrer les préférences », vous
+          acceptez que nous utilisions les catégories de cookies et de modules que vous avez sélectionnées dans la
+          fenêtre contextuelle, comme décrit dans cette politique de cookies. Vous pouvez désactiver
+          l&apos;utilisation des cookies via votre navigateur, mais veuillez noter que notre site web pourrait alors
+          ne plus fonctionner correctement.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="8. Activation/désactivation et suppression des cookies">
+        <p>
+          Vous pouvez utiliser votre navigateur Internet pour supprimer automatiquement ou manuellement les cookies.
+          Vous pouvez également indiquer que certains cookies ne peuvent pas être déposés. Une autre option consiste
+          à modifier les paramètres de votre navigateur Internet afin de recevoir un message chaque fois qu&apos;un
+          cookie est déposé.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="9. Vos droits concernant les données personnelles">
+        <p>
+          Vous disposez des droits suivants concernant vos données personnelles : droit d&apos;accès, de
+          rectification, de portabilité et de suppression de vos données, droit de limitation et d&apos;opposition
+          au traitement, et droit d&apos;introduire une réclamation auprès de l&apos;Autorité de contrôle (agpd.es).
+        </p>
+      </LegalSection>
+
+      <LegalSection title="10. Coordonnées">
+        <p>
+          Pour toute question et/ou commentaire concernant notre politique de cookies et cette déclaration, veuillez
+          nous contacter par email :{" "}
+          <a href="mailto:fmartine@hma.upv.es" style={{ color: "rgb(95, 189, 211)" }}>
+            fmartine@hma.upv.es
+          </a>
+        </p>
+      </LegalSection>
+    </>
+  );
 }
 
 // TODO(i18n-pt): translate — placeholder falls back to the Spanish text.

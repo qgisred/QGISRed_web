@@ -132,9 +132,81 @@ function PoliticaPrivacidadEs() {
   );
 }
 
-// TODO(i18n-fr): translate — placeholder falls back to the Spanish text.
 function PoliticaPrivacidadFr() {
-  return <PoliticaPrivacidadEs />;
+  return (
+    <>
+      <LegalSection title="1. INFORMATION À L'UTILISATEUR">
+        <p className="mb-4">
+          Fernando Martínez Alzamora, ci-après le RESPONSABLE, est le Responsable du traitement des données
+          personnelles de l&apos;Utilisateur et l&apos;informe que ces données seront traitées conformément aux
+          dispositions de la réglementation en vigueur en matière de protection des données personnelles, le
+          Règlement (UE) 2016/679 du 27 avril 2016 (RGPD) relatif à la protection des personnes physiques à
+          l&apos;égard du traitement des données à caractère personnel et à la libre circulation de ces données, les
+          informations de traitement suivantes lui étant ainsi communiquées :
+        </p>
+        <p className="mb-3 font-medium">Finalité du traitement : maintenir une relation commerciale avec l&apos;Utilisateur. Les opérations prévues pour réaliser le traitement sont :</p>
+        <ul className="list-disc pl-6 mb-4 flex flex-col gap-2">
+          <li>Élaboration de profils : le RESPONSABLE pourra également réaliser, avec le consentement préalable de l&apos;Utilisateur, une élaboration de profils basée sur un traitement automatisé.</li>
+          <li>Critères de conservation des données : elles seront conservées tant qu&apos;il existera un intérêt mutuel à maintenir la finalité du traitement.</li>
+          <li>Communication des données : les données ne seront pas communiquées à des tiers, sauf obligation légale.</li>
+        </ul>
+        <p className="mb-3 font-medium">Droits dont bénéficie l&apos;Utilisateur :</p>
+        <ul className="list-disc pl-6 mb-4 flex flex-col gap-1">
+          <li>Droit de retirer son consentement à tout moment.</li>
+          <li>Droit d&apos;accès, de rectification, de portabilité et de suppression de ses données.</li>
+          <li>Droit de limitation et d&apos;opposition au traitement.</li>
+          <li>Droit d&apos;introduire une réclamation auprès de l&apos;Autorité de contrôle (agpd.es).</li>
+        </ul>
+        <p className="mb-3 font-medium">Coordonnées pour exercer vos droits :</p>
+        <ul className="list-none p-0 flex flex-col gap-1">
+          <li><strong>Adresse postale :</strong> Univ. Politècnica València, IIAMA- Grupo REDHISP, blq 5J – bajo</li>
+          <li><strong>Email :</strong>{" "}
+            <a href="mailto:fmartine@hma.uvp.es" style={{ color: "rgb(95, 189, 211)" }}>
+              fmartine@hma.uvp.es
+            </a>
+          </li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="2. CARACTÈRE OBLIGATOIRE OU FACULTATIF DE L'INFORMATION FOURNIE PAR L'UTILISATEUR">
+        <p className="mb-4">
+          Les Utilisateurs, en cochant les cases correspondantes et en saisissant des données dans les champs marqués
+          d&apos;un astérisque (*) dans le formulaire de contact ou présentés dans les formulaires de téléchargement,
+          acceptent expressément et de manière libre et non équivoque que leurs données sont nécessaires pour
+          répondre à leur demande de la part du prestataire, la saisie de données dans les autres champs étant
+          facultative.
+        </p>
+        <p>
+          Le RESPONSABLE informe et garantit expressément aux utilisateurs que leurs données personnelles ne seront
+          en aucun cas cédées à des tiers, et que si une cession de données personnelles devait avoir lieu, le
+          consentement exprès, informé et non équivoque des Utilisateurs serait préalablement demandé.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="3. MESURES DE SÉCURITÉ">
+        <p className="mb-4">
+          Conformément aux dispositions de la réglementation en vigueur en matière de protection des données
+          personnelles, le RESPONSABLE se conforme à toutes les dispositions du RGPD pour le traitement des données
+          personnelles relevant de sa responsabilité, et manifestement aux principes décrits à l&apos;article 5 du
+          RGPD.
+        </p>
+        <p>
+          Le RESPONSABLE garantit avoir mis en œuvre des politiques techniques et organisationnelles appropriées pour
+          appliquer les mesures de sécurité établies par le RGPD afin de protéger les droits et libertés des
+          Utilisateurs.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="4. LOI APPLICABLE ET JURIDICTION">
+        <p>
+          Pour la résolution de tous les litiges ou questions relatifs au présent site web ou aux activités qui y
+          sont développées, la législation espagnole sera d&apos;application, à laquelle les parties se soumettent
+          expressément, les Tribunaux les plus proches de Valence étant compétents pour la résolution de tous les
+          conflits découlant de ou liés à son utilisation.
+        </p>
+      </LegalSection>
+    </>
+  );
 }
 
 // TODO(i18n-pt): translate — placeholder falls back to the Spanish text.
