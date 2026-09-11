@@ -56,8 +56,10 @@ const ejemplos: Ejemplo[] = [
   {
     name: "Red1_SI.inp (Unidades SI)",
     nameEn: "Red1_SI.inp (SI Units)",
+    nameFr: "Red1_SI.inp (Unités SI)",
     description: "Se trata de un ejemplo sencillo para mostrar el decaimiento del cloro. Incluye coeficientes de reacción en el medio y en las paredes. Todas las unidades están expresadas en el Sistema Internacional. Incorpora además una válvula de regulación que puede configurarse de diferentes modos cambiando su tipo y consigna.",
     descriptionEn: "This is a simple example to show chlorine decay. It includes reaction coefficients in the bulk and at the wall. All units are expressed in the International System. It also incorporates a regulation valve that can be configured in different ways by changing its type and set point.",
+    descriptionFr: "Il s'agit d'un exemple simple pour illustrer la décroissance du chlore. Il inclut des coefficients de réaction dans le volume et aux parois. Toutes les unités sont exprimées dans le Système International. Il intègre également une vanne de régulation qui peut être configurée de différentes manières en changeant son type et sa consigne.",
     imageSrc: "/images/utilizacion-red1.jpg",
     imageWidth: 100,
     imageHeight: 126,
@@ -65,7 +67,7 @@ const ejemplos: Ejemplo[] = [
 ];
 
 export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
-  const comingSoonText = localize(locale, "Próximamente", "Coming soon");
+  const comingSoonText = localize(locale, "Próximamente", "Coming soon", "Prochainement");
 
   return (
     <main>
@@ -141,6 +143,39 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
               <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 Finally, this section will also include a section reserved for frequently asked questions, and another to manage a user forum, both of which are currently disabled.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                C&apos;est probablement la section la plus importante de tout le site, car elle vous apprendra à utiliser QGISRed et à en tirer parti. Mais nous la construisons petit à petit, elle disposera donc de bien plus de contenu à l&apos;avenir. Pour l&apos;instant, la principale source d&apos;information est le Manuel, que vous trouverez à la fin de cette section.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Dans un premier temps, un ensemble de{" "}
+                <a href={anchorHash("tutoriales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Tutoriels</strong></a>
+                {" "}sera proposé ici afin que vous puissiez suivre calmement toutes les étapes nécessaires pour atteindre l&apos;objectif fixé dans chacun d&apos;eux. Il s&apos;agira de documents PDF que vous pourrez télécharger et utiliser à votre convenance. Cependant, les tutoriels les plus avancés seront réservés au développement des cours que nous proposons <span style={{ fontStyle: "italic" }}>(lien vers les cours).</span>
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                La section{" "}
+                <a href={anchorHash("videosformativos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Vidéos </strong></a>
+                suivra le même schéma que les tutoriels, et sera généralement basée sur ceux-ci, bien qu&apos;en raison de contraintes de temps il soit probable que certaines fonctionnalités soient omises. Si vous souhaitez une information plus complète et détaillée, il est donc recommandé de consulter les tutoriels. Pour donner une plus grande diffusion aux vidéos, nous avons décidé de les distribuer via Youtube.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Nous profiterons également de cette section pour publier les{" "}
+                <a href={anchorHash("repositorioejemplos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Exemples</strong></a>
+                {" "}utilisés dans les tutoriels ou dans les vidéos, afin que vous puissiez y accéder facilement.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Dans une autre section, il est prévu de publier le{" "}
+                <a href={anchorHash("modelodatos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Modèle de Données</strong></a>
+                {" "}utilisé par QGISRed pour héberger toutes les informations qui configurent un projet, ainsi que la structure des différents fichiers auxiliaires utilisés par QGISRed.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Pour une information plus complète sur tout ce qui a été développé jusqu&apos;à présent, vous pouvez consulter le{" "}
+                <a href={anchorHash("manualusuario", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}><strong>Manuel</strong></a>
+                {" "}de l&apos;application en PDF, que vous trouverez dans la section suivante. Le manuel a toujours été disponible en espagnol et en anglais, et nous le mettons à jour à chaque nouvelle version. À l&apos;avenir, nous espérons mettre cette information en ligne, l&apos;enrichir et partager son contenu.
+              </p>
+              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Enfin, cette section comportera également une rubrique réservée aux questions les plus fréquentes, ainsi qu&apos;une autre pour gérer un forum d&apos;utilisateurs, toutes deux actuellement désactivées.
+              </p>
             </>
           )}
         </div>
@@ -149,7 +184,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       {/* Manual del Usuario */}
       <section id={anchorId("manualusuario", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Manual del usuario", "User's Manual")} />
+          <SectionHeading title={localize(locale, "Manual del usuario", "User's Manual", "Manuel de l'utilisateur")} />
 
           <div className="flex flex-col md:flex-row gap-[40px] items-start">
             <div style={{ flex: "1 1 45%" }}>
@@ -179,6 +214,17 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
                   <p className="mb-4 font-medium" style={{ fontSize: "15px", color: "rgb(0, 9, 25)" }}>
                     To download the User Manual in English, click the following button.
                   </p>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Dès le début, QGISRed a été accompagné d&apos;un Manuel de l&apos;Utilisateur, en espagnol et en anglais, que nous mettons à jour à chaque nouvelle version. Le manuel est rédigé sous Word et diffusé en PDF. À l&apos;avenir, nous le migrerons vers un environnement web collaboratif.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Contrairement aux tutoriels, le manuel reflète toutes les informations sur les fonctionnalités de l&apos;application, de manière concise et rigoureuse, et surtout, de façon ordonnée. Vous y trouverez à la fin un court tutoriel pour exécuter le fichier Red1_SI.inp, ainsi que les étapes pour le construire à partir de zéro.
+                  </p>
+                  <p className="mb-4 font-medium" style={{ fontSize: "15px", color: "rgb(0, 9, 25)" }}>
+                    Pour télécharger le Manuel de l&apos;Utilisateur, cliquez sur le bouton correspondant ci-dessous.
+                  </p>
                 </>
               )}
 
@@ -196,7 +242,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
                     textDecoration: "none",
                   }}
                 >
-                  {localize(locale, "Manual en Español", "Manual in Spanish")}
+                  {localize(locale, "Manual en Español", "Manual in Spanish", "Manuel en espagnol")}
                 </a>
                 <a
                   href={MANUAL_EN}
@@ -211,7 +257,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
                     textDecoration: "none",
                   }}
                 >
-                  {localize(locale, "Manual en Inglés", "Manual in English")}
+                  {localize(locale, "Manual en Inglés", "Manual in English", "Manuel en anglais")}
                 </a>
               </div>
             </div>
@@ -219,7 +265,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
             <div className="hidden md:block" style={{ flex: "0 0 52%" }}>
               <Image
                 src={localize(locale, "/images/utilizacion-manual-es.png", "/images/utilizacion-manual-en.png")}
-                alt={localize(locale, "Manual de usuario de QGISRed en GitBook", "QGISRed User's Manual on GitBook")}
+                alt={localize(locale, "Manual de usuario de QGISRed en GitBook", "QGISRed User's Manual on GitBook", "Manuel de l'utilisateur de QGISRed sur GitBook")}
                 width={1160}
                 height={805}
                 className="w-full h-auto shadow-lg"
@@ -232,7 +278,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       {/* Tutoriales */}
       <section id={anchorId("tutoriales", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Tutoriales", "Tutorials")} />
+          <SectionHeading title={localize(locale, "Tutoriales", "Tutorials", "Tutoriels")} />
           <ComingSoon text={comingSoonText} />
         </div>
       </section>
@@ -240,7 +286,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       {/* Vídeos Formativos */}
       <section id={anchorId("videosformativos", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Vídeos formativos", "Training Videos")} />
+          <SectionHeading title={localize(locale, "Vídeos formativos", "Training Videos", "Vidéos de formation")} />
           <ComingSoon text={comingSoonText} />
         </div>
       </section>
@@ -248,7 +294,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       {/* Repositorio de Ejemplos */}
       <section id={anchorId("repositorioejemplos", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Repositorio de ejemplos", "Examples Repository")} />
+          <SectionHeading title={localize(locale, "Repositorio de ejemplos", "Examples Repository", "Répertoire d'exemples")} />
 
           <div className="flex flex-col gap-8">
             {ejemplos.map((ejemplo) => (
@@ -288,7 +334,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
       {/* Modelo de Datos */}
       <section id={anchorId("modelodatos", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Modelo de datos", "Data Model")} />
+          <SectionHeading title={localize(locale, "Modelo de datos", "Data Model", "Modèle de données")} />
           <ComingSoon text={comingSoonText} />
         </div>
       </section>
