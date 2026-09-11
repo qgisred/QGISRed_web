@@ -453,6 +453,21 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
                 Actualités
               </a>{" "}
               parues dans divers médias et réseaux sociaux.
+            </p>,
+            <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              Nesta seção são reunidas as atividades destinadas a divulgar o aplicativo QGISRed, com destaque para os{" "}
+              <a href={anchorHash("cursos", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+                Cursos de Formação
+              </a>
+              , cuja programação será anunciada oportunamente. Além disso, também são incluídos links para algumas{" "}
+              <a href={anchorHash("publicaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+                Publicações
+              </a>{" "}
+              do grupo REDHISP do IIAMA relacionadas com o aplicativo e suas funcionalidades, assim como links para{" "}
+              <a href={anchorHash("noticias", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "600" }}>
+                Notícias
+              </a>{" "}
+              publicadas em diversos meios e redes sociais.
             </p>
           )}
         </div>
@@ -461,7 +476,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
       {/* Cursos de Formación / Training Courses */}
       <section id={anchorId("cursos", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Cursos de formación", "Training Courses", "Cours de Formation")} />
+          <SectionHeading title={localize(locale, "Cursos de formación", "Training Courses", "Cours de Formation", "Cursos de Formação")} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
@@ -494,6 +509,18 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
                   </p>
                   <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     Le bouton suivant permet d&apos;accéder à un bref résumé de son contenu.
+                  </p>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    O <strong>primeiro curso de formação</strong> sobre o QGISRed foi ministrado na Universitat Politècnica de València,
+                    em 18 de julho de 2022, por ocasião da realização do{" "}
+                    <strong>2º Congresso conjunto WDSA-CCWI 2022</strong>, que reúne profissionais e pesquisadores de
+                    todo o mundo na área da água urbana, contando com a colaboração da Dra. Paloma Batanero
+                    Akerman.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    No botão a seguir você pode acessar um breve resumo do seu conteúdo.
                   </p>
                 </>
               )}
@@ -545,6 +572,19 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
                   <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     Il s&apos;agira essentiellement de cours en ligne avec un accompagnement tutoré. Il est également possible de dispenser des cours en présentiel à la demande de toute institution ou entreprise.
                   </p>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    No futuro, esta seção irá anunciando novas edições deste curso básico, assim como o{" "}
+                    <strong>Catálogo de Cursos</strong> que estamos preparando, para cobrir desde o aprendizado dos
+                    princípios básicos da hidráulica urbana, até a elaboração de modelos e a gestão de cenários para
+                    Planos Diretores, chegando até a migração para os Gêmeos Digitais em conexão com os dados reais,
+                    utilizando sempre como base a plataforma do QGISRed.
+                  </p>
+                  <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Serão fundamentalmente cursos on-line com acompanhamento tutorado. Além disso, há a possibilidade de
+                    ministrar cursos presenciais a pedido de qualquer instituição ou empresa.
+                  </p>
                 </>
               )}
             </div>
@@ -552,7 +592,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
               <Image
                 src="/images/difusion-curso.png"
-                alt={localize(locale, "Curso Managing Advanced Hydraulic Models with QGISRed", "Managing Advanced Hydraulic Models with QGISRed course", "Cours Managing Advanced Hydraulic Models with QGISRed")}
+                alt={localize(locale, "Curso Managing Advanced Hydraulic Models with QGISRed", "Managing Advanced Hydraulic Models with QGISRed course", "Cours Managing Advanced Hydraulic Models with QGISRed", "Curso Managing Advanced Hydraulic Models with QGISRed")}
                 width={404}
                 height={542}
                 className="w-full h-auto shadow-md"
@@ -565,18 +605,19 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
       {/* Publicaciones / Publications */}
       <section id={anchorId("publicaciones", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Publicaciones", "Publications", "Publications")} />
+          <SectionHeading title={localize(locale, "Publicaciones", "Publications", "Publications", "Publicações")} />
 
           <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
             {localize(
               locale,
               "En esta sección se reflejan algunas de las publicaciones más relevantes que, junto con el desarrollo de numerosos contratos, nos han permitido adquirir gran experiencia en la modelación de redes de distribución de agua, la cual poco a poco vamos trasladando a la aplicación QGISRed.",
               "This section reflects some of the most relevant publications that, together with the development of numerous contracts, have allowed us to acquire great experience in the modelling of water distribution networks, which we are gradually transferring to the QGISRed application.",
-              "Cette section présente certaines des publications les plus pertinentes qui, avec le développement de nombreux contrats, nous ont permis d'acquérir une grande expérience dans la modélisation des réseaux de distribution d'eau, expérience que nous transférons peu à peu à l'application QGISRed."
+              "Cette section présente certaines des publications les plus pertinentes qui, avec le développement de nombreux contrats, nous ont permis d'acquérir une grande expérience dans la modélisation des réseaux de distribution d'eau, expérience que nous transférons peu à peu à l'application QGISRed.",
+              "Nesta seção são apresentadas algumas das publicações mais relevantes que, junto com o desenvolvimento de numerosos contratos, nos permitiram adquirir grande experiência na modelação de redes de distribuição de água, a qual vamos aos poucos transferindo para o aplicativo QGISRed."
             )}
           </p>
 
-          <PublicationGroup title={localize(locale, "Artículos y libros", "Articles and books", "Articles et livres")}>
+          <PublicationGroup title={localize(locale, "Artículos y libros", "Articles and books", "Articles et livres", "Artigos e livros")}>
             <ul className="list-none p-0 m-0">
               {articulos.map((pub, i) => (
                 <PublicationItem key={i}>
@@ -599,7 +640,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
             </ul>
           </PublicationGroup>
 
-          <PublicationGroup title={localize(locale, "Comunicaciones a Congresos", "Conference Papers", "Communications à des congrès")}>
+          <PublicationGroup title={localize(locale, "Comunicaciones a Congresos", "Conference Papers", "Communications à des congrès", "Comunicações em Congressos")}>
             <ul className="list-none p-0 m-0">
               {comunicaciones.map((pub, i) => (
                 <PublicationItem key={i}>
@@ -626,14 +667,15 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
       {/* Noticias y Redes Sociales / News & Social Media */}
       <section id={anchorId("noticias", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Noticias y Redes Sociales", "News & Social Media", "Actualités et Réseaux Sociaux")} />
+          <SectionHeading title={localize(locale, "Noticias y Redes Sociales", "News & Social Media", "Actualités et Réseaux Sociaux", "Notícias e Redes Sociais")} />
 
           <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
             {localize(
               locale,
               "A continuación, se adjuntan enlaces a noticias y podcast aparecidos en los medios y redes sociales, en la relación con la repercusión que la aplicación QGISRed está teniendo en el mundo de la gestión del agua y la formación de nuevos profesionales.",
               "Below are links to news articles and podcasts that have appeared in the media and social networks, in relation to the impact that the QGISRed application is having in the world of water management and the training of new professionals.",
-              "Vous trouverez ci-dessous des liens vers des actualités et des podcasts parus dans les médias et les réseaux sociaux, en lien avec la répercussion que l'application QGISRed a dans le monde de la gestion de l'eau et la formation de nouveaux professionnels."
+              "Vous trouverez ci-dessous des liens vers des actualités et des podcasts parus dans les médias et les réseaux sociaux, en lien avec la répercussion que l'application QGISRed a dans le monde de la gestion de l'eau et la formation de nouveaux professionnels.",
+              "A seguir, apresentamos links para notícias e podcasts publicados na mídia e nas redes sociais, relacionados com a repercussão que o aplicativo QGISRed vem tendo no mundo da gestão da água e na formação de novos profissionais."
             )}
           </p>
 
@@ -665,7 +707,7 @@ export function DifusionPageContent({ locale = "es" }: { locale?: string }) {
                       textDecoration: "none",
                     }}
                   >
-                    {localize(locale, "Leer noticia", "Read article", "Lire l'article")}
+                    {localize(locale, "Leer noticia", "Read article", "Lire l'article", "Ler notícia")}
                   </a>
                 </div>
               </div>

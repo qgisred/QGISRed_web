@@ -96,8 +96,24 @@ const serviciosEmpresasFr = [
   "D'autres services ou développements proposés par l'Entreprise, dans la ligne des actions précédentes",
 ];
 
+const serviciosEmpresasPt = [
+  "Elaborar e calibrar um modelo hidráulico que reproduza fielmente o comportamento da rede, a partir da informação cartográfica, dados de consumo e medições de campo",
+  "Calibrar um modelo de qualidade da água para a análise de diversas estratégias de operação, a fim de controlar os parâmetros de qualidade estabelecidos pela normativa",
+  "Planejar melhorias na rede para um futuro próximo, conforme os objetivos propostos nos planos diretores, incluindo a setorização",
+  "Propor estratégias de operação para a economia energética, ou com qualquer outro objetivo",
+  "Analisar a integração das energias renováveis no transporte e distribuição da água através da rede",
+  "Elaborar um Gêmeo Digital da rede, contemplando todos os elementos inventariados no GIS",
+  "Obter modelos ajustados à realidade para qualquer data por consulta às bases de dados corporativas da empresa",
+  "Conectar o modelo do QGISRed com as bases de dados da empresa para manter o Gêmeo sempre vivo, e funcionando em tempo real",
+  "Utilizar o Gêmeo para a detecção e localização de vazamentos, ou a detecção de qualquer funcionamento anômalo da rede",
+  "Obter modelos simplificados a partir do Gêmeo para seu uso em processos de otimização",
+  "Utilizar o Gêmeo para realizar balanços em tempo real, ou manter um sistema de indicadores sempre atualizado",
+  "Integrar a algoritmia do núcleo do QGISRed na plataforma de gestão dos dados da Empresa, para agregar valor à informação simplesmente armazenada",
+  "Outros serviços ou desenvolvimentos propostos pela Empresa, na linha das atuações anteriores",
+];
+
 export function SoportePageContent({ locale = "es" }: { locale?: string }) {
-  const servicios = localize(locale, serviciosEmpresas, serviciosEmpresasEn, serviciosEmpresasFr);
+  const servicios = localize(locale, serviciosEmpresas, serviciosEmpresasEn, serviciosEmpresasFr, serviciosEmpresasPt);
 
   return (
     <main>
@@ -258,6 +274,59 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
                 Entrez et vous découvrirez toutes ces propositions plus en détail.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                O objetivo desta seção é dar suporte a qualquer usuário do QGISRed. Embora o aplicativo seja livre,
+                nem por isso está desassistido. Você encontrará aqui <strong>vários níveis de ajuda</strong> para se sentir apoiado nos seus
+                primeiros passos, e também quando já for um profissional no uso do aplicativo.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Em primeiro lugar, lembramos que existe um portal para relatar qualquer{" "}
+                <a
+                  href={anchorHash("incidencias", locale)}
+                  style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
+                >
+                  ocorrência
+                </a>
+                {" "}observada no uso do QGISRed. Embora seja preciso se cadastrar previamente, trata-se de um portal público vinculado à
+                plataforma de desenvolvimento no GitHub.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Mas se você quiser um atendimento mais contínuo e personalizado, pode assinar o{" "}
+                <a
+                  href={anchorHash("soportetecnico", locale)}
+                  style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
+                >
+                  Serviço de Suporte Técnico
+                </a>
+                {" "}para obter uma resposta mais imediata aos seus problemas.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                A atenção às suas necessidades pode ir ainda mais longe, oferecendo um{" "}
+                <a
+                  href={anchorHash("empresas", locale)}
+                  style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
+                >
+                  Serviço de Assistência direto às Empresas
+                </a>
+                {" "}sob contrato. Consulte a seção correspondente, e você terá uma ideia das múltiplas formas em que podemos colaborar,
+                para que você tire o máximo proveito do QGISRed e o transforme em sua ferramenta de modelação preferida.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Por fim, nosso espírito universitário nos leva a propor a forma preferida de colaboração da nossa parte,
+                que é através da participação em{" "}
+                <a
+                  href={anchorHash("participacion", locale)}
+                  style={{ color: "rgb(95, 189, 211)", fontWeight: "bold" }}
+                >
+                  Projetos de Pesquisa e Desenvolvimento
+                </a>
+                , buscando sempre avançar para alcançar metas cada vez mais exigentes.
+              </p>
+              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Entre e conhecerá todas essas propostas com mais detalhes.
+              </p>
             </>
           )}
         </div>
@@ -266,7 +335,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
       {/* Incidencias / Issues */}
       <section id={anchorId("incidencias", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Incidencias", "Issues", "Incidents")} />
+          <SectionHeading title={localize(locale, "Incidencias", "Issues", "Incidents", "Ocorrências")} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
@@ -373,6 +442,46 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                     <em>GitHub</em>, en cliquant sur le bouton <em>Sign up</em> en haut à droite de la fenêtre, et
                     remplir les données demandées.
                   </p>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Na seção de Apresentação já contamos que parte do código do QGISRed é pública, e
+                    está hospedada no portal do GitHub{" "}
+                    <a
+                      href="https://github.com/qgisred/QGISRed/issues"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "rgb(95, 189, 211)", textDecoration: "none", wordBreak: "break-all" }}
+                    >
+                      https://github.com/qgisred/QGISRed/issues
+                    </a>
+                    . Ali também foi mencionada a existência da aba <strong>Issues</strong> reservada para que os usuários possam
+                    notificar qualquer ocorrência observada no uso do aplicativo, embora na prática alguns usuários estejam
+                    usando também esta seção para nos fazer sugestões. No futuro você poderá fazer sugestões também através
+                    deste site, e o portal do GitHub ficará reservado para reportar apenas as ocorrências e falhas encontradas
+                    no uso do aplicativo.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    A seguir, mostra-se novamente a página do QGISRed no GitHub, aberta agora na aba{" "}
+                    <em>Issues</em>. Observe que a informação se divide em duas partes, uma relativa aos temas ainda{" "}
+                    <em>Abertos</em>, e outra aos temas já <em>Fechados</em>. Se você entrar em qualquer um deles poderá seguir
+                    o fio da conversa. Em alguns casos, informações muito interessantes são compartilhadas a partir do tema levantado,
+                    sobretudo em nossas respostas.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Cada <em>Issue</em> tem um título e número precedido de um hashtag, e para cada uma você também pode ver a data
+                    em que foi criada e fechada, os usuários que participaram, e uma etiqueta de cor que qualifica o
+                    tipo de ocorrência, se era uma falha ou uma sugestão, se foi resolvida, se fica para o futuro, etc.
+                    Tudo isso pode ser usado para classificar as ocorrências a partir dos botões que aparecem à direita, como
+                    cabeçalhos.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Para seguir o fio da conversa basta entrar nela e adicionar novas mensagens ao
+                    final. Você também pode criar uma nova ocorrência clicando no botão verde <em>New Issue</em>,
+                    localizado em cima à direita. Mas para participar ativamente, é preciso se cadastrar antes no projeto do{" "}
+                    <em>GitHub</em>, clicando no botão <em>Sign up</em> no canto superior direito da janela, e
+                    preencher os dados solicitados.
+                  </p>
                 </>
               )}
 
@@ -389,7 +498,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                   textDecoration: "none",
                 }}
               >
-                {localize(locale, "Ver incidencias en GitHub", "View issues on GitHub", "Voir les incidents sur GitHub")}
+                {localize(locale, "Ver incidencias en GitHub", "View issues on GitHub", "Voir les incidents sur GitHub", "Ver ocorrências no GitHub")}
               </a>
             </div>
 
@@ -409,7 +518,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
       {/* Soporte Técnico / Technical Support */}
       <section id={anchorId("soportetecnico", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Soporte técnico", "Technical Support", "Support Technique")} />
+          <SectionHeading title={localize(locale, "Soporte técnico", "Technical Support", "Support Technique", "Suporte Técnico")} />
 
           {localize(locale,
             <>
@@ -487,6 +596,34 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                 possibles et sont détaillées dans la section suivante, mais elles restent soumises à notre capacité de réponse
                 à chaque instant.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Uma das coisas que costumam ser criticadas nos aplicativos de uso livre é a falta de uma ajuda
+                direta ao usuário, em contrapartida à vantagem de não ter que pagar licenças. Embora haja a opção de usar
+                o portal de{" "}
+                <a href={anchorHash("incidencias", locale)} style={{ color: "rgb(95, 189, 211)" }}>ocorrências</a>
+                , ou o fórum de usuários, não há garantia de uma resposta rápida e eficaz.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                No entanto, podemos prestar um serviço de Suporte Técnico personalizado, com resposta prioritária, em troca de uma{" "}
+                <strong>assinatura anual </strong>ainda a ser definida. A opção de garantir uma resposta a qualquer
+                falha em um tempo reduzido pode incentivar qualquer empresa a adotar o QGISRed como seu produto de referência na hora
+                de desenvolver e manter os modelos das redes. Se este for o seu caso,{" "}
+                <strong>
+                  você pode entrar em contato conosco através da seção{" "}
+                  <Link href="/contacto" style={{ color: "inherit" }}>Contato</Link>
+                </strong>
+                , para estabelecer as condições da assistência, que seria sempre feita à distância, seja por e-mail,
+                por videoconferência ou por acesso remoto.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Este suporte incluiria também a orientação sobre a melhor forma de abordar um problema determinado, mas
+                não a análise dos dados do cliente, nem a ajuda técnica para elaborar o modelo da rede, nem
+                tampouco o desenvolvimento de funcionalidades específicas solicitadas pelos clientes. Essas opções também são
+                possíveis e são detalhadas na seção seguinte, mas ficam sujeitas à nossa capacidade de resposta
+                a cada momento.
+              </p>
             </>
           )}
 
@@ -501,7 +638,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               textDecoration: "none",
             }}
           >
-            {localize(locale, "Solicitar soporte técnico", "Request technical support", "Demander un support technique")}
+            {localize(locale, "Solicitar soporte técnico", "Request technical support", "Demander un support technique", "Solicitar suporte técnico")}
           </Link>
         </div>
       </section>
@@ -509,7 +646,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
       {/* Servicios a Empresas / Business Services */}
       <section id={anchorId("empresas", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Servicios a empresas", "Business Services", "Services aux entreprises")} />
+          <SectionHeading title={localize(locale, "Servicios a empresas", "Business Services", "Services aux entreprises", "Serviços a Empresas")} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 55%" }}>
@@ -572,6 +709,28 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                     L&apos;IIAMA peut offrir une <strong>large variété de services aux entreprises gestionnaires</strong> des
                     réseaux d&apos;eau potable.
                   </p>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    O Professor Fernando Martínez, responsável e diretor do aplicativo QGISRed, tem mais de{" "}
+                    <strong>40 anos de experiência na elaboração de modelos</strong> de redes de abastecimento e de irrigação
+                    para muitas instalações reais. Algumas tão complexas como o Sistema de Abastecimento de Valência e sua
+                    área metropolitana, que abastece 1,5 milhão de habitantes, e cujo Gêmeo Digital é atualmente uma
+                    referência mundial.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Toda essa experiência está servindo para criar o núcleo do aplicativo QGISRed e dar a cada uma de
+                    suas capacidades o maior sentido prático possível.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Mas, embora o QGISRed seja livre, e provavelmente seja utilizado por muitas engenharias para oferecer serviços
+                    de modelação a outras empresas, o contato direto com os autores do aplicativo é sempre uma
+                    garantia de sucesso.
+                  </p>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    O IIAMA pode oferecer uma <strong>ampla variedade de serviços às empresas gestoras</strong> dos
+                    abastecimentos de água potável.
+                  </p>
                 </>
               )}
 
@@ -580,7 +739,8 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                   locale,
                   "Despliega para ver algunos de los servicios a empresas",
                   "Expand to see some of the business services",
-                  "Déployez pour voir certains des services aux entreprises"
+                  "Déployez pour voir certains des services aux entreprises",
+                  "Expanda para ver alguns dos serviços a empresas"
                 )}
               >
                 <ul className="flex flex-col gap-3 list-none p-0">
@@ -634,6 +794,19 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                     <strong>aux entreprises de conseil,</strong> qui à leur tour offrent leurs services d&apos;ingénierie à
                     d&apos;autres entreprises gestionnaires de l&apos;eau ou directement aux utilisateurs finaux.
                   </p>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    A contratação desses serviços dependerá sempre da capacidade do grupo para enfrentar os desafios
+                    propostos, cujo principal objetivo é por enquanto completar as capacidades e funcionalidades do QGISRed,
+                    e aumentar sua robustez e alcance.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    Outra forma de nossa equipe colaborar com o ambiente empresarial é prestando{" "}
+                    <strong>assistência técnica sob contrato</strong> no uso do QGISRed,{" "}
+                    <strong>às empresas consultoras,</strong> que por sua vez oferecem seus serviços de engenharia a outras
+                    empresas gestoras de água ou diretamente aos usuários finais.
+                  </p>
                 </>
               )}
 
@@ -648,14 +821,14 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                   textDecoration: "none",
                 }}
               >
-                {localize(locale, "Solicitar información", "Request information", "Demander des informations")}
+                {localize(locale, "Solicitar información", "Request information", "Demander des informations", "Solicitar informações")}
               </Link>
             </div>
 
             <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
               <Image
                 src="/images/soporte-team.jpg"
-                alt={localize(locale, "Equipo de innovadores", "Team of innovators", "Équipe d'innovateurs")}
+                alt={localize(locale, "Equipo de innovadores", "Team of innovators", "Équipe d'innovateurs", "Equipe de inovadores")}
                 width={1024}
                 height={684}
                 className="w-full h-auto shadow-md"
@@ -668,7 +841,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
       {/* Participación en Proyectos / Participation in Projects */}
       <section id={anchorId("participacion", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Participación en Proyectos", "Participation in Projects", "Participation à des Projets")} />
+          <SectionHeading title={localize(locale, "Participación en Proyectos", "Participation in Projects", "Participation à des Projets", "Participação em Projetos")} />
 
           {localize(locale,
             <>
@@ -758,6 +931,39 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                 qui composent les réseaux réels. À cette fin, les bibliothèques de QGISRed pourraient également devenir publiques
                 un jour, si nécessaire.
               </p>
+            </>,
+            <>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Os projetos públicos ou privados são uma forma de enfrentar novos desafios, contando com a colaboração de
+                especialistas em diversas áreas complementares entre si.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Nesse sentido, o IIAMA como Universidade, e a consultora WaterPi como sócia privada, podem{" "}
+                <strong>participar como sócios ou como subcontratados, em qualquer projeto de âmbito local, nacional ou europeu,</strong>{" "}
+                contribuindo com a experiência na modelação de redes de distribuição, por um lado, e por outro com a possibilidade de
+                transformar os resultados do projeto em uma plataforma já operacional e de uso livre, que colocaria de imediato
+                os resultados do projeto ao alcance dos usuários.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Além disso, em um projeto de pesquisa o modelo hidráulico normalmente não constitui o fim, mas o meio
+                para alcançar os resultados pretendidos: minimizar o consumo energético, reduzir perdas, facilitar a
+                detecção de vazamentos, gerenciar o consumo, detectar antecipadamente a entrada de um contaminante, planejar
+                investimentos, recuperar o abastecimento permanente 24h, etc. Nesse sentido, o IIAMA pode contribuir igualmente
+                com seu know-how em todas essas questões, evidenciado através das numerosas{" "}
+                <Link href={{ pathname: "/difusion", hash: anchorHash("publicaciones", locale) }} style={{ color: "rgb(95, 189, 211)" }}>publicações</Link>{" "}
+                sobre esses temas.
+              </p>
+              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+                Por fim, o QGISRed, por seu caráter público e vinculado a uma Universidade, pode servir também de{" "}
+                <strong>plataforma de ensaios </strong>para testar diversas alternativas à solução de qualquer problema
+                proposto, dando participação aberta a todas as propostas. Por exemplo, para testar algoritmos que competem
+                por antecipar a detecção de um evento ou de um vazamento, por otimizar os custos de operação do sistema,
+                por maximizar a resiliência da rede ao custo mínimo, etc., utilizando para isso bases de dados comuns, e um{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("modelodatos", locale) }} style={{ color: "rgb(95, 189, 211)" }}>modelo de dados</Link>{" "}
+                que é público e compatível com outros aplicativos, o qual chega a contemplar todos os elementos que
+                configuram as redes reais. Para isso, as bibliotecas do QGISRed poderiam também se tornar públicas algum dia,
+                se necessário.
+              </p>
             </>
           )}
 
@@ -772,7 +978,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               textDecoration: "none",
             }}
           >
-            {localize(locale, "Proponer colaboración", "Propose collaboration", "Proposer une collaboration")}
+            {localize(locale, "Proponer colaboración", "Propose collaboration", "Proposer une collaboration", "Propor colaboração")}
           </Link>
         </div>
       </section>

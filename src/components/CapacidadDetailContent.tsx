@@ -36,8 +36,8 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
     article.paragraphsAfterListFr,
     article.paragraphsAfterListPt
   );
-  const backLinkText = localize(locale, "Volver a Capacidades", "Back to Capabilities", "Retour aux Capacités");
-  const buttonText = localize(locale, "Ver todas las capacidades", "See all capabilities", "Voir toutes les capacités");
+  const backLinkText = localize(locale, "Volver a Capacidades", "Back to Capabilities", "Retour aux Capacités", "Voltar a Capacidades");
+  const buttonText = localize(locale, "Ver todas las capacidades", "See all capabilities", "Voir toutes les capacités", "Ver todas as capacidades");
 
   return (
     <main>
