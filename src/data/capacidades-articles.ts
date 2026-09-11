@@ -5,7 +5,9 @@ export interface CapacidadArticle {
   slugEn: string;
   title: string;
   titleEn?: string;
-  group: "novedades" | "capacidadesdestacadas";
+  group: "novedades" | "capacidadesdestacadas" | "historicodeversiones";
+  /** Version this article's card is filed under; only set for `group: "historicodeversiones"`. */
+  version?: string;
   excerpt: string;
   excerptEn?: string;
   paragraphs: string[];
@@ -378,7 +380,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "minor-improvements-and-bug-fixes",
     title: "Pequeñas mejoras y depuración de errores",
     titleEn: "Minor Improvements and Bug Fixes",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.17",
     excerpt: "Además de todo lo anterior, en la versión 0.17 se ha continuado depurando las prestaciones ya ofrecidas por QGISRed.",
     excerptEn: "In addition to all of the above, version 0.17 has continued to refine the features already offered by QGISRed.",
     paragraphsEn: [
@@ -400,7 +403,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "integration-of-epanet-toolkit-version-2-3",
     title: "Integración de la versión 2.3 de la Toolkit de EPANET",
     titleEn: "Integration of EPANET Toolkit Version 2.3",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.17",
     excerpt: "La versión 2.2 de la Toolkit de EPANET se lanzó en 2019 y fue incorporada a QGISRed en sus primeras versiones. Finalmente, en Julio de 2025 se lanzó la nueva versión 2.3.",
     excerptEn: "The EPANET Toolkit version 2.2 was released in 2019 and incorporated into QGISRed in its early versions. Finally, in July 2025, the new version 2.3 was released.",
     paragraphsEn: [
@@ -424,7 +428,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "new-options-in-the-project-manager",
     title: "Nuevas opciones del Gestor de Proyectos",
     titleEn: "New Options in the Project Manager",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.17",
     excerpt: "El Gestor de Proyectos de QGISRed es una de las herramientas más utilizadas por los usuarios, pues fácilmente permite pasar de un escenario a otro. La versión 0.17 viene a completar varias opciones muy demandadas.",
     excerptEn: "The QGISRed Project Manager has received several enhancements in version 0.17 that streamline project organization and sharing.",
     paragraphsEn: [
@@ -450,7 +455,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "scenario-manager-compatible-with-epanet",
     title: "Gestión de escenarios compatibles con EPANET",
     titleEn: "Scenario Manager Compatible with EPANET",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.17",
     excerpt: "El Gestor de Escenarios de QGISRed permite modificar en bloque los valores de un determinado parámetro del modelo. En la nueva versión los escenarios pueden exportarse/importarse siguiendo los mismos formatos usados por EPANET.",
     excerptEn: "The QGISRed Scenario Manager allows bulk modification of model parameters. In the new version, scenarios can be exported/imported using the same formats as EPANET.",
     paragraphsEn: [
@@ -474,7 +480,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "chaining-successive-simulations",
     title: "Encadenamiento de simulaciones sucesivas",
     titleEn: "Chaining Successive Simulations",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.17",
     excerpt: "La versión 0.17 de QGISRed permite encadenar simulaciones desde el Gestor de Escenarios, exportando el estado final de los elementos de regulación e importándolo como estado inicial para la etapa siguiente.",
     excerptEn: "Version 0.17 of QGISRed allows chaining simulations from the Scenario Manager, exporting the final state of regulation elements and importing it as the initial state for the next stage.",
     paragraphsEn: [
@@ -500,7 +507,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "identification-of-up-to-13-statuses-in-pipes-pumps-and-valves",
     title: "Identificación de hasta 13 estados en tuberías, bombas y válvulas",
     titleEn: "Identification of up to 13 Statuses in Pipes, Pumps and Valves",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.17",
     excerpt: "Aunque EPANET diferencia hasta 8 estados distintos, en QGISRed se distinguen hasta 13 estados que completan las diferentes situaciones que pueden darse en tuberías, bombas y válvulas.",
     excerptEn: "Although EPANET distinguishes up to 8 different states, QGISRed identifies up to 13 states covering all possible situations for pipes, pumps and valves.",
     paragraphsEn: [
@@ -526,7 +534,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "new-isolated-segment-exploration-tool",
     title: "Nueva herramienta para la identificación de segmentos aislados",
     titleEn: "New Isolated Segment Exploration Tool",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.17",
     excerpt: "Una de las prestaciones más solicitadas en un software de simulación es la determinación de las válvulas que hay que cerrar para aislar un segmento de la red en torno a un punto donde ha producido una avería.",
     excerptEn: "One of the most requested features in simulation software is the determination of which valves must be closed to isolate a network segment around a failure point.",
     paragraphsEn: [
@@ -552,7 +561,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "debugging-and-enhancement-of-previous-features",
     title: "Depuración y Mejora de Prestaciones Anteriores",
     titleEn: "Debugging and Enhancement of Previous Features",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.16",
     excerpt: "La versión 0.16 ha mejorado algunos aspectos de las versiones anteriores, como la barra de tiempos, el orden y clasificación de algunas opciones de menú, y nuevos campos en la importación de shapes.",
     excerptEn: "Version 0.16 improved several aspects of previous versions, including the timeline feature, menu organization, and new fields during shape imports.",
     paragraphsEn: [
@@ -574,7 +584,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "identification-of-demand-sectors-dma",
     title: "Identificación de los Sectores de Demanda (DMA)",
     titleEn: "Identification of Demand Sectors (DMA)",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.16",
     excerpt: "A partir de la versión 0.15 ya se pueden declarar las válvulas de corte superpuestas a las tuberías, y con la versión 0.16 también se pueden declarar caudalímetros y contadores para identificar sectores de demanda.",
     excerptEn: "Starting with version 0.15, isolation valves can be declared on pipes, and version 0.16 introduced the ability to add flow meters to identify demand sectors.",
     paragraphsEn: [
@@ -598,7 +609,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "adding-meters-to-the-model",
     title: "Incorporación de los Medidores al Modelo",
     titleEn: "Adding Meters to the Model",
-    group: "capacidadesdestacadas",
+    group: "historicodeversiones",
+    version: "0.16",
     excerpt: "Una de las características más importantes que se le deben exigir al modelo hidráulico de una red en explotación es que reproduzca fielmente la realidad. En QGISRed los medidores son tratados como objetos con sus propias propiedades.",
     excerptEn: "One of the most important features required for the hydraulic model of a network in service is that it faithfully represents reality. In QGISRed, meters are treated as objects with their own properties.",
     paragraphsEn: [

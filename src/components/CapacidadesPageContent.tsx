@@ -59,9 +59,11 @@ interface CapacidadCardProps {
   imageWidth?: number;
   imageHeight?: number;
   readMoreText?: string;
+  /** Small label above the title, e.g. a version tag on an archived changelog card. */
+  eyebrow?: string;
 }
 
-function CapacidadCard({ title, description, slug, imageSrc, imageAlt, imageWidth, imageHeight, readMoreText = "Leer más" }: CapacidadCardProps) {
+function CapacidadCard({ title, description, slug, imageSrc, imageAlt, imageWidth, imageHeight, readMoreText = "Leer más", eyebrow }: CapacidadCardProps) {
   const href = { pathname: "/capacidades/[slug]", params: { slug } } as const;
   return (
     <div
@@ -80,6 +82,14 @@ function CapacidadCard({ title, description, slug, imageSrc, imageAlt, imageWidt
         </div>
       )}
       <div className="p-4 flex flex-col flex-1">
+        {eyebrow && (
+          <span
+            className="font-semibold uppercase mb-1"
+            style={{ fontSize: "11px", letterSpacing: "0.04em", color: "rgb(95, 189, 211)" }}
+          >
+            {eyebrow}
+          </span>
+        )}
         <h3 className="font-semibold mb-2" style={{ fontSize: "14px", color: "rgb(0, 9, 25)", lineHeight: "1.35" }}>
           <Link href={href} style={{ color: "inherit", textDecoration: "none" }} className="hover:text-[rgb(95,189,211)] transition-colors">
             {title}
@@ -1073,26 +1083,30 @@ const historico = [
 export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
   const isEn = locale === "en";
   const readMoreText = isEn ? "Read more" : "Leer más";
-  const comingSoonText = isEn ? "Coming soon" : "Próximamente";
 
   const novedadesArticles = capacidadesArticles.filter((a) => a.group === "novedades");
   const destacadasArticles = capacidadesArticles.filter((a) => a.group === "capacidadesdestacadas");
+  const historicoArticles = capacidadesArticles.filter((a) => a.group === "historicodeversiones");
+  const historicoVersions = Array.from(new Set(historicoArticles.map((a) => a.version!))).sort((a, b) =>
+    b.localeCompare(a, undefined, { numeric: true })
+  );
 
   return (
     <main>
       {/* Intro */}
       <section className="w-full bg-white" style={{ paddingTop: "64px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
+          <div className="columns-1 md:columns-2 gap-12">
           {isEn ? (
             <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 After the{" "}
                 <Link href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
                   Presentation
                 </Link>
                 , you will be eager to know what capabilities the QGISRed plugin offers. In this section we will tell you. Since it is still a product in development, we will do it in stages.
               </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 First we will show you the{" "}
                 <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
                 {" "}included in the most recent version. Then we will highlight the{" "}
@@ -1105,19 +1119,19 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>each Version</a>
                 .
               </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 To give you a more accurate idea of the versioning, note that all current versions start with 0, as the product is still in development. The goal of the first version of QGISRed is to complete all planned improvements over what EPANET 2.2 currently offers, complete the additional capabilities aimed at facilitating model construction, and finalize the model extension to include all additional necessary elements and their functionalities, until the real behaviour of a network can be reproduced for any chosen period, in connection with field data, as a first step towards building a Digital Twin.
               </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 At that point we will launch version 1.0 and open the doors to completing the product with other much more practical and professional features. In the meantime, we are on version 0.15 and estimate that there are about 5 additional versions to complete all the planned objectives.
               </p>
-              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 Enter the following sections, and you will learn all about it in more detail.
               </p>
             </>
           ) : (
             <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 Después de la{" "}
                 <Link href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
                   Presentación
@@ -1126,7 +1140,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 contamos. Pero puesto que es un producto aún en desarrollo, iniciado hace algunos años, lo vamos a hacer
                 por etapas.
               </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 En primer lugar te mostraremos las{" "}
                 <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novedades</a>
                 {" "}incluidas en la versión más reciente. A continuación te resaltaremos las{" "}
@@ -1139,7 +1153,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versión</a>
                 .
               </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 Para que tengas una idea más exacta de la numeración seguida en el versionado, observa que todas las
                 versiones actuales empiezan por 0, por ser un producto aún en desarrollo. El objetivo de la primera versión
                 de QGISRed es concluir todas las mejoras previstas sobre lo que actualmente ofrece EPANET 2.2, completar
@@ -1148,7 +1162,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 reproducir el comportamiento real de una red para cualquier periodo elegido, en conexión con los datos de
                 campo, como primer paso para confeccionar un Gemelo Digital.
               </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 En ese momento lanzaremos la versión 1.0 y abriremos las puertas a completar el producto con otras
                 prestaciones mucho más prácticas y profesionales. Mientras tanto, vamos por la versión 0.15 y estimamos
                 que quedan unas 5 versiones adicionales para concluir todos los objetivos previstos. Básicamente falta por
@@ -1157,11 +1171,12 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 mostrar los resultados, y completar toda la casuística para reproducir la realidad con mayor fidelidad, lo
                 que puede conllevar añadir algunos componentes más en la parte del Gemelo Digital.
               </p>
-              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", maxWidth: "800px" }}>
+              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 Entra en las secciones siguientes, y conocerás todo ello con más detalle.
               </p>
             </>
           )}
+          </div>
         </div>
       </section>
 
@@ -1366,7 +1381,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
             </p>
           )}
 
-          <div className="mb-8">
+          <div>
             {proximasPrestaciones.map((group) => (
               <PrestacionGroup
                 key={group.group}
@@ -1375,10 +1390,6 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               />
             ))}
           </div>
-
-          <p className="italic" style={{ fontSize: "15px", color: "rgb(120, 120, 120)", lineHeight: "1.7" }}>
-            {comingSoonText}
-          </p>
         </div>
       </section>
 
@@ -1436,6 +1447,27 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </div>
             </div>
           </div>
+
+          {historicoVersions.map((version) => (
+            <div key={version} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
+              {historicoArticles
+                .filter((article) => article.version === version)
+                .map((article) => (
+                  <CapacidadCard
+                    key={article.slug}
+                    slug={getArticleSlug(article, locale)}
+                    title={isEn ? (article.titleEn ?? article.title) : article.title}
+                    description={isEn ? (article.excerptEn ?? article.excerpt) : article.excerpt}
+                    imageSrc={article.image}
+                    imageAlt={isEn ? (article.imageAltEn ?? article.imageAlt) : article.imageAlt}
+                    imageWidth={article.imageWidth}
+                    imageHeight={article.imageHeight}
+                    readMoreText={readMoreText}
+                    eyebrow={isEn ? `What's New v${version}` : `Novedades v${version}`}
+                  />
+                ))}
+            </div>
+          ))}
         </div>
       </section>
     </main>
