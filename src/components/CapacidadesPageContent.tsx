@@ -1183,50 +1183,20 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Novedades */}
       <section id={anchorId("novedades", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={isEn ? "What's New in version 0.18" : "Novedades versión 0.18"} />
+          <SectionHeading title={isEn ? "What's New in version 0.19" : "Novedades versión 0.19"} />
 
           {isEn ? (
-            <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                This new version 0.18 of QGISRed includes many of the advances made over the last 3 years since version 0.17 was completed, even though the launch of the latter was delayed until recently.
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                The momentum in recent years has been thanks to the collaboration established with the Inter-American Development Bank (IDB), which has trusted QGISRed as a free tool for analysing solutions for the water supply improvement projects it finances.
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                Some of these improvements have been previewed through beta versions 0.17.1 to 0.17.4, released on the{" "}
-                <a href="https://github.com/qgisred/QGISRed" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GitHub</a>
-                {" "}platform of QGISRed.
-              </p>
-              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                The following cards highlight the <strong>most important new features of version 0.18.</strong>{" "}
-                For a more detailed description of all the new features, visit the{" "}
-                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Version History</a> section.
-              </p>
-            </>
+            <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+              This new version 0.19 of QGISRed includes numerous new features and improvements. The following cards highlight the <strong>most important new features of version 0.19.</strong>{" "}
+              For a more detailed description of all the new features, visit the{" "}
+              <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Version History</a> section.
+            </p>
           ) : (
-            <>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                En esta nueva versión 0.18 de QGISRed se recogen muchos de los avances realizado en los últimos 3 años
-                desde que se terminó la versión 0.17, aunque el lanzamiento de ésta última se haya retrasado hasta fechas
-                recientes.
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                El impulso dado en los últimos años ha sido gracias a la colaboración establecida con el Banco
-                Interamericano de Desarrollo (BID), quien ha confiado en QGISRed para su uso como herramienta libre en el
-                análisis de soluciones para los proyectos de mejora de los abastecimientos de agua que financia.
-              </p>
-              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                Algunas de estas mejoras se han ido adelantando a través de las versiones beta 0.17.1 a 0.17.4, liberadas en la plataforma de{" "}
-                <a href="https://github.com/qgisred/QGISRed" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GitHub</a>
-                {" "}de QGISRed.
-              </p>
-              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                En las fichas siguentes se destacan las <strong>novedades más importantes de la versión 0.18. </strong>
-                Para una descripción más detallada de todas las novedades visitar la sección{" "}
-                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</a>.
-              </p>
-            </>
+            <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+              Esta nueva versión 0.19 de QGISRed incluye numerosas mejoras y nuevas prestaciones. En las fichas siguientes se destacan las <strong>novedades más importantes de la versión 0.19. </strong>
+              Para una descripción más detallada de todas las novedades visitar la sección{" "}
+              <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de versiones</a>.
+            </p>
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

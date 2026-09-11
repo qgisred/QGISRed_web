@@ -3,6 +3,24 @@ import { Link } from "@/i18n/navigation";
 import type { CapacidadArticle } from "@/data/capacidades-articles";
 import { anchorHash } from "@/i18n/anchors";
 
+function renderParagraph(text: string, article: CapacidadArticle, isEn: boolean) {
+  if (!article.inlineIcon || !text.includes("{icon}")) return text;
+  const [before, after] = text.split("{icon}");
+  return (
+    <>
+      {before}
+      <Image
+        src={article.inlineIcon}
+        alt={(isEn ? article.inlineIconAltEn : article.inlineIconAlt) ?? ""}
+        width={article.inlineIconWidth}
+        height={article.inlineIconHeight}
+        className="inline-block align-text-bottom mx-1"
+      />
+      {after}
+    </>
+  );
+}
+
 export function CapacidadDetailContent({ article, locale }: { article: CapacidadArticle; locale: string }) {
   const isEn = locale === "en";
   // Both group names double as anchor keys on the capabilities page.
@@ -48,7 +66,7 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
                   className="mb-4"
                   style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}
                 >
-                  {p}
+                  {renderParagraph(p, article, isEn)}
                 </p>
               ))}
 

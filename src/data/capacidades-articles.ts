@@ -29,16 +29,161 @@ export interface CapacidadArticle {
    */
   imageWidth?: number;
   imageHeight?: number;
+  /** A small UI icon rendered inline wherever a paragraph contains the `{icon}` marker. */
+  inlineIcon?: string;
+  inlineIconAlt?: string;
+  inlineIconAltEn?: string;
+  inlineIconWidth?: number;
+  inlineIconHeight?: number;
 }
 
 export const capacidadesArticles: CapacidadArticle[] = [
+  // ── Novedades versión 0.19 ────────────────────────────────────────────────
+  {
+    slug: "edicion-de-propiedades-en-grupo",
+    slugEn: "group-editing-of-properties",
+    title: "Edición de propiedades en grupo",
+    titleEn: "Group Editing of Properties",
+    group: "novedades",
+    excerpt: "El Editor de Propiedades actual de QGISRed permite modificar individualmente cualquier propiedad de cualquier elemento de la red. Pero muchas veces queremos editar las propiedades de un grupo elegido de elementos en una sola acción.",
+    excerptEn: "QGISRed's current Property Editor lets you modify any property of any network element individually. But often we want to edit the properties of a chosen group of elements in a single action.",
+    paragraphsEn: [
+      "QGISRed's current Property Editor lets you modify any property of any network element individually. But often we want to assign a common property to many elements, or make the same change to all of them at once — that is, edit the properties of a chosen group of elements in a single action.",
+      "The new Group Property Editing option in QGISRed's Edit menu lets you make changes at once to the properties of a group of chosen elements, which must all be of the same type. Any of the existing network elements can be chosen for modification, whether basic elements or elements specific to the Digital Twin. Contamination sources and multiple demands are treated as independent selectable entities.",
+      "The elements to act on can be restricted by a spatial selection or by applying a filter to one of their properties. For the spatial selection, it is recommended to use QGISRed's multiple selector, available as an option in the Edit menu, while to apply a filter you can choose any property of the element and set a condition that depends on the property type. If the property is numeric, relational operators are offered; if it is text, logical operators are offered; and if it is an enumerated property, the unique values used in the project for that property are offered. Only one condition is allowed per action.",
+      "As for the property to modify, if it is enumerated, the only possible action is to replace the current value with one of the values allowed for that property. If the property is numeric, in addition to replacing its value, certain mathematical operations can be performed on the current value, such as adding or subtracting a quantity, multiplying or dividing by a factor, or capping the value of the magnitude. Finally, if the property is free text, in addition to replacing the text with another, prefixes or suffixes can be added to the current text, or one string can be swapped for another.",
+      "When the Apply button is pressed, the changes made can be seen provisionally in the attribute table, which will open automatically to show them. Only when the Accept button is pressed will all the changes made be consolidated. Since the changes cannot be undone, if you decide not to apply the proposed changes after all, they can still be discarded by pressing the Cancel button.",
+    ],
+    paragraphs: [
+      "El Editor de Propiedades actual de QGISRed permite modificar individualmente cualquier propiedad de cualquier elemento de la red. Pero muchas veces queremos asignar una propiedad común a muchos elementos, o realizar el mismo cambio para todos ellos, es decir, editar las propiedades de un grupo elegido de elementos en una sola acción.",
+      "La nueva opción de Edición de Propiedades en Grupo del menú Edit de QGISRed permite realizar cambios de una vez en las propiedades de un grupo de elementos elegidos, los cuales tienen que ser todos del mismo tipo. Como elementos a modificar puede elegirse cualquiera de los elementos existentes en la red, ya sean elementos básicos o propios del Gemelo Digital. Las fuentes contaminantes y las demandas múltiples se consideran como entidades elegibles independientes.",
+      "Los elementos sobre los cuales se va a actuar pueden restringirse mediante una selección espacial o aplicando un filtro a alguna de sus propiedades. Para realizar la selección espacial se recomienda usar el selector múltiple de QGISRed, ubicado como una opción del menú Edit, mientras que para aplicar un filtro puede seleccionarse cualquier propiedad del elemento y establecer una condición que depende del tipo de propiedad. Si la propiedad es numérica se ofrecen operadores relacionales, si es de texto se ofrecen operadores lógicos, mientras que si es una propiedad enumerada se ofrecen los valores únicos usados en el proyecto para dicha propiedad. Solo se permite una condición por acción.",
+      "En cuanto a la propiedad a modificar, si es enumerada la única acción posible es reemplazar el valor actual por alguno de los valores permitidos para esa propiedad. Si la propiedad es numérica, además de reemplazar su valor, pueden realizarse determinadas operaciones matemáticas sobre el valor actual, como añadir o restar una cantidad, multiplicar o dividir por un factor o limitar el valor de la magnitud. Finalmente, si la propiedad es de texto libre, además de reemplazar el texto por otro, se pueden añadir prefijos o sufijos al texto actual, o cambiar una cadena de caracteres por otra.",
+      "Al pulsar el botón Aplicar los cambios realizados pueden verse provisionalmente en la tabla de atributos, la cual se abrirá automáticamente para mostrarlos. Solo al pulsar el botón Aceptar se consolidarán todos los cambios realizados. Dado que los cambios no pueden deshacerse, si no se quieren aplicar finalmente los cambios propuestos, aún pueden ignorarse pulsando el botón Cancelar.",
+    ],
+  },
+  {
+    slug: "nuevas-opciones-para-asignar-demandas-a-los-nudos",
+    slugEn: "new-options-for-assigning-demands-to-nodes",
+    title: "Nuevas opciones para asignar demandas a los nudos",
+    titleEn: "New Options for Assigning Demands to Nodes",
+    group: "novedades",
+    excerpt: "El Constructor de Demandas Nodales de QGISRed es una de sus herramientas más potentes. La versión 0.19 introduce numerosas mejoras a partir de los comentarios de los usuarios.",
+    excerptEn: "QGISRed's Nodal Demand Builder is one of its most powerful tools. Version 0.19 introduces numerous improvements based on user feedback.",
+    paragraphsEn: [
+      "QGISRed's Nodal Demand Builder is one of its most powerful tools. Even so, there was still room for improvement based on feedback from some users. The main improvements introduced in version 0.19 are summarised below.",
+      "In the dialog section for assigning demands globally to the whole network, an option has been added to distribute the total flow among the selected nodes taking into account the diameter of the pipes that meet at them, to avoid small-diameter pipes having to carry large flows. The same criterion can be applied when distributing demand by sectors.",
+      "Many changes have been introduced in the section for distributing point consumption, the most common case. It is now possible to create point consumption from consumption declared over linear stretches or over parcels. Units can be chosen for imported consumption, which can ultimately be stored in a dedicated QGISRed theme capable of holding consumption for different billing periods. This new dedicated theme will be housed in a new layer group called Auxiliary Layers. It is also possible to keep several alternative point-consumption themes in the same layer group, select whichever is needed at any given time, and distribute only the selected consumption from that theme.",
+      "Another important improvement is the ability to categorise point consumption by water use: domestic, industrial, etc. This distinction means consumption will be loaded onto nodes as differentiated multiple demands, aggregating those in the same category. In addition, in this case consumption will be shown on the map differentiated by colour according to its category.",
+      "Regarding the location of the destination nodes for each point consumption, an option has been added to distribute it between the end nodes of the nearest pipe, instead of assigning it to the nearest node. In the latter case, a warning is given if the node is excessively far away. The alternative of distributing water among nodes within a given distance of the consumption point has been revised. Treating the end nodes of pumps and valves as demand nodes is now optional. Once the destination nodes for each consumption have been identified, the distribution can be made in inverse proportion to distance, considering the cross-sections of the pipes meeting at the nodes, or a weighting of both criteria.",
+      "Once the distribution has been carried out, a links theme can be added to the Auxiliary Layers group to show the flow transferred from each consumption point to each destination point, both in absolute terms and as a percentage. This theme is now editable, both regarding the layout of the links and the percentage of flow to be transferred through them.",
+      "In addition, the dialog now includes the option to consider demands located at service connections, if these have previously been declared as elements of the QGISRed model. In that case, the demand of each service connection will be distributed between the end nodes of the pipe it connects to, either in inverse proportion to the distance to the ends, or considering the diameter of the pipes meeting at each end, or a weighting of both criteria. When distributing consumption by service connections, these can likewise be categorised by previously assigning a water use to each service connection.",
+      "In the following tabs, the efficiency is adjusted for the recorded consumption to account for non-revenue water (NRW), and a pattern curve is assigned to them, either globally or by sectors. When doing so by sectors, the efficiency and pattern must be read from a sectors theme, which can now be imported and added to the Auxiliary Layers group for editing. The same theme has been extended to also hold the global demand data when it is declared by sectors.",
+      "In addition, the option has been added to declare efficiencies and patterns by demand category. For each proposed efficiency value, the results can be previewed before applying them. Efficiencies can also be declared at the global, sector and category levels simultaneously, and these can also be automatically readjusted hierarchically to comply with the efficiencies of each higher level. Similarly, patterns declared at a lower level can be readjusted to match those declared at a higher level, from the category level up to the global level.",
+    ],
+    paragraphs: [
+      "El Constructor de Demandas Nodales de QGISRed es una de sus herramientas más potentes. Pero aún así había opciones de mejorarlo a raíz de los comentarios de algunos usuarios. A continuación, se resumen las principales mejoras introducidas en la versión 0.19.",
+      "En la sección del diálogo destinada a asignar las demandas de forma global a toda la red, se ha incluido la opción de repartir el caudal total entre los nudos seleccionados teniendo en cuenta el diámetro de las tuberías que confluyen en ellos, para evitar que tuberías de pequeño diámetro tengan que transportar grandes caudales. Este mismo criterio puede aplicarse en el reparto de la demanda por sectores.",
+      "En la sección destinada a repartir los consumos puntuales, el caso más usual, se han introducido muchos cambios. Ahora es posible crear consumos puntuales a partir de consumos declarados por tramos lineales o por parcelas. Se pueden elegir las unidades para los consumos importados, y éstos pueden alojarse finalmente en un tema propio de QGISRed, el cual puede almacenar los consumos para diferentes periodos de facturación. El nuevo tema propio se alojará en un nuevo grupo de capas denominado Capas Auxiliares. También es posible mantener varios temas de consumos puntuales alternativos alojados en el mismo grupo de capas, seleccionar el que convenga en cada momento y además repartir solo los consumos seleccionados de dicho tema.",
+      "Otra mejora importante es la posibilidad de categorizar los consumos puntuales según el uso del agua: doméstico, industrial, etc. Esta diferenciación hará que los consumos se carguen en los nudos diferenciados como demandas múltiples, agregando aquellos que sean de la misma categoría. Además, en este caso los consumos se mostrarán en el mapa diferenciados por colores según su categoría.",
+      "En cuanto a la localización de los nudos de destino de cada consumo puntual se ha añadido la opción de repartirlo entre los nudos extremos de la tubería más próxima, en lugar de hacerlo al nudo más próximo. En este último caso se avisa si el nudo queda excesivamente alejado. La alternativa de repartir el agua entre los nudos distantes menos de una distancia del punto de consumo ha sido revisada. La consideración de los nudos extremos de bombas y válvulas como nudos de demanda es ahora optativa. Una vez identificados los nudos de destino de cada consumo, el reparto puede realizarse en proporción inversa a la distancia, o considerando las secciones de las tuberías que confluyen en los nudos, o una ponderación de ambos criterios.",
+      "Una vez realizado el reparto, se puede añadir al grupo de Capas Auxiliares un tema de enlaces para mostrar el caudal transferido desde cada punto de consumo a cada punto de destino, en términos absolutos y también porcentualmente. Este tema es ahora editable, tanto en lo que se refiere al trazado de los enlaces como al porcentaje de caudal a transferir a través de los mismos.",
+      "Además, se ha incorporado al diálogo la opción de considerar las demandas localizadas en las acometidas, si éstas se han declarado previamente como elementos del modelo de QGISRed. En tal caso la demanda de cada acometida se repartirá entre los nudos extremos de la tubería a la que conecta, bien inversamente proporcional a la distancia de los extremos, bien considerando el diámetro de las tuberías que confluyen en cada extremo o una ponderación de ambos criterios. En el caso de repartir los consumos por acometidas, éstos pueden igualmente categorizarse asignando previamente un uso del agua para cada acometida.",
+      "En las pestañas siguientes se ajusta el rendimiento a los consumos registrados para tener en cuenta el ANR y se les asigna una curva patrón, bien de forma global o por sectores. En el caso de hacerlo por sectores hay que leer el rendimiento y el patrón de un tema de sectores, que ahora puede importarse y añadirse al grupo de Capas Auxiliares para ser editado. El mismo tema se ha ampliado para alojar también los datos globales de la demanda cuando se declara por sectores.",
+      "Además, se ha añadido la opción de declarar rendimientos y patrones por categorías de demanda. Para cada valor propuesto del rendimiento se pueden anticipar los resultados antes de aplicarlos. Además, se pueden declarar rendimientos a nivel global, por sectores y por categorías simultáneamente, y éstos pueden además reajustarse automáticamente de forma jerárquica para cumplir con los rendimientos de cada nivel superior. Análogamente, los patrones declarados a un nivel inferior se pueden reajustar para ajustarse a los declarados para un nivel superior, desde el nivel de las categorías hasta el nivel global.",
+    ],
+  },
+  {
+    slug: "confeccion-de-estadisticas",
+    slugEn: "creation-of-statistics",
+    title: "Confección de estadísticas",
+    titleEn: "Creation of Statistics",
+    group: "novedades",
+    excerpt: "Esta nueva herramienta de QGISRed está pensada para facilitar el trabajo de realizar estadísticas sobre las propiedades de los elementos que configuran la red, clasificadas por uno o hasta dos criterios.",
+    excerptEn: "This new QGISRed tool is designed to make it easier to compile statistics on the properties of the elements that make up the network, classified by one or up to two criteria.",
+    paragraphsEn: [
+      "This new QGISRed tool is designed to make it easier to compile statistics on the properties of the elements that make up the network. When compiling statistics for a property, it can also be classified by one or up to two criteria. For example, we can analyse base demands or elevations classified by ranges of the magnitude itself, find out the materials used by diameter ranges, determine pipe length classified by diameter or material, or even classified by diameter and material for each diameter, and so on. If a simulation has been run, the properties to analyse can also be extended to the calculation results. In addition, filters can be set to restrict the elements to analyse. In each case, the analysis results are shown both in table format and graphically as a histogram. The combinations are numerous, which gives a sense of the power of this new tool, as well as its internal complexity.",
+      "The new dialog has two tabs: the first specifies the query parameters, and the second shows the results, in the two formats mentioned: table and histogram. First you must choose the type of element whose properties you want to query. This includes all basic elements, multiple demands, sources, Digital Twin elements, and the generic Line and Node elements for evaluating hydraulic and quality results without distinguishing the type of line or node.",
+      "It is possible to filter the elements to be analysed when compiling statistics, by setting a single condition on one of the properties. This condition depends on the type of property and can be applied to any property of the element, including the calculation results for the current time. Alternatively, the elements to analyse can also be restricted to the elements selected using any of the tools available in QGIS or QGISRed's multiple selector.",
+      "The property to be analysed can be numeric or enumerated, with different results in each case. If it is numeric, the count, sum, mean, and maximum and minimum values are shown. If it is enumerated, the count and the unique values that meet the conditions are shown.",
+      "The statistical analysis can simply refer to the selected elements and the chosen property, or it can be classified by ranges of another property of the same element, if numeric, or by categories if enumerated. If a numeric property is used, the ranges can be declared automatically under various criteria, or manually, allowing any number of ranges to be set. The classification property can be the same property being analysed, in which case we obtain the statistics for that property by ranges.",
+      "When the analysis is classified by a property, the table shows the different statistics in columns, using one row per class and the last row for the totals. As for the histogram, each bar represents a class, while the vertical axis shows the statistic chosen from a dropdown.",
+      "If desired, a second property of the same element can be used to perform a finer classification. This second property can also be numeric or alphanumeric, and in the first case the ranges can be declared in the same way. In that case, the results table becomes a two-way table, with the first classification property occupying the rows and the second the columns. The statistic to display in each cell can be chosen from a dropdown. The histogram, in turn, adds a second dropdown to filter by the range or category of the second property.",
+    ],
+    paragraphs: [
+      "Esta nueva herramienta de QGISRed está pensada para facilitar el trabajo de realizar estadísticas sobre las propiedades de los elementos que configuran la red. Al realizar las estadísticas de una propiedad, ésta puede además clasificarse por uno o hasta por dos criterios. Por ejemplo, podemos analizar las demandas básicas o las elevaciones clasificadas por rangos de la propia magnitud, conocer los materiales empleados por rangos de diámetros, determinar la longitud de las tuberías clasificadas por diámetros o por materiales, o incluso clasificadas por diámetros y por materiales para cada diámetro, etc. En el caso de realizar una simulación, las propiedades a analizar pueden extenderse también a los resultados del cálculo. Además, podemos establecer filtros para restringir los elementos a analizar. En cada caso, los resultados del análisis se muestran tanto en formato tabla como en formato gráfico mediante un histograma. Las combinaciones son múltiples, lo que permite vislumbrar la potencia de esta nueva herramienta, y también su complejidad interna.",
+      "El nuevo diálogo tiene dos pestañas, en la primera se especifican los parámetros de la consulta, y en la segunda se muestran los resultados, en los dos formatos indicados: tabla e histograma. Primeramente hay que elegir el tipo de elemento cuyas propiedades se quieren consultar. Se incluyen todos los elementos básicos, las demandas múltiples, las fuentes, los elementos de Gemelo Digital, y los elementos genéricos Línea y Nudos para evaluar los resultados hidráulicos y de calidad sin diferenciar el tipo de línea o nudo.",
+      "Es posible filtrar los elementos a analizar para confeccionar las estadísticas, estableciendo una condición única para alguna de las propiedades. Dicha condición depende del tipo de propiedad, y puede aplicarse a cualquier propiedad del elemento, incluidos los resultados del cálculo para el instante actual. Como alternativa los elementos a analizar pueden también restringirse a los elementos seleccionados usando cualquiera de las herramientas disponibles en QGIS o el selector múltiple de QGISRed.",
+      "La propiedad a analizar puede ser numérica o enumerada, siendo los resultados distintos. Si es numérica se muestra la cantidad, la suma, la media y los valores máximo y mínimo. Si es enumerada se indica la cantidad y los valores únicos que cumplen las condiciones.",
+      "El análisis estadístico puede referirse sin más a los elementos seleccionados y la propiedad elegida, o puede clasificarse por rangos de otra propiedad del mismo elemento, si es numérica, o por categorías si es enumerada. Si se usa una propiedad numérica los rangos pueden declararse automáticamente bajo diversos criterios, o de forma manual, pudiendo establecer cualquier número de rangos. La propiedad de clasificación puede ser la misma propiedad analizada, en cuyo caso obtendremos los estadísticos de esa propiedad por rangos.",
+      "Cuando se elige clasificar el análisis por una propiedad, en la tabla se muestran los diferentes estadísticos en columnas, empleando una fila para cada clase, y la última para los totales. En cuanto al histograma, cada barra representa una clase, mientras que en el eje vertical se muestra el estadístico elegido desde un desplegable.",
+      "Si se desea es posible usar una segunda propiedad del mismo elemento para realizar una clasificación más fina. Esta segunda propiedad puede ser también numérica o alfanumérica y en el primer caso se pueden declarar los rangos del mismo modo. En tal caso la tabla de resultados se convierte en una tabla de doble entrada, ocupando la primera propiedad de clasificación las filas, y la segunda las columnas. El estadístico a mostrar en cada casilla es elegible en un desplegable. Por su parte, el histograma añade un segundo desplegable para filtrar por el rango o categoría de la segunda propiedad.",
+    ],
+  },
+  {
+    slug: "mejoras-en-el-panel-de-resultados",
+    slugEn: "improvements-to-the-results-panel",
+    title: "Mejoras en el Panel de resultados",
+    titleEn: "Improvements to the Results Panel",
+    group: "novedades",
+    excerpt: "El panel de resultados es el 'centro de operaciones' para analizar los resultados de una simulación. La versión 0.19 de QGISRed completa sus opciones con muchas novedades.",
+    excerptEn: "The results panel is the 'operations centre' for analysing simulation results. Version 0.19 of QGISRed rounds out its options with many new features.",
+    inlineIcon: "/images/capacidades/icono-opciones-mapa-resultados.png",
+    inlineIconAlt: "Icono de opciones del mapa de resultados",
+    inlineIconAltEn: "Results map options icon",
+    inlineIconWidth: 21,
+    inlineIconHeight: 16,
+    paragraphsEn: [
+      "The results panel is the 'operations centre' for analysing the results of a simulation. Until now, this panel showed the bar for navigating through time, the selector for the variable to display on the map for nodes and lines coloured by range, and the options for showing or hiding flow direction and variable values as labels on the map. Version 0.18 introduced the option to view instantaneous values or certain statistical values calculated over the whole simulation period. Version 0.19 of QGISRed rounds out the previous options with many new features.",
+      "The first is that time can now be displayed in various formats: elapsed from the start of the simulation, or as clock time from the time specified as the simulation start. In the first case, you can choose between showing continuous hours or hours grouped by day. In the second, you can choose between am/pm or 24-hour format. As for the time navigation bar, you can now step forward/backward one step at a time, or start an animation at a controlled speed with the option to loop indefinitely.",
+      "Another very important improvement is that you can now choose between viewing results at paced instants, according to the time interval set for reports, or showing results for every calculation instant, including the intermediate instants at which some change occurs. This is of great importance for knowing what happens at every moment, and improves on the results offered by EPANET and many commercial software packages. The intermediate instants can be cross-checked against those shown in the Status Report displayed on another tab of the same panel. Switching between paced instants and all instants, as well as showing instantaneous or statistical values, does not require resimulating.",
+      "The options for customising the results map are now numerous and are shown on a new tab accessible with the {icon} button. On the one hand, it is possible to change the label font size and the number of decimal places shown for each magnitude. Labels can be shown in black or in the colour of the corresponding range in the legend. In addition, only the value can be shown, or also the element's ID. As for symbology, nodes can be shown with or without a border, and the size of nodes or the thickness of lines can be made proportional to the value of the magnitude. Since every symbol has a predefined default size, customisable from the Legend Editor, this size can be temporarily affected by a factor without changing its default values. The map background colour can also be changed, chosen from a palette. Finally, all these changes will remain linked to the project for future sessions, but can be restored to their default values at any time.",
+      "Another important improvement is the option to show, in a histogram, the distribution of the values of the chosen variable for nodes or lines at the current instant. The histogram matches the legend and can show the number of elements for each range in absolute or relative terms. A cumulative-values curve can also be overlaid for each value of the variable, expressed in absolute or relative terms. The chart can be expanded at any time into a resizable floating window, or collapsed back into the panel. The histogram updates whenever the time instant changes, for whichever options are chosen.",
+      "Finally, given how important it is to know the evolution of any variable over time, the option has been added to view, in the same panel, a simplified evolution curve for the chosen variable of nodes or lines, as an alternative to the fuller chart used to show evolution curves, which has many more options. This chart shows the evolution of the current variable for the chosen network element, which is highlighted on the map. The X axis shows time according to the chosen format, and a cursor moves along the curve as you move along the time bar. The simplified chart can only show one curve at a time, and it alternates with the histogram chart, occupying the same space, but it can be expanded into a floating window just like the histogram.",
+    ],
+    paragraphs: [
+      "El panel de resultados es el 'centro de operaciones' para analizar los resultados de una simulación. Hasta ahora en dicho panel se mostraba la barra para navegar en el tiempo, el selector de la variable a mostrar en el mapa para los nudos y líneas coloreados por rangos, y las opciones para mostrar o no en el mapa la dirección del flujo y los valores de las variables como etiquetas. La versión 0.18 incorporó la opción de observar los valores instantáneos o determinados valores estadísticos calculados para todo el periodo de simulación. La versión 0.19 de QGISRed completa las opciones anteriores con muchas novedades.",
+      "La primera es que el tiempo se puede mostrar ahora en diversos formatos: desde el inicio de la simulación, o como hora civil a partir de la hora especificada como inicio de la simulación. En el primer caso se puede elegir entre mostrar las horas continuas o agrupadas por días. En el segundo se puede elegir entre el formato am/pm o 24 h. En cuanto a la barra navegación en el tiempo ahora se puede avanzar/retroceder paso a paso o bien activar una animación con velocidad controlada y la opción de repetir el ciclo indefinidamente.",
+      "Otra mejora muy importante es que ahora se puede elegir entre observar los resultados a instantes pautados, según el intervalo de tiempo establecido para los informes, o mostrar los resultados para todos los instantes de cálculo, incluidos los instantes intermedios en que se produce algún cambio. Ello es de gran importancia para saber qué sucede en cada momento, y mejora los resultados ofrecidos por EPANET y muchos software comerciales. Los instantes intermedios pueden cotejarse con los reflejados en el Informe de Estado que se muestra en otra pestaña del mismo panel. Para permutar entre instantes pautados o todos los instantes, así como para mostrar los valores instantáneos o estadísticos no es necesario volver a simular.",
+      "Las opciones para personalizar el mapa de resultados son ahora múltiples y se muestran en una pestaña nueva accesible con el botón {icon}. Por una parte, es posible modificar el tamaño de la fuente de las etiquetas y el número de decimales mostrado para cada magnitud. Las etiquetas pueden mostrarse en negro o con el color del rango correspondiente en la leyenda. Además, se puede mostrar solo el valor o también el ID del elemento. En cuanto a la simbología pueden mostrarse los nudos con o sin borde, y el tamaño de los nudos o el grosor de las líneas puede hacerse proporcional al valor de la magnitud. Puesto que todos los símbolos tienen predefinido un tamaño por defecto, personalizable desde el Editor de Leyendas, podemos afectar temporalmente dicho tamaño con un factor, sin cambiar sus valores por defecto. También podemos cambiar el color del fondo del mapa, a elegir desde una paleta. Finalmente, todos estos cambios permanecerán vinculados al proyecto para futuras sesiones, pero pueden restaurarse a sus valores por defecto en cualquier momento.",
+      "Otra mejora importante es la opción de mostrar en un histograma la distribución de los valores de la variable elegida para los nudos o las líneas, en el instante actual. El histograma es acorde con la leyenda y puede mostrar el número de elementos para cada rango en valores absolutos o relativos. También se puede superponer una curva de valores acumulados para cada valor de la variable, expresados en términos absolutos o relativos. En cualquier momento se puede expandir el gráfico para alojarlo en una ventana flotante de tamaño ajustable o volverlo a contraer en el panel. El histograma se actualiza al cambiar el instante de tiempo para cualquiera de las opciones elegidas.",
+      "Finalmente, dada la relevancia que tiene conocer la evolución de cualquier variable en el tiempo, se ha añadido la opción de ver en el mismo Panel una curva de evolución simplificada para la variable elegida de los nudos o las líneas, como alternativa al gráfico más completo usado para mostrar las curvas de evolución, con muchas más opciones. Este gráfico muestra la evolución de la variable actual para el elemento elegido de la red, el cual se muestra resaltado en el mapa. El eje X muestra los tiempos conforme al formato elegido, y un cursor se desplaza a lo largo de la curva al movernos sobre la barra de tiempo. El gráfico simplificado solo permite mostrar una curva a la vez, y se alterna con el gráfico de los histogramas ocupando su mismo espacio, pero es expandible a una ventana flotante como en el caso del histograma.",
+    ],
+  },
+  {
+    slug: "mejoras-en-los-graficos-de-evolucion-temporal",
+    slugEn: "improvements-to-the-time-series-charts",
+    title: "Mejoras en los gráficos de evolución temporal",
+    titleEn: "Improvements to the Time Series Charts",
+    group: "novedades",
+    excerpt: "En la versión 0.18 se incorporó a QGISRed la capacidad de mostrar en un panel propio las curvas de evolución en el tiempo de cualquier variable. La versión 0.19 amplía aún más las prestaciones de este importante componente.",
+    excerptEn: "Version 0.18 introduced the ability to display time-evolution curves for any variable in its own panel. Version 0.19 further extends the capabilities of this important component.",
+    paragraphsEn: [
+      "Version 0.18 introduced into QGISRed the ability to display, in its own panel, the time-evolution curves of any variable for any chosen network element. Curves for different variables of the same element, or for different elements, could be overlaid on the same chart and compared with each other, using one or two vertical axes. In version 0.19, the capabilities of this important component have been extended even further, as it is one of the most widely used for analysing simulation results.",
+      "It is now possible to customise the appearance of every element of the chart, including backgrounds, titles, axes, legends and the symbology of each curve, including the option to show the waypoints. All these options can be saved so the chart can be restored at any time, and templates can even be created.",
+      "In line with what is selected in the Results Panel, time can be shown as hours elapsed since the start of the simulation, in continuous format or grouped by days, or as clock time in am/pm or 24-hour format, from the time set as the simulation start. In addition, curves can pass through every calculation instant or only through the paced instants. The cursor can also be synchronised or not with the time shown in the Results Panel.",
+      "As new variables, it is now possible to observe the evolution of the volume of any tank or its overflow rate. In addition, a dropdown has been added to show the evolution of certain global variables, such as total flow produced, total flow consumed, the volume stored by all tanks or the total flow overflowed by them, as well as the evolution of average system pressure.",
+      "For all the options above, the numerical values of the waypoints of every curve can be shown in a table, synchronised with the cursor position. These values can be exported to a CSV file for further processing. The chart can also be saved as an image to include in a document.",
+      "Finally, it is now possible to create several charts and keep them active in different windows or tabs, editing them individually. All of them will be synchronised with the Results Panel. And if any data is changed and the model is resimulated, all the charts will update automatically.",
+    ],
+    paragraphs: [
+      "En la versión 0.18 se incorporó a QGISRed la capacidad de mostrar en un panel propio las curvas de evolución en el tiempo de cualquier variable para cualquier elemento elegido de la red. En el mismo gráfico se podían superponer las curvas para distintas variables del mismo elemento o para diferentes elementos y contrastarlas entre sí, usando uno o dos ejes verticales. En la versión 0.19 se han ampliado aún más las prestaciones de este importante componente, por ser uno de los más usados para analizar los resultados de una simulación.",
+      "Ahora ya se puede personalizar el aspecto de todos los elementos de la gráfica, incluidos fondos, títulos, ejes, leyendas y simbología de cada curva, incluyendo la opción de mostrar los puntos de paso. Todas estas opciones se pueden almacenar para recuperar el gráfico en cualquier momento, e incluso se pueden crear plantillas.",
+      "En sintonía con lo seleccionado en el Panel de resultados, el tiempo se puede mostrar en horas transcurridas desde el inicio de la simulación, en formato continuo o agrupadas por días, o como hora civil en formato am/pm o 24 h, desde la hora establecida para el inicio de la simulación. Además, las curvas pueden pasar por todos los instantes de cálculo o solo por los instantes pautados. Por otra parte, el cursor puede sincronizarse o no con la hora mostrada en el Panel de resultados.",
+      "Como nuevas variables, ahora se puede observar la evolución del volumen de cualquier depósito o el caudal desbordado. Pero además se ha añadido un desplegable para mostrar la evolución de ciertas variables globales, como son el caudal total producido, el caudal total consumido, el volumen almacenado por todos los depósitos o el caudal total desbordado por éstos, así como la evolución de la presión media en el sistema.",
+      "Para todas las opciones anteriores se puede mostrar en una tabla los valores numéricos de los puntos de paso de todas las curvas, sincronizados con la posición del cursor. Estos valores pueden exportarse a un fichero CSV para su posterior tratamiento. Pero también se puede guardar la gráfica como una imagen para incorporarla a un documento.",
+      "Finalmente, ahora se pueden crear varios gráficos y mantenerlos activos en distintas ventanas o pestañas, y editarlos de forma individual. Todos ellos estarán sincronizados con el Panel de resultados. Y si se cambia algún dato y se vuelve a simular, todos los gráficos se actualizarán automáticamente.",
+    ],
+  },
+
   // ── Novedades versión 0.18 ────────────────────────────────────────────────
   {
     slug: "mejoras-en-el-almacenamiento-de-resultados-y-su-visualizacion-sobe-el-mapa",
     slugEn: "improvements-to-the-storage-of-results-and-their-display-on-the-map",
     title: "Mejoras en el almacenamiento de resultados y su visualización sobre el mapa",
     titleEn: "Improvements to the Storage of Results and their Display on the Map",
-    group: "novedades",
+    group: "historicodeversiones",
+    version: "0.18",
     excerpt: "Hasta la versión 0.17 los resultados de una simulación se guardaban en un fichero propio desde donde se configuraban los diferentes ficheros shape asociados a cada variable.",
     excerptEn: "Prior to version 0.17, simulation outcomes were preserved in dedicated files that generated distinct shapefiles for individual variables.",
     paragraphsEn: [
@@ -61,7 +206,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "time-series-of-dynamic-variables",
     title: "Curvas de evolución de las variables dinámicas",
     titleEn: "Time Series of Dynamic Variables",
-    group: "novedades",
+    group: "historicodeversiones",
+    version: "0.18",
     excerpt: "Una de las prestaciones que más se echaba en falta en QGISRed era poder mostrar la evolución en el tiempo de cualquiera de las variables dinámicas contenidas en los resultados.",
     excerptEn: "One of the most requested features in QGISRed was the ability to visualize how dynamic variables change over time.",
     paragraphsEn: [
@@ -84,7 +230,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "creation-of-thematic-maps",
     title: "Confección de mapas temáticos",
     titleEn: "Creation of Thematic Maps",
-    group: "novedades",
+    group: "historicodeversiones",
+    version: "0.18",
     excerpt: "Si queremos ver en el mapa los valores de una determinada variable calculada para todos los elementos de la red en un instante dado, clasificados por colores o bien como etiquetas, disponemos del panel de resultados.",
     excerptEn: "Thematic maps display static physical properties of network elements categorized by color ranges, complementing dynamic results maps.",
     paragraphsEn: [
@@ -105,7 +252,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "properties-of-the-elements",
     title: "Propiedades de los elementos",
     titleEn: "Properties of the Elements",
-    group: "novedades",
+    group: "historicodeversiones",
+    version: "0.18",
     excerpt: "Los mapas temáticos y el panel de resultados permiten mostrar sobre el mapa los valores de cualquier propiedad elegida para todos los elementos de la red, o bien clasificarlos por colores.",
     excerptEn: "A new feature called Element Properties has been integrated into QGISRed's Queries menu.",
     paragraphsEn: [
@@ -129,7 +277,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "queries-by-properties",
     title: "Consultas por Propiedades",
     titleEn: "Queries by Properties",
-    group: "novedades",
+    group: "historicodeversiones",
+    version: "0.18",
     excerpt: "A través de los mapas temáticos podemos mostrar sobre el mapa el valor de una determinada propiedad para todos sus elementos. Pero si queremos saber qué elementos cumplen un determinado criterio...",
     excerptEn: "The Property Queries tool enables users to search for network elements meeting specific criteria rather than inspecting them visually.",
     paragraphsEn: [
@@ -155,7 +304,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "legends-editor",
     title: "Editor de leyendas",
     titleEn: "Legends Editor",
-    group: "novedades",
+    group: "historicodeversiones",
+    version: "0.18",
     excerpt: "Una de las prestaciones más importantes de QGIS es su capacidad para editar los estilos de las capas, y generar mapas muy variados. En QGISRed se ha creado una nueva opción para Editar las Leyendas.",
     excerptEn: "One of QGIS's most important features is its ability to edit layer styles. QGISRed has introduced a Legends Editor with a practical, streamlined set of options.",
     paragraphsEn: [
@@ -188,7 +338,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "identifying-elements-by-their-id",
     title: "Identificador de elementos a través de su ID",
     titleEn: "Identifying Elements by their ID",
-    group: "novedades",
+    group: "historicodeversiones",
+    version: "0.18",
     excerpt: "QGISRed dispone ahora de una herramienta para identificar directamente un elemento a través de su Id, resaltándolo en el mapa y mostrando todos los elementos conectados.",
     excerptEn: "QGISRed now has a tool to identify any element directly through its ID, highlighting it on the map and showing all connected elements.",
     paragraphsEn: [
@@ -211,7 +362,8 @@ export const capacidadesArticles: CapacidadArticle[] = [
     slugEn: "miscellaneous-and-debugging",
     title: "Otras y depuración de errores",
     titleEn: "Miscellaneous and Debugging",
-    group: "novedades",
+    group: "historicodeversiones",
+    version: "0.18",
     excerpt: "Además de todo lo anterior, la versión 0.18 incluye otras muchas mejoras de menor relevancia y continúa depurando las prestaciones ofrecidas por QGISRed en versiones anteriores.",
     excerptEn: "In addition to all of the above, version 0.18 includes many other minor improvements and continues to refine previous QGISRed features.",
     paragraphsEn: [
