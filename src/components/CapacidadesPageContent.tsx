@@ -1108,10 +1108,10 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 First we will show you the{" "}
-                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
                 {" "}included in the most recent version. Then we will highlight the{" "}
                 <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
-                {" "}already developed, so you don't have to discover them by reading the entire manual. If you prefer, you can also take a quick look at all{" "}
+                {" "}already developed, so you don&apos;t have to discover them by reading the entire manual. If you prefer, you can also take a quick look at all{" "}
                 <a href={anchorHash("prestacionesactuales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Current Capabilities</a>
                 . Finally, we will give you a preview of what is coming in{" "}
                 <a href={anchorHash("proximasprestaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Road Map</a>
@@ -1225,7 +1225,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 There are many, so we have ordered them by topic. We will gradually complete them as we have more content. As in the{" "}
-                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
                 {" "}section, the following cards are intended to provide only an introduction to each featured capability to motivate you. For further depth, we will refer you to tutorials and videos, and ultimately to the Manual.
               </p>
             </>
@@ -1275,7 +1275,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               </p>
               <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                 Some of these capabilities are described in more detail in{" "}
-                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What's New</a>
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>What&apos;s New</a>
                 , or in{" "}
                 <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Featured Capabilities</a>
                 , but to learn more about other capabilities you will need to consult the{" "}

@@ -205,7 +205,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               {isEn ? (
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    In the Presentation section we already told you that part of QGISRed's code is public and hosted on the GitHub portal{" "}
+                    In the Presentation section we already told you that part of QGISRed&apos;s code is public and hosted on the GitHub portal{" "}
                     <a
                       href="https://github.com/qgisred/QGISRed/issues"
                       target="_blank"
@@ -389,7 +389,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                     All this experience is being used to create the core of the QGISRed application and give each of its capabilities the greatest possible practical meaning.
                   </p>
                   <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    But, although QGISRed is free, and will surely be used by many engineering firms to offer modelling services to other companies, direct contact with the application's authors is always a guarantee of success.
+                    But, although QGISRed is free, and will surely be used by many engineering firms to offer modelling services to other companies, direct contact with the application&apos;s authors is always a guarantee of success.
                   </p>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     IIAMA can offer a <strong>wide variety of services to the managing companies</strong> of drinking water supplies.
@@ -445,7 +445,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
               {isEn ? (
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    The hiring of these services will always depend on the group's capacity to take on the proposed challenges, whose main objective for now is to complete the capabilities and features of QGISRed, and increase its robustness and reach.
+                    The hiring of these services will always depend on the group&apos;s capacity to take on the proposed challenges, whose main objective for now is to complete the capabilities and features of QGISRed, and increase its robustness and reach.
                   </p>
                   <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
                     Another way for our team to collaborate with the business environment is by providing{" "}
@@ -521,7 +521,7 @@ export function SoportePageContent({ locale = "es" }: { locale?: string }) {
                 Finally, QGISRed, due to its public nature and its link to a University, can also serve as a{" "}
                 <strong>testing platform </strong>for testing various alternatives to solving any given problem, giving open participation to all proposals. For example, to test algorithms that compete to anticipate the detection of an event or a leak, to optimise system operating costs, to maximise network resilience at minimum cost, etc., using common databases and a{" "}
                 <Link href={{ pathname: "/utilizacion", hash: anchorHash("modelodatos", locale) }} style={{ color: "rgb(95, 189, 211)" }}>data model</Link>{" "}
-                that is public and compatible with other applications, which covers all the elements that make up real networks. To this end, QGISRed's libraries could also be made public one day, if necessary.
+                that is public and compatible with other applications, which covers all the elements that make up real networks. To this end, QGISRed&apos;s libraries could also be made public one day, if necessary.
               </p>
             </>
           ) : (

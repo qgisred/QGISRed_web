@@ -146,7 +146,7 @@ export function UtilizacionPageContent({ locale = "es" }: { locale?: string }) {
                     From the beginning QGISRed has been accompanied by a User Manual, in Spanish and English, which we update with each new version. The manual is written in Word and distributed in PDF format. In the future we will migrate it to a collaborative web environment.
                   </p>
                   <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    Unlike the tutorials, the manual contains all the information about the application's features, in a concise and rigorous manner, and above all, in an orderly fashion. At the end you will find a short tutorial to run the Red1_SI.inp file, as well as the steps to build it from scratch.
+                    Unlike the tutorials, the manual contains all the information about the application&apos;s features, in a concise and rigorous manner, and above all, in an orderly fashion. At the end you will find a short tutorial to run the Red1_SI.inp file, as well as the steps to build it from scratch.
                   </p>
                   <p className="mb-4 font-medium" style={{ fontSize: "15px", color: "rgb(0, 9, 25)" }}>
                     To download the User Manual in English, click the following button.

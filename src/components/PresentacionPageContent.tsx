@@ -128,7 +128,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                   Welcome to QGISRed. On this page you will find everything you would probably want to know when making contact with this product for the first time. What is it and what are its objectives? How did it come about? What is it for? How can I install it? Who is behind it? I encourage you to visit the following sections of this page to answer all your beginner questions.
                 </p>
                 <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                  If you want to learn more about all the product's capabilities and its current development status, how to use the application, the publications where its foundations are described, or how to contact us to get support or collaborate on this exciting project, visit the other sections of this website. Oh! And you can also register to be permanently informed of new developments.
+                  If you want to learn more about all the product&apos;s capabilities and its current development status, how to use the application, the publications where its foundations are described, or how to contact us to get support or collaborate on this exciting project, visit the other sections of this website. Oh! And you can also register to be permanently informed of new developments.
                 </p>
               </>
             ) : (
@@ -187,7 +187,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                       As an advanced modelling tool, QGISRed offers additional options to extend the model and connect it with real data, thus progressively converting the hydraulic model of the network into a Digital Twin. For example, through service connections the billing or meter reading data can be loaded into the model, and through sensors the field measurements can be compared with the simulated values. Shut-off valves allow isolation for maintenance operations or to sectorise the network temporarily or permanently. Having access to real data, water balances can be performed, performance indicators (or KPIs) obtained, etc.
                     </p>
                     <p className="mb-3">
-                      Emulating EPANET's capabilities allows accelerating the learning curve in handling QGISRed. Moreover, the QGIS knowledge required for its use is minimal, since dedicated tools have been developed to carry out all necessary operations. However, QGIS specialists will be able to get even more out of the features offered by QGISRed.
+                      Emulating EPANET&apos;s capabilities allows accelerating the learning curve in handling QGISRed. Moreover, the QGIS knowledge required for its use is minimal, since dedicated tools have been developed to carry out all necessary operations. However, QGIS specialists will be able to get even more out of the features offered by QGISRed.
                     </p>
                     <p className="mb-3">
                       Through this page, numerous resources are offered to quickly become an expert in network modelling, and to offer professional solutions to companies using the tools associated with the Digital Twin. Finally, it is worth noting that the data model used by QGISRed is public and has a very simple structure, fundamentally oriented to carrying out all types of analysis, which allows QGISRed to connect with other network modelling applications such as EPANET, InfoWorks or WaterGEMS.
@@ -282,7 +282,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
               {isEn ? (
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    The idea of enhancing EPANET's capabilities by connecting it with a GIS is not new for our research group. Back in 2004, Fernando Martínez, director of the current QGISRed project, directed a project with similar objectives and features, called <strong>GISRed. </strong>There were two versions at the time, 1.0 and 2.0, and its capabilities were disseminated through several{" "}
+                    The idea of enhancing EPANET&apos;s capabilities by connecting it with a GIS is not new for our research group. Back in 2004, Fernando Martínez, director of the current QGISRed project, directed a project with similar objectives and features, called <strong>GISRed. </strong>There were two versions at the time, 1.0 and 2.0, and its capabilities were disseminated through several{" "}
                     <Link href={{ pathname: "/difusion", hash: anchorHash("publicaciones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>publications</Link>.
                   </p>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -303,7 +303,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                       , integrating the latest version of the Toolkit. This version 2.2 of the Toolkit remained current until July 2025, when it was superseded by the new version 2.3.
                     </p>
                     <p className="mb-3">
-                      However, these advances in EPANET did not enhance the tools for building models, nor did they incorporate new types of elements into the network. They were basically limited to making all the data in a scenario accessible to programmers and offering the option of using the function library in concurrent mode, with the greatest contribution being the possibility of running models with pressure-dependent demands (PDA). The challenges of the old GISRed were still present, so in 2018, following the spectacular advances of the free software QGIS, we decided to reproduce GISRed's features in this new environment, and in the process improve both the features of that initial product, bringing them up to the level offered by the latest version of EPANET 2.2. The first public presentation of the new product, now called QGISRed, took place during the CCWI 2019 Conference, in Exeter (UK).
+                      However, these advances in EPANET did not enhance the tools for building models, nor did they incorporate new types of elements into the network. They were basically limited to making all the data in a scenario accessible to programmers and offering the option of using the function library in concurrent mode, with the greatest contribution being the possibility of running models with pressure-dependent demands (PDA). The challenges of the old GISRed were still present, so in 2018, following the spectacular advances of the free software QGIS, we decided to reproduce GISRed&apos;s features in this new environment, and in the process improve both the features of that initial product, bringing them up to the level offered by the latest version of EPANET 2.2. The first public presentation of the new product, now called QGISRed, took place during the CCWI 2019 Conference, in Exeter (UK).
                     </p>
                     <p className="mb-3">
                       On the other hand, the experience gained by the authors in the development of one of the first Digital Twins in the world for the city of Valencia led us to further enhance the capabilities of the new plugin to allow migration from a conventional hydraulic model to the construction of a Digital Twin.
@@ -779,7 +779,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
               {isEn ? (
                 <>
                   <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                    QGISRed is not a closed product. The part of QGISRed's code that interacts with QGIS functionalities is developed in <em>Python</em> and is in the public domain, in accordance with the terms of the{" "}
+                    QGISRed is not a closed product. The part of QGISRed&apos;s code that interacts with QGIS functionalities is developed in <em>Python</em> and is in the public domain, in accordance with the terms of the{" "}
                     <a href="https://docs.qgis.org/3.22/en/docs/user_manual/appendices/GNU_GPL.html" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>GNU GPL 2.0 QGIS licence</a>
                     , which is extensible to all plugins distributed through its official repository. This code is accessible through the GitHub portal{" "}
                     <a href="https://github.com/qgisred/qgisred" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>QGISRed</a>
@@ -795,7 +795,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                       The QGISRed project is in its first implementation phase, and for now the development of the free code is not collaborative, although it is planned to open it to the research community in the future.
                     </p>
                     <p className="mb-3">
-                      On the right-hand side of this tab, the plugin's licence is also shown,{" "}
+                      On the right-hand side of this tab, the plugin&apos;s licence is also shown,{" "}
                       <Link href={{ pathname: "/capacidades", hash: anchorHash("novedades", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>the latest released version</Link>
                       {" "}and all{" "}
                       <Link href={{ pathname: "/capacidades", hash: anchorHash("historicodeversiones", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>previously published versions with their improvements</Link>
@@ -810,7 +810,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                       Also in the future we will host in the Wiki tab of this portal an open and collaborative version of the application manuals, both in Spanish and English.
                     </p>
                     <p>
-                      However, <strong>the majority of QGISRed's code is developed in C# for Windows</strong>, configuring a series of libraries called <strong><em>GISRed.xxx.dll</em>,</strong> which are used by the graphical interface. These libraries contain the majority of the algorithms, forms and dialogue boxes specific to the application, and are installed in the …/AppData/Roaming/QGISRed/dlls/… folder of the user's profile when any button or option of the plugin is pressed, once installed. All the algorithms contained in this library have been developed from scratch, and do not use any other external library, nor those of QGIS itself, thus not generating any dependency, except with the <em>Epanet2.dll</em> library corresponding to the EPANET 2.3 Toolkit (version 2.3.4), used to launch hydraulic and quality simulations, and the <em>Shapelib.dll</em> library used to read and write .shp files; both libraries are installed at the same time as the QGISRed libraries. On the other hand, the Python dialogues have been built using the{" "}
+                      However, <strong>the majority of QGISRed&apos;s code is developed in C# for Windows</strong>, configuring a series of libraries called <strong><em>GISRed.xxx.dll</em>,</strong> which are used by the graphical interface. These libraries contain the majority of the algorithms, forms and dialogue boxes specific to the application, and are installed in the …/AppData/Roaming/QGISRed/dlls/… folder of the user&apos;s profile when any button or option of the plugin is pressed, once installed. All the algorithms contained in this library have been developed from scratch, and do not use any other external library, nor those of QGIS itself, thus not generating any dependency, except with the <em>Epanet2.dll</em> library corresponding to the EPANET 2.3 Toolkit (version 2.3.4), used to launch hydraulic and quality simulations, and the <em>Shapelib.dll</em> library used to read and write .shp files; both libraries are installed at the same time as the QGISRed libraries. On the other hand, the Python dialogues have been built using the{" "}
                       <a href="https://www.qt.io/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Qt</a>
                       {" "}platform, which is also in the public domain.
                     </p>
@@ -912,7 +912,7 @@ export function PresentacionPageContent({ locale = "es" }: { locale?: string }) 
                 {" "}(UPV), as a proposal to resume the features of the old GISRed application and adapt them to a more modern working environment, while promoting its dissemination worldwide.
               </p>
               <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
-                The project started with a <strong>Grant from the Generalitat Valenciana</strong> for the hiring of Technology Transfer Support Staff (APOTI/2018/006), for an effective amount of €18,300 and duration from November 2018 to July 2019. From that date the project continued through the economic support of the REDHISP group's R&D Sustainability Fund, fed by its own resources generated through contracts and with the collaboration of the company{" "}
+                The project started with a <strong>Grant from the Generalitat Valenciana</strong> for the hiring of Technology Transfer Support Staff (APOTI/2018/006), for an effective amount of €18,300 and duration from November 2018 to July 2019. From that date the project continued through the economic support of the REDHISP group&apos;s R&D Sustainability Fund, fed by its own resources generated through contracts and with the collaboration of the company{" "}
                 <a href="https://waterpi.com/" target="_blank" rel="noopener noreferrer" style={{ color: "rgb(95, 189, 211)", textDecoration: "none", fontWeight: "bold" }}>WaterPi</a>
                 {" "}until the end of 2022.
               </p>
