@@ -152,6 +152,7 @@ const prestacionesActuales: PrestacionGroupData[] = [
     group: "Gestión de Proyecto",
     groupEn: "Project Management",
     groupFr: "Gestion de Projet",
+    groupPt: "Gestão de Projeto",
     items: [
       "Gestor de proyectos para facilitar la carga y almacenamiento de los diferentes proyectos",
       "Creación automática de un nuevo proyecto vacío",
@@ -170,11 +171,18 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Création automatique d'un projet à partir d'un fichier INP",
       "Clonage de projets et création d'une copie de sauvegarde",
     ],
+    itemsPt: [
+      "Gerenciador de projetos para facilitar o carregamento e armazenamento dos diferentes projetos",
+      "Criação automática de um novo projeto vazio",
+      "Criação automática de um projeto a partir de um arquivo INP",
+      "Clonagem de projetos e criação de uma cópia de segurança",
+    ],
   },
   {
     group: "Datos del Proyecto",
     groupEn: "Project Data",
     groupFr: "Données du Projet",
+    groupPt: "Dados do Projeto",
     items: [
       "Edición de los metadatos y propiedades del proyecto",
       "Resumen de las características del proyecto",
@@ -196,11 +204,19 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Déclaration des valeurs par défaut",
       "Déclaration des options du modèle",
     ],
+    itemsPt: [
+      "Edição dos metadados e propriedades do projeto",
+      "Resumo das características do projeto",
+      "Gestão das camadas do modelo",
+      "Declaração de valores padrão",
+      "Declaração das opções do modelo",
+    ],
   },
   {
     group: "Herramientas de Edición Gráfica",
     groupEn: "Graphical Editing Tools",
     groupFr: "Outils d'Édition Graphique",
+    groupPt: "Ferramentas de Edição Gráfica",
     items: [
       "Creación automática de los nudos a medida que se trazan las tuberías",
       "Creación automática de las relaciones topológicas entre todos los elementos cada vez que se necesita, liberando de ello al usuario",
@@ -225,11 +241,20 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Outil pour inverser automatiquement le tracé des conduites, pompes et vannes",
       "Outil pour changer l'état des conduites, pompes et vannes d'un simple toucher",
     ],
+    itemsPt: [
+      "Criação automática dos nós à medida que as tubulações são traçadas",
+      "Criação automática das relações topológicas entre todos os elementos sempre que necessário, liberando o usuário dessa tarefa",
+      "Inserção de válvulas e bombas como elementos lineares em pontos intermediários das tubulações ou em nós",
+      "Ferramentas para a edição gráfica de todos os elementos básicos de uma rede (criação, exclusão, deslocamento e edição do traçado)",
+      "Ferramenta para inverter automaticamente o traçado de tubulações, bombas e válvulas",
+      "Ferramenta para alterar o estado de tubulações, bombas e válvulas com um toque",
+    ],
   },
   {
     group: "Edición de Propiedades",
     groupEn: "Property Editing",
     groupFr: "Édition des Propriétés",
+    groupPt: "Edição de Propriedades",
     items: [
       "Asignación de propiedades por defecto al crear nuevos elementos",
       "Ventanas específicas para editar las propiedades de todos los elementos básicos de la red",
@@ -260,11 +285,22 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Reconnaissance des émetteurs comme points de décharge à l'atmosphère suivant une loi exponentielle",
       "Traitement des sources contaminantes comme une couche indépendante, en intégrant l'édition de leurs propriétés avec celle des nœuds",
     ],
+    itemsPt: [
+      "Atribuição de propriedades padrão ao criar novos elementos",
+      "Janelas específicas para editar as propriedades de todos os elementos básicos da rede",
+      "Localizador de elementos por tipo e identificador Id",
+      "Navegador para visitar os elementos vinculados ao elemento atual ou retornar aos já visitados",
+      "Seleção de múltiplos elementos por regiões para edição posterior",
+      "Tratamento dos Consumos Múltiplos como uma camada independente, integrando a edição de suas propriedades com as dos nós",
+      "Reconhecimento dos emissores como pontos de descarga para a atmosfera seguindo uma lei exponencial",
+      "Tratamento das fontes contaminantes como uma camada independente, integrando a edição de suas propriedades com as dos nós",
+    ],
   },
   {
     group: "Asistentes para completar los Datos del Modelo",
     groupEn: "Wizards for Completing the Model Data",
     groupFr: "Assistants pour Compléter les Données du Modèle",
+    groupPt: "Assistentes para Completar os Dados do Modelo",
     items: [
       "Recálculo automático de las longitudes de las tuberías conforme al CRS",
       "Interpolación automática de las cotas de los nudos a partir de un MDT",
@@ -301,11 +337,24 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Éditeur avancé de motifs et de courbes de comportement des éléments",
       "Éditeur avancé de lois de contrôle simples et par règles",
     ],
+    itemsPt: [
+      "Recálculo automático dos comprimentos das tubulações conforme o CRS",
+      "Interpolação automática das cotas dos nós a partir de um MDT",
+      "Estimativa automática da rugosidade das tubulações a partir do material e da idade das tubulações",
+      "Conversão do coeficiente de rugosidade entre diferentes fórmulas de perda de carga e sistemas de unidades",
+      "Atribuição automática de consumos aos nós a partir de consumos declarados por setores ou por pontos",
+      "Correção dos consumos com a eficiência hidráulica por setores",
+      "Atribuição de curvas de modulação do consumo por setores",
+      "Assistente para construir cenários com Consumos Múltiplos, classificados por categorias",
+      "Editor avançado de padrões e curvas de comportamento dos elementos",
+      "Editor avançado de leis de controle simples e por regras",
+    ],
   },
   {
     group: "Importación/exportación de Datos",
     groupEn: "Data Import/Export",
     groupFr: "Importation/Exportation de Données",
+    groupPt: "Importação/Exportação de Dados",
     items: [
       "Importación completa de todos los datos de un fichero INP de EPANET. Detección de errores",
       "Importación de los elementos básicos de la red desde ficheros shape (SHP). Selección de campos",
@@ -327,11 +376,19 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Importation/exportation des courbes de modulation et de comportement des éléments depuis les Éditeurs correspondants",
       "Exportation de toutes les données du modèle actuel vers un fichier INP pour poursuivre les analyses depuis EPANET, y compris les données de terrain le cas échéant",
     ],
+    itemsPt: [
+      "Importação completa de todos os dados de um arquivo INP do EPANET. Detecção de erros",
+      "Importação dos elementos básicos da rede a partir de arquivos shape (SHP). Seleção de campos",
+      "Importação aditiva de componentes a partir de arquivos shape",
+      "Importação/exportação de curvas de modulação e de comportamento dos elementos a partir dos Editores correspondentes",
+      "Exportação de todos os dados do modelo atual para um arquivo INP para continuar as análises no EPANET, incluindo os dados de campo, se houver",
+    ],
   },
   {
     group: "Verificación y Depuración de los Datos del Modelo",
     groupEn: "Model Data Verification and Debugging",
     groupFr: "Vérification et Débogage des Données du Modèle",
+    groupPt: "Verificação e Depuração dos Dados do Modelo",
     items: [
       "Detección y eliminación de elementos superpuestos",
       "Simplificación del trazado de líneas con vértices alineados",
@@ -368,11 +425,24 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Vérification de la plage de validité pour certaines propriétés des éléments (longueurs, diamètres, matériaux et dates)",
       "Identification des différents secteurs hydrauliques et leur classification en fonction de la demande appliquée et des sources d'approvisionnement",
     ],
+    itemsPt: [
+      "Detecção e eliminação de elementos sobrepostos",
+      "Simplificação do traçado de linhas com vértices alinhados",
+      "Divisão de tubulações criando nós intermediários",
+      "Fusão de tubulações contíguas com as mesmas propriedades",
+      "Fusão e separação de nós de consumo",
+      "Criação de conexões em T, ou reversão quando aplicável",
+      "Resolução dos cruzamentos de tubulações, criando nós intermediários ou cancelando-os",
+      "Verificação da conectividade de todos os elementos declarados na rede",
+      "Verificação do intervalo de validade para algumas propriedades dos elementos (comprimentos, diâmetros, materiais e datas)",
+      "Identificação dos diferentes setores hidráulicos e sua classificação em função do consumo aplicado e das fontes de abastecimento",
+    ],
   },
   {
     group: "Gestión de Escenarios",
     groupEn: "Scenario Management",
     groupFr: "Gestion des Scénarios",
+    groupPt: "Gestão de Cenários",
     items: [
       "Asistente para gestionar escenarios de datos cambiando diámetros, rugosidades, cotas, demandas, estados iniciales, calidades iniciales, coeficientes de reacción o fuentes contaminantes",
       "Creación de escenarios combinados modificando varias magnitudes al mismo tiempo",
@@ -385,11 +455,16 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Assistant pour gérer des scénarios de données en modifiant les diamètres, rugosités, cotes, demandes, états initiaux, qualités initiales, coefficients de réaction ou sources contaminantes",
       "Création de scénarios combinés modifiant plusieurs grandeurs à la fois",
     ],
+    itemsPt: [
+      "Assistente para gerenciar cenários de dados alterando diâmetros, rugosidades, cotas, consumos, estados iniciais, qualidades iniciais, coeficientes de reação ou fontes contaminantes",
+      "Criação de cenários combinados modificando várias grandezas ao mesmo tempo",
+    ],
   },
   {
     group: "Análisis y visualización de Resultados",
     groupEn: "Analysis and Display of Results",
     groupFr: "Analyse et Visualisation des Résultats",
+    groupPt: "Análise e Visualização de Resultados",
     items: [
       "Ventana específica para editar todas las Opciones de Análisis, ordenadas por categorías",
       "Conexión con la Toolkit 2.2 de EPANET para llevar a cabo las simulaciones. Reconocimiento de todas las funciones",
@@ -420,11 +495,22 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Option pour afficher les résultats numériques de la grandeur actuelle sous forme d'étiquettes fixes ou flottantes",
       "Barre de navigation pour observer l'évolution des résultats dans le temps, sur l'intervalle de simulation",
     ],
+    itemsPt: [
+      "Janela específica para editar todas as Opções de Análise, organizadas por categorias",
+      "Conexão com a Toolkit 2.2 do EPANET para realizar as simulações. Reconhecimento de todas as funções",
+      "Armazenamento dos resultados da simulação em uma estrutura de dados própria",
+      "Visualização dos resultados em mapas de cores por grandeza, a escolher no painel de resultados",
+      "Definição automática das legendas e simbologia para observar os resultados, editável a partir do QGIS",
+      "Opção para mostrar o sentido dos fluxos por meio de setas",
+      "Opção para mostrar os resultados numéricos da grandeza atual como rótulos fixos ou flutuantes",
+      "Barra de navegação para observar a evolução dos resultados ao longo do tempo, durante o intervalo de simulação",
+    ],
   },
   {
     group: "Extensión para trabajar con Gemelos Digitales",
     groupEn: "Extension for Working with Digital Twins",
     groupFr: "Extension pour Travailler avec des Jumeaux Numériques",
+    groupPt: "Extensão para Trabalhar com Gêmeos Digitais",
     items: [
       "Edición y manejo de las acometidas como elementos diferenciados para la carga de demandas al modelo",
       "Importación de las acometidas desde ficheros shape e integración en el Editor de Propiedades",
@@ -470,11 +556,27 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Déclaration des signaux enregistrés par chaque appareil de mesure et leur association avec les données provenant du SCADA ou des enregistreurs de données",
       "Importation des mesures de terrain et comparaison avec les valeurs simulées depuis l'environnement d'EPANET",
     ],
+    itemsPt: [
+      "Edição e manuseio das Ligações de Serviço como elementos diferenciados para o carregamento de consumos no modelo",
+      "Importação das Ligações de Serviço a partir de arquivos shape e integração no Editor de Propriedades",
+      "Assistente para o traçado automático das Ligações de Serviço por meio de perpendiculares às tubulações ou conectando-as a nós e vértices",
+      "Carregamento das leituras de hidrômetro automatizadas nas Ligações de Serviço e transferência automática dos consumos para os nós do modelo",
+      "Integração opcional das Ligações de Serviço no modelo para fazer parte dele como tubulações ou como nós",
+      "Edição e manuseio das Válvulas de Isolamento como elementos diferenciados para controlar a passagem do fluxo",
+      "Importação das Válvulas de Isolamento a partir de arquivos shape e integração no Editor de Propriedades",
+      "Transferência automática do estado das Válvulas de Isolamento para as tubulações",
+      "Identificação das zonas isoladas pelas Válvulas de Isolamento e anulação dos consumos nelas",
+      "Declaração de medidores de diversos tipos, e associação automática destes com os elementos da rede",
+      "Importação dos medidores a partir de arquivos shape e integração no Editor de Propriedades",
+      "Declaração dos sinais registrados por cada um dos medidores e sua vinculação com os dados provenientes do SCADA ou data-loggers",
+      "Importação das medições de campo e comparação com os valores simulados a partir do ambiente do EPANET",
+    ],
   },
   {
     group: "Conexión del Gemelo con los Datos Reales",
     groupEn: "Connecting the Twin to Real Data",
     groupFr: "Connexion du Jumeau avec les Données Réelles",
+    groupPt: "Conexão do Gêmeo com os Dados Reais",
     items: [
       "Creación de un repositorio propio del proyecto con los datos de campo. Por ahora limitado a los registros de consumos, y las señales del SCADA o data-loggers",
       "Carga del modelo con los datos de campo para un intervalo cualquiera del pasado, dentro del rango cubierto por el repositorio",
@@ -487,11 +589,16 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Création d'un référentiel propre au projet avec les données de terrain. Pour l'instant limité aux relevés de consommation et aux signaux du SCADA ou des enregistreurs de données",
       "Chargement du modèle avec les données de terrain pour n'importe quel intervalle passé, dans la plage couverte par le référentiel",
     ],
+    itemsPt: [
+      "Criação de um repositório próprio do projeto com os dados de campo. Por enquanto limitado aos registros de consumos, e aos sinais do SCADA ou data-loggers",
+      "Carregamento do modelo com os dados de campo para qualquer intervalo do passado, dentro do período coberto pelo repositório",
+    ],
   },
   {
     group: "Herramientas de Exploración",
     groupEn: "Exploration Tools",
     groupFr: "Outils d'Exploration",
+    groupPt: "Ferramentas de Exploração",
     items: [
       "Identificación de los sectores de demanda básicos, considerando las válvulas cerradas y la ubicación de los caudalímetros",
       "Trazado del árbol de mínima resistencia de la red, con parámetros configurables, para identificar los trayectos prioritarios del agua",
@@ -504,11 +611,16 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Identification des secteurs de demande de base, en tenant compte des vannes fermées et de l'emplacement des débitmètres",
       "Tracé de l'arbre de résistance minimale du réseau, avec des paramètres configurables, pour identifier les trajets prioritaires de l'eau",
     ],
+    itemsPt: [
+      "Identificação dos setores de consumo básicos, considerando as válvulas fechadas e a localização dos medidores de vazão",
+      "Traçado da árvore de resistência mínima da rede, com parâmetros configuráveis, para identificar os trajetos prioritários da água",
+    ],
   },
   {
     group: "Información",
     groupEn: "Information",
     groupFr: "Informations",
+    groupPt: "Informação",
     items: [
       "Ventana de información sobre la versión instalada, con algunos enlaces básicos y los créditos",
       "Botón de acceso directo al entorno de desarrollo GitHub para reportar incidencias",
@@ -521,6 +633,10 @@ const prestacionesActuales: PrestacionGroupData[] = [
       "Fenêtre d'information sur la version installée, avec quelques liens de base et les crédits",
       "Bouton d'accès direct à l'environnement de développement GitHub pour signaler des incidents",
     ],
+    itemsPt: [
+      "Janela de informação sobre a versão instalada, com alguns links básicos e os créditos",
+      "Botão de acesso direto ao ambiente de desenvolvimento GitHub para reportar ocorrências",
+    ],
   },
 ];
 
@@ -529,6 +645,7 @@ const proximasPrestaciones: PrestacionGroupData[] = [
     group: "De carácter General de Proyecto",
     groupEn: "General Project Matters",
     groupFr: "Aspects généraux du Projet",
+    groupPt: "De Caráter Geral do Projeto",
     items: [
       "Completar algunas opciones del Gestor de Proyectos",
       "Revisar las opciones por defecto, y diferenciarlas a nivel de código, de usuario y de proyecto",
@@ -559,11 +676,22 @@ const proximasPrestaciones: PrestacionGroupData[] = [
       "Développer un convertisseur d'unités pour toutes les données",
       "Importer des fichiers CAO",
     ],
+    itemsPt: [
+      "Completar algumas opções do Gerenciador de Projetos",
+      "Revisar as opções padrão, e diferenciá-las em nível de código, de usuário e de projeto",
+      "Integrar o MDT e a tabela de rugosidades nas especificações do projeto e dinamizar seu uso a partir do Editor de Propriedades.",
+      "Completar as Opções em nível de Projeto (modos para atribuir rugosidades, …)",
+      "Adicionar algumas propriedades adicionais aos elementos atuais. Completar o modelo de dados",
+      "Tornar editável a tabela de rugosidades por materiais e idade",
+      "Desenvolver um conversor de unidades para todos os dados",
+      "Importar arquivos de CAD",
+    ],
   },
   {
     group: "Edición de los Elementos",
     groupEn: "Element Editing",
     groupFr: "Édition des Éléments",
+    groupPt: "Edição dos Elementos",
     items: [
       "Desarrollar una herramienta para mover los elementos superpuestos sobre el trazado de la red",
       "Desarrollar herramientas para clonar elementos y copiar sus propiedades",
@@ -582,11 +710,18 @@ const proximasPrestaciones: PrestacionGroupData[] = [
       "Ajouter un chercheur d'éléments par Id depuis le Menu Édition",
       "Développer un Éditeur de Propriétés des éléments en Groupe",
     ],
+    itemsPt: [
+      "Desenvolver uma ferramenta para mover os elementos sobrepostos ao traçado da rede",
+      "Desenvolver ferramentas para clonar elementos e copiar suas propriedades",
+      "Adicionar um localizador de elementos por Id no Menu de Edição",
+      "Desenvolver um Editor de Propriedades de elementos em Grupo",
+    ],
   },
   {
     group: "Asistentes para completar los Datos del Modelo",
     groupEn: "Wizards for Completing the Model Data",
     groupFr: "Assistants pour compléter les Données du Modèle",
+    groupPt: "Assistentes para Completar os Dados do Modelo",
     items: [
       "Interpolar las cotas a partir de MDTs declarados como nubes de puntos",
       "Asistente para reasignar los Ids de los componentes",
@@ -614,11 +749,21 @@ const proximasPrestaciones: PrestacionGroupData[] = [
       "Augmenter les options de vérification et de nettoyage des données du modèle",
       "Rendre compatibles les fichiers de scénarios avec ceux d'EPANET",
     ],
+    itemsPt: [
+      "Interpolar as cotas a partir de MDTs declarados como nuvens de pontos",
+      "Assistente para reatribuir os Ids dos componentes",
+      "Reorientar o traçado das tubulações para reduzir os casos de vazões negativas",
+      "Completar o Editor de Consumos Nodais para atribuir aos nós os consumos declarados por polígonos ou trechos lineares.",
+      "Classificar nós e linhas por setores no campo Etiqueta",
+      "Ampliar as opções de verificação e depuração dos dados do modelo",
+      "Compatibilizar os arquivos de cenários com os do EPANET",
+    ],
   },
   {
     group: "Nuevos Elementos del Modelo",
     groupEn: "New Model Elements",
     groupFr: "Nouveaux Éléments du Modèle",
+    groupPt: "Novos Elementos do Modelo",
     items: [
       "Mejorar la modelación de los depósitos de rotura de carga y de los pequeños depósitos de reserva",
       "Implementar emisores con exponente variable a nivel de nudo",
@@ -643,11 +788,20 @@ const proximasPrestaciones: PrestacionGroupData[] = [
       "Lier la consommation énergétique des pompages à la production solaire photovoltaïque",
       "Traiter les points d'injection de contaminant comme des objets avec leur propre Id, indépendants des nœuds. Créer un éditeur spécifique pour leurs attributs",
     ],
+    itemsPt: [
+      "Melhorar a modelação dos reservatórios de quebra de carga e dos pequenos reservatórios de reserva",
+      "Implementar emissores com expoente variável em nível de nó",
+      "Ampliar a caracterização das curvas de comportamento de bombas e válvulas. Curvas padrão.",
+      "Incorporar as turbinas como elementos para recuperar energia",
+      "Vincular o consumo energético dos bombeamentos com a produção solar fotovoltaica",
+      "Tratar os pontos de injeção de contaminante como objetos com Id próprio, desvinculados dos nós. Criar um editor específico para seus atributos",
+    ],
   },
   {
     group: "Visualización de Datos y Resultados",
     groupEn: "Display of Data and Results",
     groupFr: "Visualisation des Données et des Résultats",
+    groupPt: "Visualização de Dados e Resultados",
     items: [
       "Mejorar toda la iconografía: botones, componentes, simbología, etc.",
       "Simbolizar nudos los emisores con un icono diferente",
@@ -696,11 +850,28 @@ const proximasPrestaciones: PrestacionGroupData[] = [
       "Développer des outils pour comparer les données de terrain avec les valeurs calculées et élaborer des rapports de calibration propres",
       "Comparer les résultats de différents scénarios entre eux",
     ],
+    itemsPt: [
+      "Melhorar toda a iconografia: botões, componentes, simbologia, etc.",
+      "Simbolizar os nós emissores com um ícone diferente",
+      "Aplicar opções de zoom à visualização dos componentes",
+      "Diferenciar as redes de transporte, arterial e de distribuição",
+      "Compatibilizar a simbologia e o visualizador de camadas do QGIS com o do QGISRed",
+      "Gerar mapas temáticos a partir das propriedades dos elementos: diâmetros, materiais, idade, rugosidade, cotas, etc.",
+      "Desenvolver um Editor de Legendas próprio",
+      "Agilizar a representação de resultados e melhorar a navegação sobre o mapa",
+      "Completar as opções de avaliar máximos, mínimos, intervalos, médias e desvios dos resultados",
+      "Desenvolver gráficos de evolução para uma ou mais variáveis.",
+      "Mostrar resultados para eventos intermediários nos gráficos temporais",
+      "Desenvolver novas janelas e camadas para visualizar e analisar os resultados",
+      "Desenvolver ferramentas para comparar dados de campo com valores calculados e elaborar relatórios de calibração próprios",
+      "Comparar os resultados de diferentes cenários entre si",
+    ],
   },
   {
     group: "Flujos y Balances",
     groupEn: "Flows and Balances",
     groupFr: "Flux et Bilans",
+    groupPt: "Fluxos e Balanços",
     items: [
       "Potenciar las herramientas de exploración topológica. Trabajar con árboles",
       "Desarrollar herramientas de ayuda para gestionar el trayecto de los flujos en una red",
@@ -740,11 +911,25 @@ const proximasPrestaciones: PrestacionGroupData[] = [
       "Superposer les sources d'origine pour la substance totale arrivant à un nœud à un instant donné",
       "Superposer l'analyse de qualité pour plusieurs substances non réactives entre elles",
     ],
+    itemsPt: [
+      "Potencializar as ferramentas de exploração topológica. Trabalhar com árvores",
+      "Desenvolver ferramentas de apoio para gerenciar o trajeto dos fluxos em uma rede",
+      "Realizar balanços hidráulicos por setores e mostrá-los em diagramas",
+      "Identificar origem e destino das energias consumidas",
+      "Realizar balanços de energia por setores e mostrá-los em diagramas",
+      "Mostrar graficamente os percursos do fluxo através das tubulações",
+      "Identificar as zonas a montante e a jusante de qualquer nó",
+      "Realizar balanços de massa por setores e mostrá-los em diagramas",
+      "Identificar as zonas de influência das diferentes fontes de abastecimento",
+      "Sobrepor as fontes de origem para a substância total que chega a um nó em um instante",
+      "Sobrepor a análise de qualidade para diversas substâncias não reativas entre si",
+    ],
   },
   {
     group: "Gemelo Digital",
     groupEn: "Digital Twin",
     groupFr: "Jumeau Numérique",
+    groupPt: "Gêmeo Digital",
     items: [
       "Crear un Gestor de Acometidas para realizar asignaciones de demanda y otro tipo de operaciones masivas relacionadas con ellas",
       "Completar la asignación de demandas a las acometidas a partir de facturaciones periódicas",
@@ -802,6 +987,25 @@ const proximasPrestaciones: PrestacionGroupData[] = [
       "Intégrer les citernes domestiques comme nouveaux éléments du Jumeau Numérique",
       "Intégrer d'autres éléments au Jumeau Numérique, tels que Bouches d'Incendie, Bouches d'Arrosage, Vannes de remplissage et de vidange, Ventouses, etc.",
     ],
+    itemsPt: [
+      "Criar um Gerenciador de Ligações de Serviço para realizar atribuições de consumo e outros tipos de operações em massa relacionadas a elas",
+      "Completar a atribuição de consumos às Ligações de Serviço a partir de faturamentos periódicos",
+      "Criar um Gerenciador de Válvulas Manuais para realizar todo tipo de operações em massa com as válvulas",
+      "Conectar o modelo com o histórico de estados das Válvulas de Isolamento",
+      "Completar a identificação de fechamentos (polígonos de corte) e criar estruturas de dados associadas aos fechamentos",
+      "Conectar o modelo com o histórico de fechamentos. Dinamizar o isolamento de setores",
+      "Completar a caracterização dos setores de consumo e criar estruturas de dados associadas",
+      "Encadear simulações para períodos prolongados sobre dados reais, e avaliar KPIs para esses períodos",
+      "Adicionar os hidrômetros domiciliares como um novo componente do Gêmeo. Criar um Gerenciador de Hidrômetros",
+      "Ajustar os consumos às vazões injetadas por setores. Consideração das medições horárias da telemedição.",
+      "Distribuir os vazamentos latentes entre os nós da rede e as Ligações de Serviço",
+      "Adicionar os vazamentos pontuais como um novo elemento do Gêmeo. Criar um Gerenciador de Vazamentos Pontuais",
+      "Incorporar novas leis para caracterizar os vazamentos",
+      "Personalizar os parâmetros das curvas de consumo dependentes da pressão (PDD) em nível de nó",
+      "Incorporar novas leis de comportamento para as PDDs",
+      "Incorporar as caixas d'água domiciliares como novos elementos do Gêmeo Digital",
+      "Incorporar outros elementos ao Gêmeo Digital, como Hidrantes, Bocas de Rega, Válvulas de enchimento e esvaziamento, Ventosas, etc.",
+    ],
   },
 ];
 
@@ -823,6 +1027,7 @@ const historico: HistoricoEntry[] = [
     fecha: "septiembre 2026",
     fechaEn: "September 2026",
     fechaFr: "septembre 2026",
+    fechaPt: "setembro de 2026",
     items: [
       "Agrupación de las opciones de tipo informativo como Novedades, Incidencias, Manual, Valoración, Suscripciones y Acerca de.. en una nueva entrada Info del menú principal.",
       "Reubicación del menú de Consultas tras el menú de Herramientas, en la barra del menú principal.",
@@ -1147,12 +1352,121 @@ const historico: HistoricoEntry[] = [
       "Vérifier que les identifiants des éléments, courbes et motifs ne contiennent aucun espace vide.",
       "Correction d'une erreur qui empêchait la consolidation de l'heure de début civil de la simulation.",
     ],
+    itemsPt: [
+      "Agrupamento de opções informativas como Notícias, Incidentes, Manual, Avaliação, Assinaturas e Sobre... em uma nova entrada de Informações no menu principal.",
+      "Relocação do menu Consultas para trás do menu Ferramentas, na barra de menu principal.",
+      "Incorporação de uma marca e um prefixo no título de todos os painéis QGISRed para diferenciá-los dos demais.",
+      "Incorporação de um ícone de aviso nas camadas que podem ficar desatualizadas quando são feitas alterações nos dados.",
+      "Agora você pode alterar de forma independente o nome do projeto QGISRed e o nome do arquivo que contém as informações do mapa (qgz).",
+      "Ao mover um projeto, você pode mover os dados e o arquivo de mapa (qgz) juntos ou independentemente para pastas diferentes.",
+      "A opção de fazer backup do projeto foi removida, e substituída pela opção de Exportar o projeto, com mais alternativas.",
+      "Ao exportar um projeto, você pode escolher os grupos de camadas QGISRed e as camadas externas ao projeto (cartografias, MDT, etc.) para copiar, entre aquelas presentes no painel de camadas. Tudo isso é salvo em um único arquivo .zip.",
+      "Para exportar o arquivo qgz do mapa, ele deve estar na mesma pasta do projeto ou em um nível superior. As informações cartográficas deverão estar em pastas paralelas à pasta do projeto.",
+      "Ao importar um projeto QGISRed, todas as informações exportadas anteriormente são restauradas para uma nova pasta, mantendo a estrutura de todos os arquivos.",
+      "Possibilidade de selecionar as tubulações candidatas para conectar as conexões que partem dos pontos de consumo importados.",
+      "Declaração de uma tabela de materiais padrão diferente para cada um dos quatro idiomas suportados.",
+      "Novas opções na caixa de diálogo de edição de tabelas de materiais, para copiar, carregar e editar novas tabelas em nível global, antes de criar um projeto ou dentro dele.",
+      "Novas opções para escolher a tabela de materiais desejada ao criar um novo projeto ou importar arquivos de formas pela primeira vez.",
+      "Criação de um novo grupo de camadas denominado AuxiliaryLayers para hospedar temas complementares aos temas básicos.",
+      "Criação de um subgrupo dentro do grupo de Camadas Auxiliares, denominado Construtor de Consumos, para hospedar temas próprios: setores, demandas específicas e links.",
+      "Adicionando uma nova aba ao Gerenciador de Camadas para criar, excluir, carregar ou baixar camadas auxiliares vinculadas ao Construtor de Consumos.",
+      "Bater a varinha em uma bomba, válvula ou tubo agora alterna apenas entre os estados aberto e fechado.",
+      "Para alternar entre o estado ativo ou fechado de uma válvula, ou declarar um CV em um tubo, segure a tecla Ctrl ao clicar com a varinha.",
+      "Ao inserir uma bomba ou válvula em uma seção menor que a separação estabelecida entre os nós extremos, eles se mantêm e não se movem mais.",
+      "Ao mover um nó nenhuma camada fica aberta, evitando conflitos com outras ferramentas de edição.",
+      "Revisada a ferramenta de edição de vértices para torná-la mais fácil de usar.",
+      "Ao dividir um tubo em um ponto intermediário, o Id é dividido adicionando um sufixo numérico. O Id original pode ser recuperado se as seções forem mescladas na direção oposta à qual os nós intermediários foram criados.",
+      "Quando dois tubos em série não podem ser unidos eliminando o nó intermediário, a causa é informada.",
+      "Revisada a ferramenta de mesclagem ou separação de nós, permitindo maior separação entre eles.",
+      "A criação de uma conexão em T agora estende a última seção do ramal até que ela cruze com o tubo principal.",
+      "Revisadas as ferramentas de desfazer T e cruzar, removendo algumas restrições e padronizando ações do mouse.",
+      "Nova opção de menu Editar para editar as propriedades dos elementos do grupo.",
+      "Pré-seleção gráfica dos elementos a serem modificados com múltiplas ferramentas de seleção.",
+      "Aplicação de filtros para restringir os elementos a modificar, dependendo do tipo de imóvel.",
+      "Opção para exibir os elementos que serão modificados no mapa.",
+      "Múltiplas opções para modificar a propriedade escolhida, diferenciando se a propriedade é numérica, textual ou enumerada.",
+      "Visualize na tabela de atributos as alterações realizadas antes de consolidá-las.",
+      "Incorporação de novos mapas temáticos vinculados às tubulações: Ano de instalação, idade e coeficiente de rugosidade conforme fórmula de perda.",
+      "Novos mapas temáticos vinculados aos entroncamentos: Elevações e Demanda Base Total graduados por tamanho.",
+      "Ao criar o mapa de materiais, cada material agora recebe sua própria cor com base em sua abreviatura e idioma, que é editável.",
+      "Quando um mapa temático fica desatualizado devido a uma mudança nas unidades ou na fórmula de perda, um ícone de aviso é exibido e pode ser atualizado clicando nele.",
+      "Melhorias nos assistentes para criar automaticamente intervalos, tamanhos e cores para definir a legenda para todas as camadas.",
+      "Possibilidade de modificar alguns parâmetros de estilo dos temas básicos do grupo Dados.",
+      "Incorporação ao Editor de Legendas do QGISRed das camadas criadas pelas Consultas (mapas temáticos, setores hidráulicos, árvores, etc.).",
+      "Adicionadas camadas de resultados ao Editor de legendas para personalizar seu estilo.",
+      "Opção para salvar legendas no nível do projeto ou no nível do usuário para aplicá-las a novos projetos.",
+      "Opção de armazenar assistentes para adaptar a legenda aos dados, em vez de salvar uma legenda pré-configurada.",
+      "Criação de uma biblioteca QGISRed de símbolos, rampas e paletas de cores, acessíveis no Editor de Legendas e editáveis no QGIS.",
+      "Opção de consolidação dos parâmetros importados relativos à atribuição de demandas por setores em um tema QGISRed.",
+      "Opção de distribuição da demanda global ou por setores com base nos diâmetros que convergem nos nós candidatos.",
+      "Opção de declaração de consumo por trechos lineares ou por polígonos, como alternativa ao consumo específico.",
+      "Opção de consolidação de consumos específicos importados em tema QGISRed.",
+      "Opção de gerenciar temas de consumo específicos e agregar diversas demandas ao mesmo tema.",
+      "Reconhecimento de diversas unidades na declaração do consumo a ser importado.",
+      "Opção de atribuir demandas específicas às extremidades do tubo mais próximo em vez de procurar diretamente os nós mais próximos.",
+      "Opção de considerar ou não as extremidades das bombas e válvulas como possíveis nós de demanda.",
+      "Opção de distribuição de demandas específicas em função dos diâmetros das tubulações que convergem nos nós, ou em combinação com sua distância dos pontos de consumo.",
+      "Notificação de nós carregados que estão a mais de uma determinada distância dos pontos de consumo.",
+      "Possibilidade de edição e reaproveitamento de links entre pontos de consumo e nós de demanda.",
+      "Atribuição de demandas aos nós com base nas conexões declaradas como elementos do Gêmeo Digital.",
+      "Diferenciação das demandas base por categorias, tanto em consumo específico quanto por conexões, criando múltiplas demandas nos nós.",
+      "Opção de carregar demandas apenas dos setores, pontos de consumo ou ligações selecionados.",
+      "Opção de utilizar tema próprio para atribuir eficiências e padrões por setor, importar seus valores e editá-los.",
+      "Opção de aplicar eficiências hidráulicas e atribuir padrões de demanda por categorias.",
+      "Opção de reajustar eficiências e padrões declarados em um nível pelos impostos em outro nível superior (categorias -> setores -> globais).",
+      "Nova opção no menu Consultas para realizar todos os tipos de estatísticas com os dados e resultados do modelo.",
+      "Avaliação das estatísticas de uma grandeza, classificadas por faixas ou classes dessa grandeza ou outra grandeza do mesmo tipo de elemento.",
+      "Capacidade de usar uma segunda magnitude de classificação para criar tabelas de dupla entrada.",
+      "Possibilidade de aplicar filtros nos dados iniciais e visualizar no mapa os elementos afetados pela consulta.",
+      "Exibição de estatísticas em histogramas ou através de tabela de valores exportável.",
+      "Exportação da configuração da consulta e sua posterior importação.",
+      "Revisadas as ferramentas Conectividade, Setores Hidráulicos e Gráficos de Árvore: novos nomes, realocação de camadas, mudanças de estilo, etc.",
+      "Novo tópico para destacar demandas isoladas nos setores hidráulicos.",
+      "Possibilidade de criar e gerenciar a existência de diversos temas para Grafos em Árvore (agora chamados de Árvores de Custo Mínimo).",
+      "Nova caixa de diálogo de progresso para mostrar o progresso dos cálculos hidráulicos e de qualidade.",
+      "A caixa de diálogo de progresso pode ser pausada para observar cuidadosamente o progresso dos cálculos.",
+      "A caixa de diálogo de progresso pode ser omitida para maior velocidade nos cálculos, exceto para redes com longos tempos de processamento.",
+      "Opção de mostrar todos os momentos de cálculo no mapa de resultados e outros painéis em que o tempo intervém.",
+      "Opção de mostrar o momento da simulação em vários formatos: tempo decorrido desde o início (em horas acumuladas ou agrupadas por dias) ou tempo de calendário (em formato 24 horas ou am/pm).",
+      "Nova barra de botões para realizar animações em velocidade controlada ou passo a passo.",
+      "As variáveis escolhidas para exibir os resultados dos nós e linhas agora estão destacadas e possuem cor própria atribuída.",
+      "Nova aba com diversas opções para melhorar a visualização dos resultados no mapa, a simbologia e a cor de fundo.",
+      "Nova opção para mostrar em histograma a distribuição da variável atual de nós ou linhas e seus valores acumulados, no momento atual.",
+      "Nova opção para mostrar uma curva de evolução simplificada da variável atual de nós ou linhas, para o elemento escolhido no mapa.",
+      "Ao resgatar o Painel de Resultados, as opções da última ação são preservadas, ao invés de aplicar as opções padrão.",
+      "Quando os dados do cenário são alterados, as camadas resultantes exibem um ícone de aviso, que pode ser atualizado clicando nele.",
+      "Novos botões para navegar no gráfico das curvas de evolução.",
+      "Novo botão com múltiplas opções para personalizar a aparência de todos os componentes do gráfico.",
+      "Adaptação da escala temporal de acordo com as opções escolhidas no Painel de Resultados.",
+      "Possibilidade de mostrar todos os momentos ou apenas momentos agendados, conforme escolhido no Painel de Resultados.",
+      "Sincronização opcional do cursor com o momento atual do Painel de Resultados.",
+      "Incorporação da evolução do volume de um tanque ou da vazão de transbordamento, como novas variáveis.",
+      "Opção de representar as curvas de evolução de algumas variáveis globais para todo o sistema.",
+      "Novo botão para exibir em tabela os valores numéricos dos pontos de passagem das curvas de evolução e exportar seus valores para um arquivo CSV.",
+      "Novo botão para exportar gráficos como imagens.",
+      "Opção para salvar e recuperar configurações do gráfico de evolução, incluindo criação de modelos.",
+      "Capacidade de criar e manter abertas diversas janelas de curvas de evolução ao mesmo tempo.",
+      "Todas as opções de menu, caixas de diálogo e mensagens do QGISRed agora também são exibidas em francês e português do Brasil, quando este idioma é escolhido para a interface do QGIS. Atualmente já são exibidos em inglês e espanhol.",
+      "Todos os controles de segurança verificados e incidentes relacionados à qualidade do código, reportados pelo sistema QGIS Security Scan, corrigidos.",
+      "Código da versão 0.19 verificado para compatibilidade com Qt6 e QGIS 4.xx.",
+      "Fim do suporte para bibliotecas QGISRed em sistemas de 32 bits (x86). A partir de agora o QGISRed funcionará apenas em sistemas de 64 bits.",
+      "Removidos os botões minimizar e maximizar em todas as caixas de diálogo incorporadas às bibliotecas.",
+      "Revisados os nomes de alguns campos em arquivos shape, tabelas dbf e arquivos CSV, para uniformidade. Todos os campos de identificação agora terminam com ID.",
+      "Revisados os nomes das propriedades exibidos em todas as caixas de diálogo do QGISRed, dependendo do idioma, para uniformidade.",
+      "Revisados os decimais apresentados nas tabelas de atributos do tópico, dependendo das unidades utilizadas.",
+      "Revisão de possíveis situações ao carregar bibliotecas GISRed para evitar tentativas repetidas.",
+      "Revisão do formato de exportação dos arquivos INP para evitar sobreposições que causassem erros de leitura.",
+      "Corrigido bug que impedia a criação de novas curvas de comportamento.",
+      "Verificando se os identificadores dos elementos, curvas e padrões não contêm espaços em branco.",
+      "Corrigido erro que impedia a consolidação do horário de início civil da simulação.",
+    ],
   },
   {
     version: "0.18",
     fecha: "30 abril 2026",
     fechaEn: "30 April 2026",
     fechaFr: "30 avril 2026",
+    fechaPt: "30 de abril de 2026",
     items: [
       "Mejoras en el Gestor de Proyectos. Nuevos botones para Mover y Exportar proyectos, y nuevas opciones para Renombrar proyectos.",
       "Identificación de todas las capas gestionadas por QGISRed mediante un Id propio, en lugar de hacerlo por el nombre, lo que permite trabajar en varios idiomas.",
@@ -1258,12 +1572,48 @@ const historico: HistoricoEntry[] = [
       "Correction d'une erreur empêchant l'annulation des demandes des zones restant isolées.",
       "Limitation de la taille du champ Description, utilisé pour indiquer les demandes des branchements chargées sur chaque nœud.",
     ],
+    itemsPt: [
+      "Melhorias no Gerenciador de Projetos. Novos botões para Mover e Exportar projetos, e novas opções para Renomear projetos.",
+      "Identificação de todas as camadas gerenciadas pelo QGISRed por meio de um Id próprio, em vez de pelo nome, o que permite trabalhar em vários idiomas.",
+      "Revisão dos símbolos, etiquetas e avisos do mapa associados a todas as camadas gerenciadas pelo QGISRed.",
+      "Maior integração do Editor de Propriedades dos Elementos, mantendo as propriedades das camadas, e a atualização dos dados em todas as janelas afetadas, incluindo a tabela de atributos.",
+      "Armazenamento do estilo de todas as camadas gerenciadas pelo QGISRed em arquivos .qml em três níveis: padrão, nível de usuário e nível de projeto.",
+      "Armazenamento em uma tabela própria de todas as grandezas gerenciadas pelo QGISRed, especificando as unidades e decimais a exibir nos diferentes sistemas de unidades e conforme a casuística.",
+      "Criação de um Editor de Legendas próprio para personalizar intervalos ou classes, cores e tamanhos de todas as legendas gerenciadas pelo QGISRed.",
+      "Assistentes para personalizar as legendas automaticamente.",
+      "Adição de um novo menu e uma nova barra de ferramentas para hospedar as novas opções voltadas a realizar consultas sobre dados e resultados.",
+      "Reorganização das camadas do grupo de Consultas, e do armazenamento dos arquivos shp correspondentes na estrutura de pastas do projeto.",
+      "Nova ferramenta para localizar no mapa qualquer elemento por meio do seu Id e identificar os elementos conectados, com a opção de navegar por eles.",
+      "Novo painel para observar os dados e resultados de qualquer elemento da rede selecionado. Sincronização dos resultados com o instante atual da simulação.",
+      "Novo diálogo para criar mapas temáticos de algumas grandezas associadas aos diferentes tipos de elementos gerenciados pelo QGISRed.",
+      "Novo painel para localizar no mapa os elementos que atendem a determinados critérios em relação aos dados ou aos resultados. Sincronização com os resultados para o instante atual da simulação.",
+      "Melhoria do formato em que o arquivo INP é exportado a partir do QGISRed, semelhante ao que seria exportado pela Toolkit do EPANET.",
+      "Substituição do motor de cálculo do EPANET 2.2 pela nova versão 2.3, até a revisão mais recente 2.3.5.",
+      "Leitura dos resultados de uma simulação diretamente a partir dos arquivos binários do EPANET para uma navegação mais rápida e ágil.",
+      "Incorporação do Relatório de Estado ao painel de resultados em uma nova aba, sempre acessível.",
+      "Exportação de todos os resultados de uma simulação para um arquivo CSV estruturado.",
+      "Nova opção para mostrar diversas estatísticas sobre os resultados ao longo de todo o período de simulação.",
+      "Nova janela para mostrar a curva de evolução no tempo de qualquer grandeza de um elemento ao longo do período de simulação. Possibilidade de sobrepor várias curvas para a mesma grandeza ou para grandezas diferentes.",
+      "Melhorias no Construtor de Consumos para os consumos pontuais. Revisão dos algoritmos e carregamento automático dos links. Novo tema para os pontos de consumo.",
+      "Revisão da ferramenta de identificação dos setores hidráulicos e detecção dos consumos isolados.",
+      "Revisão do algoritmo para identificar fechamentos. Detecção dos consumos isolados.",
+      "Novas opções em nível de projeto para transferir os consumos das Ligações de Serviço para os nós. Classificação dos consumos por padrões.",
+      "Compatibilização da versão 0.18 com as novas versões do QGIS 4.0.",
+      "Tradução de todos os diálogos, painéis, mensagens e nomes de camadas do QGISRed para o idioma espanhol.",
+      "Redesenho de todos os ícones gerenciados pelo QGISRed com uma aparência mais uniforme e agradável.",
+      "Hospedagem na web do manual provisório do QGISRed em inglês e espanhol para consulta on-line através da plataforma colaborativa GitBook.",
+      "Menção ao Banco Interamericano de Desenvolvimento (BID) pelo apoio financeiro a todas as melhorias realizadas na presente versão 0.18.",
+      "Resolvido um problema ao carregar os dados de campo relacionado ao separador decimal.",
+      "Corrigido um erro que impedia cancelar os consumos das zonas que ficam isoladas.",
+      "Limitação do tamanho do campo Descrição, usado para informar sobre os consumos das Ligações de Serviço carregados em cada nó.",
+    ],
   },
   {
     version: "0.17",
     fecha: "febrero 2026",
     fechaEn: "February 2026",
     fechaFr: "février 2026",
+    fechaPt: "fevereiro de 2026",
     items: [
       "Resueltas las incompatibilidades con las últimas versiones de QGISRed, hasta la 3.44",
       "Sustitución de la versión 2.2 de la Toolkit de EPANET por la nueva versión 2.3",
@@ -1396,12 +1746,57 @@ const historico: HistoricoEntry[] = [
       "Correction de certaines erreurs d'importation/exportation de courbes et modèles liées au séparateur décimal",
       "Correction d'une erreur du symbole décimal dans les options du modèle PDA",
     ],
+    itemsPt: [
+      "Resolvidas as incompatibilidades com as últimas versões do QGIS, até a 3.44",
+      "Substituição da versão 2.2 da Toolkit do EPANET pela nova versão 2.3",
+      "Nova ferramenta de exploração para identificar os polígonos de corte, destacando as válvulas manuais e Ligações de Serviço afetadas",
+      "Visualização nos resultados de até 13 estados para tubulações, válvulas e bombas",
+      "Transferência de estados e qualidades para o encadeamento de simulações em períodos sucessivos",
+      "Novas opções para redefinir rugosidades, elevações e diâmetros no construtor de cenários",
+      "Nova opção para exportar e importar cenários no formato do EPANET",
+      "Os projetos listados no Gerenciador de Projetos agora podem ser reordenados temporariamente pelos diferentes campos clicando nos cabeçalhos",
+      "Novas opções no Gerenciador de Projetos para Reordenar, Exportar, Excluir e Renomear projetos",
+      "Nova aba no diálogo de importação para Importar projetos do QGISRed",
+      "Novos botões e opções de menu para abrir e salvar projetos",
+      "O caminho do arquivo .qgz agora é armazenado como um caminho relativo no arquivo metadata.txt",
+      "Se, ao abrir um projeto do QGISRed, o arquivo .qgz associado não for encontrado, agora é oferecida a opção de procurá-lo",
+      "Ao abrir um projeto qgz diretamente a partir do QGIS, se for um projeto do QGISRed, ele é adicionado automaticamente ao Gerenciador de Projetos",
+      "Alterações nos ícones e textos de algumas opções de menu",
+      "Alteração na simbologia de alguns elementos: nós com consumo, Consumos Múltiplos, emissores e fontes contaminantes",
+      "As camadas do grupo Input agora são reordenadas automaticamente",
+      "Ao lado do nome de cada camada agora é exibido o número de elementos que ela contém",
+      "Todos os elementos agora exibem seu ID ao passar o mouse por cima",
+      "Removida a notificação padrão sobre a presença de bombas ou válvulas com uma extremidade livre",
+      "Ampliada a precisão ao gravar certos valores numéricos nos shapes",
+      "Alterações na mensagem no momento de baixar as dependências necessárias",
+      "Agora o arquivo 'metadata.txt' sempre é fechado ao ser aberto a partir do diálogo About",
+      "A tolerância padrão ao criar um projeto ou importar os shapes agora é 0, para evitar comportamentos estranhos em coordenadas WGS84",
+      "Removida a criação padrão do arquivo Signals.dbf ao criar um novo projeto",
+      "Removida a criação inesperada do tema de Ligações de Serviço ao realizar algumas operações de edição gráfica",
+      "Estendida a representação das curvas das bombas declaradas por 3 pontos a todo o quadrante",
+      "Caso o material de uma tubulação seja declarado e a data de instalação seja omitida, sua rugosidade é determinada como se fosse nova",
+      "Corrigido erro que impedia adicionar bombas e válvulas sobre nós com grau de conectividade dois",
+      "Corrigido um erro ao visualizar a curva de modulação padrão no diálogo de padrões, e ao declará-la ou modificá-la nas opções de análise",
+      "Corrigido um erro de armazenamento da data de instalação das Válvulas de Isolamento.",
+      "Corrigido um erro ao interpolar cotas quando o ponto cai em alguma das extremidades da malha",
+      "Corrigido um erro ao distribuir os consumos em proporção ao comprimento das tubulações",
+      "Exclusão das extremidades de bombas e válvulas em todas as opções, ao atribuir os consumos aos nós a partir do Nodal Demand Builder ou das Ligações de Serviço",
+      "Corrigido um erro que impedia sobrepor consumos sobre o mesmo nó na atribuição de consumos pontuais a partir do Nodal Demand Builder",
+      "Corrigido um erro ao carregar os consumos a partir de uma camada de setores",
+      "Corrigido um erro que confundia o padrão de preços com o padrão de velocidades na leitura do INP",
+      "Corrigido um erro ao importar INPs com fontes de qualidade sem padrão definido",
+      "Corrigidos alguns erros ao importar um INP, relacionados aos formatos de tempo e às leis de controle temporais",
+      "Corrigido um erro ao ler a seção LABELS de um INP, que diferenciava maiúsculas de minúsculas nas palavras-chave",
+      "Corrigidos certos erros de importação/exportação de curvas e padrões relacionados ao separador decimal",
+      "Corrigido um erro no símbolo decimal, nas opções do modelo PDA",
+    ],
   },
   {
     version: "0.16",
     fecha: "14 julio 2022",
     fechaEn: "14 July 2022",
     fechaFr: "14 juillet 2022",
+    fechaPt: "14 de julho de 2022",
     items: [
       "Nuevas opciones en el gestor de demandas nodales para declarar el consumo para toda la red o por zonas",
       "Posibilidad de exportar, editar y reimportar los enlaces entre los consumos puntuales y los nudos",
@@ -1522,12 +1917,53 @@ const historico: HistoricoEntry[] = [
       "Correction d'une erreur dans l'outil de sélection par polygone, lorsque le système de référence n'était pas celui pris par défaut",
       "Correction d'une erreur avec l'outil de snapping (sélection ponctuelle d'éléments) dans la version 3.26 de QGIS",
     ],
+    itemsPt: [
+      "Novas opções no gerenciador de consumos nodais para declarar o consumo para toda a rede ou por zonas",
+      "Possibilidade de exportar, editar e reimportar os links entre os consumos pontuais e os nós",
+      "Novas opções para importar/exportar/excluir cenários de consumo por categorias",
+      "Novas ferramentas no gerenciador de consumos nodais para considerar a eficiência hidráulica ou atribuir padrões de consumo por setores.",
+      "Novo Gerenciador de Cenários para armazenar e recuperar em bloco diversos parâmetros do modelo",
+      "Cálculo automático do comprimento das tubulações a partir das coordenadas dos vértices",
+      "Conclusão automática do traçado das Ligações de Serviço por meio de um trecho perpendicular à tubulação mais próxima ou um link ao nó mais próximo.",
+      "Possibilidade de traçar automaticamente Ligações de Serviço de comprimento predefinido a partir de um ponto de uma tubulação ou de um nó.",
+      "Nova opção para espelhar uma Ligação de Serviço com a ferramenta de inverter",
+      "Nova opção de importar Ligações de Serviço como pontos, criando perpendiculares às tubulações ou conexões aos nós mais próximos.",
+      "Novo campo IsActive nas Ligações de Serviço para definir se está operativa ou não",
+      "Verificação do ponto de contato de uma Ligação de Serviço com alguma tubulação ou nó em ambas as extremidades.",
+      "Antes de calcular a setorização hidráulica, agora é transmitido o estado das válvulas manuais",
+      "Ao exportar para INP, o coeficiente de perdas das Válvulas de Isolamento é transmitido às tubulações",
+      "Declaração, edição e exclusão de medidores de diversos tipos, como novos elementos do Gêmeo Digital",
+      "Edição, leitura e salvamento dos sinais associados aos medidores",
+      "Novo diálogo para ler os dados de campo e exportar para CSV os correspondentes ao intervalo de simulação",
+      "Nova opção para exportar os dados de campo, junto com o arquivo INP",
+      "Novos campos no diálogo de importação, para poder importar mais informações dos elementos",
+      "Nova opção para mostrar nos temas auxiliares os elementos com alguma ocorrência, durante o processo de importação de shapefiles.",
+      "Novos botões e novo controle deslizante no painel de resultados",
+      "Melhorias nas etiquetas para mostrar os resultados",
+      "Novo tipo de resultado para visualizar o Status das linhas",
+      "Melhorias nas buscas a partir do editor de propriedades",
+      "Ao exportar o INP, novo menu suspenso com os caminhos dos executáveis do EPANET encontrados, para abrir automaticamente o arquivo exportado",
+      "Ao importar um arquivo INP, agora os padrões são classificados por seu tipo",
+      "Novo aviso quando o Id de algum elemento é autocompletado",
+      "Alterações na ordem e nos nomes de alguns botões da barra de ferramentas",
+      "Alterações nos estilos visuais de alguns dos elementos",
+      "Novo link para o site do QGISRed na janela de informações",
+      "Corrigida a leitura do Id da curva em válvulas GPV e sua edição a partir da janela de propriedades dos elementos",
+      "Corrigido um erro ao atribuir valores padrão na importação dos coeficientes de reação no meio da água e nas paredes",
+      "Corrigido um erro e a mensagem exibida ao ler as fontes contaminantes em reservatórios e represas",
+      "Corrigido um problema que fazia com que as ferramentas de seleção pontual deixassem de funcionar para certos elementos",
+      "Corrigido um erro na ferramenta de criar conexões em T em massa",
+      "Corrigido um erro com a ferramenta de seleção múltipla",
+      "Corrigido um erro na ferramenta de seleção por polígono, quando o sistema de referência não era o assumido por padrão",
+      "Corrigido um erro com a ferramenta de snapping (seleção pontual de elementos) na versão 3.26 do QGIS",
+    ],
   },
   {
     version: "0.15",
     fecha: "10 marzo 2022",
     fechaEn: "10 March 2022",
     fechaFr: "10 mars 2022",
+    fechaPt: "10 de março de 2022",
     items: [
       "Gestión de válvulas manuales (importación, creación, borrado, edición de propiedades, interacción con el estado de las tuberías...)",
       "Nueva herramienta para cambiar el estado de los elementos lineales y válvulas manuales",
@@ -1591,12 +2027,34 @@ const historico: HistoricoEntry[] = [
       "Correction d'un problème lors de l'attribution de la projection du projet",
       "Correction d'une erreur lors de l'édition des propriétés en travaillant avec des couches raster",
     ],
+    itemsPt: [
+      "Gestão de válvulas manuais (importação, criação, exclusão, edição de propriedades, interação com o estado das tubulações...)",
+      "Nova ferramenta para alterar o estado dos elementos lineares e válvulas manuais",
+      "Nova simbolização de tubulações, bombas, válvulas de regulação e manuais conforme seu estado",
+      "Anulação dos consumos isolados pelo fechamento de tubulações ou válvulas sobrepostas durante as simulações",
+      "Atribuição de consumos aos nós a partir de setores de consumo e consumos pontuais, com diversas opções",
+      "Melhorias na janela de edição de propriedades (seleção múltipla, elementos conectados, elementos visitados, centralizar elemento selecionado)",
+      "Revisão e ampliação das opções de análise (hidráulicas, qualidade, tempos e energia)",
+      "Incorporação dos novos parâmetros do EPANET 2.2 aos formulários (transbordamento de reservatórios, consumos dependentes da pressão)",
+      "Destacados os botões/menus da barra de ferramentas principal",
+      "Idioma padrão e único o inglês (por enquanto)",
+      "Melhoria da edição de rules (com times e clock times)",
+      "Corrigido erro ao escrever valores de consumo com mais de 4 dígitos à esquerda do ponto decimal",
+      "Corrigido erro com as etiquetas de tempo para selecionar resultados",
+      "Corrigido erro ao converter números no processo de interpolação de cotas",
+      "Corrigidos erros com a leitura e escrita de rules",
+      "Corrigido erro com a ordem das rules",
+      "Corrigido erro com rules usando a vírgula como separador decimal",
+      "Corrigido problema ao atribuir a projeção do projeto",
+      "Corrigido erro ao editar propriedades trabalhando com camadas raster",
+    ],
   },
   {
     version: "0.14",
     fecha: "11 junio 2021",
     fechaEn: "11 June 2021",
     fechaFr: "11 juin 2021",
+    fechaPt: "11 de junho de 2021",
     items: [
       "Nueva herramienta para editar la geometría de las acometidas",
       "Prioridad de los elementos del Gemelo Digital a la hora de seleccionar los objetos para editar sus propiedades o borrarlos",
@@ -1624,12 +2082,22 @@ const historico: HistoricoEntry[] = [
       "Correction d'une erreur lors de l'installation du plugin sans disposer au préalable des dépendances nécessaires",
       "Correction d'une erreur lors de l'interprétation du format de l'heure dans les lois de contrôle simples",
     ],
+    itemsPt: [
+      "Nova ferramenta para editar a geometria das Ligações de Serviço",
+      "Prioridade dos elementos do Gêmeo Digital na hora de selecionar os objetos para editar suas propriedades ou excluí-los",
+      "A opção hidráulica Demand Multiplier agora aceita um valor com decimais",
+      "Visualização do separador decimal definido pelo usuário nas diferentes janelas do plugin",
+      "Corrigido erro grave ao ler os metadados de modelos anteriores, que impedia trabalhar com eles",
+      "Corrigido um erro ao instalar o plugin sem dispor previamente das dependências necessárias",
+      "Corrigido um erro ao interpretar o formato da hora nas leis de controle simples",
+    ],
   },
   {
     version: "0.13",
     fecha: "26 mayo 2021",
     fechaEn: "26 May 2021",
     fechaFr: "26 mai 2021",
+    fechaPt: "26 de maio de 2021",
     items: [
       "Nuevo menú para agrupar las herramientas destinadas al manejo de los Gemelos Digitales",
       "Creación de acometidas a través de una herramienta propia, e incorporación de las mismas a la herramienta de borrado",
@@ -1693,12 +2161,34 @@ const historico: HistoricoEntry[] = [
       "Correction de l'erreur d'importation des SHP lorsqu'une entité n'a pas sa géométrie déclarée",
       "Correction d'une erreur d'affichage dans les couches de résultats",
     ],
+    itemsPt: [
+      "Novo menu para agrupar as ferramentas destinadas ao manuseio dos Gêmeos Digitais",
+      "Criação de Ligações de Serviço por meio de uma ferramenta própria, e incorporação destas à ferramenta de exclusão",
+      "Ficha específica para editar as propriedades das Ligações de Serviço",
+      "Carregamento das leituras automáticas de hidrômetro (telemedição) em diferentes formatos, nas Ligações de Serviço ou nós do modelo",
+      "Incorporação ao editor de curvas de modulação das curvas dos consumos nas Ligações de Serviço",
+      "Novo gerenciador de consumos para completar a importação a partir de arquivo, a exportação para arquivo e a exclusão seletiva dos consumos base nos nós e suas curvas de modulação",
+      "Melhoria dos tempos de acesso à janela de edição de propriedades dos elementos, para redes de grande porte",
+      "A abertura do arquivo INP a partir da interface do EPANET ao exportá-lo agora é opcional",
+      "Novas opções para definir as unidades e a fórmula de perda de carga ao importar dados a partir do GIS",
+      "O conversor dos coeficientes de perdas, ao mudar de fórmula, verifica antes se existem tubulações declaradas",
+      "Corrigido o formato das opções de tempo para permitir inserir dias, além de horas, minutos e segundos",
+      "A eliminação das curvas de modulação em Consumos Múltiplos agora se limita exclusivamente aos consumos eliminados",
+      "Corrigida a leitura de datas nos metadados",
+      "Corrigido o erro que impedia importar SHPs ao selecionar o mesmo campo para diferentes propriedades",
+      "Corrigido o erro pelo qual eram importados alguns campos dos SHPs sem tê-los selecionado expressamente",
+      "Tradução para o inglês de alguns textos que eram exibidos somente em espanhol",
+      "Corrigida a falha das ferramentas de seleção gráfica quando o CRS do QGIS é diferente do dos dados do QGISRed",
+      "Corrigido o erro de importação de SHPs quando alguma feature não tem sua geometria declarada",
+      "Corrigido um erro de visualização nas camadas de resultados",
+    ],
   },
   {
     version: "0.12",
     fecha: "7 enero 2021",
     fechaEn: "7 January 2021",
     fechaFr: "7 janvier 2021",
+    fechaPt: "7 de janeiro de 2021",
     items: [
       "Edición de la tabla de materiales-rugosidad para el cálculo de la rugosidad en función de material y edad",
       "Nueva importación y exportación de patrones/curvas en formato CSV",
@@ -1747,12 +2237,29 @@ const historico: HistoricoEntry[] = [
       "Correction d'une erreur d'accès lorsque le Pattern TimeStep est 0:00",
       "Les branchements sont désormais lus correctement",
     ],
+    itemsPt: [
+      "Edição da tabela de materiais-rugosidade para o cálculo da rugosidade em função do material e da idade",
+      "Nova importação e exportação de padrões/curvas em formato CSV",
+      "Nova ferramenta para importar os consumos base nos nós e os Ids das curvas de modulação (simples ou múltiplas) a partir de um arquivo CSV",
+      "Importação de Ligações de Serviço a partir de SHP",
+      "Nova ferramenta para obter a árvore de resistência mínima da rede",
+      "Atualização da biblioteca do EPANET para a versão 2.2",
+      "Melhorada a interface para converter os coeficientes de rugosidade",
+      "Correção de um erro ao mostrar resultados de Qualidade",
+      "Atualização das unidades e da fórmula de perdas atuais na barra de status, ao carregar um projeto do QGIS",
+      "Os projetos importados a partir de INP agora são exibidos na lista de projetos",
+      "Correção de um erro quando os nós não têm coordenadas",
+      "Ao inserir válvulas ou bombas em tubulações, agora se evita o surgimento de comprimentos negativos",
+      "Correção de um erro de acesso quando o Pattern TimeStep é 0:00",
+      "As Ligações de Serviço agora são lidas corretamente",
+    ],
   },
   {
     version: "0.11",
     fecha: "15 septiembre 2020",
     fechaEn: "15 September 2020",
     fechaFr: "15 septembre 2020",
+    fechaPt: "15 de setembro de 2020",
     items: [
       "Creación de un archivo Json para definir las diferentes proyecciones (contenido del .prj) en el caso de no disponer de Internet",
       "Implementada la lectura de los formatos de la sección PUMPS heredados de la versión 1.1 de EPANET",
@@ -1801,12 +2308,29 @@ const historico: HistoricoEntry[] = [
       "Correction de l'erreur qui figeait la carte lors de l'enregistrement d'un scénario de résultats",
       "Nouveau tri alphabétique dans les listes de links et nodes des Contrôles Simples",
     ],
+    itemsPt: [
+      "Criação de um arquivo Json para definir as diferentes projeções (conteúdo do .prj) no caso de não haver Internet disponível",
+      "Implementada a leitura dos formatos da seção PUMPS herdados da versão 1.1 do EPANET",
+      "Novo instalador único para ambas as arquiteturas (x86 e x64)",
+      "São exibidas as unidades e a fórmula de perda de carga na barra de status.",
+      "A estimativa do coeficiente de rugosidade em função da idade e do material agora admite diferentes fórmulas de perda de carga e sistemas de unidades",
+      "Conversão de coeficientes de rugosidade entre diferentes fórmulas de perda de carga",
+      "Ferramenta para criar uma cópia de segurança do projeto (restauração manual)",
+      "Corrigido o erro ao carregar o plugin na versão do QGIS 3.14.15",
+      "Corrigido um erro que não permitia expressar as horas em formato diferente de AM/PM na seção Controls",
+      "Corrigido um erro por não ser possível acessar as informações do usuário do Windows em determinados computadores",
+      "Nova cor azul nas etiquetas para os resultados do tipo linha",
+      "Corrigido o erro que fazia perder os metadados ao clonar o projeto",
+      "Corrigido o erro que travava o mapa ao salvar um cenário de resultados",
+      "Nova ordem alfabética nas listas de links e nodes nos Controles Simples",
+    ],
   },
   {
     version: "0.10",
     fecha: "12 mayo 2020",
     fechaEn: "12 May 2020",
     fechaFr: "12 mai 2020",
+    fechaPt: "12 de maio de 2020",
     items: [
       "Corregido el comportamiento anormal de la herramienta crear/importar cuando hay otras capas abiertas",
       "Las cabeceras de las secciones del fichero INP se escriben ahora en inglés",
@@ -1855,11 +2379,27 @@ const historico: HistoricoEntry[] = [
       "Depuis EditProject, on accède désormais à LayerManagement pour contrôler la visibilité des couches et leur création",
       "La projection est désormais correctement enregistrée dans les fichiers shape",
     ],
+    itemsPt: [
+      "Corrigido o comportamento anormal da ferramenta criar/importar quando há outras camadas abertas",
+      "Os cabeçalhos das seções do arquivo INP agora são escritos em inglês",
+      "As propriedades dos elementos foram validadas para evitar que as linhas tenham os dois nós extremos com o mesmo ID",
+      "Corrigido um erro ao importar os reservatórios",
+      "Melhorada a simplificação de vértices para eliminar repetições no ponto inicial",
+      "Corrigido um erro ao escrever as Opções de Tempo",
+      "Os Metadados foram reestruturados, e unificados no arquivo _Metadata.txt",
+      "Corrigido o erro de unir tubulações com as mesmas características, quando começam e terminam no mesmo nó",
+      "Agora se verifica se existe uma nova versão e o usuário é notificado",
+      "Corrigida a visualização dos ícones na legenda para a versão 3.12 do QGIS",
+      "Corrigida uma falha que impedia armazenar os estilos para os resultados",
+      "Corrigido um erro na leitura do separador decimal quando o usuário utiliza o formato em Inglês e altera o separador decimal para vírgula",
+      "A partir do EditProject agora é possível acessar o LayerManagement para controlar a visibilidade das camadas e sua criação",
+      "Agora a projeção é armazenada corretamente nos arquivos shape",
+    ],
   },
 ];
 
 export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
-  const readMoreText = localize(locale, "Leer más", "Read more", "Lire la suite");
+  const readMoreText = localize(locale, "Leer más", "Read more", "Lire la suite", "Ler mais");
 
   const novedadesArticles = capacidadesArticles.filter((a) => a.group === "novedades");
   const destacadasArticles = capacidadesArticles.filter((a) => a.group === "capacidadesdestacadas");
@@ -1998,6 +2538,49 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
                 Entrez dans les sections suivantes, et vous découvrirez tout cela plus en détail.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
+                Depois da{" "}
+                <Link href="/presentacion" style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>
+                  Apresentação
+                </Link>
+                , você deve estar ansioso para saber quais capacidades o plugin QGISRed oferece ao usuário. Nesta seção, nós as apresentamos. Mas como se trata de um produto ainda em desenvolvimento, iniciado há alguns anos, vamos fazer isso por etapas.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Primeiro vamos mostrar as{" "}
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas novidades</a>
+                {" "}incluídas na versão mais recente. Em seguida vamos destacar as{" "}
+                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades mais importantes</a>
+                {" "}já desenvolvidas, para que você não precise descobri-las fazendo uma revisão exaustiva do manual, mas se preferir, pode dar uma olhada rápida em todas as
+                <a href={anchorHash("prestacionesactuales", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}> Capacidades já implementadas</a>
+                . Por fim, vamos adiantar o que está por vir nas{" "}
+                <a href={anchorHash("proximasprestaciones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Próximas Funcionalidades</a>
+                . E para os mais curiosos, reservamos a última seção, onde você poderá ver como o produto evoluiu desde seus primórdios, e as melhorias introduzidas em{" "}
+                <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>cada Versão</a>
+                .
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Para que você tenha uma ideia mais exata da numeração seguida no versionamento, observe que todas as
+                versões atuais começam com 0, por ser um produto ainda em desenvolvimento. O objetivo da primeira versão
+                do QGISRed é concluir todas as melhorias previstas em relação ao que o EPANET 2.2 oferece atualmente, completar
+                as capacidades adicionais voltadas a facilitar a construção do modelo, e finalizar a extensão do
+                modelo para contemplar todos os elementos adicionais necessários e suas funcionalidades, até poder
+                reproduzir o comportamento real de uma rede para qualquer período escolhido, em conexão com os dados de
+                campo, como primeiro passo para elaborar um Gêmeo Digital.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Nesse momento lançaremos a versão 1.0 e abriremos as portas para completar o produto com outras
+                funcionalidades muito mais práticas e profissionais. Enquanto isso, estamos na versão 0.15 e estimamos
+                que faltam cerca de 5 versões adicionais para concluir todos os objetivos previstos. Basicamente falta
+                completar a inserção dos dados para torná-la ainda mais ágil e potente, adicionar mais alguns parâmetros
+                aos componentes, melhorar certos aspectos estéticos, aumentar a agilidade e as alternativas na hora de
+                mostrar os resultados, e completar toda a casuística para reproduzir a realidade com maior fidelidade, o
+                que pode implicar adicionar alguns componentes a mais na parte do Gêmeo Digital.
+              </p>
+              <p style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7", breakInside: "avoid" }}>
+                Entre nas seções seguintes, e conhecerá tudo isso com mais detalhes.
+              </p>
             </>
           )}
           </div>
@@ -2007,7 +2590,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Novedades */}
       <section id={anchorId("novedades", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Novedades versión 0.19", "What's New in version 0.19", "Nouveautés de la version 0.19")} />
+          <SectionHeading title={localize(locale, "Novedades versión 0.19", "What's New in version 0.19", "Nouveautés de la version 0.19", "Novidades da versão 0.19")} />
 
           {localize(locale,
             <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -2024,6 +2607,11 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               Cette nouvelle version 0.19 de QGISRed comporte de nombreuses améliorations et nouvelles prestations. Les fiches suivantes mettent en avant les <strong>nouveautés les plus importantes de la version 0.19. </strong>
               Pour une description plus détaillée de toutes les nouveautés, consultez la section{" "}
               <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Historique des versions</a>.
+            </p>,
+            <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+              Esta nova versão 0.19 do QGISRed inclui numerosas melhorias e novas funcionalidades. Nas fichas a seguir são destacadas as <strong>novidades mais importantes da versão 0.19. </strong>
+              Para uma descrição mais detalhada de todas as novidades, visite a seção{" "}
+              <a href={anchorHash("historicodeversiones", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Histórico de Versões</a>.
             </p>
           )}
 
@@ -2044,7 +2632,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Capacidades Destacadas */}
       <section id={anchorId("capacidadesdestacadas", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Capacidades destacadas", "Featured Capabilities", "Capacités phares")} />
+          <SectionHeading title={localize(locale, "Capacidades destacadas", "Featured Capabilities", "Capacités phares", "Capacidades em Destaque")} />
 
           {localize(locale,
             <>
@@ -2085,6 +2673,19 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 motiver et éveiller votre intérêt. Pour approfondir, nous vous renverrons vers les tutoriels et
                 vidéos, et en dernier recours vers le Manuel.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Nesta seção queremos destacar as capacidades mais notáveis do QGISRed, no que já foi desenvolvido
+                até agora. Embora o Manual reflita todas as capacidades do aplicativo, sua leitura nem sempre é
+                agradável. Por outro lado, aqui podemos contar a você a motivação, as particularidades e o alcance de cada
+                uma das capacidades em destaque.
+              </p>
+              <p className="mb-8" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Como são muitas, nós as organizamos por temática. Além disso, iremos completá-las aos poucos, à medida que tivermos mais conteúdo. Assim como na seção de{" "}
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Novidades</a>
+                , nas fichas a seguir pretendemos fazer apenas uma introdução a cada capacidade em destaque para motivar você e despertar seu interesse. Para se aprofundar mais nelas, vamos te encaminhar aos tutoriais e vídeos, e em último caso ao Manual.
+              </p>
             </>
           )}
 
@@ -2109,7 +2710,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Prestaciones Actuales */}
       <section id={anchorId("prestacionesactuales", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Prestaciones actuales", "Current Capabilities", "Prestations actuelles")} />
+          <SectionHeading title={localize(locale, "Prestaciones actuales", "Current Capabilities", "Prestations actuelles", "Funcionalidades Atuais")} />
 
           {localize(locale,
             <>
@@ -2190,6 +2791,33 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                 téléchargeable depuis l&apos;installateur d&apos;Extensions de QGIS, que nous avons classées par
                 thématiques pour plus de clarté.
               </p>
+            </>,
+            <>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                O QGISRed já completou quase quatro anos de vida, desde que começou sua trajetória no final de 2018. Desde
+                então não paramos de introduzir melhorias, embora talvez não no ritmo desejado, por não termos podido
+                dedicar atenção exclusiva durante esse tempo. Mas se olharmos para trás, as funcionalidades que
+                ele já oferece em sua última versão são muito notáveis.
+              </p>
+              <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                Algumas dessas funcionalidades são descritas com mais detalhes nas{" "}
+                <a href={anchorHash("novedades", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Últimas Novidades</a>
+                , ou nas{" "}
+                <a href={anchorHash("capacidadesdestacadas", locale)} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Capacidades em Destaque</a>
+                , mas para saber mais sobre outras funcionalidades você terá que consultar o{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("manualusuario", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Manual</Link>
+                , ou os{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("tutoriales", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Tutoriais</Link>
+                {" "}e{" "}
+                <Link href={{ pathname: "/utilizacion", hash: anchorHash("videosformativos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Vídeos de Treinamento</Link>
+                {" "}que estamos desenvolvendo aos poucos. Você também pode se inscrever em nossos{" "}
+                <Link href={{ pathname: "/difusion", hash: anchorHash("cursos", locale) }} style={{ color: "rgb(95, 189, 211)", textDecoration: "none" }}>Cursos</Link>
+                {" "}presenciais ou virtuais, ainda em elaboração.
+              </p>
+              <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                A seguir, listamos as principais funcionalidades já oferecidas pela última versão disponível para download
+                pelo instalador de Complementos do QGIS, as quais organizamos por temática para maior clareza.
+              </p>
             </>
           )}
 
@@ -2208,7 +2836,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Próximas Prestaciones */}
       <section id={anchorId("proximasprestaciones", locale)} className="w-full bg-white" style={{ paddingTop: "48px", paddingBottom: "48px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Próximas prestaciones", "Road Map", "Prochaines prestations")} />
+          <SectionHeading title={localize(locale, "Próximas prestaciones", "Road Map", "Prochaines prestations", "Próximas Funcionalidades")} />
 
           {localize(locale,
             <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
@@ -2223,6 +2851,11 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
               Comme vous le savez déjà, la version 1.0 de QGISRed est encore en développement. Vous trouverez
               ci-dessous une liste des principales améliorations que nous prévoyons d&apos;intégrer pour compléter
               cette version. Cette liste n&apos;est pas définitive et peut être sujette à des modifications.
+            </p>,
+            <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+              Como você já sabe, a versão 1.0 do QGISRed ainda está em desenvolvimento. A seguir, apresentamos uma lista
+              das principais melhorias que temos previsto incorporar para completar esta versão. A lista apresentada
+              não é fechada, e pode estar sujeita a alterações.
             </p>
           )}
 
@@ -2241,7 +2874,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
       {/* Histórico de Versiones */}
       <section id={anchorId("historicodeversiones", locale)} className="w-full" style={{ backgroundColor: "rgb(246,246,246)", paddingTop: "48px", paddingBottom: "64px" }}>
         <div className="mx-auto" style={{ maxWidth: "1280px", padding: "0 clamp(20px, 5vw, 60px)" }}>
-          <SectionHeading title={localize(locale, "Histórico de versiones", "Version History", "Historique des versions")} />
+          <SectionHeading title={localize(locale, "Histórico de versiones", "Version History", "Historique des versions", "Histórico de Versões")} />
 
           <div className="flex flex-col md:flex-row gap-[60px] items-start">
             <div style={{ flex: "1 1 100%" }}>
@@ -2280,6 +2913,19 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                     Ce qui suit est une liste des avancées et corrections réalisées dans les versions successives de
                     QGISRed, depuis la version 0.6 qui a été mise en ligne pour la première fois sur le dépôt de QGIS.
                   </p>
+                </>,
+                <>
+                  <p className="mb-4" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    O processo de desenvolvimento de um produto de software é complexo e exige muitas horas de dedicação e
+                    revisão do código. Desde a concepção inicial de um procedimento até sua implementação final, há
+                    muitos testes intermediários, e no final sempre surgem erros onde menos se espera. A cada nova
+                    versão tenta-se introduzir novas capacidades, mas ao mesmo tempo é inevitável ter que corrigir
+                    erros do que aparentemente já estava consolidado.
+                  </p>
+                  <p className="mb-6" style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}>
+                    A seguir apresentamos uma relação dos avanços e correções realizados nas sucessivas versões do
+                    QGISRed, desde a versão 0.6 que foi enviada pela primeira vez ao repositório do QGIS.
+                  </p>
                 </>
               )}
 
@@ -2291,7 +2937,8 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                       locale,
                       `Cambios en la versión ${item.version} – ${item.fecha}`,
                       `Changes in version ${item.version} – ${item.fechaEn}`,
-                      `Changements de la version ${item.version} – ${item.fechaFr ?? item.fecha}`
+                      `Changements de la version ${item.version} – ${item.fechaFr ?? item.fecha}`,
+                      `Alterações na versão ${item.version} – ${item.fechaPt ?? item.fecha}`
                     )}
                   >
                     <ul className="list-none p-0 m-0">
@@ -2323,7 +2970,7 @@ export function CapacidadesPageContent({ locale = "es" }: { locale?: string }) {
                     imageWidth={article.imageWidth}
                     imageHeight={article.imageHeight}
                     readMoreText={readMoreText}
-                    eyebrow={localize(locale, `Novedades v${version}`, `What's New v${version}`, `Nouveautés v${version}`)}
+                    eyebrow={localize(locale, `Novedades v${version}`, `What's New v${version}`, `Nouveautés v${version}`, `Novidades v${version}`)}
                   />
                 ))}
             </div>
