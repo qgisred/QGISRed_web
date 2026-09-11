@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Nested build output left behind in agent worktrees (default ignores
+    // above only match the top-level dirs, not `.claude/worktrees/*/out/**`).
+    "**/.claude/worktrees/**",
   ]),
 ]);
 
