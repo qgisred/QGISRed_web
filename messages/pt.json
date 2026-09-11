@@ -1,244 +1,244 @@
 {
   "metadata": {
-    "siteTitle": "QGISRed – Extensión libre de QGIS desarrollada para facilitar la tarea de construir y analizar modelos hidráulicos de redes de distribución de agua.",
-    "siteDescription": "Extensión libre de QGIS para construir y analizar Modelos Avanzados de Redes de Distribución de Agua y Gemelos Digitales"
+    "siteTitle": "QGISRed – Extensão livre do QGIS desenvolvida para facilitar a tarefa de construir e analisar modelos hidráulicos de redes de distribuição de água.",
+    "siteDescription": "Extensão livre do QGIS para construir e analisar Modelos Avançados de Redes de Distribuição de Água e Gêmeos Digitais"
   },
   "nav": {
-    "home": "Inicio",
-    "presentation": "Presentación",
+    "home": "Início",
+    "presentation": "Apresentação",
     "capabilities": "Capacidades",
-    "usage": "Utilización",
-    "diffusion": "Difusión",
-    "support": "Soporte",
-    "contact": "Contacto",
+    "usage": "Utilização",
+    "diffusion": "Difusão",
+    "support": "Suporte",
+    "contact": "Contato",
     "spanish": "Español",
     "english": "English",
     "french": "Français",
     "portuguese": "Português",
     "presentationSubmenu": {
-      "whatIs": "Qué es QGISRed",
+      "whatIs": "O que é o QGISRed",
       "background": "Antecedentes",
-      "applications": "Aplicaciones",
-      "installation": "Instalación",
-      "github": "Proyecto en GitHub",
+      "applications": "Aplicações",
+      "installation": "Instalação",
+      "github": "Projeto no GitHub",
       "credits": "Créditos"
     },
     "capabilitiesSubmenu": {
-      "news": "Novedades",
-      "featured": "Capacidades Destacadas",
-      "current": "Prestaciones Actuales",
-      "upcoming": "Próximas Prestaciones",
-      "history": "Histórico de Versiones"
+      "news": "Novidades",
+      "featured": "Capacidades em Destaque",
+      "current": "Funcionalidades Atuais",
+      "upcoming": "Próximas Funcionalidades",
+      "history": "Histórico de Versões"
     },
     "usageSubmenu": {
-      "manual": "Manual del Usuario",
-      "tutorials": "Tutoriales",
-      "videos": "Vídeos Formativos",
-      "examples": "Repositorio de Ejemplos",
-      "dataModel": "Modelo de Datos"
+      "manual": "Manual do Usuário",
+      "tutorials": "Tutoriais",
+      "videos": "Vídeos de Treinamento",
+      "examples": "Repositório de Exemplos",
+      "dataModel": "Modelo de Dados"
     },
     "diffusionSubmenu": {
-      "courses": "Cursos de Formación",
-      "publications": "Publicaciones",
-      "news": "Noticias y Redes Sociales"
+      "courses": "Cursos de Formação",
+      "publications": "Publicações",
+      "news": "Notícias e Redes Sociais"
     },
     "supportSubmenu": {
-      "issues": "Incidencias",
-      "technicalSupport": "Soporte Técnico",
-      "businessServices": "Servicios a Empresas",
-      "projects": "Participación en Proyectos"
+      "issues": "Incidentes",
+      "technicalSupport": "Suporte Técnico",
+      "businessServices": "Serviços para Empresas",
+      "projects": "Participação em Projetos"
     }
   },
   "footer": {
-    "copyright": "© 2026 QGISRed Todos los derechos reservados",
+    "copyright": "© 2026 QGISRed Todos os direitos reservados",
     "legalNotice": "Aviso Legal",
-    "privacyPolicy": "Política de Privacidad",
+    "privacyPolicy": "Política de Privacidade",
     "cookiesPolicy": "Política de Cookies"
   },
   "hero": {
-    "title": "Modelado de redes hidráulicas desde QGIS",
-    "subtitle": "Extensión libre de QGIS para construir y analizar Modelos Avanzados de Redes de Distribución de Agua y Gemelos Digitales",
-    "cta": "Saber más"
+    "title": "Modelagem de redes hidráulicas a partir do QGIS",
+    "subtitle": "Extensão livre do QGIS para construir e analisar Modelos Avançados de Redes de Distribuição de Água e Gêmeos Digitais",
+    "cta": "Saiba mais"
   },
   "presentacionSection": {
     "label": "QGISRED",
-    "title": "Presentación",
-    "body": "Bienvenido a QGISRed. En esta página encontrarás todo aquello que probablemente desearías conocer al tomar contacto por primera vez con este producto. ¿Qué es y cuáles son los objetivos buscados? ¿Cómo surge? ¿Para qué sirve? ¿Cómo puedo instalarlo? ¿Quiénes están detrás de él?. Te animo a visitar las secciones siguientes de esta página para contestar a todas tus preguntas de principiante.",
-    "cta": "Ver más",
+    "title": "Apresentação",
+    "body": "Bem-vindo ao QGISRed. Nesta página você encontrará tudo o que provavelmente gostaria de saber ao entrar em contato pela primeira vez com este produto. O que é e quais são os objetivos buscados? Como surgiu? Para que serve? Como posso instalá-lo? Quem está por trás dele? Convido você a visitar as seções seguintes desta página para responder a todas as suas dúvidas de iniciante.",
+    "cta": "Ver mais",
     "listItems": {
-      "whatIs": "Qué es QGISRed",
+      "whatIs": "O que é o QGISRed",
       "background": "Antecedentes",
-      "applications": "Aplicaciones",
-      "installation": "Instalación",
-      "github": "Proyecto en GitHub",
+      "applications": "Aplicações",
+      "installation": "Instalação",
+      "github": "Projeto no GitHub",
       "credits": "Créditos"
     }
   },
   "capacidadesSection": {
-    "title": "Capacidades de QGISRed",
-    "body": "Estarás ansioso por saber qué capacidades ofrece al usuario el plugin QGISRed. En esta sección te las contamos. Pero puesto que es un producto aún en desarrollo, iniciado hace algunos años, lo vamos a hacer por etapas.",
-    "cta": "Ver todo sobre las capacidades",
+    "title": "Capacidades do QGISRed",
+    "body": "Você deve estar ansioso para saber quais capacidades o plugin QGISRed oferece ao usuário. Nesta seção, nós as apresentamos. Mas como se trata de um produto ainda em desenvolvimento, iniciado há alguns anos, vamos fazer isso por etapas.",
+    "cta": "Ver tudo sobre as capacidades",
     "cards": {
-      "news": "Novedades",
-      "featured": "Capacidades Destacadas",
-      "current": "Prestaciones Actuales",
-      "upcoming": "Próximas Prestaciones",
-      "history": "Histórico de Versiones"
+      "news": "Novidades",
+      "featured": "Capacidades em Destaque",
+      "current": "Funcionalidades Atuais",
+      "upcoming": "Próximas Funcionalidades",
+      "history": "Histórico de Versões"
     }
   },
   "utilizacionSection": {
-    "label": "Cómo se utiliza QGISRed",
-    "title": "Utilización",
-    "body": "Probablemente sea esta la sección más importante de toda la página, pues te enseñará cómo utilizar y sacar provecho de QGISRed. Pero la estamos construyendo poco a poco, así que en el futuro tendrá bastante más contenido. Por ahora la mayor fuente de información es el Manual, que tienes al final de esta sección.",
-    "cta": "Saber más"
+    "label": "Como se utiliza o QGISRed",
+    "title": "Utilização",
+    "body": "Esta é provavelmente a seção mais importante de toda a página, pois vai ensinar você a utilizar e tirar proveito do QGISRed. Mas estamos construindo-a aos poucos, então no futuro terá bem mais conteúdo. Por enquanto, a maior fonte de informação é o Manual, que você encontra ao final desta seção.",
+    "cta": "Saiba mais"
   },
   "recursosSection": {
-    "tutorials": "Tutoriales",
-    "examples": "Repositorio de Ejemplos",
-    "manual": "Manual del Usuario",
-    "videos": "Videos Formativos",
-    "dataModel": "Modelo de Datos",
-    "faq": "Preguntas Frecuentes"
+    "tutorials": "Tutoriais",
+    "examples": "Repositório de Exemplos",
+    "manual": "Manual do Usuário",
+    "videos": "Vídeos de Treinamento",
+    "dataModel": "Modelo de Dados",
+    "faq": "Perguntas Frequentes"
   },
   "difusionSection": {
-    "title": "Difusión",
-    "body": "En esta sección se recogen aquellas actividades destinadas a dar difusión de la aplicación QGISRed, destacando los Cursos de Formación, cuya programación se irá anunciando oportunamente. Además, se recogen también las Publicaciones realizadas en torno a QGISRed, así como las Noticias y Redes Sociales.",
-    "courses": "Cursos de Formación",
-    "publications": "Publicaciones",
-    "news": "Noticias y Redes Sociales"
+    "title": "Difusão",
+    "body": "Nesta seção são reunidas as atividades destinadas a divulgar o aplicativo QGISRed, com destaque para os Cursos de Formação, cuja programação será anunciada oportunamente. Além disso, também são reunidas as Publicações realizadas sobre o QGISRed, assim como as Notícias e Redes Sociais.",
+    "courses": "Cursos de Formação",
+    "publications": "Publicações",
+    "news": "Notícias e Redes Sociais"
   },
   "soporteSection": {
-    "title": "Soporte",
-    "body": "El objetivo de esta sección es dar soporte a cualquier usuario de QGISRed. Aunque la aplicación es libre, no por ello está desatendida. Encontrarás aquí varios niveles de ayuda para sentirte apoyado en el uso de la aplicación.",
+    "title": "Suporte",
+    "body": "O objetivo desta seção é dar suporte a qualquer usuário do QGISRed. Embora o aplicativo seja livre, isso não significa que esteja desassistido. Você encontrará aqui vários níveis de ajuda para se sentir apoiado no uso do aplicativo.",
     "bulletItems": {
-      "issues": "Incidencias",
-      "technicalSupport": "Soporte Técnico",
-      "businessServices": "Servicios a Empresas",
-      "projects": "Participación en Proyectos"
+      "issues": "Incidentes",
+      "technicalSupport": "Suporte Técnico",
+      "businessServices": "Serviços para Empresas",
+      "projects": "Participação em Projetos"
     },
-    "cta": "Contacta con nosotros",
+    "cta": "Entre em contato conosco",
     "form": {
-      "nombre": "Nombre*",
+      "nombre": "Nome*",
       "email": "Email*",
       "empresa": "Empresa",
-      "telefono": "Teléfono",
-      "mensaje": "Mensaje",
+      "telefono": "Telefone",
+      "mensaje": "Mensagem",
       "submit": "Enviar",
       "submitting": "Enviando…",
-      "privacy": "He leído y acepto la",
-      "privacyLink": "política de privacidad",
-      "successTitle": "¡Gracias por tu mensaje!",
-      "successBody": "Nos pondremos en contacto contigo a la mayor brevedad posible.",
-      "errorMessage": "No se ha podido enviar el mensaje. Inténtalo de nuevo o escríbenos a info@qgisred.com."
+      "privacy": "Li e aceito a",
+      "privacyLink": "política de privacidade",
+      "successTitle": "Obrigado pela sua mensagem!",
+      "successBody": "Entraremos em contato com você o mais breve possível.",
+      "errorMessage": "Não foi possível enviar a mensagem. Tente novamente ou escreva para info@qgisred.com."
     }
   },
   "newsletterSection": {
-    "title": "Regístrate en nuestra Newsletter para estar al día de todas las novedades",
-    "namePlaceholder": "Nombre*",
+    "title": "Cadastre-se em nossa Newsletter para ficar por dentro de todas as novidades",
+    "namePlaceholder": "Nome*",
     "countryPlaceholder": "País*",
-    "companyPlaceholder": "Empresa/Institución*",
+    "companyPlaceholder": "Empresa/Instituição*",
     "emailPlaceholder": "Email*",
-    "privacyText": "He leído y acepto la",
-    "privacyLink": "política de privacidad",
-    "submit": "REGISTRARME",
+    "privacyText": "Li e aceito a",
+    "privacyLink": "política de privacidade",
+    "submit": "CADASTRAR",
     "submitting": "ENVIANDO…",
-    "successMessage": "Te hemos enviado un email para que confirmes tu suscripción. Revisa también la carpeta de spam.",
-    "errorMessage": "No se ha podido completar la suscripción. Inténtalo de nuevo más tarde.",
-    "dataProtectionTitle": "INFORMACIÓN BÁSICA SOBRE PROTECCIÓN DE DATOS RESPONSABLE DEL TRATAMIENTO",
-    "responsible": "RESPONSABLE:",
+    "successMessage": "Enviamos um email para você confirmar sua inscrição. Verifique também a pasta de spam.",
+    "errorMessage": "Não foi possível concluir a inscrição. Tente novamente mais tarde.",
+    "dataProtectionTitle": "INFORMAÇÕES BÁSICAS SOBRE PROTEÇÃO DE DADOS RESPONSÁVEL PELO TRATAMENTO",
+    "responsible": "RESPONSÁVEL:",
     "responsibleLink": "Fernando Martínez Alzamora",
-    "purpose": "FINALIDAD:",
-    "purposeText": "Envío de emails informativos sobre novedades de QGISRed y formaciones.",
-    "legitimation": "LEGITIMACIÓN:",
-    "legitimationText": "Su consentimiento",
-    "recipients": "DESTINATARIOS:",
-    "recipientsText": "Los datos no se cederán a terceros salvo en los casos en los que exista una obligación legal o comunicación necesaria para dar contestación a su consulta.",
-    "rights": "DERECHOS:",
-    "rightsText": "Puede ejercer sus Derechos a acceder, rectificar, oponerse, limitar, portar y suprimir los datos ante el responsable del tratamiento; además de acudir a la autoridad de control competente (AEPD).",
-    "additionalInfo": "INFORMACIÓN ADICIONAL:",
-    "additionalInfoLink": "información adicional sobre el tratamiento de sus datos personales aquí."
+    "purpose": "FINALIDADE:",
+    "purposeText": "Envio de emails informativos sobre novidades do QGISRed e formações.",
+    "legitimation": "LEGITIMAÇÃO:",
+    "legitimationText": "Seu consentimento",
+    "recipients": "DESTINATÁRIOS:",
+    "recipientsText": "Os dados não serão cedidos a terceiros, exceto nos casos em que exista uma obrigação legal ou comunicação necessária para responder à sua consulta.",
+    "rights": "DIREITOS:",
+    "rightsText": "Você pode exercer seus Direitos de acesso, retificação, oposição, limitação, portabilidade e supressão dos dados perante o responsável pelo tratamento; além de recorrer à autoridade de controle competente (AEPD).",
+    "additionalInfo": "INFORMAÇÕES ADICIONAIS:",
+    "additionalInfoLink": "informações adicionais sobre o tratamento de seus dados pessoais aqui."
   },
   "contactPage": {
-    "title": "¿Quieres contactar con nosotros?",
+    "title": "Quer entrar em contato conosco?",
     "form": {
-      "name": "Nombre*",
-      "phone": "Teléfono",
+      "name": "Nome*",
+      "phone": "Telefone",
       "email": "Email*",
-      "subject": "Asunto",
-      "message": "Mensaje*",
-      "privacy": "He leído y acepto la",
-      "privacyLink": "Política de Privacidad",
-      "submit": "Enviar mensaje",
+      "subject": "Assunto",
+      "message": "Mensagem*",
+      "privacy": "Li e aceito a",
+      "privacyLink": "Política de Privacidade",
+      "submit": "Enviar mensagem",
       "submitting": "Enviando…",
-      "successTitle": "¡Gracias por tu mensaje!",
-      "successBody": "Nos pondremos en contacto contigo a la mayor brevedad posible.",
-      "errorMessage": "No se ha podido enviar el mensaje.",
-      "dataProtectionSummary": "Información básica sobre protección de datos",
-      "responsible": "RESPONSABLE:",
+      "successTitle": "Obrigado pela sua mensagem!",
+      "successBody": "Entraremos em contato com você o mais breve possível.",
+      "errorMessage": "Não foi possível enviar a mensagem.",
+      "dataProtectionSummary": "Informações básicas sobre proteção de dados",
+      "responsible": "RESPONSÁVEL:",
       "responsibleName": "Fernando Martínez Alzamora.",
-      "purpose": "FINALIDAD:",
-      "purposeText": "Gestionar su consulta/petición y dar una respuesta a la misma.",
-      "legitimation": "LEGITIMACIÓN:",
-      "legitimationText": "Su consentimiento.",
-      "recipients": "DESTINATARIOS:",
-      "recipientsText": "Los datos no se cederán a terceros salvo en los casos en los que exista una obligación legal.",
-      "rights": "DERECHOS:",
-      "rightsText": "Puede ejercer sus derechos de acceso, rectificación, oposición, limitación, portabilidad y supresión ante el responsable del tratamiento."
+      "purpose": "FINALIDADE:",
+      "purposeText": "Gerenciar sua consulta/solicitação e dar uma resposta a ela.",
+      "legitimation": "LEGITIMAÇÃO:",
+      "legitimationText": "Seu consentimento.",
+      "recipients": "DESTINATÁRIOS:",
+      "recipientsText": "Os dados não serão cedidos a terceiros, exceto nos casos em que exista uma obrigação legal.",
+      "rights": "DIREITOS:",
+      "rightsText": "Você pode exercer seus direitos de acesso, retificação, oposição, limitação, portabilidade e supressão perante o responsável pelo tratamento."
     },
     "info": {
-      "institute": "Instituto de Ingeniería del Agua y del Medio Ambiente",
+      "institute": "Instituto de Engenharia da Água e do Meio Ambiente",
       "university": "Universitat Politècnica de València",
-      "address": "Camino de Vera s/n, 46022 Valencia, España",
-      "social": "Redes Sociales"
+      "address": "Camino de Vera s/n, 46022 Valência, Espanha",
+      "social": "Redes Sociais"
     },
     "newsletter": {
-      "title": "Regístrate en nuestra Newsletter",
-      "body": "Regístrate en nuestra Newsletter para estar al día de todas las novedades de QGISRed y las próximas formaciones.",
-      "name": "Nombre*",
+      "title": "Cadastre-se em nossa Newsletter",
+      "body": "Cadastre-se em nossa Newsletter para ficar por dentro de todas as novidades do QGISRed e das próximas formações.",
+      "name": "Nome*",
       "country": "País*",
-      "company": "Empresa/Institución*",
+      "company": "Empresa/Instituição*",
       "jobTitle": "Cargo",
       "email": "Email*",
-      "privacy": "He leído y acepto la",
-      "privacyLink": "Política de Privacidad",
-      "submit": "Suscribirme",
+      "privacy": "Li e aceito a",
+      "privacyLink": "Política de Privacidade",
+      "submit": "Inscrever-me",
       "submitting": "Enviando…",
-      "successTitle": "¡Casi listo!",
-      "successBody": "Te hemos enviado un email para que confirmes tu suscripción. Revisa también la carpeta de spam.",
-      "errorMessage": "No se ha podido completar la suscripción."
+      "successTitle": "Quase pronto!",
+      "successBody": "Enviamos um email para você confirmar sua inscrição. Verifique também a pasta de spam.",
+      "errorMessage": "Não foi possível concluir a inscrição."
     }
   },
   "pageHero": {
-    "presentation": "Presentación",
+    "presentation": "Apresentação",
     "capabilities": "Capacidades",
-    "usage": "Utilización",
-    "diffusion": "Difusión",
-    "support": "Soporte",
-    "contact": "Contacto",
+    "usage": "Utilização",
+    "diffusion": "Difusão",
+    "support": "Suporte",
+    "contact": "Contato",
     "legalNotice": "Aviso Legal",
-    "privacyPolicy": "Política de Privacidad",
+    "privacyPolicy": "Política de Privacidade",
     "cookiesPolicy": "Política de Cookies"
   },
   "legalPages": {
     "legalNotice": {
       "title": "Aviso Legal",
       "metaTitle": "Aviso Legal – QGISRed",
-      "metaDescription": "Aviso legal del sitio web QGISRed."
+      "metaDescription": "Aviso legal do site QGISRed."
     },
     "privacyPolicy": {
-      "title": "Política de Privacidad",
-      "metaTitle": "Política de Privacidad – QGISRed",
-      "metaDescription": "Política de privacidad del sitio web QGISRed."
+      "title": "Política de Privacidade",
+      "metaTitle": "Política de Privacidade – QGISRed",
+      "metaDescription": "Política de privacidade do site QGISRed."
     },
     "cookiesPolicy": {
       "title": "Política de Cookies",
       "metaTitle": "Política de Cookies – QGISRed",
-      "metaDescription": "Política de cookies del sitio web QGISRed."
+      "metaDescription": "Política de cookies do site QGISRed."
     }
   },
   "notFound": {
-    "title": "Página no encontrada",
-    "description": "Lo sentimos, la página que buscas no existe o ha sido movida.",
-    "backHome": "Volver al inicio"
+    "title": "Página não encontrada",
+    "description": "Sentimos muito, a página que você procura não existe ou foi movida.",
+    "backHome": "Voltar ao início"
   }
 }

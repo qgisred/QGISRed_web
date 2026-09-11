@@ -209,9 +209,78 @@ function PoliticaPrivacidadFr() {
   );
 }
 
-// TODO(i18n-pt): translate — placeholder falls back to the Spanish text.
 function PoliticaPrivacidadPt() {
-  return <PoliticaPrivacidadEs />;
+  return (
+    <>
+      <LegalSection title="1. INFORMAÇÃO AO USUÁRIO">
+        <p className="mb-4">
+          Fernando Martínez Alzamora, doravante RESPONSÁVEL, é o Responsável pelo tratamento dos dados pessoais do
+          Usuário e informa que esses dados serão tratados em conformidade com o disposto nas normas vigentes em
+          matéria de proteção de dados pessoais, o Regulamento (UE) 2016/679, de 27 de abril de 2016 (GDPR), relativo
+          à proteção das pessoas físicas no que diz respeito ao tratamento de dados pessoais e à livre circulação
+          desses dados, sendo-lhe fornecidas, portanto, as seguintes informações sobre o tratamento:
+        </p>
+        <p className="mb-3 font-medium">Finalidade do tratamento: manter uma relação comercial com o Usuário. As operações previstas para realizar o tratamento são:</p>
+        <ul className="list-disc pl-6 mb-4 flex flex-col gap-2">
+          <li>Elaboração de Perfis: o RESPONSÁVEL também poderá realizar, mediante consentimento prévio do Usuário, uma elaboração de perfis baseada em tratamento automatizado.</li>
+          <li>Critérios de conservação dos dados: serão conservados enquanto existir um interesse mútuo em manter a finalidade do tratamento.</li>
+          <li>Comunicação dos dados: os dados não serão comunicados a terceiros, salvo obrigação legal.</li>
+        </ul>
+        <p className="mb-3 font-medium">Direitos que assistem ao Usuário:</p>
+        <ul className="list-disc pl-6 mb-4 flex flex-col gap-1">
+          <li>Direito de retirar o consentimento a qualquer momento.</li>
+          <li>Direito de acesso, retificação, portabilidade e supressão dos seus dados.</li>
+          <li>Direito de limitação e oposição ao tratamento.</li>
+          <li>Direito de apresentar uma reclamação perante a Autoridade de controle (agpd.es).</li>
+        </ul>
+        <p className="mb-3 font-medium">Dados de contato para exercer os seus direitos:</p>
+        <ul className="list-none p-0 flex flex-col gap-1">
+          <li><strong>Endereço postal:</strong> Univ. Politècnica València, IIAMA- Grupo REDHISP, blq 5J – bajo</li>
+          <li><strong>Email:</strong>{" "}
+            <a href="mailto:fmartine@hma.uvp.es" style={{ color: "rgb(95, 189, 211)" }}>
+              fmartine@hma.uvp.es
+            </a>
+          </li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="2. CARÁTER OBRIGATÓRIO OU FACULTATIVO DA INFORMAÇÃO FORNECIDA PELO USUÁRIO">
+        <p className="mb-4">
+          Os Usuários, ao marcar as caixas correspondentes e inserir dados nos campos assinalados com um asterisco (*)
+          no formulário de contato ou apresentados em formulários de download, aceitam expressamente e de forma livre
+          e inequívoca que os seus dados são necessários para atender à sua solicitação por parte do prestador, sendo
+          voluntária a inclusão de dados nos campos restantes.
+        </p>
+        <p>
+          O RESPONSÁVEL informa e garante expressamente aos usuários que os seus dados pessoais não serão cedidos em
+          nenhum caso a terceiros, e que, sempre que for realizada alguma cessão de dados pessoais, será solicitado
+          previamente o consentimento expresso, informado e inequívoco dos Usuários.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="3. MEDIDAS DE SEGURANÇA">
+        <p className="mb-4">
+          Em conformidade com o disposto nas normas vigentes em matéria de proteção de dados pessoais, o RESPONSÁVEL
+          está cumprindo todas as disposições das normas do GDPR para o tratamento dos dados pessoais sob sua
+          responsabilidade, e manifestamente com os princípios descritos no artigo 5 do GDPR.
+        </p>
+        <p>
+          O RESPONSÁVEL garante que implementou políticas técnicas e organizacionais apropriadas para aplicar as
+          medidas de segurança estabelecidas pelo GDPR, com o objetivo de proteger os direitos e liberdades dos
+          Usuários.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="4. LEI APLICÁVEL E JURISDIÇÃO">
+        <p>
+          Para a resolução de todas as controvérsias ou questões relacionadas com o presente site ou com as
+          atividades nele desenvolvidas, será aplicável a legislação espanhola, à qual as partes se submetem
+          expressamente, sendo competentes para a resolução de todos os conflitos derivados ou relacionados com o seu
+          uso os Juizados e Tribunais mais próximos de Valência.
+        </p>
+      </LegalSection>
+    </>
+  );
 }
 
 function PrivacyPolicyEn() {

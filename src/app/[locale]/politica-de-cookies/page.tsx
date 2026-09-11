@@ -289,9 +289,120 @@ function PoliticaCookiesFr() {
   );
 }
 
-// TODO(i18n-pt): translate — placeholder falls back to the Spanish text.
 function PoliticaCookiesPt() {
-  return <PoliticaCookiesEs />;
+  return (
+    <>
+      <LegalSection>
+        <p className="mb-4 text-sm" style={{ color: "rgb(120,120,120)" }}>
+          Esta política de cookies foi atualizada pela última vez em 15 de julho de 2022 e aplica-se aos cidadãos e
+          residentes legais permanentes do Espaço Econômico Europeu e da Suíça.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="1. Introdução">
+        <p>
+          Nosso site, https://qgisred.upv.es, utiliza cookies e outras tecnologias relacionadas (para maior
+          comodidade, todas as tecnologias são denominadas «cookies»). Os cookies também são colocados por terceiros
+          que contratamos. No documento a seguir, informamos você sobre o uso de cookies em nosso site.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="2. O que são cookies?">
+        <p>
+          Um cookie é um pequeno arquivo enviado junto com as páginas deste site e que o seu navegador armazena no
+          disco rígido do seu computador ou de outro dispositivo. As informações armazenadas podem ser devolvidas aos
+          nossos servidores ou aos servidores de terceiros apropriados durante uma visita posterior.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="3. O que são scripts?">
+        <p>
+          Um script é um fragmento de código de programa que é utilizado para fazer com que nosso site funcione
+          corretamente e de forma interativa. Esse código é executado em nosso servidor ou no seu dispositivo.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="4. O que é um web beacon?">
+        <p>
+          Um web beacon (ou pixel de rastreamento) é um pequeno elemento invisível de texto ou imagem em um site que é
+          utilizado para monitorar o tráfego em um site. Para isso, são armazenados diversos dados sobre você por
+          meio desses web beacons.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="5. Cookies">
+        <p className="mb-4">
+          <strong>5.1 Cookies técnicos ou funcionais</strong><br />
+          Alguns cookies garantem que determinadas partes do site funcionem corretamente e que suas preferências de
+          usuário continuem sendo lembradas. Ao colocar cookies funcionais, facilitamos a sua visita ao nosso site.
+          Podemos colocar esses cookies sem o seu consentimento.
+        </p>
+        <p className="mb-4">
+          <strong>5.2 Cookies estatísticos</strong><br />
+          Utilizamos cookies estatísticos para otimizar a experiência do site para os nossos usuários. Com esses
+          cookies estatísticos, obtemos informações sobre o uso do nosso site. Pedimos a sua permissão para colocar
+          cookies estatísticos.
+        </p>
+        <p className="mb-4">
+          <strong>5.3 Cookies de marketing/rastreamento</strong><br />
+          Os cookies de marketing/rastreamento são cookies, ou qualquer outra forma de armazenamento local, usados
+          para criar perfis de usuário a fim de exibir publicidade ou rastrear o usuário neste site ou em vários
+          sites com fins de marketing similares.
+        </p>
+        <p>
+          <strong>5.4 Redes sociais</strong><br />
+          Em nosso site, incluímos conteúdo do X (anteriormente Twitter) para promover páginas web ou compartilhar em
+          redes sociais. Esse conteúdo está incorporado com código derivado do X (anteriormente Twitter) e salva
+          cookies.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="6. Cookies utilizados">
+        <p className="mb-4">
+          Usamos cookies de: <strong>Elementor</strong>, <strong>WordPress</strong>, <strong>Polylang</strong>,{" "}
+          <strong>mailpoet</strong>, <strong>Google Analytics</strong>, <strong>Google reCAPTCHA</strong>,{" "}
+          <strong>YouTube</strong> e <strong>Twitter</strong>.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="7. Consentimento">
+        <p>
+          Quando você visitar nosso site pela primeira vez, mostraremos uma janela pop-up com uma explicação sobre os
+          cookies. Assim que você clicar em «Salvar preferências», você aceita que usemos as categorias de cookies e
+          plugins que você selecionou na janela pop-up, conforme descrito nesta política de cookies. Você pode
+          desativar o uso de cookies por meio do seu navegador, mas, por favor, tenha em conta que nosso site pode
+          deixar de funcionar corretamente.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="8. Ativação/desativação e exclusão de cookies">
+        <p>
+          Você pode utilizar o seu navegador de Internet para excluir automática ou manualmente os cookies. Você
+          também pode especificar que determinados cookies não possam ser colocados. Outra opção é alterar as
+          configurações do seu navegador de Internet para que você receba uma mensagem sempre que um cookie for
+          colocado.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="9. Os seus direitos em relação aos dados pessoais">
+        <p>
+          Você tem os seguintes direitos em relação aos seus dados pessoais: direito de acesso, retificação,
+          portabilidade e supressão dos seus dados, direito de limitação e oposição ao tratamento, e direito de
+          apresentar uma reclamação perante a Autoridade de controle (agpd.es).
+        </p>
+      </LegalSection>
+
+      <LegalSection title="10. Dados de contato">
+        <p>
+          Para perguntas e/ou comentários sobre nossa política de cookies e esta declaração, por favor entre em
+          contato conosco por email:{" "}
+          <a href="mailto:fmartine@hma.upv.es" style={{ color: "rgb(95, 189, 211)" }}>
+            fmartine@hma.upv.es
+          </a>
+        </p>
+      </LegalSection>
+    </>
+  );
 }
 
 function CookiesPolicyEn() {

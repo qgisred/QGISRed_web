@@ -308,9 +308,127 @@ function AvisoLegalFr() {
   );
 }
 
-// TODO(i18n-pt): translate — placeholder falls back to the Spanish text.
 function AvisoLegalPt() {
-  return <AvisoLegalEs />;
+  return (
+    <>
+      <LegalSection>
+        <p className="font-semibold mb-3">LEI DOS SERVIÇOS DA SOCIEDADE DA INFORMAÇÃO (LSSI)</p>
+        <p className="mb-4">
+          Fernando Martínez Alzamora, responsável pelo site, doravante RESPONSÁVEL, disponibiliza aos usuários o
+          presente documento, com o qual pretende dar cumprimento às obrigações previstas na Lei espanhola 34/2002, de
+          11 de julho, de Serviços da Sociedade da Informação e de Comércio Eletrônico (LSSICE), BOE Nº 166, bem como
+          informar todos os usuários do site sobre quais são as condições de uso. Toda pessoa que acesse este site
+          assume o papel de usuário, comprometendo-se à observância e ao cumprimento rigoroso das disposições aqui
+          previstas, bem como de qualquer outra disposição legal que seja aplicável.
+        </p>
+        <p className="mb-4">
+          Fernando Martínez Alzamora reserva-se o direito de modificar qualquer tipo de informação que possa aparecer
+          no site, sem que exista obrigação de avisar previamente ou dar conhecimento aos usuários de tais alterações,
+          entendendo-se como suficiente a publicação no site do QGISRed.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="1. DADOS IDENTIFICATIVOS">
+        <ul className="list-none p-0 flex flex-col gap-1">
+          <li><strong>Nome de domínio:</strong> qgisred.upv.es e qgisred.webs.upv.es</li>
+          <li><strong>Nome comercial:</strong> QGISRed</li>
+          <li><strong>Titular do site:</strong> Fernando Martínez Alzamora</li>
+          <li><strong>NIF:</strong> 19.827.162N</li>
+          <li><strong>Domicílio social:</strong> Univ. Politècnica València. IIAMA</li>
+          <li><strong>Telefone:</strong> 963879610</li>
+          <li><strong>e-mail:</strong>{" "}
+            <a href="mailto:fmartine@hma.upv.es" style={{ color: "rgb(95, 189, 211)" }}>
+              fmartine@hma.upv.es
+            </a>
+          </li>
+        </ul>
+      </LegalSection>
+
+      <LegalSection title="2. DIREITOS DE PROPRIEDADE INTELECTUAL E INDUSTRIAL">
+        <p className="mb-4">
+          O site, incluindo a título enunciativo mas não limitativo sua programação, edição, compilação e demais
+          elementos necessários ao seu funcionamento, os desenhos, logotipos, textos e/ou gráficos, são propriedade do
+          RESPONSÁVEL ou, se for o caso, dispõe de licença ou autorização expressa por parte dos autores. Todos os
+          conteúdos do site encontram-se devidamente protegidos pela normativa de propriedade intelectual e
+          industrial, bem como inscritos nos registros públicos correspondentes.
+        </p>
+        <p className="mb-4">
+          Independentemente da finalidade a que se destinem, a reprodução total ou parcial, uso, exploração,
+          distribuição e comercialização exigem, em todo caso, autorização escrita prévia por parte do RESPONSÁVEL.
+          Qualquer uso não previamente autorizado é considerado uma violação grave dos direitos de propriedade
+          intelectual ou industrial do autor.
+        </p>
+        <p className="mb-4">
+          Os desenhos, logotipos, textos e/ou gráficos alheios ao RESPONSÁVEL que possam aparecer no site pertencem
+          aos seus respectivos proprietários, sendo eles próprios responsáveis por qualquer possível controvérsia que
+          possa surgir a respeito deles. O RESPONSÁVEL autoriza expressamente que terceiros possam redirecionar
+          diretamente para conteúdos específicos do site, e em todo caso redirecionar para o site principal do
+          QGISRed.
+        </p>
+        <p className="mb-4">
+          O RESPONSÁVEL reconhece em favor de seus titulares os correspondentes direitos de propriedade intelectual e
+          industrial, não implicando a sua mera menção ou aparição no site a existência de nenhum direito ou
+          responsabilidade sobre os mesmos, nem tampouco apoio, patrocínio ou recomendação por parte do RESPONSÁVEL.
+        </p>
+        <p>
+          Para realizar qualquer tipo de observação a respeito de possíveis violações dos direitos de propriedade
+          intelectual ou industrial, bem como sobre qualquer um dos conteúdos do site, pode fazê-lo através do
+          correio eletrônico{" "}
+          <a href="mailto:fmartine@hma.upv.es" style={{ color: "rgb(95, 189, 211)" }}>
+            fmartine@hma.upv.es
+          </a>
+          .
+        </p>
+      </LegalSection>
+
+      <LegalSection title="3. ISENÇÃO DE RESPONSABILIDADES">
+        <p className="mb-4">
+          O RESPONSÁVEL isenta-se de qualquer tipo de responsabilidade derivada da informação publicada em seu site,
+          sempre que essa informação tenha sido manipulada ou introduzida por um terceiro alheio ao mesmo.
+        </p>
+        <p className="mb-3 font-semibold">Uso de Cookies</p>
+        <p className="mb-4">
+          Este site pode utilizar cookies técnicos (pequenos arquivos de informação que o servidor envia ao computador
+          de quem acessa a página) para realizar determinadas funções que são consideradas imprescindíveis para o
+          correto funcionamento e visualização do site. Os cookies utilizados têm, em todo caso, caráter temporário,
+          com a única finalidade de tornar a navegação mais eficaz, e desaparecem ao término da sessão do usuário. Em
+          nenhum caso esses cookies fornecem por si mesmos dados de caráter pessoal e não serão utilizados para a
+          coleta dos mesmos.
+        </p>
+        <p className="mb-4">
+          O usuário tem a possibilidade de configurar seu navegador para ser alertado sobre o recebimento de cookies e
+          para impedir sua instalação em seu equipamento.
+        </p>
+        <p className="mb-3 font-semibold">Política de links</p>
+        <p className="mb-4">
+          A partir do site, é possível que ocorra o redirecionamento para conteúdos de sites de terceiros. Uma vez que
+          o RESPONSÁVEL nem sempre pode controlar os conteúdos introduzidos por terceiros em seus respectivos sites,
+          não assume nenhum tipo de responsabilidade a respeito desses conteúdos.
+        </p>
+        <p className="mb-4">
+          Este site foi revisado e testado para que funcione corretamente. Entretanto, o RESPONSÁVEL não descarta a
+          possibilidade de existirem certos erros de programação, ou que ocorram causas de força maior que tornem
+          impossível o acesso à página web.
+        </p>
+        <p className="mb-3 font-semibold">Endereços IP</p>
+        <p>
+          Os servidores do site poderão detectar automaticamente o endereço IP e o nome de domínio utilizados pelo
+          usuário. Um endereço IP é um número atribuído automaticamente a um computador quando este se conecta à
+          Internet. Toda essa informação é registrada em um arquivo de atividade do servidor devidamente inscrito, que
+          permite o posterior processamento dos dados com o objetivo de obter medições unicamente estatísticas.
+        </p>
+      </LegalSection>
+
+      <LegalSection title="4. LEI APLICÁVEL E JURISDIÇÃO">
+        <p>
+          Para a resolução de todas as controvérsias ou questões relacionadas com o presente site ou com as
+          atividades nele desenvolvidas, será aplicável a legislação espanhola, à qual as partes se submetem
+          expressamente, sendo competentes para a resolução de todos os conflitos derivados ou relacionados com o seu
+          uso os Juizados e Tribunais mais próximos de Valência.
+        </p>
+      </LegalSection>
+    </>
+  );
 }
 
 function LegalWarningEn() {
