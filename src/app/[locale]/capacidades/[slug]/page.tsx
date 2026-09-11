@@ -17,15 +17,14 @@ interface Params {
 // English ones are `/capabilities/[slug]` (generated from
 // `../../capabilities/[slug]/page.tsx`) and the French ones are
 // `/capacites/[slug]` (generated from `../../capacites/[slug]/page.tsx`).
-// The Portuguese entries are filtered to articles that already have a
-// `slugPt`, so an untranslated article simply isn't generated yet rather
-// than building a broken `/undefined` path. See `src/i18n/routing.ts`.
+// Portuguese falls back to the Spanish slug for articles without a `slugPt`
+// yet — the page content itself already falls back to Spanish via
+// `localize()`, so this is consistent: the URL is just the last piece to
+// catch up once translated. See `src/i18n/routing.ts`.
 export function generateStaticParams(): Params[] {
   return [
     ...capacidadesArticles.map((article) => ({ locale: "es", slug: article.slug })),
-    ...capacidadesArticles
-      .filter((article) => article.slugPt)
-      .map((article) => ({ locale: "pt", slug: article.slugPt as string })),
+    ...capacidadesArticles.map((article) => ({ locale: "pt", slug: article.slugPt ?? article.slug })),
   ];
 }
 
