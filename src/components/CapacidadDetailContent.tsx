@@ -2,8 +2,9 @@ import Image from "@/components/AppImage";
 import { Link } from "@/i18n/navigation";
 import type { CapacidadArticle } from "@/data/capacidades-articles";
 import { anchorHash } from "@/i18n/anchors";
+import { localize } from "@/i18n/localize";
 
-function renderParagraph(text: string, article: CapacidadArticle, isEn: boolean) {
+function renderParagraph(text: string, article: CapacidadArticle, locale: string) {
   if (!article.inlineIcon || !text.includes("{icon}")) return text;
   const [before, after] = text.split("{icon}");
   return (
@@ -11,7 +12,7 @@ function renderParagraph(text: string, article: CapacidadArticle, isEn: boolean)
       {before}
       <Image
         src={article.inlineIcon}
-        alt={(isEn ? article.inlineIconAltEn : article.inlineIconAlt) ?? ""}
+        alt={localize(locale, article.inlineIconAlt, article.inlineIconAltEn, article.inlineIconAltFr, article.inlineIconAltPt) ?? ""}
         width={article.inlineIconWidth}
         height={article.inlineIconHeight}
         className="inline-block align-text-bottom mx-1"
@@ -22,18 +23,21 @@ function renderParagraph(text: string, article: CapacidadArticle, isEn: boolean)
 }
 
 export function CapacidadDetailContent({ article, locale }: { article: CapacidadArticle; locale: string }) {
-  const isEn = locale === "en";
   // Both group names double as anchor keys on the capabilities page.
   const backAnchor = anchorHash(article.group, locale);
 
-  const displayTitle = isEn ? (article.titleEn ?? article.title) : article.title;
-  const displayParagraphs = isEn ? (article.paragraphsEn ?? article.paragraphs) : article.paragraphs;
-  const displayBulletList = isEn ? (article.bulletListEn ?? article.bulletList) : article.bulletList;
-  const displayParagraphsAfterList = isEn
-    ? (article.paragraphsAfterListEn ?? article.paragraphsAfterList)
-    : article.paragraphsAfterList;
-  const backLinkText = isEn ? "Back to Capabilities" : "Volver a Capacidades";
-  const buttonText = isEn ? "See all capabilities" : "Ver todas las capacidades";
+  const displayTitle = localize(locale, article.title, article.titleEn, article.titleFr, article.titlePt);
+  const displayParagraphs = localize(locale, article.paragraphs, article.paragraphsEn, article.paragraphsFr, article.paragraphsPt);
+  const displayBulletList = localize(locale, article.bulletList, article.bulletListEn, article.bulletListFr, article.bulletListPt);
+  const displayParagraphsAfterList = localize(
+    locale,
+    article.paragraphsAfterList,
+    article.paragraphsAfterListEn,
+    article.paragraphsAfterListFr,
+    article.paragraphsAfterListPt
+  );
+  const backLinkText = localize(locale, "Volver a Capacidades", "Back to Capabilities");
+  const buttonText = localize(locale, "Ver todas las capacidades", "See all capabilities");
 
   return (
     <main>
@@ -66,7 +70,7 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
                   className="mb-4"
                   style={{ fontSize: "15px", color: "rgb(51, 51, 51)", lineHeight: "1.7" }}
                 >
-                  {renderParagraph(p, article, isEn)}
+                  {renderParagraph(p, article, locale)}
                 </p>
               ))}
 
@@ -116,7 +120,7 @@ export function CapacidadDetailContent({ article, locale }: { article: Capacidad
               <div className="hidden md:block" style={{ flex: "0 0 40%" }}>
                 <Image
                   src={article.image}
-                  alt={(isEn ? article.imageAltEn : article.imageAlt) ?? displayTitle}
+                  alt={localize(locale, article.imageAlt, article.imageAltEn, article.imageAltFr, article.imageAltPt) ?? displayTitle}
                   width={article.imageWidth}
                   height={article.imageHeight}
                   className="w-full h-auto shadow-md"
